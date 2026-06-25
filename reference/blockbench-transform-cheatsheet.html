@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Transform Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Transform Cheat Sheet</b></span>
+  </nav>
+
+  <p class="kicker">Reference — keep this open while rotating parts</p>
+  <h1>Move, Resize, Rotate, Pivot</h1>
+  <p class="dek">The small set of transformations that turn boxes into props. Use exact numbers
+  first; drag handles once you understand what should happen.</p>
+
+  <div class="callout tip">
+    <span class="label">Source</span>
+    <p>Blockbench's official overview identifies X as width, Y as height, and Z as length; the
+    Element panel exposes Position, Size, Pivot Point, and Rotation sliders; and Edit mode includes
+    Move, Resize, Rotate, Pivot Tool, and Vertex Snap.
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki]</a></p>
+  </div>
+
+  <h2>The four transformations</h2>
+  <table>
+    <thead><tr><th>Tool</th><th>Changes</th><th>Use it when</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Move</strong></td><td>Position</td><td>A part is the right shape but in the wrong place.</td></tr>
+      <tr><td><strong>Resize</strong></td><td>Size</td><td>A part is too wide, tall, short, thick, or thin.</td></tr>
+      <tr><td><strong>Rotate</strong></td><td>Rotation</td><td>A part should sit at an angle instead of following the grid.</td></tr>
+      <tr><td><strong>Pivot</strong></td><td>Rotation point</td><td>A part rotates from the wrong hinge or joint. Save this for later.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <span class="label">Beginner rule</span>
+    <p>When a lesson gives numbers, type them into the <strong>Element</strong> panel. Typed values
+    are calmer than dragging because you can see exactly what changed.</p>
+  </div>
+
+  <h2>Axes in plain words</h2>
+  <table>
+    <thead><tr><th>Axis</th><th>Plain meaning</th><th>Today's use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>X</strong></td><td>Width, left to right</td><td>Make a plate or spoon wider.</td></tr>
+      <tr><td><strong>Y</strong></td><td>Height, up and down</td><td>Turn a utensil diagonally on a tabletop.</td></tr>
+      <tr><td><strong>Z</strong></td><td>Length, front to back</td><td>Make a tray deeper or a handle longer.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Rotation recipes</h2>
+  <table>
+    <thead><tr><th>Goal</th><th>Try this</th><th>Watch for</th></tr></thead>
+    <tbody>
+      <tr><td>Diagonal spoon on plate</td><td><code>Rotation Y -35</code></td><td>The spoon turns across the tabletop.</td></tr>
+      <tr><td>Opposite diagonal</td><td><code>Rotation Y 35</code></td><td>Same angle, mirrored direction.</td></tr>
+      <tr><td>Back to straight</td><td><code>Rotation 0 0 0</code></td><td>The part returns to the grid.</td></tr>
+      <tr><td>Matching two parts</td><td>Use the same number on both</td><td>Separate cubes read as one object.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>The model angle changed, but the part did not</td><td>You orbited the camera.</td><td>Select the cube and change Element → Rotation.</td></tr>
+      <tr><td>The spoon flickers on the plate</td><td>Two faces occupy the same surface.</td><td>Move the spoon slightly upward.</td></tr>
+      <tr><td>The bowl and handle do not line up</td><td>Their Rotation values differ.</td><td>Type the same Y Rotation value on both parts.</td></tr>
+      <tr><td>A part swings from a strange point</td><td>The pivot is not where you expect.</td><td>Ignore for now; use Move after Rotate. Pivot gets its own lesson later.</td></tr>
+    </tbody>
+  </table>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0004-plate-and-spoon-rotation.html">▸ Lesson 4 — Plate and spoon</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">Interface Cheat Sheet →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · transform reference · source: Blockbench Wiki</footer>
+
+</main>
+</body>
+</html>

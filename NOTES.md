@@ -46,3 +46,7 @@ Working notes + learner preferences. Refer back before designing each lesson.
   list one). Interleaves Outliner naming + Space-toggle recall; first 3-piece "set" shot. Framed as
   the seed of modular tiles (Wk4) + chef arms (Wk3). *(authored 2026-06-25; **completed
   2026-06-25** — self-reported)*
+- **0004** — Plate and spoon. New idea: **Rotate** via typed Element → Rotation numbers, especially
+  <code>Y -35</code> for a utensil lying diagonally on a tabletop. Reuses Duplicate for plate rims,
+  reinforces naming and set shots, and adds `reference/blockbench-transform-cheatsheet.html`.
+  *(authored 2026-06-25; completion not yet reported)*

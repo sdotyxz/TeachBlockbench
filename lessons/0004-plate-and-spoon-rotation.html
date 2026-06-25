@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 4 · Plate &amp; Spoon — Rotate for Angles</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 4</b></span>
+  </nav>
+
+  <p class="kicker">Day 4 — Week 1: Foundations</p>
+  <h1><span class="num">04</span>A plate and spoon — rotate for readable angles</h1>
+  <p class="dek">Straight boxes are useful. Angled boxes are alive. Today you make a small serving
+  plate with a spoon lying diagonally across it, and learn the difference between moving your
+  <em>camera</em> and rotating an <em>element</em>.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–60 min</span>
+    <span>🎯 Builds on Lessons 1–3</span>
+    <span>🛠️ No install needed</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>A chunky <strong>serving plate with a diagonal spoon</strong>, your fourth kitchen prop, and a
+    <strong>Day-4 devlog posted</strong>. The new skill is <strong>Rotate</strong>: turning one cube
+    so it sits at an angle instead of lining up with the grid.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer from memory before opening. This keeps the old moves available while you learn the new one.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What happens right after you Duplicate a cube?</summary>
+      <div class="answer">The copy is selected and sits directly on top of the original, so the next move is to slide it away.</div>
+    </details>
+    <details>
+      <summary>Why name cubes in the Outliner?</summary>
+      <div class="answer">Names turn a pile of cubes into a readable parts list: <code>body</code>, <code>rim</code>, <code>handle-l</code>, <code>handle-r</code>.</div>
+    </details>
+    <details>
+      <summary>What makes separate props feel like one asset pack?</summary>
+      <div class="answer">A shared blocky style, shared palette, and screenshots that show the props together as a set.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — Rotate</h2>
+  <p><strong>Move</strong> slides a cube. <strong>Resize</strong> changes its dimensions.
+  <strong>Rotate</strong> turns it around an axis. Blockbench lists Rotate as one of the default
+  Edit-mode tools, and the <strong>Element</strong> panel gives you exact Rotation numbers.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — tools and Element panel]</a></p>
+
+  <p>For today's spoon, use the beginner-safe method: select the spoon cube, find
+  <strong>Element → Rotation</strong>, and type <code>Y -35</code>. That means "turn this cube on
+  the tabletop." You are rotating the spoon, not orbiting your camera.</p>
+
+  <div class="callout tip">
+    <span class="label">Important distinction</span>
+    <p><strong>Orbiting the view</strong> only changes what you see. <strong>Rotating an element</strong>
+    changes the model itself. If the screenshot angle changes but the spoon still lines up with the
+    grid, you moved the camera, not the spoon.</p>
+  </div>
+
+  <div class="figure">
+    <div class="art">▭ + ╲ = 🍽️</div>
+    <div class="cap"><strong>Your modeling target:</strong> a shallow rectangular plate, a raised rim,
+    and one spoon crossing the plate diagonally. Rotation makes the spoon feel placed by hand.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep both references open:
+  <a href="../reference/blockbench-interface-cheatsheet.html">Interface Cheat Sheet</a> and
+  <a href="../reference/blockbench-transform-cheatsheet.html">Transform Cheat Sheet</a>.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>plate-spoon</code></h3>
+      <strong>File → New → Generic Model</strong>. Same starting point as every prop so far.
+    </li>
+    <li>
+      <h3>Plate base: one shallow slab</h3>
+      Add a cube. Make it a flat rectangle, around
+      <code>Width 12 · Height 0.6 · Depth 8</code>. Sit it just above the grid floor. Name it
+      <code>plate-base</code>.
+    </li>
+    <li>
+      <h3>Plate rim: four thin bars</h3>
+      Add one long thin cube for the front rim, roughly
+      <code>Width 12.5 · Height 0.6 · Depth 0.7</code>, and move it to the front edge of the plate.
+      Name it <code>rim-front</code>. Duplicate it, slide the copy to the back edge, and rename it
+      <code>rim-back</code>.
+    </li>
+    <li>
+      <h3>Finish the rim with two side bars</h3>
+      Add one short side rim cube, about <code>Width 0.7 · Height 0.6 · Depth 8</code>. Move it to
+      the left edge and name it <code>rim-left</code>. Duplicate it, slide the copy to the right
+      edge, and rename it <code>rim-right</code>. The plate should now read as a shallow tray.
+    </li>
+    <li>
+      <h3>Spoon handle: a long thin cube</h3>
+      Add a cube, make it a slim handle, around
+      <code>Width 8 · Height 0.35 · Depth 0.7</code>. Move it slightly above the plate surface so it
+      does not flicker against the plate. Name it <code>spoon-handle</code>.
+    </li>
+    <li>
+      <h3>⭐ The new move: rotate the handle</h3>
+      Select <code>spoon-handle</code>. In the <strong>Element</strong> panel, find
+      <strong>Rotation</strong> and type <code>Y -35</code>. The handle should now lie diagonally
+      across the plate. If it lands outside the plate, switch back to <strong>Move</strong> and slide
+      it until the angle looks intentional.
+    </li>
+    <li>
+      <h3>Spoon bowl: copy the same angle</h3>
+      Add a small flat cube, about <code>Width 2 · Height 0.35 · Depth 2</code>. Name it
+      <code>spoon-bowl</code>. Type the same Rotation value, <code>Y -35</code>, then Move it to one
+      end of the handle. The two cubes now read as one spoon.
+    </li>
+    <li>
+      <h3>Color it (your established loop)</h3>
+      Create a 16 × 16 texture, switch to <strong>Paint</strong> mode, and fill:
+      <ul>
+        <li><strong>plate parts</strong> → warm off-white, pale blue, or red enamel.</li>
+        <li><strong>spoon parts</strong> → light steel grey.</li>
+        <li><strong>Optional garnish</strong> → one tiny green cube on the plate for a postable color pop.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Frame a set shot</h3>
+      Capture the plate alone, then make one shot with the crate, chopping board, pot, and plate.
+      Four props is enough to look like the beginning of a real pack.
+    </li>
+    <li>
+      <h3>Post your Day-4 devlog</h3>
+      Save the editable <code>.bbmodel</code>, then post your screenshot with one of the captions
+      below. <em>Streak: Day 4.</em>
+    </li>
+  </ol>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
+    <div class="template">Day 4 of learning Blockbench from zero. Built a little serving plate with a diagonal spoon. New trick today: Rotate. The spoon finally breaks out of the grid and makes the prop feel placed, not just stacked. Four kitchen props in the set now!</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第4天】零基础学 Blockbench 做游戏素材 🎮
+今天做了一个小餐盘,上面放了一把斜着的勺子。
+新技能:旋转! 终于不只是横平竖直地堆方块了,斜放的小勺子一下子让道具更像真实摆在桌上的东西。
+厨房素材包第4件完成,继续每天更新!
+#Blockbench #3D建模 #低多边形 #游戏开发 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏开发</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is the difference between orbiting and rotating?</summary>
+      <div class="answer">Orbiting changes your camera view. Rotating changes the selected cube inside the model.</div>
+    </details>
+    <details>
+      <summary>Which Rotation field turned today's spoon on the tabletop?</summary>
+      <div class="answer"><strong>Y Rotation</strong>. Typing <code>Y -35</code> made the spoon lie diagonally across the plate.</div>
+    </details>
+    <details>
+      <summary>What should you do if the spoon flickers against the plate?</summary>
+      <div class="answer">Move it slightly upward so the spoon and plate surfaces are not sitting in the same place.</div>
+    </details>
+    <details>
+      <summary>Why use the same Rotation number for handle and bowl?</summary>
+      <div class="answer">Matching angles make separate cubes read as one spoon instead of two unrelated parts.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~8 min)</span>
+    <p>Read the official Blockbench overview sections on the
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Element panel,
+    Rotate tool, and Transform actions</a>. You only need the parts about Move, Resize, Rotate,
+    Pivot, and the numeric sliders.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Rotation is the first step toward better silhouettes: angled knives, tilted pan handles,
+    open cabinet doors, chef arms, and later simple poses. Today is small on purpose: one angle,
+    one prop, one post.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the spoon rotates strangely, the plate flickers, or the parts stop lining up, tell me what
+    happened or share a screenshot. I can diagnose whether it is a Rotation value, a Move value, or
+    a height-overlap problem. Bring back your Day-4 result and I'll set up <strong>Lesson 5</strong>
+    around either a frying pan, a mug, or the first shared color palette.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0003-cooking-pot.html">◂ Lesson 3 — Cooking pot</a>
+    <a href="../reference/blockbench-transform-cheatsheet.html">📄 Transform Cheat Sheet</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Interface Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 4 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

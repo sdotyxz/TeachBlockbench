@@ -1,7 +1,7 @@
 # Overcooked-style Blockbench Assets — Resources
 
 Curated, high-trust sources. Lesson knowledge is drawn from here, not from memory.
-Last reviewed: 2026-06-23.
+Last reviewed: 2026-06-25.
 
 ## Knowledge
 
