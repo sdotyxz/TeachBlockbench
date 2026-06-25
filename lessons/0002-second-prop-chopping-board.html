@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 2 · Your Second Prop — Combine Cubes</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 2</b></span>
+  </nav>
+
+  <p class="kicker">Day 2 — Week 1: Foundations</p>
+  <h1><span class="num">02</span>Your second prop — combine cubes</h1>
+  <p class="dek">You can make one cube. Now make a prop out of <em>several</em> — a little chopping
+  board with a knife resting on it — and you've started a matching set.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–55 min</span>
+    <span>🎯 Builds on Lesson 1</span>
+    <span>🛠️ No install needed</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>A wooden <strong>chopping board with a little knife</strong> — your second prop — and your
+    <strong>Day-2 devlog posted</strong>. Two props that share a look is the moment a pile of
+    objects becomes a <em>set</em>. That's what people buy.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer each <em>out loud from memory</em> before you open it. The retrieval is what makes
+  Lesson 1 stick — don't skip it.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Which project type do you start, every time?</summary>
+      <div class="answer"><strong>Generic Model.</strong> Your default for all game art.</div>
+    </details>
+    <details>
+      <summary>The three camera moves — and the one that always works?</summary>
+      <div class="answer">Rotate (left-drag), Pan (right-drag), Zoom (<strong>scroll</strong> — works everywhere).</div>
+    </details>
+    <details>
+      <summary>Why was your crate white until you made a texture?</summary>
+      <div class="answer">Color lives in a <strong>texture</strong> painted onto faces. No texture → plain white.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea</h2>
+  <p>A real prop is just <strong>several cubes positioned next to each other</strong>. That's the
+  whole secret to everything you'll build from here — a chef, a stove, a counter: all of it is boxes
+  placed together. The only new tool you need is the
+  <a href="../reference/blockbench-interface-cheatsheet.html"><strong>Outliner</strong></a> — the
+  list of every cube in your model. As soon as you have more than one cube,
+  <strong>name them</strong>, or you'll get lost in <code>Cube</code>, <code>Cube2</code>,
+  <code>Cube3</code>. The Outliner is your parts list.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — panels]</a></p>
+
+  <div class="figure">
+    <div class="art">▭ + ▬ + ▪ = 🔪🪵</div>
+    <div class="cap">Three cubes — a flat board, a thin blade, a small handle — read as one little scene.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Same loop as Lesson 1 (<a href="../lessons/0001-your-first-blockbench-prop.html">add cube →
+  shape → color</a>) — just repeated three times, with names. Keep the
+  <a href="../reference/blockbench-interface-cheatsheet.html">Cheat Sheet</a> open.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>chopping-board</code></h3>
+      You know this one: <strong>File → New → Generic Model</strong>. Empty grid, fresh start.
+    </li>
+    <li>
+      <h3>Build the board: one flat, wide slab</h3>
+      Add a cube. In the <strong>Element</strong> panel, type a flat-slab <strong>Size</strong> —
+      roughly <code>Width 14 · Height 1.5 · Depth 9</code> (eyeball it; numbers don't need to be
+      exact). Sit it on the grid floor. A cutting board is just a squashed crate.
+    </li>
+    <li>
+      <h3>Name it in the Outliner</h3>
+      Find the new cube in the <strong>Outliner</strong> panel, double-click its name, and call it
+      <code>board</code>. <em>This is the new habit:</em> every cube gets a name the moment it exists.
+    </li>
+    <li>
+      <h3>Add the knife handle (cube #2)</h3>
+      Add another cube. Make it a small bar — about <code>Width 4 · Height 1 · Depth 1.2</code>.
+      Switch to the <strong>Move</strong> tool (<kbd>Space</kbd> flips Move ⇄ Resize) and drag it so
+      it rests on <em>top</em> of the board, near one short edge. Rename it <code>handle</code>.
+    </li>
+    <li>
+      <h3>Add the blade (cube #3)</h3>
+      Add a third cube. Make it thin and flat — about <code>Width 6 · Height 0.4 · Depth 2</code> —
+      and Move it so it lines up end-to-end with the handle, lying flat on the board. Now the two
+      cubes <em>read</em> as one knife. Rename it <code>blade</code>. You should see
+      <code>board · handle · blade</code> in the Outliner — that's a tidy model.
+    </li>
+    <li>
+      <h3>Color all three (your Lesson-1 loop)</h3>
+      Create a texture (16 × 16), switch to <strong>Paint</strong> mode, and click faces to fill —
+      exactly like the crate, just more faces:
+      <ul>
+        <li><strong>board</strong> → a warm wood brown. <em>Tip:</em> match it to your crate's brown
+          so the two props look like a set.</li>
+        <li><strong>blade</strong> → light steel grey.</li>
+        <li><strong>handle</strong> → a darker brown or black.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Frame a 3/4 shot &amp; capture it</h3>
+      Back to normal view, orbit to that slightly-looking-down corner angle, and screenshot. Bonus:
+      put the crate and the board in <em>one</em> shot later for a "set" photo.
+    </li>
+    <li>
+      <h3>Post your Day-2 devlog</h3>
+      Same project page as yesterday. Screenshot + a caption from below. <em>Streak: Day 2.</em>
+    </li>
+  </ol>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
+    <div class="template">Day 2 of learning Blockbench from zero. Built my second prop — a little chopping board with a knife — by combining a few cubes. Two props down, both sharing a wood palette, slowly building an Overcooked-style kitchen pack. Posting daily!</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第2天】零基础学 Blockbench 做游戏素材 🎮
+今天用几个方块拼出了第二个道具——一块小砧板,还配了把小刀!
+两个道具凑齐啦,慢慢做成一套《胡闹厨房》风格的厨房素材包,每天更新进度~
+#Blockbench #3D建模 #低多边形 #游戏开发 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏开发</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>From memory first — this is today's new material, so the recall matters most here.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Where do you rename a cube, and why bother?</summary>
+      <div class="answer">In the <strong>Outliner</strong>. Named parts keep a multi-cube model from becoming an unreadable pile as it grows.</div>
+    </details>
+    <details>
+      <summary>What makes a thin cube read as a knife blade?</summary>
+      <div class="answer">A very <strong>small Height</strong> — a flat, wide, shallow box. Shape comes from proportions, not detail.</div>
+    </details>
+    <details>
+      <summary>How do you place one cube against another precisely?</summary>
+      <div class="answer">The <strong>Move</strong> tool (<kbd>Space</kbd> to switch), or type exact <strong>Position</strong> numbers in the Element panel.</div>
+    </details>
+    <details>
+      <summary>What turns two separate props into a sellable "set"?</summary>
+      <div class="answer">A <strong>shared look</strong> — same palette and blocky style — so they belong together.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~10 min)</span>
+    <p>Watch a real multi-cube prop come together start to finish:
+    <a href="https://www.youtube.com/watch?v=qD6YPlEUguI">"Making Low Poly Assets | Blockbench |
+    FULL PROCESS Timelapse"</a>. Notice how the whole thing is just boxes placed and resized —
+    that's all you're doing too.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Optional stretch (only if you have time)</span>
+    <p>Want more? Add two tiny cubes as <em>chopped food</em> on the board (an orange carrot, a red
+    tomato) — pure Lesson-2 practice, and even cuter to post. Then <strong>File → Save</strong> your
+    <code>.bbmodel</code> so you keep the build.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>Cubes not lining up? Knife looks off? Not sure your browns match? Tell me, or drop a
+    screenshot and I'll react. Bring back your board and I'll set up <strong>Lesson 3</strong> in
+    your zone — likely a rounder prop (a pot or plate) so your set gains some variety of shape.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0001-your-first-blockbench-prop.html">◂ Lesson 1 — Your first prop</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 2 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

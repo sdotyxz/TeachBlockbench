@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 3 · A Cooking Pot — Duplicate for Symmetry</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 3</b></span>
+  </nav>
+
+  <p class="kicker">Day 3 — Week 1: Foundations</p>
+  <h1><span class="num">03</span>A cooking pot — duplicate for free symmetry</h1>
+  <p class="dek">The most iconic Overcooked object of all. Build it once — then learn the move that
+  makes the <em>second</em> handle appear in a single click, perfectly matched.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–55 min</span>
+    <span>🎯 Builds on Lessons 1–2</span>
+    <span>🛠️ No install needed</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>A little <strong>cooking pot with two matching handles</strong> — the signature Overcooked
+    prop — and your <strong>Day-3 devlog posted</strong>. You'll also pocket a tool you'll reuse on
+    almost everything from here: <strong>Duplicate</strong>.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Say each answer <em>out loud from memory</em> before opening it. Yesterday's material plus
+  Lesson 1 — mixing old and new is what makes it stick.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Where do you name your cubes, and why?</summary>
+      <div class="answer">In the <strong>Outliner</strong> — so a multi-cube model stays readable instead of becoming <code>Cube, Cube2, Cube3…</code></div>
+    </details>
+    <details>
+      <summary>One key flips between the Move and Resize tools — which?</summary>
+      <div class="answer"><kbd>Space</kbd>. (Or double-click the tool.) Move slides a cube; Resize changes its size.</div>
+    </details>
+    <details>
+      <summary>What turns separate props into a sellable "set"?</summary>
+      <div class="answer">A <strong>shared look</strong> — same palette, same blocky style — so they clearly belong together.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — Duplicate</h2>
+  <p>Many props are <strong>symmetrical</strong>: a pot has two handles, a chef has two arms, a
+  counter has repeating panels. Re-building each half by hand is slow <em>and</em> the two halves
+  never quite match. The fix is <strong>Duplicate</strong> — make one part perfectly, then copy it.</p>
+  <p>The version-proof way: <strong>right-click the cube</strong> (in the Outliner or the viewport)
+  and choose <strong>Duplicate</strong> — it also lives in the <strong>Edit menu</strong>. The copy
+  lands selected and sitting <em>right on top</em> of the original, so your very next move is to
+  slide it to its new home with the <strong>Move</strong> tool.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — tools &amp; menus]</a></p>
+
+  <div class="callout tip">
+    <span class="label">Find its hotkey</span>
+    <p>Blockbench shows the keyboard shortcut for <strong>Duplicate</strong> right next to it in the
+    menu (often <kbd>Ctrl</kbd>+<kbd>D</kbd>). Hover the action to see <em>your</em> build's binding —
+    that habit works for <em>any</em> command, no memorizing required.
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Wiki — keybindings]</a></p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/cooking-pot-reference.png"
+      alt="Blocky low-poly cooking pot made from a dark box body, a thin grey overhanging top slab, and two matching rectangular side handles">
+    <div class="cap"><strong>Your modeling target:</strong> one chunky box body, one thin overhanging
+    slab, and two identical side handles. Build one handle, then Duplicate it for the other side.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Same core loop as before (<a href="../lessons/0002-second-prop-chopping-board.html">add cube →
+  shape → name → color</a>). The only new step is <strong>4</strong>. Keep the
+  <a href="../reference/blockbench-interface-cheatsheet.html">Cheat Sheet</a> open.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>cooking-pot</code></h3>
+      <strong>File → New → Generic Model</strong>. Fresh grid, like always.
+    </li>
+    <li>
+      <h3>Body: a chunky box (cube #1)</h3>
+      Add a cube and give it a <strong>Size</strong> around <code>Width 9 · Height 7 · Depth 9</code>
+      — a little taller than wide, sitting on the grid floor. Name it <code>body</code> in the
+      Outliner. This squat box already reads as a pot.
+    </li>
+    <li>
+      <h3>Rim: a thin overhanging lid-edge (cube #2)</h3>
+      Add a cube, make it a flat slab a touch <em>wider</em> than the body —
+      <code>Width 10 · Height 1 · Depth 10</code> — and Move it to sit on top, overhanging slightly
+      on every side. That little lip is what makes a plain box look like a real pot. Name it
+      <code>rim</code>.
+    </li>
+    <li>
+      <h3>One handle (cube #3)</h3>
+      Add a cube, make a small bar — about <code>Width 2 · Height 1.2 · Depth 4</code> — and Move it
+      so it sticks out from <em>one</em> side of the body, near the top. Name it <code>handle-l</code>.
+      Get this one looking right; the next step copies it exactly.
+    </li>
+    <li>
+      <h3>⭐ The new move: Duplicate the handle</h3>
+      <strong>Right-click <code>handle-l</code> → Duplicate</strong> (or use the Edit menu). A second
+      handle appears, selected, sitting on top of the first. With the <strong>Move</strong> tool
+      (<kbd>Space</kbd>), slide it straight across to the <em>opposite</em> side of the body. Rename
+      the copy <code>handle-r</code>. Two identical handles, perfectly matched — and you never rebuilt
+      a thing. <em>That's the whole point of Duplicate.</em>
+    </li>
+    <li>
+      <h3>Color it (your Lesson-1 loop)</h3>
+      Create a texture (16 × 16), switch to <strong>Paint</strong> mode, and fill faces:
+      <ul>
+        <li><strong>body</strong> + <strong>rim</strong> + both handles → a dark <strong>steel grey</strong>.</li>
+        <li>Want a pop of Overcooked color? Paint the body a <strong>red</strong> or <strong>teal</strong>
+          enamel and keep the rim grey — that's a classic stylized-kitchen look.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Stretch (optional): a bowl of soup</h3>
+      Add one more cube, sized to drop just inside the rim, and paint it bright orange or yellow —
+      now it's a pot of soup. Pure Lesson-2 practice, and far cuter to post.
+    </li>
+    <li>
+      <h3>Frame a 3/4 shot &amp; capture it</h3>
+      Orbit to the slightly-looking-down corner angle so both handles read, and screenshot. Then put
+      the <strong>pot, crate, and chopping board in one shot</strong> — your first three-piece set photo.
+    </li>
+    <li>
+      <h3>Post your Day-3 devlog</h3>
+      Same project page. Screenshot + a caption from below. <em>Streak: Day 3.</em> Then
+      <strong>File → Save</strong> your <code>.bbmodel</code>.
+    </li>
+  </ol>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
+    <div class="template">Day 3 of learning Blockbench from zero. Built the most Overcooked prop of all — a little cooking pot. New trick today: Duplicate, so the second handle is a perfect copy of the first instead of a hand-built mismatch. Three props in the set now. Posting daily!</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第3天】零基础学 Blockbench 做游戏素材 🎮
+今天做了《胡闹厨房》里最经典的道具——一口小炖锅!
+学了个新技能:"复制",一键就能做出对称的另一只锅耳,完全不用重新搭,两边还分毫不差~
+厨房素材包凑齐三件啦,每天更新进度!
+#Blockbench #3D建模 #低多边形 #游戏开发 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏开发</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>From memory first — today's new material matters most here.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Two ways to Duplicate a cube — name them.</summary>
+      <div class="answer"><strong>Right-click → Duplicate</strong>, or the <strong>Edit menu → Duplicate</strong> (the menu also shows its hotkey).</div>
+    </details>
+    <details>
+      <summary>Right after duplicating, where is the copy — and what's your next move?</summary>
+      <div class="answer">Selected and sitting <strong>on top of the original</strong>. Next move: <strong>Move</strong> it to its new position.</div>
+    </details>
+    <details>
+      <summary>What one detail makes a plain box read as a pot?</summary>
+      <div class="answer">A thin <strong>rim that overhangs</strong> the body — the lip sells it. Shape from proportions, not detail.</div>
+    </details>
+    <details>
+      <summary>Why duplicate the handle instead of building a second one?</summary>
+      <div class="answer">It's <strong>faster</strong> and <strong>perfectly matched</strong> — hand-built halves never line up. Symmetry for free.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~12 min)</span>
+    <p>Watch a low-poly object get modeled and given a pixel texture, beginner-friendly and
+    end-to-end:
+    <a href="https://www.youtube.com/watch?v=GukhptdHlPk">"How to Make Low-Poly Models with Pixel
+    Texture" (Blockbench)</a>. Watch for moments where parts get copied rather than rebuilt — that's
+    today's idea in action.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Duplicate isn't just for handles — it's the seed of <strong>modular pieces</strong> (repeating
+    counter and floor tiles) in Week 4, and the <strong>two arms</strong> of your chef in Week 3. You
+    just learned a move you'll lean on for the rest of the pack.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>Handle landing in the wrong spot? Rim not overhanging evenly? Pot looks more like a bucket?
+    Tell me, or drop a screenshot and I'll react on proportions and framing. Bring back your pot and
+    I'll set up <strong>Lesson 4</strong> in your zone — likely a <strong>plate or mug</strong>, or
+    our first proper look at <strong>rotating</strong> a cube for angles.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0002-second-prop-chopping-board.html">◂ Lesson 2 — Chopping board</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 3 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>
