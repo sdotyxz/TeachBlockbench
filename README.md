@@ -19,5 +19,17 @@ Run with the `/teach` skill. Each session ends with something postable.
 | `learning-records/` | What's been learned — drives what gets taught next. |
 
 ## Start here
-Open `lessons/0001-your-first-blockbench-prop.html` in a browser, and keep
-`reference/blockbench-interface-cheatsheet.html` open alongside it.
+Open `index.html` in a browser. It links the current lesson, all existing lessons, and the
+reference sheets.
+
+## GitHub Pages
+This repo is ready to publish as a static GitHub Pages site from the repo root.
+
+1. Push the repo to GitHub.
+2. Open the repository on GitHub.
+3. Go to **Settings → Pages**.
+4. Set **Source** to **Deploy from a branch**.
+5. Choose your main branch and the root folder `/`.
+
+GitHub Pages will use `index.html` as the homepage. The `.nojekyll` file tells GitHub to serve the
+static files as-is.
