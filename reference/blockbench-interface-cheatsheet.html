@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Interface Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Interface &amp; Navigation Cheat Sheet</b></span>
+  </nav>
+
+  <p class="kicker">Reference — keep this open while you work</p>
+  <h1>Blockbench Interface &amp; Navigation</h1>
+  <p class="dek">The 20% of the interface you'll use 80% of the time. Designed to print on one page.</p>
+
+  <div class="callout tip">
+    <span class="label">How to use this</span>
+    <p>Don't memorize it — keep it open in a second tab. The moves become automatic after a few
+    sessions. Everything here is from the official
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Blockbench Wiki — Overview &amp; Tips</a>.</p>
+  </div>
+
+  <h2>Get Blockbench</h2>
+  <table>
+    <thead><tr><th>Option</th><th>Where</th><th>When to use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Web app</strong> (no install)</td><td><a href="https://web.blockbench.net">web.blockbench.net</a></td><td>Right now — fastest way to start. Great for learning.</td></tr>
+      <tr><td><strong>Desktop app</strong></td><td><a href="https://www.blockbench.net/downloads">blockbench.net/downloads</a></td><td>Later — Win/Mac/Linux. Best for plugins &amp; exporting a finished pack.</td></tr>
+    </tbody>
+  </table>
+  <p>Free and open-source, for any project, forever.</p>
+
+  <h2>Start a model</h2>
+  <ol class="steps">
+    <li><h3>New project</h3>Top menu → <strong>File → New</strong>.</li>
+    <li><h3>Pick <em>Generic Model</em></h3>This is the format for normal game assets (the Minecraft
+      formats add rules you don't want). <strong>Always choose Generic Model</strong> for this course.</li>
+    <li><h3>Name &amp; create</h3>Give it a name (e.g. <code>crate</code>) and confirm. You now have a
+      blank 3D workspace.</li>
+  </ol>
+
+  <h2>Move the camera (viewport navigation)</h2>
+  <p>You're not moving the model — you're moving <em>your view</em> of it. Three moves do everything:</p>
+  <table>
+    <thead><tr><th>Move</th><th>Do this</th><th>Think of it as</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Zoom</strong></td><td><strong>Scroll wheel</strong> (works on any setup)</td><td>Step closer / further away</td></tr>
+      <tr><td><strong>Rotate / orbit</strong></td><td><strong>Left-click + drag</strong> on empty space</td><td>Walk around the object</td></tr>
+      <tr><td><strong>Pan</strong></td><td><strong>Right-click + drag</strong></td><td>Slide the whole view sideways</td></tr>
+    </tbody>
+  </table>
+  <div class="callout tip">
+    <span class="label">If you use a mouse with a middle button</span>
+    <p>Alternative defaults: middle-click = rotate, <kbd>Shift</kbd>+middle = pan, <kbd>Ctrl</kbd>+middle = zoom.
+    Scrolling to zoom always works. You can also load Blender/Maya keymaps in Preferences later.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Lost your model? Re-center the view</span>
+    <p>Select a cube, then run <strong>Center View on Selection</strong> — it snaps the camera back
+    onto whatever's selected. It's in the viewport <strong>right-click menu</strong>. Heads-up: the
+    <em>default keymap assigns it no shortcut</em> — set your own in
+    <strong>Preferences → Keybindings</strong> (search "Center View on Selection"); <kbd>F</kbd> is the
+    natural pick (it's what the Maya keymap uses). Hold <kbd>Shift</kbd> while triggering it to rotate
+    only (no zoom), or <kbd>Ctrl</kbd> to zoom in close.
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Wiki]</a></p>
+  </div>
+
+  <h2>WASD fly navigation <span style="font-weight:400;font-size:.7em">(optional plugin · desktop app)</span></h2>
+  <p>Move <em>through</em> the scene like a first-person game instead of orbiting. Install the
+  <strong>WASD Controls</strong> plugin (File → Plugins), then enable
+  <strong>View menu → WASD Movement</strong>. The viewport must be focused (not a text field).
+  Best for big scenes, not single props — your mouse moves above are faster for posing one object.</p>
+  <table>
+    <thead><tr><th>Action</th><th>Default key</th></tr></thead>
+    <tbody>
+      <tr><td>Move forward / back</td><td><kbd>W</kbd> / <kbd>S</kbd></td></tr>
+      <tr><td>Move left / right</td><td><kbd>A</kbd> / <kbd>D</kbd></td></tr>
+      <tr><td>Move up / down</td><td><kbd>Space</kbd> / <kbd>Shift</kbd></td></tr>
+      <tr><td>Faster / slower (hold)</td><td><kbd>Ctrl</kbd> / <kbd>Alt</kbd></td></tr>
+    </tbody>
+  </table>
+  <p>All eight are remappable in <strong>Preferences → Keybindings</strong>. Tip: turn on
+  <strong>"WASD Hold Right Mouse Button"</strong> in settings so W/A/S/D only fly while right-mouse is
+  held — that keeps the letters free for naming cubes.
+  <a href="https://github.com/JannisX11/blockbench-plugins/blob/master/plugins/wasd_controls.js">[Plugin source]</a></p>
+
+  <h2>The 5 core tools</h2>
+  <p>Pick a tool from the toolbar, then drag the colored arrows/handles on the selected cube.</p>
+  <table>
+    <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Move</strong></td><td>Slides an element along X / Y / Z.</td></tr>
+      <tr><td><strong>Resize</strong></td><td>Stretches or shrinks an element's size.</td></tr>
+      <tr><td><strong>Rotate</strong></td><td>Turns an element around a point.</td></tr>
+      <tr><td><strong>Pivot</strong></td><td>Moves the point something rotates around.</td></tr>
+      <tr><td><strong>Vertex Snap</strong></td><td>Glues one cube's corner exactly onto another's.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout tip">
+    <span class="label">The one shortcut to remember</span>
+    <p>Press <kbd>Space</kbd> (or double-click in the viewport) to flip between <strong>Move ⇄ Resize</strong>
+    (and <strong>Rotate ⇄ Pivot</strong>). For exact numbers, type values straight into the
+    <strong>Element</strong> panel instead of dragging.</p>
+  </div>
+
+  <h2>The panels around the screen</h2>
+  <table>
+    <thead><tr><th>Panel</th><th>What lives there</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Outliner</strong></td><td>The list of every cube &amp; group in your model. Rename and organize here.</td></tr>
+      <tr><td><strong>Element</strong></td><td>Exact numbers for the selected cube: Position, Size, Pivot, Rotation.</td></tr>
+      <tr><td><strong>Textures</strong></td><td>Your texture images. Create or import them here.</td></tr>
+      <tr><td><strong>UV</strong></td><td>How a texture wraps onto the cube's faces (covered in a later week).</td></tr>
+      <tr><td><strong>Color</strong></td><td>Color picker &amp; palette, used in Paint mode.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>First-words glossary</h2>
+  <table>
+    <thead><tr><th>Term</th><th>Plain meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Low-poly</strong></td><td>A model made of few, chunky flat surfaces — the blocky Overcooked look. The opposite of smooth/realistic.</td></tr>
+      <tr><td><strong>Cube / Element</strong></td><td>A single box. Models are built by combining boxes. "Element" = any one piece.</td></tr>
+      <tr><td><strong>Generic Model</strong></td><td>Blockbench's neutral project type for ordinary 3D assets. Your default.</td></tr>
+      <tr><td><strong>Texture</strong></td><td>The flat image that gives a model its color/detail, painted onto its surfaces.</td></tr>
+      <tr><td><strong>UV map</strong></td><td>The "unfolded" layout that says which part of the texture lands on which face.</td></tr>
+      <tr><td><strong>Pivot</strong></td><td>The anchor point a piece rotates around.</td></tr>
+      <tr><td><strong>.glb / .gltf</strong></td><td>Common game-ready export formats — what a buyer drops into a game engine.</td></tr>
+    </tbody>
+  </table>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0001-your-first-blockbench-prop.html">▸ Lesson 1 — Your first prop</a>
+    <a href="https://www.blockbench.net/wiki/">Full official wiki →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · reference · sources: Blockbench Wiki &amp; blockbench.net</footer>
+
+</main>
+</body>
+</html>

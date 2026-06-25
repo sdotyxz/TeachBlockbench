@@ -1,0 +1,200 @@
+/* ============================================================
+   Blockbench Course — shared stylesheet
+   Reused by every lesson and reference doc. Edit HERE, never inline.
+   Aesthetic: warm "paper", readable serif body, Overcooked-warm accent.
+   ============================================================ */
+
+:root{
+  --paper:#fbf7f0;
+  --ink:#2c2a26;
+  --ink-soft:#5b574f;
+  --accent:#e3712b;       /* warm Overcooked orange */
+  --accent-dk:#b8531a;
+  --green:#3f8f5b;
+  --blue:#2f6f9e;
+  --red:#c2452f;
+  --gold:#9a7d1e;
+  --rule:#e4dccd;
+  --card:#fffdf8;
+  --shadow:0 1px 2px rgba(60,50,35,.06), 0 6px 18px rgba(60,50,35,.06);
+  --measure:42rem;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  background-image:radial-gradient(rgba(80,60,30,.018) 1px, transparent 1px);
+  background-size:4px 4px;
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.55;
+}
+
+.wrap{max-width:var(--measure); margin:0 auto; padding:2.4rem 1.4rem 5rem}
+
+/* ---------- top chrome ---------- */
+.kicker{
+  font-family:var(--sans); font-size:.72rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent-dk);
+  margin:0 0 .5rem;
+}
+.breadcrumb{
+  font-family:var(--sans); font-size:.78rem; color:var(--ink-soft);
+  display:flex; flex-wrap:wrap; gap:.4rem .8rem;
+  border-bottom:1px solid var(--rule); padding-bottom:1rem; margin-bottom:1.6rem;
+}
+.breadcrumb b{color:var(--ink)}
+.breadcrumb a{color:var(--ink-soft)}
+
+h1{font-size:2.15rem; line-height:1.1; margin:.2rem 0 .5rem; letter-spacing:-.01em}
+h1 .num{
+  display:inline-block; font-family:var(--sans); font-size:.8rem; font-weight:700;
+  letter-spacing:.08em; color:#fff; background:var(--accent);
+  padding:.2em .6em; border-radius:.5em; vertical-align:middle; margin-right:.45rem;
+}
+.dek{font-size:1.12rem; color:var(--ink-soft); font-style:italic; margin:.2rem 0 1.3rem}
+.meta{
+  font-family:var(--sans); font-size:.78rem; color:var(--ink-soft);
+  display:flex; gap:1.2rem; flex-wrap:wrap; margin-bottom:1.8rem;
+}
+.meta span{display:inline-flex; align-items:center; gap:.35rem}
+
+/* ---------- headings & text ---------- */
+h2{
+  font-size:1.4rem; margin:2.4rem 0 .7rem; padding-bottom:.25rem;
+  border-bottom:2px solid var(--accent); display:inline-block;
+}
+h3{font-family:var(--sans); font-size:1.05rem; margin:1.6rem 0 .4rem}
+p{margin:.7rem 0}
+a{color:var(--accent-dk); text-underline-offset:2px}
+a:hover{color:var(--accent)}
+strong{color:var(--ink)}
+em{color:var(--ink-soft)}
+ul,ol{padding-left:1.3rem}
+li{margin:.35rem 0}
+hr{border:none; border-top:2px dotted var(--rule); margin:2.2rem 0}
+
+kbd{
+  font-family:var(--sans); font-size:.78em; white-space:nowrap;
+  background:#fff; border:1px solid #d8cdb8; border-bottom-width:2px;
+  border-radius:.35em; padding:.08em .45em; color:var(--ink);
+  box-shadow:0 1px 0 #efe7d6;
+}
+code{font-family:var(--mono); font-size:.86em; background:#f1eadb;
+  padding:.08em .35em; border-radius:.3em}
+
+/* ---------- numbered steps ---------- */
+ol.steps{list-style:none; counter-reset:step; padding:0; margin:1.4rem 0}
+ol.steps>li{counter-increment:step; position:relative; padding:0 0 1.4rem 3.2rem}
+ol.steps>li::before{
+  content:counter(step); position:absolute; left:0; top:-.15rem;
+  width:2.1rem; height:2.1rem; border-radius:50%;
+  background:var(--accent); color:#fff; font-family:var(--sans); font-weight:700;
+  display:grid; place-items:center; box-shadow:var(--shadow);
+}
+ol.steps>li::after{
+  content:""; position:absolute; left:1.05rem; top:2.2rem; bottom:.1rem;
+  width:2px; background:var(--rule);
+}
+ol.steps>li:last-child::after{display:none}
+ol.steps>li h3{margin:.05rem 0 .25rem}
+
+/* ---------- callouts ---------- */
+.callout{
+  border-radius:.7rem; padding:1rem 1.1rem; margin:1.3rem 0;
+  background:var(--card); border:1px solid var(--rule); box-shadow:var(--shadow);
+}
+.callout .label{
+  font-family:var(--sans); font-size:.7rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; display:block; margin-bottom:.35rem;
+}
+.callout p:first-of-type{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.callout.win{border-color:var(--green); background:#f1f8f1}
+.callout.win .label{color:var(--green)}
+.callout.tip{border-color:var(--blue); background:#eef5fa}
+.callout.tip .label{color:var(--blue)}
+.callout.warn{border-color:var(--red); background:#fbeeea}
+.callout.warn .label{color:var(--red)}
+.callout.source{border-color:var(--gold); background:#fbf6e6}
+.callout.source .label{color:var(--gold)}
+.callout.post{border:2px dashed var(--accent); background:#fdf1e7}
+.callout.post .label{color:var(--accent-dk)}
+
+/* ---------- self-check (retrieval practice) ---------- */
+.selfcheck details{
+  border:1px solid var(--rule); border-radius:.6rem; background:var(--card);
+  padding:.1rem .95rem; margin:.6rem 0; box-shadow:var(--shadow);
+}
+.selfcheck summary{
+  cursor:pointer; font-family:var(--sans); font-weight:600; padding:.75rem 0; list-style:none;
+}
+.selfcheck summary::-webkit-details-marker{display:none}
+.selfcheck summary::before{content:"▸  "; color:var(--accent)}
+.selfcheck details[open] summary::before{content:"▾  "}
+.selfcheck .answer{padding:0 0 .85rem; color:var(--ink-soft)}
+
+/* ---------- paste-ready template ---------- */
+.template{
+  font-family:var(--mono); font-size:.8rem; line-height:1.5;
+  background:#2c2a26; color:#f3ecdd; border-radius:.6rem;
+  padding:1rem 1.1rem; margin:.7rem 0; white-space:pre-wrap; overflow-x:auto;
+}
+
+/* ---------- tables (cheat sheets) ---------- */
+table{border-collapse:collapse; width:100%; margin:1.2rem 0; font-size:.92rem}
+th,td{text-align:left; padding:.55rem .7rem; border-bottom:1px solid var(--rule); vertical-align:top}
+th{font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.08em; color:var(--ink-soft)}
+tbody tr:nth-child(odd){background:rgba(255,255,255,.55)}
+
+/* ---------- misc ---------- */
+.tags{display:flex; flex-wrap:wrap; gap:.4rem; margin:.6rem 0 0}
+.tag{font-family:var(--sans); font-size:.72rem; background:#fff;
+  border:1px solid var(--rule); border-radius:1rem; padding:.2rem .7rem; color:var(--ink-soft)}
+.figure{
+  background:var(--card); border:1px solid var(--rule); border-radius:.6rem;
+  padding:1.2rem; margin:1.3rem 0; text-align:center; box-shadow:var(--shadow);
+}
+.figure img{
+  display:block; width:100%; height:auto; border-radius:.4rem;
+}
+.figure .art{font-size:2.6rem; line-height:1.2}
+.figure .cap{font-family:var(--sans); font-size:.76rem; color:var(--ink-soft); margin-top:.6rem}
+
+.lesson-nav{
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  margin-top:3rem; border-top:1px solid var(--rule); padding-top:1.3rem;
+  font-family:var(--sans); font-size:.85rem;
+}
+footer.course{
+  margin-top:2.5rem; font-family:var(--sans); font-size:.74rem;
+  color:var(--ink-soft); text-align:center;
+}
+
+@media(max-width:480px){
+  body{font-size:17px}
+  .wrap{padding:1.6rem 1.1rem 4rem}
+  h1{font-size:1.7rem}
+}
+
+@media print{
+  :root{--paper:#fff}
+  body{background:#fff; font-size:12pt}
+  body{background-image:none}
+  .wrap{max-width:none; padding:0}
+  .callout,.figure,.selfcheck details,table,h1 .num{box-shadow:none}
+  .lesson-nav{display:none}
+  .selfcheck details{break-inside:avoid}
+  .selfcheck summary::before{display:none}
+  .selfcheck details[open] .answer{display:block}
+  a{color:var(--ink); text-decoration:underline}
+  h2{break-after:avoid}
+}
