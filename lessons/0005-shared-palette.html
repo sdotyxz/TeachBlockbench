@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 5 · A Shared Palette — Make It Look Like One Pack</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 5</b></span>
+  </nav>
+
+  <p class="kicker">Day 5 — Week 2: Texturing &amp; Polish</p>
+  <h1><span class="num">05</span>A shared palette — make four props look like one pack</h1>
+  <p class="dek">You have four good props. Right now they're four <em>separate</em> things. Today you give
+  them a single small palette of colors — and they snap together into something that looks
+  <em>designed</em>, like a set a buyer would want.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–60 min</span>
+    <span>🎯 Builds on Lessons 1–4</span>
+    <span>🛠️ No install needed</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>before / after set shot</strong>: your four props recolored to a single shared
+    palette, posted as Day 5. The new skill is building and <strong>saving a reusable palette</strong>
+    in Blockbench, then filling parts with those exact colors. No new modeling — pure polish.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer from memory before opening anything. Keeps the old moves fresh while you add a new one.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Name the three transforms you know so far.</summary>
+      <div class="answer"><strong>Move</strong> (position), <strong>Resize</strong> (size), and <strong>Rotate</strong> (angle). See the <a href="../reference/blockbench-transform-cheatsheet.html">Transform Cheat Sheet</a>.</div>
+    </details>
+    <details>
+      <summary>What is the difference between orbiting and rotating?</summary>
+      <div class="answer">Orbiting moves your <em>camera</em>; rotating changes the <em>element</em> inside the model.</div>
+    </details>
+    <details>
+      <summary>What makes separate props feel like one asset pack?</summary>
+      <div class="answer">A shared blocky style, a <strong>shared palette</strong>, and set shots showing them together — exactly today's lesson.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — a limited, shared palette</h2>
+  <p>A <strong>palette</strong> is the small fixed set of colors a whole project is allowed to use.
+  When every wooden thing is the <em>same</em> brown and every metal thing the <em>same</em> grey,
+  separate objects start to read as one family. A buyer scanning itch.io for a "pack" is really
+  looking for that cohesion — it's what separates a product from a pile of models.</p>
+
+  <p>Blockbench has this built in. The <strong>Color</strong> panel has a <strong>Color Bar</strong>
+  (your current color + its HEX value + recent history) and three tabs: <strong>Picker</strong>,
+  <strong>Palette</strong>, and <strong>Both</strong>. The Palette tab lets you
+  <strong>add, save, import, export, and load</strong> palettes, and there's an
+  <strong>“Add To Palette”</strong> action plus a <strong>“Pick Screen Color”</strong> sampler.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — Color panel]</a></p>
+
+  <p>Your palette is already chosen for you. Keep the
+  <a href="../reference/overcooked-palette.html">Course Palette reference</a> open — it is the single
+  source of truth for color from here on.</p>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">plates, ceramic</span><span class="hex">#F3E6C4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">crate, board, handles</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">edges, shadow</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#AEB8BE"></div><div class="body"><span class="name">Steel</span><span class="role">pot, knife, spoon</span><span class="hex">#AEB8BE</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">warm accent</span><span class="hex">#D94A36</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5FA63E"></div><div class="body"><span class="name">Leaf</span><span class="role">garnish</span><span class="hex">#5FA63E</span></div></div>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Why fill, not eyeball</span>
+    <p>The <strong>Paint Bucket</strong> tool fills "faces, cubes, or connected areas with a single
+    color," depending on its <strong>Fill Mode</strong>. Setting Fill Mode to <strong>Cube</strong>
+    recolors a whole part in one click — fast, and exact every time, so two props end up with the
+    truly identical brown. <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Wiki — paint tools]</a></p>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Open both references: the <a href="../reference/overcooked-palette.html">Course Palette</a> and the
+  <a href="../reference/blockbench-interface-cheatsheet.html">Interface Cheat Sheet</a>.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Open one prop and find the Color panel</h3>
+      <strong>File → Open</strong> your <code>crate.bbmodel</code>. Find the <strong>Color</strong>
+      panel (the one with a color square and a HEX value). Click the <strong>Palette</strong> tab.
+    </li>
+    <li>
+      <h3>⭐ Build the palette: type a HEX, then Add To Palette</h3>
+      Click the color square / Color Bar, type the first HEX from the reference —
+      <code>F3E6C4</code> — then use <strong>Add To Palette</strong>. Repeat for all six:
+      <code>C68B45</code>, <code>7A4E24</code>, <code>AEB8BE</code>, <code>D94A36</code>,
+      <code>5FA63E</code>. You now have a six-swatch palette you can click instead of retyping.
+    </li>
+    <li>
+      <h3>Save the palette so it survives</h3>
+      In the Palette tab, use <strong>Export</strong> to save the palette to a file (e.g.
+      <code>overcooked-palette</code>). In each later prop you can <strong>Import</strong> it back —
+      so every model in the pack literally shares the same colors.
+    </li>
+    <li>
+      <h3>Recolor the crate → Wood</h3>
+      Switch to <strong>Paint</strong> mode. Pick the <strong>Paint Bucket</strong> tool and set its
+      <strong>Fill Mode</strong> to <strong>Cube</strong>. Click the <strong>Wood</strong> swatch
+      (<code>C68B45</code>), then click the crate. The whole part fills with the shared brown.
+      <em>Optional:</em> a couple of <strong>Dark Wood</strong> (<code>7A4E24</code>) clicks on edge
+      slats for depth.
+    </li>
+    <li>
+      <h3>Recolor the other three (use the reference table)</h3>
+      Open each remaining prop and fill from the same palette:
+      <ul>
+        <li><strong>Chopping board</strong> → Wood body, <strong>Steel</strong> knife blade, Dark Wood handle.</li>
+        <li><strong>Cooking pot</strong> → <strong>Steel</strong> body, <strong>Tomato</strong> or Dark Wood handles.</li>
+        <li><strong>Plate &amp; spoon</strong> → <strong>Cream</strong> plate, <strong>Steel</strong> spoon, <strong>Leaf</strong> garnish.</li>
+      </ul>
+      Re-save (<strong>Ctrl/Cmd&nbsp;S</strong>) each <code>.bbmodel</code> after recoloring.
+    </li>
+    <li>
+      <h3>Frame the before / after set shot</h3>
+      Put all four props in one scene and take a clean shot. If you still have an old screenshot from
+      before recoloring, pair them side by side — the “they match now!” jump is the whole post.
+    </li>
+    <li>
+      <h3>Post your Day-5 devlog</h3>
+      Post the set shot with a caption below. <em>Streak: Day 5.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Shortcut for matching to a real image</span>
+    <p>Want colors pulled straight from an Overcooked screenshot? Use <strong>Pick Screen Color</strong>
+    to sample a pixel directly, then Add To Palette. Great for later, when you build a second palette
+    from a reference image instead of typed HEX codes.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
+    <div class="template">Day 5 of learning Blockbench from zero. No new prop today — instead I gave my four kitchen props one shared 6-color palette. Same wood, same metal, same cream everywhere. They went from four random objects to something that actually looks like a SET. A limited palette might be the highest-impact trick I've learned so far.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第5天】零基础学 Blockbench 做游戏素材 🎮
+今天没做新道具,而是给前四件厨房道具统一了一套只有6种颜色的配色。
+所有木头同一个棕色,所有金属同一个灰色,盘子同一个奶油白。
+原本四个零散的小物件,一下子变成了一整套! 🎨
+统一配色,可能是目前学到性价比最高的小技巧。
+#Blockbench #3D建模 #低多边形 #游戏开发 #配色 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#配色</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does a limited, shared palette do for a pack?</summary>
+      <div class="answer">It creates cohesion — repeated colors make separate props read as one designed set, which is what buyers want.</div>
+    </details>
+    <details>
+      <summary>How do you save a color into Blockbench's palette?</summary>
+      <div class="answer">Set the color in the Color Bar (type the HEX), then use <strong>Add To Palette</strong>. Export the palette to reuse it across files.</div>
+    </details>
+    <details>
+      <summary>Which tool + setting recolors a whole part in one click?</summary>
+      <div class="answer">The <strong>Paint Bucket</strong> with <strong>Fill Mode → Cube</strong>. One click fills the entire part with the chosen color.</div>
+    </details>
+    <details>
+      <summary>Why type exact HEX codes instead of eyeballing a brown?</summary>
+      <div class="answer">So two different props get the <em>identical</em> color. "Close enough" browns break the illusion that the props belong together.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~6 min)</span>
+    <p>Read the official Blockbench overview sections on the
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Color panel and Paint
+    tools</a> — the parts about the Picker/Palette tabs, Add To Palette, and the Paint Bucket Fill
+    modes. That's the whole toolbox you used today.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Flat fills are step one. Next we keep this exact palette but add real <strong>pixel
+    texture</strong> — painting plank lines into the crate's wood and grill marks into the board — so
+    the props gain detail without leaving the set. Today's saved palette is the foundation for all of it.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the Paint Bucket fills the wrong area, the palette won't export, or a color looks off against
+    the others, tell me what happened or share a screenshot. Bring back your Day-5 before/after and
+    I'll set up <strong>Lesson 6</strong> — the first real <strong>pixel texture</strong> on the crate.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0004-plate-and-spoon-rotation.html">◂ Lesson 4 — Plate &amp; spoon</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Interface Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 5 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>
