@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 6 · First Pixel Texture — Paint Wood Planks</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 6</b></span>
+  </nav>
+
+  <p class="kicker">Day 6 — Week 2: Texturing &amp; Polish</p>
+  <h1><span class="num">06</span>First pixel texture — paint wood planks on the crate</h1>
+  <p class="dek">Yesterday gave the set one shared palette. Today you keep that palette, but stop
+  using only flat fills. You paint a few crisp pixel lines on the crate so its wood starts to read as
+  planks, edges, and small scratches.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–60 min</span>
+    <span>🎯 Builds on Lesson 5</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>re-textured crate render</strong>: the same model and same six-color palette, but
+    with visible plank seams, darker edges, and a few tiny wood marks. The new skill is using the
+    <strong>Paint Brush</strong> for deliberate pixel texture instead of only bucket fills.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards. This keeps the Week-2 palette work available.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Why did Lesson 5 use exact HEX colors?</summary>
+      <div class="answer">Exact HEX colors make separate props share the same wood, metal, cream, and accents. That cohesion makes the props read as one asset pack.</div>
+    </details>
+    <details>
+      <summary>Which Fill Mode recolors an entire cube in one click?</summary>
+      <div class="answer"><strong>Paint Bucket → Fill Mode: Cube</strong>.</div>
+    </details>
+    <details>
+      <summary>What are today's two wood colors?</summary>
+      <div class="answer"><strong>Wood</strong> <code>#C68B45</code> for the base and <strong>Dark Wood</strong> <code>#7A4E24</code> for plank lines, edges, and scratches.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — texture is pixels, not extra cubes</h2>
+  <p>A <strong>texture</strong> is the image wrapped onto your model. You already used textures when
+  you filled parts with one color. Now you will edit individual pixels on that image. In Paint Mode,
+  Blockbench's UV Editor can be used for painting, and the Paint Brush can paint directly on the
+  model or in the UV Editor. Holding <strong>Shift</strong> with the Paint Brush draws a straight
+  line. <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — Paint Mode]</a></p>
+
+  <div class="callout tip">
+    <span class="label">Beginner rule</span>
+    <p>Do <strong>less</strong> than you think. Three plank lines and a few corner marks beat a noisy
+    texture. Low-poly assets need readable shapes from a distance, not tiny realism.</p>
+  </div>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">base fill</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">lines + edges</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">optional tiny highlight</span><span class="hex">#F3E6C4</span></div></div>
+  </div>
+
+  <div class="figure">
+    <img src="../artifacts/crate/crate.png" alt="Beginner low-poly wooden crate render from Lesson 1">
+    <div class="cap"><strong>Starting point:</strong> the Lesson-1 crate. Today you keep the shape and
+    improve only the painted pixels.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/overcooked-palette.html">Course Palette</a> open. If your saved
+  palette from Lesson 5 is not loaded, import it before painting.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Open the crate and save a copy</h3>
+      Open <code>crate.bbmodel</code>. Use <strong>File → Save As</strong> if you want a safe copy,
+      e.g. <code>crate-pixel-texture.bbmodel</code>. The goal is texture practice, not rebuilding.
+    </li>
+    <li>
+      <h3>Confirm the base wood fill</h3>
+      Switch to <strong>Paint</strong> mode. Pick <strong>Wood</strong> <code>#C68B45</code>, choose
+      the <strong>Paint Bucket</strong>, set <strong>Fill Mode → Cube</strong>, and click the crate
+      if it is not already the shared wood color.
+    </li>
+    <li>
+      <h3>Turn on the pixel grid</h3>
+      Toggle the <strong>Painting Grid</strong> so you can see individual pixels. If the UV Editor is
+      tiny, use its larger view / full view button. Bigger view, smaller brush.
+    </li>
+    <li>
+      <h3>⭐ Paint three plank seams</h3>
+      Pick <strong>Dark Wood</strong> <code>#7A4E24</code>. Choose the <strong>Paint Brush</strong>,
+      set size to <strong>1</strong>, and paint three straight plank seams on the front face. Hold
+      <strong>Shift</strong> while painting a line if your hand wobbles.
+    </li>
+    <li>
+      <h3>Add darker corners</h3>
+      With the same one-pixel brush, place short dark marks near the crate's corners and bottom edge.
+      Think "edge shadow," not outline-everything. Stop after 8-12 small marks.
+    </li>
+    <li>
+      <h3>Add two tiny highlights</h3>
+      Optional: pick <strong>Cream</strong> <code>#F3E6C4</code> and add one or two one-pixel marks
+      on the top edge. This is a stylized catchlight, not a new material.
+    </li>
+    <li>
+      <h3>Orbit out and judge the read</h3>
+      Zoom back until the crate is small. If the plank lines still read, keep them. If the crate looks
+      dirty or striped, undo half the marks. Good game textures survive at thumbnail size.
+    </li>
+    <li>
+      <h3>Save the model and texture</h3>
+      Use <strong>Ctrl/Cmd S</strong>. If Blockbench shows a separate save icon for the texture, save
+      that too. The editable model and image texture both matter.
+    </li>
+    <li>
+      <h3>Render a before / after</h3>
+      Capture yesterday's flat crate beside today's plank-textured crate if possible. If not, one clean
+      after shot is enough.
+    </li>
+    <li>
+      <h3>Post your Day-6 devlog</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 6.</em>
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Common mistake</span>
+    <p>If the texture becomes messy, you probably used too many colors or too many marks. Return to
+    only two wood colors: <strong>Wood</strong> base and <strong>Dark Wood</strong> detail.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
+    <div class="template">Day 6 of learning Blockbench from zero. I took the first crate from Day 1 and gave it its first real pixel texture: plank seams, darker corners, and a few tiny wood marks, all using the same shared palette from yesterday. Same model, better read. The pack is starting to look less flat.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第6天】零基础学 Blockbench 做游戏素材 🎮
+今天回到第1天做的小木箱,第一次开始画真正的像素贴图。
+没有加新模型,只是用昨天统一好的配色,给木箱画了木板缝、暗角和一点点木纹。
+同一个模型,细节一加,马上没那么平了。
+#Blockbench #3D建模 #低多边形 #像素贴图 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#像素贴图</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What changed today: model shape or texture pixels?</summary>
+      <div class="answer">Texture pixels. The crate's geometry stayed the same; the painted image became more descriptive.</div>
+    </details>
+    <details>
+      <summary>Which tool paints one-pixel wood detail?</summary>
+      <div class="answer">The <strong>Paint Brush</strong>, with brush size set to <strong>1</strong>.</div>
+    </details>
+    <details>
+      <summary>Why zoom out before saving?</summary>
+      <div class="answer">Game assets are often seen small. If the texture reads at thumbnail size, it is doing its job.</div>
+    </details>
+    <details>
+      <summary>What should you do if the crate looks noisy?</summary>
+      <div class="answer">Remove marks and return to the two-color wood plan: Wood base plus Dark Wood details.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~8 min)</span>
+    <p>Read the official Blockbench overview section on
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Paint Mode tools and
+    actions</a>: Paint Brush, Paint Bucket, Color Picker, Painting Grid, and Shift-drawn lines.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Tomorrow we reuse the same idea on the chopping board: board grain plus a simple knife highlight.
+    The pattern is now clear — one old prop, one small texture upgrade, one post.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the brush paints the wrong face, the UV view is confusing, or the texture saves separately
+    from the model, tell me exactly what you see. Bring back your Day-6 crate and I'll set up the next
+    texture pass on the chopping board.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0005-shared-palette.html">◂ Lesson 5 — Shared palette</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Interface Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 6 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

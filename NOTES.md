@@ -6,6 +6,8 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **Fastest path to a postable win** each session; momentum > completeness. One sitting (~1 hr) max.
 - **Daily public output is a core goal**, not a nice-to-have. Every lesson must end with a postable
   artifact + a ready-to-paste caption (itch.io devlog + RedNote/小红书).
+- **itch.io posts should be visual devlogs, not lesson transcripts.** Use
+  `reference/itch-devlog-block-kit.md` as the reusable block kit for richer lesson posts.
 - **Total beginner** — assume zero 3D/Blockbench jargon. Define every term on first use; lean on the
   interface cheat sheet in `./reference/`.
 
@@ -56,4 +58,10 @@ Working notes + learner preferences. Refer back before designing each lesson.
   four old props; win is a before/after "set" shot. Adds `reference/overcooked-palette.html` (canonical
   palette — adhere to it in every future prop) + reusable `.palette/.swatch` CSS. Learner chose this
   over a 5th prop / jumping to painted textures. Sets up Lesson 6 = first pixel texture on the crate.
-  *(authored 2026-06-26; completion not yet reported)*
+  Added explicit itch.io devlog finish checklist using official itch.io devlog/search guidance.
+  *(authored 2026-06-26; **completed 2026-06-27** — completion requested; post URL not yet captured)*
+- **0006** — First pixel texture on the crate. New idea: texture detail is painted pixels, not extra
+  cubes. Reopens Day-1 crate, keeps Lesson-5 shared palette, uses Paint Brush size 1 + Painting Grid
+  + Shift-straight lines to add plank seams, darker corners, and tiny wood marks. Win is a before/after
+  crate render and Day-6 devlog. Sets up next likely lesson = apply the same texture-detail pattern to
+  the chopping board and knife. *(authored 2026-06-27; completion not yet reported)*
