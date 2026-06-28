@@ -12,7 +12,7 @@ RedNote (小红书) — that proves the skill and can eventually earn.
 - Has published one cohesive **Overcooked-style asset pack** on itch.io: several props + at
   least one character, a real product page, a clear license, and game-ready export files
   (`.gltf` / `.glb` / `.obj`).
-- Holds a **daily public devlog streak** across itch.io + RedNote — one postable artifact a day.
+- Holds a **daily public posting streak** across itch.io + RedNote — one postable artifact a day.
 - Can export an asset in a format a game engine *could* import (even though we never build the game).
 
 ## Constraints

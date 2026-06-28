@@ -5,15 +5,16 @@ Working notes + learner preferences. Refer back before designing each lesson.
 ## Preferences
 - **Fastest path to a postable win** each session; momentum > completeness. One sitting (~1 hr) max.
 - **Daily public output is a core goal**, not a nice-to-have. Every lesson must end with a postable
-  artifact + a ready-to-paste caption (itch.io devlog + RedNote/小红书).
-- **itch.io posts should be visual devlogs, not lesson transcripts.** Use
-  `reference/itch-devlog-block-kit.md` as the reusable block kit for richer lesson posts.
+  artifact + a ready-to-paste caption (normal itch.io post + RedNote/小红书).
+- **itch.io posts are normal account posts, not project devlogs.** They should still read like visual
+  progress logs, not lesson transcripts. Use `reference/itch-devlog-block-kit.md` as the reusable
+  block kit for richer lesson posts.
 - **Total beginner** — assume zero 3D/Blockbench jargon. Define every term on first use; lean on the
   interface cheat sheet in `./reference/`.
 
 ## Confirmed with the learner
 - **RedNote (小红书) captions → Chinese only** (confirmed 2026-06-24). Don't also offer an English
-  alt-caption for RedNote. The **itch.io devlog stays English** (Western marketplace) unless the
+  alt-caption for RedNote. The **itch.io post stays English** (Western marketplace) unless the
   learner says otherwise.
 
 ## To confirm with the learner
@@ -64,4 +65,12 @@ Working notes + learner preferences. Refer back before designing each lesson.
   cubes. Reopens Day-1 crate, keeps Lesson-5 shared palette, uses Paint Brush size 1 + Painting Grid
   + Shift-straight lines to add plank seams, darker corners, and tiny wood marks. Win is a before/after
   crate render and Day-6 devlog. Sets up next likely lesson = apply the same texture-detail pattern to
-  the chopping board and knife. *(authored 2026-06-27; completion not yet reported)*
+  the chopping board and knife. *(authored 2026-06-27; **completed 2026-06-28** — completion requested;
+  normal itch.io draft prepared at `https://itch.io/blog/1566677/day-6-first-pixel-texture-on-the-crate`,
+  publication pending approval)*
+- **0007** — Texture pass on the chopping board and knife. New idea: different materials need
+  different pixel marks. Reopens the Day-2 board, keeps the shared palette, adds short broken wood
+  grain to the board, a crisp steel highlight to the blade, and a few dark handle pixels. No new
+  geometry; the win is a cleaner board-and-knife render and Day-7 devlog. Sets up next likely lesson =
+  apply controlled texture detail to the cooking pot. *(authored 2026-06-28; completion not yet
+  reported)*

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 7 · Board and Knife Texture Pass</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 7</b></span>
+  </nav>
+
+  <p class="kicker">Day 7 — Week 2: Texturing &amp; Polish</p>
+  <h1><span class="num">07</span>Board and knife texture pass</h1>
+  <p class="dek">Yesterday you proved that painted pixels can make a simple crate read better without
+  adding cubes. Today you repeat that skill on the chopping board and knife: short wood grain, a
+  clean blade highlight, and a few darker handle marks.</p>
+
+  <div class="meta">
+    <span>⏱️ ~35–55 min</span>
+    <span>🎯 Builds on Lessons 2, 5, and 6</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>polished chopping-board render</strong>: the same Day-2 model, still using the
+    shared palette, but now the board reads more like wood and the knife reads more like steel. The
+    new habit is choosing texture marks based on the material.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards. This is how yesterday's painting skill becomes reusable.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What changed on the crate yesterday: geometry or texture?</summary>
+      <div class="answer"><strong>Texture.</strong> The cube shape stayed the same; painted pixels made it read as planks and corners.</div>
+    </details>
+    <details>
+      <summary>Which brush setting keeps pixel detail crisp?</summary>
+      <div class="answer">Use the <strong>Paint Brush</strong> at size <strong>1</strong>, with the Painting Grid visible if it helps.</div>
+    </details>
+    <details>
+      <summary>What is the rule if texture starts looking noisy?</summary>
+      <div class="answer">Zoom out, delete marks, and keep only the pixels that make the object easier to read.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — each material gets its own marks</h2>
+  <p>A good texture is not just "add lines everywhere." Wood, metal, and dark handles need different
+  marks. For this prop, the board gets <strong>short broken grain</strong>, the blade gets
+  <strong>one clean highlight band</strong>, and the handle gets <strong>a few dark end marks</strong>.
+  Same tool, different decision.</p>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">board base</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">grain + handle shadows</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#AEB8BE"></div><div class="body"><span class="name">Steel</span><span class="role">blade base</span><span class="hex">#AEB8BE</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">tiny blade highlight</span><span class="hex">#F3E6C4</span></div></div>
+  </div>
+
+  <div class="figure">
+    <img src="../artifacts/chopping-board/chopping-board.png" alt="Low-poly chopping board with a knife from Lesson 2">
+    <div class="cap"><strong>Starting point:</strong> the Day-2 chopping board and knife. Keep the
+    model. Upgrade only the painted pixels.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/overcooked-palette.html">Course Palette</a> open. If the saved
+  palette is not loaded, import it before painting.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Open the board and save a copy</h3>
+      Open <code>chopping-board.bbmodel</code>. Use <strong>File → Save As</strong> if you want a
+      safe copy, e.g. <code>chopping-board-texture.bbmodel</code>. Do not rebuild the prop.
+    </li>
+    <li>
+      <h3>Reset the base colors if needed</h3>
+      In <strong>Paint</strong> mode, use <strong>Paint Bucket → Fill Mode: Cube</strong>. Fill the
+      board with <strong>Wood</strong>, the blade with <strong>Steel</strong>, and the handle with
+      <strong>Dark Wood</strong>. This gives you a clean base before detail.
+    </li>
+    <li>
+      <h3>⭐ Add short broken wood grain</h3>
+      Pick <strong>Dark Wood</strong>. Use the <strong>Paint Brush</strong> at size <strong>1</strong>.
+      Paint 6-10 short lines on the board, not full-width stripes. Leave gaps. Wood grain should feel
+      irregular, but still calm.
+    </li>
+    <li>
+      <h3>Add a lighter board edge</h3>
+      Optional: pick <strong>Cream</strong> and add two or three tiny pixels along the top edge of
+      the board. This is a stylized catchlight, not a new color family.
+    </li>
+    <li>
+      <h3>Make the knife blade read as steel</h3>
+      Pick <strong>Cream</strong> or a very light part of the Steel color. Paint one narrow highlight
+      line along the blade. Keep it straighter and cleaner than the wood grain. Metal likes crisp
+      highlights.
+    </li>
+    <li>
+      <h3>Darken the handle ends</h3>
+      Pick <strong>Dark Wood</strong>. Add a few darker pixels at the handle's ends or underside.
+      Stop early. The handle only needs enough detail to avoid looking like a plain bar.
+    </li>
+    <li>
+      <h3>Thumbnail test</h3>
+      Zoom out until the board is small. You should still read "wood board with knife." If the grain
+      turns into static, undo half of it.
+    </li>
+    <li>
+      <h3>Save model and texture</h3>
+      Save the <code>.bbmodel</code> and the texture image if Blockbench asks. The editable model and
+      the painted texture are both part of the asset.
+    </li>
+    <li>
+      <h3>Render the after shot</h3>
+      Capture the board from a slightly high 3/4 angle. If you can place it beside the textured crate,
+      even better: the post will show the pack becoming more cohesive.
+    </li>
+    <li>
+      <h3>Post your Day-7 itch.io post</h3>
+      Use the caption below. <em>Streak: Day 7.</em>
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Common mistake</span>
+    <p>Do not cover the board with equal stripes. Equal stripes make it look like a pattern. Short,
+    uneven marks make it read as stylized wood.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 7 of learning Blockbench from zero. I reused yesterday's pixel-texture lesson on the chopping board and knife: short broken wood grain for the board, one clean highlight for the blade, and a few darker handle pixels. Same model, same palette, but the materials read more clearly now.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第7天】零基础学 Blockbench 做游戏素材 🎮
+今天把昨天学到的像素贴图方法用到砧板和小刀上。
+木板加短短的木纹,刀刃加一条干净的高光,刀柄加一点暗部。
+没有加新模型,还是同一个配色,但材质终于更像木头和金属了。
+#Blockbench #3D建模 #低多边形 #像素贴图 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#像素贴图</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Why are the wood marks broken instead of long equal stripes?</summary>
+      <div class="answer">Broken marks read as natural stylized grain. Equal stripes look like a printed pattern.</div>
+    </details>
+    <details>
+      <summary>What kind of mark makes the blade read more like metal?</summary>
+      <div class="answer">One clean, narrow highlight. Metal usually benefits from crisp light bands, not lots of noisy scratches.</div>
+    </details>
+    <details>
+      <summary>What should stay consistent from Lesson 5?</summary>
+      <div class="answer">The shared palette. Texture detail should use the course colors so the props still belong in one pack.</div>
+    </details>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Next, use controlled texture detail on the cooking pot: a simple rim highlight, a darker lower
+    edge, and maybe one warm handle accent. Same principle, new material.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the grain looks too busy, the blade highlight paints the wrong face, or the texture save is
+    confusing, tell me exactly what you see. Bring back your Day-7 board and I'll set up the cooking
+    pot texture pass.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0006-first-pixel-texture.html">◂ Lesson 6 — Crate texture</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Interface Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 7 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # TeachBlockbench
 
 A self-paced course for learning **Blockbench** to build a sellable, **Overcooked-style
-low-poly asset pack** — shipped to itch.io with a daily public devlog (itch.io + RedNote/小红书).
+low-poly asset pack** — shipped to itch.io with a daily public post (itch.io + RedNote/小红书).
 ~1 hour a day, total beginner → first pack in 1–2 months.
 
 Run with the `/teach` skill. Each session ends with something postable.
