@@ -16,6 +16,17 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **RedNote (小红书) captions → Chinese only** (confirmed 2026-06-24). Don't also offer an English
   alt-caption for RedNote. The **itch.io post stays English** (Western marketplace) unless the
   learner says otherwise.
+- **Pivot/origin is already familiar** (confirmed 2026-06-29). Don't spend a daily lesson on basic
+  pivot/origin control unless it is only a small supporting move inside a larger new skill.
+- **Exporting is already familiar** (confirmed 2026-06-29). Don't spend a daily lesson on basic
+  `.glb`, `.obj`, or game-ready export unless it is only a supporting step inside a larger new skill.
+- **Each lesson should introduce a new skill** (confirmed 2026-06-29). Avoid lessons whose main move
+  is repeating yesterday's technique on a different prop.
+- **Day 7 redesign direction: beginner UV mapping** (confirmed 2026-06-29). The learner is new to UV
+  mapping and is open to a lesson focused on moving/resizing face UVs instead of drawing more texture
+  details on the chopping board and knife.
+- **Day 7 should build a new, more substantial prop** (confirmed 2026-06-29). Prefer a richer kitchen
+  asset over a tiny single-purpose sign, while still keeping the lesson achievable in one focused hour.
 
 ## To confirm with the learner
 - **OS** for the eventual desktop install (using the browser app for now to remove friction).
@@ -64,13 +75,12 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **0006** — First pixel texture on the crate. New idea: texture detail is painted pixels, not extra
   cubes. Reopens Day-1 crate, keeps Lesson-5 shared palette, uses Paint Brush size 1 + Painting Grid
   + Shift-straight lines to add plank seams, darker corners, and tiny wood marks. Win is a before/after
-  crate render and Day-6 devlog. Sets up next likely lesson = apply the same texture-detail pattern to
-  the chopping board and knife. *(authored 2026-06-27; **completed 2026-06-28** — completion requested;
+  crate render and Day-6 devlog. The original follow-up was another texture-detail pass, but the
+  learner wants each lesson to introduce a new skill instead. *(authored 2026-06-27; **completed 2026-06-28** — completion requested;
   normal itch.io draft prepared at `https://itch.io/blog/1566677/day-6-first-pixel-texture-on-the-crate`,
   publication pending approval)*
-- **0007** — Texture pass on the chopping board and knife. New idea: different materials need
-  different pixel marks. Reopens the Day-2 board, keeps the shared palette, adds short broken wood
-  grain to the board, a crisp steel highlight to the blade, and a few dark handle pixels. No new
-  geometry; the win is a cleaner board-and-knife render and Day-7 devlog. Sets up next likely lesson =
-  apply controlled texture detail to the cooking pot. *(authored 2026-06-28; completion not yet
-  reported)*
+- **0007** — Chalkboard menu stand: first UV mapping. New idea: UV mapping chooses which part of a
+  texture image appears on a selected face. Builds a new, richer kitchen prop with a wooden frame,
+  legs, and a chalkboard front, then maps a small `MENU` patch onto the front face. Avoids repeating
+  Day-6 texture painting; pivot/origin and basic export are skipped because the learner already knows
+  them. *(redesigned 2026-06-29; completion not yet reported)*

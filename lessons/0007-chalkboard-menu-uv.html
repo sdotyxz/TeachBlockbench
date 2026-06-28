@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 7 · Chalkboard Menu Stand — First UV Mapping</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 7</b></span>
+  </nav>
+
+  <p class="kicker">Day 7 — Week 2: Texturing &amp; Polish</p>
+  <h1><span class="num">07</span>Chalkboard menu stand — first UV mapping</h1>
+  <p class="dek">Yesterday you painted texture pixels directly. Today you learn a different texture
+  skill: choosing which part of a texture image lands on one face. Build a small menu stand, then map
+  the chalkboard face to a prepared <code>MENU</code> patch.</p>
+
+  <div class="meta">
+    <span>⏱️ ~45–60 min</span>
+    <span>🎯 Builds on Lessons 2, 5, and 6</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>chalkboard menu stand render</strong>: a new kitchen prop with a wooden frame,
+    angled legs, a dark chalkboard face, and a readable <code>MENU</code> label placed with
+    <strong>UV mapping</strong>. The new skill is moving a face's UV rectangle, not drawing more
+    pixels on yesterday's prop.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards. This keeps old skills available while today adds a new one.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does the shared palette do for the asset pack?</summary>
+      <div class="answer">It makes separate props use the same wood, metal, cream, and accent colors so they read as one designed set.</div>
+    </details>
+    <details>
+      <summary>What did yesterday's Paint Brush work change?</summary>
+      <div class="answer">The texture pixels. The model shape stayed the same; painted marks made the crate read better.</div>
+    </details>
+    <details>
+      <summary>What is a texture?</summary>
+      <div class="answer">A flat image wrapped onto the model's faces. Today you control which part of that image appears on one face.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — UVs choose the texture area</h2>
+  <p>A <strong>UV map</strong> is the unfolded layout that tells Blockbench which part of the texture
+  image appears on each model face. Painting changes the image. <strong>UV mapping</strong> changes
+  the placement of that image on the model.</p>
+
+  <p>Blockbench's official guide notes that the UV Panel in Edit Mode is used for UV mapping, while
+  in Paint Mode the UV Editor is used for painting. So today, do the mapping work from
+  <strong>Edit</strong> mode: select a face, then move and resize its UV rectangle until the front
+  board shows the intended patch.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — UV Panel and Paint Mode]</a></p>
+
+  <div class="callout tip">
+    <span class="label">Beginner rule</span>
+    <p>Map only one important face today: the front chalkboard. If every face becomes a UV puzzle,
+    the lesson gets too big. One clean mapped face is the win.</p>
+  </div>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">frame + legs</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">board face + feet</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">chalk writing</span><span class="hex">#F3E6C4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">menu icon</span><span class="hex">#D94A36</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5FA63E"></div><div class="body"><span class="name">Leaf</span><span class="role">menu icon</span><span class="hex">#5FA63E</span></div></div>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/chalkboard-menu-stand-reference.png" alt="Chalkboard menu stand reference showing a texture patch mapped onto the front face">
+    <div class="cap"><strong>Lesson target:</strong> a wooden menu stand with one deliberate UV-mapped
+    front face. The small texture sheet on the left shows the patch that should land on the board.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/overcooked-palette.html">Course Palette</a> open. Use exact colors
+  when filling parts, but keep the UV lesson focused on placement rather than perfect art.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>chalkboard-menu-stand</code></h3>
+      Start a new <strong>Generic Model</strong>. Save early with the same name. This is a new prop
+      for the kitchen pack, not a repaint of an old model.
+    </li>
+    <li>
+      <h3>Build the chalkboard panel</h3>
+      Add one flat cube for the board face. Suggested size:
+      <code>X 8</code>, <code>Y 4.5</code>, <code>Z 0.4</code>. Fill it with
+      <strong>Dark Wood</strong> so the cream chalk marks will read clearly while staying inside the
+      course palette. Rename it <code>chalkboard_face</code>.
+    </li>
+    <li>
+      <h3>Add the wooden frame</h3>
+      Add four thin cubes around the board: top, bottom, left, and right frame pieces. Fill them with
+      <strong>Wood</strong>. Make the bottom rail slightly thicker so the prop feels chunky and
+      low-poly. Rename the pieces clearly in the Outliner.
+    </li>
+    <li>
+      <h3>Add two angled legs and feet</h3>
+      Add two narrow cubes below the frame for front legs. Rotate each one slightly outward, or keep
+      them straight if rotation is slowing you down. Add two small dark feet at the bottom. The stand
+      should read from a distance before any UV work begins.
+    </li>
+    <li>
+      <h3>Add a top bar and two round pegs</h3>
+      Add a small wooden bar above the frame. Add two tiny steel or cream cubes as pegs if you want
+      the stand to feel assembled. This is optional polish; do not let it steal the UV time.
+    </li>
+    <li>
+      <h3>Create a 32 × 32 texture</h3>
+      In the <strong>Textures</strong> panel, create a new texture named <code>menu-sign</code> at
+      <strong>32 × 32</strong>. Use the template option if Blockbench offers it. You need one texture
+      image that contains both plain colors and a small menu patch.
+    </li>
+    <li>
+      <h3>Paint a simple menu patch on the texture</h3>
+      Switch to <strong>Paint</strong> mode. In one clear area of the texture, draw a small dark
+      rectangle using <strong>Dark Wood</strong>, then add cream <code>MENU</code> marks, a line, and
+      one or two simple food-color blocks. It does not need perfect letters. It only needs a
+      recognizable patch to map onto the board.
+    </li>
+    <li>
+      <h3>⭐ Map the front face to the menu patch</h3>
+      Switch back to <strong>Edit</strong> mode and select <code>chalkboard_face</code>. In the
+      <strong>UV</strong> panel, use the face tabs (<strong>North</strong>, <strong>South</strong>,
+      <strong>East</strong>, <strong>West</strong>, <strong>Up</strong>, <strong>Down</strong>) to find
+      the side that faces the camera. Move that face's UV rectangle over the menu patch you painted,
+      then resize it so the whole patch fits. Orbit the model: the board should now show the patch
+      instead of a random part of the texture.
+    </li>
+    <li>
+      <h3>Fix stretching before adding detail</h3>
+      If <code>MENU</code> looks squashed, widen or narrow the UV rectangle. If it is cut off, move the
+      rectangle until the whole patch is inside. If it is upside down, rotate or flip the UV selection
+      if your UV panel exposes that action; otherwise move the patch on the texture and try again.
+    </li>
+    <li>
+      <h3>Fill the rest simply</h3>
+      Use <strong>Paint Bucket → Fill Mode: Cube</strong> for frame, legs, feet, and pegs. Do not
+      hand-paint every side. Today's lesson is controlled placement on one face.
+    </li>
+    <li>
+      <h3>Render the new prop</h3>
+      Capture a slightly high 3/4 view where the menu face is readable. If you have time, place the
+      stand beside the crate or plate to show it belongs in the same kitchen pack.
+    </li>
+    <li>
+      <h3>Post your Day-7 itch.io post</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 7.</em>
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Common mistake</span>
+    <p>Do not stay in Paint Mode and try to fix the front by painting over and over. If the wrong
+    part of the image appears on the face, that is a <strong>UV placement</strong> problem. Go back to
+    Edit Mode and move the face's UV rectangle.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 7 of learning Blockbench from zero. Built a new chalkboard menu stand and learned my first UV mapping: instead of painting directly on every face, I moved the front face's UV area so one MENU patch from the texture lands exactly on the board. New prop, new skill, same kitchen-pack palette.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第7天】零基础学 Blockbench 做游戏素材 🎮
+今天没有继续重复画木纹,而是做了一个新的菜单小黑板架。
+新技能是 UV 映射: 不是每个面都重新画,而是把正面的 UV 区域移动到贴图里的 MENU 区域,让文字刚好显示在黑板上。
+新的道具,新的技能,还是同一套厨房素材配色。
+#Blockbench #3D建模 #低多边形 #UV映射 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#UV映射</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is the difference between painting and UV mapping?</summary>
+      <div class="answer">Painting changes the texture image. UV mapping changes which part of that image appears on a model face.</div>
+    </details>
+    <details>
+      <summary>Why did we map only the front chalkboard face today?</summary>
+      <div class="answer">It keeps the lesson small and gives one clear win: a deliberate texture patch placed on the most important face.</div>
+    </details>
+    <details>
+      <summary>If the word appears cut off, what should you move?</summary>
+      <div class="answer">Move or resize the correct face tab's UV rectangle in the UV panel until the full menu patch is inside it.</div>
+    </details>
+    <details>
+      <summary>Why is this useful for a future asset pack?</summary>
+      <div class="answer">Signs, labels, packaging, decals, and character details often need one specific part of a texture placed on one specific face.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~8 min)</span>
+    <p>Read the official Blockbench overview notes on the
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">UV Panel and Paint Mode</a>.
+    The key distinction: use the UV Panel in Edit Mode for mapping, and Paint Mode's UV Editor for
+    painting.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Next, use another new modeling skill: <strong>inflate / deflate</strong> or bevel-like chunky
+    edge polish. That can make a new kitchen prop feel softer and more toy-like without leaving the
+    low-poly style.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the menu text lands on the wrong face, stretches, flips, or disappears, tell me exactly what
+    you selected and what the UV panel shows. Bring back your Day-7 menu stand and I'll set up the
+    next new-skill lesson.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0006-first-pixel-texture.html">◂ Lesson 6 — First pixel texture</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-interface-cheatsheet.html">📄 Interface Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 7 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

@@ -183,7 +183,7 @@ Examples:
 
 > Next up: painting the first real pixel texture on the crate.
 
-> Next up: using the same texture-detail pattern on the chopping board and knife.
+> Next up: building a chalkboard menu stand and learning first UV mapping.
 
 ## Optional Blocks
 
@@ -351,7 +351,7 @@ Body draft:
 >
 > Thumbnail test: if the crate is small and I can still see wood boards, the texture is doing its job.
 >
-> Next up: using the same texture-detail pattern on the chopping board and knife.
+> Next up: building a chalkboard menu stand and learning first UV mapping.
 >
 > Streak: Day 6.
 

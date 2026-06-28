@@ -24,6 +24,7 @@ details, and cool metal corner caps.
 
 ## Teaching implication
 
-Repeat the same texture-detail pattern on the chopping board and knife. Keep the old prop, keep the
-shared palette, and show that different materials need different tiny marks: short wood grain on the
-board, a clean highlight on the blade, and a few darker handle pixels.
+Do not repeat the same texture-detail pattern on another old prop. The learner wants each lesson to
+introduce a new skill, and has already learned pivot/origin and basic export. Move next into beginner
+UV mapping with a new, substantial kitchen prop: a chalkboard menu stand whose front face maps to a
+specific `MENU` patch on the texture image.
