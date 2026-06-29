@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide · Café Chalkboard Menu Stand in Blockbench</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Café Chalkboard Menu Stand</b></span>
+  </nav>
+
+  <p class="kicker">Build guide — detailed prop breakdown</p>
+  <h1>Café chalkboard menu stand</h1>
+  <p class="dek">Use this guide when you want to build a more detailed version of the Day-7
+  chalkboard: an A-frame café sign with chunky wood, a dark menu board, a top coffee badge, side
+  supports, and UV-mapped chalk art.</p>
+
+  <div class="meta">
+    <span>⏱️ 90–150 min if you build the full version</span>
+    <span>🎯 Main skills: cube layout, rotation, UV mapping, pixel menu art</span>
+    <span>🛠️ Generic Model</span>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/cafe-chalkboard-menu-reference.png" alt="Detailed café chalkboard menu stand reference">
+    <div class="cap"><strong>Reference target:</strong> an A-frame café menu board. Do not copy every
+    tiny word first. Capture the silhouette, chunky frame, dark board, and a few readable café marks.</div>
+  </div>
+
+  <div class="callout win">
+    <span class="label">What to finish first</span>
+    <p>The minimum successful version is: <strong>front board + wooden frame + two back legs +
+    top coffee badge + one UV-mapped menu texture</strong>. The detailed menu text, leaves, cups, and
+    cake icons are polish after the prop reads correctly.</p>
+  </div>
+
+  <h2>1. Set up the model</h2>
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model</h3>
+      Create a new <strong>Generic Model</strong> named <code>cafe-chalkboard-stand</code>. Save it
+      before building.
+    </li>
+    <li>
+      <h3>Use a front-facing scale</h3>
+      Treat the sign like a tall rectangle. Suggested overall size:
+      <code>X 10</code>, <code>Y 16</code>, <code>Z 4</code>. The front face sits near
+      <code>Z -1</code>; the back legs lean toward <code>Z 2</code>.
+    </li>
+    <li>
+      <h3>Choose the color plan</h3>
+      Stay close to the course palette: <strong>Wood</strong> for most frame pieces,
+      <strong>Dark Wood</strong> for shadows and board, <strong>Cream</strong> for chalk, plus
+      <strong>Leaf</strong>, <strong>Tomato</strong>, and <strong>Steel</strong> accents.</li>
+  </ol>
+
+  <h2>2. Build the big silhouette</h2>
+  <p>Do this before any texture work. If the model reads as an A-frame chalkboard in flat colors,
+  the final texture will have something solid to support.</p>
+
+  <table>
+    <thead><tr><th>Part</th><th>Suggested size</th><th>Position idea</th><th>Color</th></tr></thead>
+    <tbody>
+      <tr><td>Front chalkboard</td><td><code>X 8.2 · Y 12.5 · Z 0.35</code></td><td>Centered, slightly tilted back</td><td>Dark Wood / near-black</td></tr>
+      <tr><td>Top rail</td><td><code>X 10 · Y 0.8 · Z 0.8</code></td><td>Above board</td><td>Wood</td></tr>
+      <tr><td>Bottom rail</td><td><code>X 10 · Y 0.9 · Z 0.8</code></td><td>Below board</td><td>Wood</td></tr>
+      <tr><td>Left side rail</td><td><code>X 0.8 · Y 14 · Z 0.8</code></td><td>Left edge, slight inward angle</td><td>Wood</td></tr>
+      <tr><td>Right side rail</td><td><code>X 0.8 · Y 14 · Z 0.8</code></td><td>Right edge, slight inward angle</td><td>Wood</td></tr>
+      <tr><td>Back legs</td><td><code>X 0.7 · Y 13 · Z 0.7</code></td><td>Behind the sign, leaning back</td><td>Dark Wood</td></tr>
+      <tr><td>Feet blocks</td><td><code>X 1.1 · Y 0.8 · Z 1.2</code></td><td>Four lower corners</td><td>Dark Wood</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <span class="label">Rotation tip</span>
+    <p>For the front sign, a small <strong>X rotation</strong> backward is enough. For the rear legs,
+    rotate them farther back so the side view forms an <strong>A</strong> shape. If rotation gets
+    frustrating, keep the front rectangle straight and only angle the back legs.</p>
+  </div>
+
+  <h2>3. Add the chunky frame detail</h2>
+  <ol class="steps">
+    <li>
+      <h3>Layer small blocks on the corners</h3>
+      Add small square cubes over the four front corners. This creates the thick, toy-like corner
+      plates visible in the reference.
+    </li>
+    <li>
+      <h3>Add darker side strips</h3>
+      Place narrow <strong>Dark Wood</strong> strips just inside the left and right rails. These read
+      as shadow gaps between the frame and the chalkboard.
+    </li>
+    <li>
+      <h3>Break up the wood with patches</h3>
+      Add a few shallow Wood/Dark Wood rectangles on the rails, or paint tiny square patches later.
+      Keep them sparse; the reference looks detailed because the big wood frame already works.</li>
+  </ol>
+
+  <h2>4. Build the top coffee badge</h2>
+  <p>The badge is a separate decorative sign sitting above the main board. Make it chunky and simple.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Make a stepped round-ish badge</h3>
+      Use one center cube plus smaller side/top cubes to fake an octagonal wooden plaque. Fill it with
+      <strong>Dark Wood</strong>, then add a Wood highlight strip.
+    </li>
+    <li>
+      <h3>Add a simple cup icon</h3>
+      Build the cup as tiny cream cubes on the badge: a rectangle body, one darker coffee strip, and
+      a one-cube handle on the side. Two light vertical cubes above it can read as steam.
+    </li>
+    <li>
+      <h3>Stop before it becomes a second lesson</h3>
+      The cup only needs to read at thumbnail size. If it takes more than 10 minutes, simplify it to
+      one cream rectangle and one handle cube.
+    </li>
+  </ol>
+
+  <h2>5. Create the menu texture sheet</h2>
+  <p>This is where the guide gets close to the reference image. Use one texture for the board face.
+  Keep the art blocky and high contrast.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Create a 64 × 64 texture</h3>
+      Use <strong>32 × 32</strong> for a simpler version, or <strong>64 × 64</strong> if you want
+      several menu sections like the reference.
+    </li>
+    <li>
+      <h3>Reserve one large rectangle for the front board</h3>
+      Paint a dark board rectangle. This is the patch you will UV-map onto the front chalkboard face.
+    </li>
+    <li>
+      <h3>Block in three menu sections</h3>
+      Use readable headings rather than tiny full text:
+      <code>CAFE</code>, <code>TEA</code>, and <code>CAKE</code> are enough. Add short white lines or
+      dotted rows under them to suggest prices.
+    </li>
+    <li>
+      <h3>Add three icon zones</h3>
+      Add a coffee cup, a leaf, and a cake slice as small pixel icons. These sell the reference much
+      faster than writing every menu item.
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Do not over-letter</span>
+    <p>The reference has many words, but a beginner Blockbench prop does not need readable
+    <code>ESPRESSO</code>, <code>AMERICANO</code>, and prices yet. Use blocky headings, dots, and
+    short rows. The viewer will understand "menu."</p>
+  </div>
+
+  <h2>6. UV-map the board face</h2>
+  <ol class="steps">
+    <li>
+      <h3>Select the front board cube</h3>
+      In <strong>Edit</strong> mode, select the cube named <code>front_board</code> or
+      <code>chalkboard_face</code>.
+    </li>
+    <li>
+      <h3>Find the visible face in the UV panel</h3>
+      Use the face tabs: <strong>North</strong>, <strong>South</strong>, <strong>East</strong>,
+      <strong>West</strong>, <strong>Up</strong>, <strong>Down</strong>. The correct tab is the one
+      that changes the visible front.
+    </li>
+    <li>
+      <h3>Place the UV rectangle over the menu patch</h3>
+      Move and resize that face's UV rectangle so the whole menu art patch fills the front board.
+      If the text is stretched, adjust the rectangle width/height. If it is upside down, rotate/flip
+      the UV selection if available, or flip the art on the texture.
+    </li>
+  </ol>
+
+  <h2>7. Add side hardware and rear support</h2>
+  <p>The side bar in the reference makes the A-frame feel functional. Add it after the front already
+  looks good.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>Add a steel side hinge bar</h3>
+      On one side, place a thin <strong>Steel</strong> bar from the front frame to the back leg.
+      Add two small darker end blocks as hinge plates.
+    </li>
+    <li>
+      <h3>Add rear board darkness</h3>
+      Put a dark rectangle behind the front board or between the back legs. It gives the side view
+      depth without needing a fully detailed back menu.
+    </li>
+    <li>
+      <h3>Check the side silhouette</h3>
+      Orbit to a 3/4 view. The sign should read as a freestanding A-frame, not a flat poster.</li>
+  </ol>
+
+  <h2>8. Final polish pass</h2>
+  <ul>
+    <li><strong>Wood patches:</strong> add a few darker square marks on the frame, especially corners.</li>
+    <li><strong>Chalk smudges:</strong> add two or three grey/cream pixels near the menu lines.</li>
+    <li><strong>Depth:</strong> push the board face slightly behind the front frame so the frame wraps it.</li>
+    <li><strong>Readable render:</strong> capture a high 3/4 view where the board face and A-frame side are both visible.</li>
+  </ul>
+
+  <div class="callout post">
+    <span class="label">Build order checklist</span>
+    <div class="template">1. Big front board
+2. Wood frame rails
+3. Back legs + feet
+4. Corner blocks + shadow strips
+5. Top coffee badge
+6. 64 x 64 menu texture
+7. UV-map the front face
+8. Side hinge bar
+9. Final render</div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Teacher note</span>
+    <p>If you only have one hour, build the silhouette and map a simple <code>CAFE</code> texture.
+    Save the detailed menu rows, icons, and wood patching for a second session. The prop succeeds when
+    it reads as a café chalkboard at thumbnail size.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0007-chalkboard-menu-uv.html">◂ Lesson 7 — First UV mapping</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-transform-cheatsheet.html">Transform Cheat Sheet →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · detailed chalkboard stand guide</footer>
+
+</main>
+</body>
+</html>
