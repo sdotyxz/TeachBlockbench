@@ -159,6 +159,54 @@ tbody tr:nth-child(odd){background:rgba(255,255,255,.55)}
 .tags{display:flex; flex-wrap:wrap; gap:.4rem; margin:.6rem 0 0}
 .tag{font-family:var(--sans); font-size:.72rem; background:#fff;
   border:1px solid var(--rule); border-radius:1rem; padding:.2rem .7rem; color:var(--ink-soft)}
+
+/* ---------- learning path maps ---------- */
+.path-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));
+  gap:.8rem;
+  margin:1.3rem 0;
+}
+.path-card{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:.6rem;
+  padding:.9rem 1rem;
+  box-shadow:var(--shadow);
+}
+.path-card h3{margin:.1rem 0 .35rem}
+.path-card p{font-size:.92rem; margin:.45rem 0}
+.progress{
+  height:.75rem;
+  background:#efe5d4;
+  border:1px solid #d8cdb8;
+  border-radius:999px;
+  overflow:hidden;
+  margin:.75rem 0 .35rem;
+}
+.progress span{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+}
+.path-scale{
+  display:flex;
+  justify-content:space-between;
+  gap:.5rem;
+  font-family:var(--sans);
+  font-size:.68rem;
+  color:var(--ink-soft);
+}
+.milestone{
+  border-left:4px solid var(--rule);
+  padding:.1rem 0 .35rem .85rem;
+  margin:.85rem 0;
+}
+.milestone.done{border-color:var(--green)}
+.milestone.now{border-color:var(--accent)}
+.milestone.later{border-color:var(--blue)}
+.milestone h3{margin:.05rem 0 .15rem}
+.source-list a{font-family:var(--mono); font-size:.78rem}
 .figure{
   background:var(--card); border:1px solid var(--rule); border-radius:.6rem;
   padding:1.2rem; margin:1.3rem 0; text-align:center; box-shadow:var(--shadow);

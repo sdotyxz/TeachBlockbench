@@ -21,3 +21,6 @@ node_modules/
 dist/
 build/
 coverage/
+
+# Local upstream source references
+reference/blockbench-source/

@@ -22,6 +22,9 @@ Working notes + learner preferences. Refer back before designing each lesson.
   `.glb`, `.obj`, or game-ready export unless it is only a supporting step inside a larger new skill.
 - **Each lesson should introduce a new skill** (confirmed 2026-06-29). Avoid lessons whose main move
   is repeating yesterday's technique on a different prop.
+- **Each lesson should include a settings tutorial section** (confirmed 2026-06-29). Keep it scoped to
+  the day's tool: where the setting lives, the beginner-safe value, what changes on screen, and when
+  to change it.
 - **Day 7 redesign direction: beginner UV mapping** (confirmed 2026-06-29). The learner is new to UV
   mapping and is open to a lesson focused on moving/resizing face UVs instead of drawing more texture
   details on the chopping board and knife.

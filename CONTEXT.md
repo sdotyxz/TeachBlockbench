@@ -18,3 +18,19 @@ _Avoid_: exercise result, homework
 **UV mapping**:
 The Blockbench skill of deciding which part of a texture image appears on each face of a model.
 _Avoid_: texture drawing, painting pixels
+
+**Course pillar**:
+One of the three durable Blockbench skill areas this course tracks: Modeling, Texturing, and
+Animation. Each lesson should primarily advance one pillar while briefly reviewing earlier pillars.
+_Avoid_: random topic, loose category
+
+**Blockbench mastery**:
+The learner's practical ability to independently create, texture, lightly animate, export, and package
+a cohesive low-poly asset pack in Blockbench. It does not mean knowing every Blockbench feature or
+contributing to Blockbench's source code.
+_Avoid_: total software expertise, source-code mastery
+
+**Settings tutorial**:
+A small section inside each lesson that explains only the Blockbench settings needed for that lesson's
+tool or workflow, including the recommended beginner value and when to change it.
+_Avoid_: full settings reference, preference dump
