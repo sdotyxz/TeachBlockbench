@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 8 · Bread Basket — Inflate &amp; Deflate</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 8</b></span>
+  </nav>
+
+  <p class="kicker">Day 8 — Week 2: Texturing &amp; Polish</p>
+  <h1><span class="num">08</span>Bread basket — inflate &amp; deflate</h1>
+  <p class="dek">Yesterday you controlled where a texture lands with UV mapping. Today you learn a
+  small shape-polish control: <strong>Inflate</strong>. Build a bread basket, then use tiny Inflate
+  and Deflate values to make chunky pieces overlap cleanly without flickering.</p>
+
+  <div class="meta">
+    <span>⏱️ ~45–60 min</span>
+    <span>🎯 Builds on Lessons 2, 5, 6, and 7</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>bread basket render</strong>: a shallow wooden crate-basket, a cream cloth liner,
+    and three warm bread rolls. The new skill is using <strong>Inflate / Deflate</strong> as controlled
+    shape polish, not just resizing cubes bigger and smaller.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards. Today reuses old skills but adds one new control.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does UV mapping change?</summary>
+      <div class="answer">It changes which part of a texture image appears on a face. Painting changes the image itself.</div>
+    </details>
+    <details>
+      <summary>Why do we keep using the same palette?</summary>
+      <div class="answer">Repeated wood, cream, metal, and accent colors make separate props read as one asset pack.</div>
+    </details>
+    <details>
+      <summary>What visual problem happens when two faces sit in the exact same place?</summary>
+      <div class="answer">They can flicker or shimmer because the renderer cannot decide which face is in front. That is called z-fighting.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — inflate changes all sides evenly</h2>
+  <p><strong>Resize</strong> changes a cube's dimensions: wider, taller, thinner, longer. <strong>Inflate</strong>
+  pushes every side of a selected cube outward by the same amount. <strong>Deflate</strong> uses a
+  negative value to pull every side inward.</p>
+
+  <p>Blockbench's official overview says the Inflate feature scales cubes by the same number on all
+  axes, keeps UV mapping intact, and the slider lives next to the <strong>Size</strong> sliders in the
+  Element panel.
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — Inflation &amp; Deflation]</a></p>
+
+  <div class="callout warn">
+    <span class="label">Honest expectation</span>
+    <p>Inflate does <strong>not</strong> magically bevel a cube or make it truly round. It is still
+    blocky. The bread will feel softer because you combine squat shapes, small Inflate values, warm
+    colors, and simple highlight pixels.</p>
+  </div>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">cloth liner</span><span class="hex">#F3E6C4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">basket rails</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">basket seams</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">cloth stripe</span><span class="hex">#D94A36</span></div></div>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/bread-basket-inflate-reference.png" alt="Low-poly bread basket reference with three chunky rolls and a cream cloth liner">
+    <div class="cap"><strong>Lesson target:</strong> a postable bread basket. Do not chase the exact
+    render. Build the same readable idea: basket, cloth, three rolls, and visible chunky polish.</div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/overcooked-palette.html">Course Palette</a> open. Use exact colors
+  for the basket and cloth; for bread, stay close to the wood color and use small lighter/darker marks
+  from the palette.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>bread-basket-inflate</code></h3>
+      Start a new <strong>Generic Model</strong>. Save early. The output is a new food prop for the
+      kitchen pack, not a practice cube.
+    </li>
+    <li>
+      <h3>Build the basket base</h3>
+      Add one shallow cube for the basket floor. Suggested size:
+      <code>X 7</code>, <code>Y 0.5</code>, <code>Z 4.5</code>. Fill it with <strong>Wood</strong>.
+      Rename it <code>basket_floor</code>.
+    </li>
+    <li>
+      <h3>Add four wooden rails</h3>
+      Add front, back, left, and right rails around the floor. Suggested rail thickness:
+      <code>0.45</code> to <code>0.6</code>. Fill them with <strong>Wood</strong>. Add a few
+      <strong>Dark Wood</strong> seam pixels later, but keep the shape readable first.
+    </li>
+    <li>
+      <h3>Make the cloth liner slightly bigger than the basket</h3>
+      Add a very thin cream cube inside the basket. Suggested size:
+      <code>X 6.7</code>, <code>Y 0.25</code>, <code>Z 4.2</code>. Name it
+      <code>cloth_liner</code>. Set <strong>Inflate</strong> to about <code>0.05</code> so it sits
+      proud of the basket instead of hiding inside it.
+    </li>
+    <li>
+      <h3>Use Deflate if faces flicker</h3>
+      Orbit the basket. If the cloth and basket floor flicker, they are too close. Either move the
+      cloth slightly up, or set the basket floor <strong>Inflate</strong> to a tiny negative value
+      like <code>-0.03</code>. The goal is clean separation, not a big visible gap.
+    </li>
+    <li>
+      <h3>Build the first bread roll</h3>
+      Add one squat cube for a roll. Suggested size:
+      <code>X 2.1</code>, <code>Y 1.2</code>, <code>Z 1.6</code>. Place it inside the basket and fill
+      it with <strong>Wood</strong>. Name it <code>roll_center</code>. Set <strong>Inflate</strong>
+      to about <code>0.2</code>. This makes the roll chunkier without changing the basic typed size.
+    </li>
+    <li>
+      <h3>Duplicate the roll twice</h3>
+      Duplicate <code>roll_center</code> two times. Move one left and one right. Rotate them a little
+      if you want a natural pile. Keep the same Inflate value so all three rolls feel related.
+    </li>
+    <li>
+      <h3>Add simple bread highlights</h3>
+      Create or reuse a texture. With a size-1 brush, add a few short lighter marks on the top of
+      each roll and one or two darker toasted marks. Do not cover the whole roll. The marks should
+      say "bread" at thumbnail size.
+    </li>
+    <li>
+      <h3>Add a cloth stripe</h3>
+      Paint one thin <strong>Tomato</strong> stripe on the visible cloth edges. If the stripe lands
+      awkwardly, use the UV panel from Lesson 7 to move that face's texture area. This is a small
+      reuse, not today's main skill.
+    </li>
+    <li>
+      <h3>Run the z-fighting check</h3>
+      Orbit around the basket slowly. Watch the cloth, basket rails, and rolls. Any flickering face
+      needs a tiny move, Inflate, or Deflate adjustment. Keep changes small: <code>0.03</code> to
+      <code>0.2</code> is the normal range today.
+    </li>
+    <li>
+      <h3>Render the new prop</h3>
+      Capture a slightly high 3/4 view where the basket shape and all three rolls are visible. This
+      is a food prop, so readability matters more than perfect texture detail.
+    </li>
+    <li>
+      <h3>Post your Day-8 itch.io post</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 8.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Good tiny numbers</span>
+    <p>Use <code>0.05</code> when you only need separation, <code>0.1</code> when a piece should feel
+    slightly chunkier, and <code>0.2</code> when the shape should visibly puff out. If it looks bloated,
+    cut the number in half.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 8 of learning Blockbench from zero. Built a little bread basket and learned Inflate / Deflate: instead of only resizing cubes, I used tiny inflate values to make the rolls feel chunkier and tiny deflate/offset fixes to stop overlapping faces from flickering. Another food prop for the kitchen pack.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第8天】零基础学 Blockbench 做游戏素材 🎮
+今天做了一个面包篮: 木篮子、布垫、三个小面包。
+新技能是 Inflate / Deflate: 不只是把方块拉大拉小,而是用很小的膨胀数值让面包更厚实,也用微小的收缩或上移解决重叠面闪烁的问题。
+厨房素材包又多了一个食物道具。
+#Blockbench #3D建模 #低多边形 #游戏美术 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is the difference between Resize and Inflate?</summary>
+      <div class="answer">Resize changes selected dimensions. Inflate pushes every side outward by the same amount.</div>
+    </details>
+    <details>
+      <summary>What does a negative Inflate value do?</summary>
+      <div class="answer">It deflates the cube, pulling every side inward by the same amount.</div>
+    </details>
+    <details>
+      <summary>What should you do if two faces flicker?</summary>
+      <div class="answer">Move one face slightly away, or use a tiny Inflate/Deflate value so the faces no longer occupy the same place.</div>
+    </details>
+    <details>
+      <summary>Why keep Inflate values small today?</summary>
+      <div class="answer">Small values polish the shape. Large values can make the prop look swollen or break the clean low-poly style.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~5 min)</span>
+    <p>Read the official Blockbench overview section on
+    <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Inflation &amp; Deflation</a>.
+    Focus on the sentence that says Inflate scales cubes equally on all axes and keeps UV mapping intact.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">Looking ahead</span>
+    <p>Next, start moving from props toward pack presentation: either make a small set-shot scene with
+    several finished props, or learn a new texture workflow that makes one prop look more finished
+    without adding many cubes.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the Inflate slider is hard to find, a face flickers, or the bread looks too boxy, tell me
+    which element is selected and what its Size and Inflate values are. Bring back your Day-8 render
+    and I'll help post it.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0007-chalkboard-menu-uv.html">◂ Lesson 7 — First UV mapping</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../reference/blockbench-transform-cheatsheet.html">📄 Transform Cheat Sheet</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 8 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

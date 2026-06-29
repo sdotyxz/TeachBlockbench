@@ -83,4 +83,11 @@ Working notes + learner preferences. Refer back before designing each lesson.
   texture image appears on a selected face. Builds a new, richer kitchen prop with a wooden frame,
   legs, and a chalkboard front, then maps a small `MENU` patch onto the front face. Avoids repeating
   Day-6 texture painting; pivot/origin and basic export are skipped because the learner already knows
-  them. *(redesigned 2026-06-29; completion not yet reported)*
+  them. *(redesigned 2026-06-29; **completed 2026-06-29** — completion requested; normal itch.io
+  visual-devlog draft prepared at
+  `https://itch.io/blog/1568012/day-7-first-uv-mapping-on-a-chalkboard-menu-stand`, publication
+  pending approval; artifacts in `artifacts/chalkboard/`)*
+- **0008** — Bread basket: inflate and deflate. New idea: Inflate scales a selected cube outward
+  equally on all axes while keeping UVs intact; Deflate uses a negative value. Builds a new food prop
+  with a wooden basket, cloth liner, and three chunky bread rolls. Uses tiny Inflate/Deflate values
+  both for shape polish and z-fighting fixes. *(authored 2026-06-29; completion not yet reported)*
