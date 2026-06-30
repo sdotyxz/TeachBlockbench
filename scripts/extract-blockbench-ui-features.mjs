@@ -6,6 +6,7 @@ const repoRoot = process.cwd();
 const sourceRoot = path.join(repoRoot, 'reference/blockbench-source');
 const lang = JSON.parse(fs.readFileSync(path.join(sourceRoot, 'lang/en.json'), 'utf8'));
 const outputPath = path.join(repoRoot, 'reference/blockbench-ui-feature-list.html');
+const wikiOutputDir = path.join(repoRoot, 'reference/blockbench-ui-features');
 const jsonOutputPath = path.join(repoRoot, 'reference/blockbench-ui-feature-list.json');
 
 const constructorTypes = [
@@ -100,8 +101,10 @@ function main() {
     panel_contents: panelContents,
     features,
   }, null, 2));
-  fs.writeFileSync(outputPath, renderHtml(features, panelContents));
-  console.log(`Wrote ${path.relative(repoRoot, outputPath)} with ${features.length} UI-reachable features`);
+  renderWiki(features, panelContents);
+  fs.writeFileSync(outputPath, renderLegacyRedirect());
+  console.log(`Wrote ${path.relative(repoRoot, wikiOutputDir)} with ${features.length} UI-reachable features`);
+  console.log(`Wrote ${path.relative(repoRoot, outputPath)} as the legacy entry point`);
   console.log(`Wrote ${path.relative(repoRoot, jsonOutputPath)} for machine-readable review`);
 }
 
@@ -967,41 +970,218 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function renderHtml(features, panelContents) {
-  const counts = features.reduce((acc, feature) => {
-    acc[feature.type] = (acc[feature.type] || 0) + 1;
-    return acc;
-  }, {});
-  const typeOptions = Object.keys(counts).sort()
-    .map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)} (${counts[type]})</option>`)
+function renderWiki(features, panelContents) {
+  fs.rmSync(wikiOutputDir, {recursive: true, force: true});
+  fs.mkdirSync(wikiOutputDir, {recursive: true});
+
+  const areas = uiAreas(features, panelContents);
+  const areaPages = areas.map(area => ({
+    ...area,
+    file: `${slugify(area.name)}.html`,
+  }));
+
+  fs.writeFileSync(path.join(wikiOutputDir, 'wiki.css'), wikiCss());
+  fs.writeFileSync(path.join(wikiOutputDir, 'index.html'), renderWikiIndex(areaPages, features, panelContents));
+  for (const area of areaPages) {
+    fs.writeFileSync(path.join(wikiOutputDir, area.file), renderAreaPage(area, areaPages));
+  }
+}
+
+function renderLegacyRedirect() {
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=blockbench-ui-features/index.html">
+  <title>Blockbench UI Feature Wiki</title>
+</head>
+<body>
+  <p>The Blockbench UI feature list has moved to <a href="blockbench-ui-features/index.html">the UI feature wiki</a>.</p>
+</body>
+</html>
+`;
+}
+
+function uiAreas(features, panelContents) {
+  const byArea = new Map();
+
+  for (const feature of features) {
+    const routesByArea = groupRoutesByArea(feature.routes);
+    for (const [areaName, routes] of routesByArea) {
+      const area = ensureArea(byArea, areaName);
+      area.features.push({...feature, area_routes: routes});
+    }
+  }
+
+  for (const item of panelContents) {
+    const areaName = routeArea(item.ui_path);
+    const area = ensureArea(byArea, areaName);
+    area.panel_contents.push(item);
+  }
+
+  return [...byArea.values()].sort((a, b) => {
+    const count = b.features.length + b.panel_contents.length - (a.features.length + a.panel_contents.length);
+    if (count) return count;
+    return a.name.localeCompare(b.name);
+  });
+}
+
+function ensureArea(byArea, name) {
+  if (!byArea.has(name)) {
+    byArea.set(name, {name, features: [], panel_contents: []});
+  }
+  return byArea.get(name);
+}
+
+function groupRoutesByArea(routes) {
+  const byArea = new Map();
+  for (const route of routes) {
+    const area = routeArea(route);
+    if (!byArea.has(area)) byArea.set(area, []);
+    byArea.get(area).push(route);
+  }
+  return byArea;
+}
+
+function routeArea(route) {
+  return route.split(' > ')[0] || 'Other';
+}
+
+function routeSection(route) {
+  const parts = route.split(' > ');
+  return parts[1] || 'Direct';
+}
+
+function slugify(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '') || 'other';
+}
+
+function renderWikiIndex(areas, features, panelContents) {
+  const rows = areas.map(area => `<tr>
+      <td><a href="${escapeHtml(area.file)}">${escapeHtml(area.name)}</a></td>
+      <td>${area.features.length}</td>
+      <td>${area.panel_contents.length}</td>
+    </tr>`).join('\n');
+  const areaLinks = areas.map(area => `<a href="${escapeHtml(area.file)}">${escapeHtml(area.name)}</a>`).join('');
+
+  return renderPage({
+    title: 'Blockbench UI Feature Wiki',
+    subtitle: `Generated from reference/blockbench-source. ${features.length} UI-reachable features and ${panelContents.length} panel controls are organized by the visible Blockbench UI area that begins each path.`,
+    nav: `<a href="../../index.html">Course Home</a><a href="../blockbench-ui-feature-list.json">JSON Data</a>`,
+    body: `
+    <section class="note">
+      Routes through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from source menu registrations. Features with routes in multiple UI areas appear on each matching page.
+    </section>
+    <nav class="area-links">${areaLinks}</nav>
+    <table>
+      <thead>
+        <tr>
+          <th>UI Area</th>
+          <th>Features</th>
+          <th>Panel Controls</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`,
+  });
+}
+
+function renderAreaPage(area, areas) {
+  const rowsBySection = groupFeatureRowsBySection(area.features);
+  const featureSections = Object.keys(rowsBySection).sort()
+    .map(section => renderFeatureSection(section, rowsBySection[section]))
     .join('');
-  const rows = features.map(feature => {
-    const routes = feature.routes
-      .map(route => `<li>${escapeHtml(route)}</li>`)
-      .join('');
-    return `<tr data-type="${escapeHtml(feature.type)}" data-search="${escapeHtml(`${feature.name} ${feature.type} ${feature.id} ${feature.routes.join(' ')} ${feature.description}`.toLowerCase())}">
+  const panelSection = area.panel_contents.length
+    ? renderPanelContentSection(area.panel_contents)
+    : '';
+  const areaLinks = areas.map(item => item.name === area.name
+    ? `<strong>${escapeHtml(item.name)}</strong>`
+    : `<a href="${escapeHtml(item.file)}">${escapeHtml(item.name)}</a>`).join('');
+  const body = `
+    <section class="summary">
+      <div><strong>${area.features.length}</strong><span>features</span></div>
+      <div><strong>${area.panel_contents.length}</strong><span>panel controls</span></div>
+    </section>
+    <nav class="area-links">${areaLinks}</nav>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search this UI area">
+    </div>
+    ${featureSections || '<p>No UI-reachable features found for this area.</p>'}
+    ${panelSection}
+    ${filterScript()}`;
+
+  return renderPage({
+    title: `${area.name} UI Features`,
+    subtitle: `Features whose UI path starts in ${area.name}. Rows show all known UI paths for each feature, even when a feature also appears on another area page.`,
+    nav: `<a href="index.html">Feature Wiki</a><a href="../blockbench-ui-feature-list.json">JSON Data</a>`,
+    body,
+  });
+}
+
+function groupFeatureRowsBySection(features) {
+  return features.reduce((groups, feature) => {
+    const sections = unique(feature.area_routes.map(routeSection));
+    for (const section of sections) {
+      if (!groups[section]) groups[section] = [];
+      groups[section].push(feature);
+    }
+    return groups;
+  }, {});
+}
+
+function renderFeatureSection(section, features) {
+  const rows = features
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(renderFeatureRow)
+    .join('\n');
+  return `<section class="feature-section">
+      <h2>${escapeHtml(section)} <span>${features.length} features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </section>`;
+}
+
+function renderFeatureRow(feature) {
+  const routes = feature.routes
+    .map(route => `<li>${escapeHtml(route)}</li>`)
+    .join('');
+  return `<tr data-search="${escapeHtml(`${feature.name} ${feature.type} ${feature.id} ${feature.routes.join(' ')} ${feature.description}`.toLowerCase())}">
       <td class="feature"><strong>${escapeHtml(feature.name)}</strong><span>${escapeHtml(feature.id)}</span></td>
       <td><span class="pill">${escapeHtml(feature.type)}</span></td>
       <td class="route"><ul class="routes">${routes}</ul></td>
       <td>${escapeHtml(feature.description)}</td>
       <td><code>${escapeHtml(feature.source)}</code></td>
     </tr>`;
-  }).join('\n');
-  const countCards = Object.keys(counts).sort()
-    .map(type => `<div><strong>${counts[type]}</strong><span>${escapeHtml(type)}</span></div>`)
-    .join('');
+}
+
+function renderPanelContentSection(panelContents) {
   const panelGroups = groupBy(panelContents, item => item.panel_name);
-  const panelSections = Object.keys(panelGroups).sort()
+  const sections = Object.keys(panelGroups).sort()
     .map(panelName => {
       const items = panelGroups[panelName];
-      const itemRows = items.map(item => `<tr>
+      const rows = items.map(item => `<tr data-search="${escapeHtml(`${item.control_name} ${item.control_id} ${item.control_type} ${item.ui_path}`.toLowerCase())}">
         <td class="feature"><strong>${escapeHtml(item.control_name)}</strong><span>${escapeHtml(item.control_id)}</span></td>
         <td><span class="pill">${escapeHtml(item.control_type)}</span></td>
         <td class="route">${escapeHtml(item.ui_path)}</td>
         <td><code>${escapeHtml(item.source)}</code></td>
       </tr>`).join('');
-      return `<section class="panel-section">
-        <h3>${escapeHtml(panelName)} <span>${items.length} controls</span></h3>
+      return `<section class="feature-section">
+        <h2>${escapeHtml(panelName)} Panel Controls <span>${items.length} controls</span></h2>
         <table>
           <thead>
             <tr>
@@ -1011,19 +1191,48 @@ function renderHtml(features, panelContents) {
               <th>Toolbar Source</th>
             </tr>
           </thead>
-          <tbody>${itemRows}</tbody>
+          <tbody>${rows}</tbody>
         </table>
       </section>`;
     })
     .join('');
+  return `<h2>Panel Contents</h2>${sections}`;
+}
 
+function renderPage({title, subtitle, nav, body}) {
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blockbench UI-Reachable Feature List</title>
-  <style>
+  <title>${escapeHtml(title)}</title>
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+  <header>
+    <nav class="top">${nav}</nav>
+    <h1>${escapeHtml(title)}</h1>
+    <p>${escapeHtml(subtitle)}</p>
+  </header>
+  <main>${body}</main>
+</body>
+</html>
+`;
+}
+
+function filterScript() {
+  return `<script>
+    const search = document.querySelector('#search');
+    const rows = [...document.querySelectorAll('tbody tr')];
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      for (const row of rows) row.hidden = q && !row.dataset.search.includes(q);
+    });
+  </script>`;
+}
+
+function wikiCss() {
+  return `
     :root {
       color-scheme: light;
       --ink: #172026;
@@ -1042,37 +1251,56 @@ function renderHtml(features, panelContents) {
       background: white;
     }
     header {
-      padding: 28px 32px 18px;
+      padding: 22px 32px 18px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #fff, #f8fafb);
+      background: #f8fafb;
     }
-    h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0; }
-    h2 { margin: 26px 0 8px; font-size: 20px; letter-spacing: 0; }
-    h3 { margin: 18px 0 8px; font-size: 16px; letter-spacing: 0; }
-    h3 span { color: var(--muted); font-weight: 500; font-size: 13px; }
-    p { margin: 0; color: var(--muted); max-width: 980px; }
     main { padding: 22px 32px 36px; }
-    .counts {
+    h1 { margin: 14px 0 8px; font-size: 28px; letter-spacing: 0; }
+    h2 { margin: 26px 0 8px; font-size: 20px; letter-spacing: 0; }
+    h2 span { color: var(--muted); font-weight: 500; font-size: 13px; }
+    p { margin: 0; color: var(--muted); max-width: 980px; }
+    .top, .area-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .top a, .area-links a, .area-links strong {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 9px;
+      background: white;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .area-links { margin: 18px 0; }
+    .area-links strong { background: var(--band); }
+    .summary {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 8px;
-      margin: 18px 0;
+      margin-bottom: 18px;
     }
-    .counts div {
+    .summary div, .note {
       border: 1px solid var(--line);
       border-radius: 6px;
       padding: 10px 12px;
       background: var(--band);
     }
-    .counts strong { display: block; font-size: 22px; }
-    .counts span { color: var(--muted); }
-    .controls {
-      display: grid;
-      grid-template-columns: minmax(220px, 1fr) 240px;
-      gap: 10px;
-      margin: 18px 0 12px;
+    .summary strong { display: block; font-size: 22px; }
+    .summary span { color: var(--muted); }
+    .note {
+      border-left: 3px solid var(--warn);
+      background: #fff8ed;
+      color: #57380a;
     }
-    input, select {
+    .controls {
+      margin: 18px 0 12px;
+      max-width: 620px;
+    }
+    input {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 6px;
@@ -1111,9 +1339,7 @@ function renderHtml(features, panelContents) {
       padding-left: 16px;
     }
     .routes li + li { margin-top: 4px; }
-    .panel-section {
-      margin: 12px 0 18px;
-    }
+    .feature-section { margin: 18px 0 26px; }
     .pill {
       display: inline-block;
       border: 1px solid #c9d4dc;
@@ -1125,70 +1351,10 @@ function renderHtml(features, panelContents) {
       font-size: 12px;
     }
     code { color: var(--accent-2); font-size: 12px; }
-    .note {
-      margin: 14px 0;
-      padding: 10px 12px;
-      border-left: 3px solid var(--warn);
-      background: #fff8ed;
-      color: #57380a;
-    }
     @media (max-width: 760px) {
       header, main { padding-left: 16px; padding-right: 16px; }
-      .controls { grid-template-columns: 1fr; }
       table { display: block; overflow-x: auto; white-space: nowrap; }
       td:nth-child(4) { white-space: normal; min-width: 280px; }
     }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Blockbench UI-Reachable Feature List</h1>
-    <p>Generated from <code>reference/blockbench-source</code>. A feature is included when the source exposes a visible route through menus, toolbox, panels, mode switcher, format picker, or settings.</p>
-  </header>
-  <main>
-    <div class="counts">${countCards}</div>
-    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents include attached toolbar controls, static dropdown/menu paths, and reachable popups whose dialog forms are statically declared in source.</p>
-    <h2>Panel Contents</h2>
-    <p>${panelContents.length} panel controls extracted from panel toolbar registrations.</p>
-    ${panelSections}
-    <h2>All UI-Reachable Features</h2>
-    <div class="controls">
-      <input id="search" type="search" placeholder="Search feature, UI path, id, description">
-      <select id="type">
-        <option value="">All feature types (${features.length})</option>
-        ${typeOptions}
-      </select>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Type</th>
-          <th>UI Path</th>
-          <th>Description</th>
-          <th>Source</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
-  </main>
-  <script>
-    const search = document.querySelector('#search');
-    const type = document.querySelector('#type');
-    const rows = [...document.querySelectorAll('tbody tr')];
-    function applyFilters() {
-      const q = search.value.trim().toLowerCase();
-      const t = type.value;
-      for (const row of rows) {
-        const matchSearch = !q || row.dataset.search.includes(q);
-        const matchType = !t || row.dataset.type === t;
-        row.hidden = !(matchSearch && matchType);
-      }
-    }
-    search.addEventListener('input', applyFilters);
-    type.addEventListener('change', applyFilters);
-  </script>
-</body>
-</html>
-`;
+  `;
 }

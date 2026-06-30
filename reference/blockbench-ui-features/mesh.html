@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mesh UI Features</title>
+  <link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+  <header>
+    <nav class="top"><a href="index.html">Feature Wiki</a><a href="../blockbench-ui-feature-list.json">JSON Data</a></nav>
+    <h1>Mesh UI Features</h1>
+    <p>Features whose UI path starts in Mesh. Rows show all known UI paths for each feature, even when a feature also appears on another area page.</p>
+  </header>
+  <main>
+    <section class="summary">
+      <div><strong>13</strong><span>features</span></div>
+      <div><strong>0</strong><span>panel controls</span></div>
+    </section>
+    <nav class="area-links"><a href="view.html">View</a><a href="file.html">File</a><a href="uv.html">UV</a><a href="tools.html">Tools</a><a href="transform.html">Transform</a><a href="timeline.html">Timeline</a><a href="help.html">Help</a><a href="edit.html">Edit</a><a href="keyframe.html">Keyframe</a><a href="animation.html">Animation</a><a href="image.html">Image</a><strong>Mesh</strong><a href="mode-switcher.html">Mode Switcher</a><a href="skin.html">Skin</a><a href="display.html">Display</a></nav>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search this UI area">
+    </div>
+    <section class="feature-section">
+      <h2>Apply Rotation <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="apply rotation action apply_mesh_rotation mesh &gt; apply rotation reset the element rotation of the mesh, and apply it to the geometry instead">
+      <td class="feature"><strong>Apply Rotation</strong><span>apply_mesh_rotation</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Apply Rotation</li></ul></td>
+      <td>Reset the element rotation of the mesh, and apply it to the geometry instead</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:639</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Create Face or Edge <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="create face or edge action create_face mesh &gt; create face or edge creates a new face or edge between the selected vertices">
+      <td class="feature"><strong>Create Face or Edge</strong><span>create_face</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Create Face or Edge</li></ul></td>
+      <td>Creates a new face or edge between the selected vertices</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:362</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Dissolve Edges <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="dissolve edges action dissolve_edges mesh &gt; dissolve edges dissolve selected edges in a mesh and merge the faces they divide">
+      <td class="feature"><strong>Dissolve Edges</strong><span>dissolve_edges</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Dissolve Edges</li></ul></td>
+      <td>Dissolve selected edges in a mesh and merge the faces they divide</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:1254</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Extrude Selection <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="extrude selection action extrude_mesh_selection mesh &gt; extrude selection extrude the selected parts of the mesh">
+      <td class="feature"><strong>Extrude Selection</strong><span>extrude_mesh_selection</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Extrude Selection</li></ul></td>
+      <td>Extrude the selected parts of the mesh</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:697</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Inset Selection <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="inset selection action inset_mesh_selection mesh &gt; inset selection inset the selected parts of the mesh">
+      <td class="feature"><strong>Inset Selection</strong><span>inset_mesh_selection</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Inset Selection</li></ul></td>
+      <td>Inset the selected parts of the mesh</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:1130</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Invert Face <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="invert face action invert_face mesh &gt; invert face invert the selected faces to make them face the opposite direction">
+      <td class="feature"><strong>Invert Face</strong><span>invert_face</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Invert Face</li></ul></td>
+      <td>Invert the selected faces to make them face the opposite direction</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:659</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Loop Cut <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="loop cut action loop_cut mesh &gt; loop cut split the mesh in a loop across the selected edge">
+      <td class="feature"><strong>Loop Cut</strong><span>loop_cut</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Loop Cut</li></ul></td>
+      <td>Split the mesh in a loop across the selected edge</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/loop_cut.ts:1</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Merge Meshes <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="merge meshes action merge_meshes mesh &gt; merge meshes merge multiple meshes into one">
+      <td class="feature"><strong>Merge Meshes</strong><span>merge_meshes</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Merge Meshes</li></ul></td>
+      <td>Merge multiple meshes into one</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/merge_split.ts:207</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Merge Vertices <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="merge vertices action merge_vertices mesh &gt; merge vertices merge the selected vertices into the position of the first selected vertex">
+      <td class="feature"><strong>Merge Vertices</strong><span>merge_vertices</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Merge Vertices</li></ul></td>
+      <td>Merge the selected vertices into the position of the first selected vertex</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/merge_split.ts:172</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Set Vertex Weights <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="set vertex weights action set_vertex_weights mesh &gt; set vertex weights set the vertex weights of the selected vertices to a specific value on a certain armature bone">
+      <td class="feature"><strong>Set Vertex Weights</strong><span>set_vertex_weights</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Set Vertex Weights</li></ul></td>
+      <td>Set the vertex weights of the selected vertices to a specific value on a certain armature bone</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/set_vertex_weights.ts:5</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Solidify Faces <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="solidify faces action solidify_mesh_selection mesh &gt; solidify faces solidify the selected faces of the mesh">
+      <td class="feature"><strong>Solidify Faces</strong><span>solidify_mesh_selection</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Solidify Faces</li></ul></td>
+      <td>Solidify the selected faces of the mesh</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:961</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Split Mesh <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="split mesh action split_mesh mesh &gt; split mesh split the selected faces of the mesh into a new mesh">
+      <td class="feature"><strong>Split Mesh</strong><span>split_mesh</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Split Mesh</li></ul></td>
+      <td>Split the selected faces of the mesh into a new mesh</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/merge_split.ts:252</code></td>
+    </tr></tbody>
+      </table>
+    </section><section class="feature-section">
+      <h2>Switch Face Crease <span>1 features</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Type</th>
+            <th>UI Path</th>
+            <th>Description</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody><tr data-search="switch face crease action switch_face_crease mesh &gt; switch face crease switch in which direction the quad folds in the middle">
+      <td class="feature"><strong>Switch Face Crease</strong><span>switch_face_crease</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>Mesh &gt; Switch Face Crease</li></ul></td>
+      <td>Switch in which direction the quad folds in the middle</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh_editing.js:677</code></td>
+    </tr></tbody>
+      </table>
+    </section>
+    
+    <script>
+    const search = document.querySelector('#search');
+    const rows = [...document.querySelectorAll('tbody tr')];
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      for (const row of rows) row.hidden = q && !row.dataset.search.includes(q);
+    });
+  </script></main>
+</body>
+</html>

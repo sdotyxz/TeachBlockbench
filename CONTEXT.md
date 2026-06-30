@@ -43,3 +43,8 @@ _Avoid_: internal API, source-code feature
 **UI path**:
 The shortest visible route a learner can follow in Blockbench to reach a UI-reachable feature.
 _Avoid_: code path, implementation path
+
+**UI area**:
+The top-level visible Blockbench region or menu that begins a UI path, such as File, View, UV,
+Timeline, or Mode Switcher.
+_Avoid_: feature type, source module
