@@ -18,6 +18,9 @@ Last reviewed: 2026-06-25.
     painting on the model, brush size/softness. Use for: adding detail by raising texture resolution.
   - [Formats](https://www.blockbench.net/wiki/blockbench/formats/) — which project type to pick and
     what each exports. Use for: confirming Generic Model + export formats when we ship.
+- [Blockbench GitHub source — Knife Tool](https://github.com/JannisX11/blockbench/blob/8fe8d9d/js/modeling/mesh/knife_tool.js)
+  Official source implementation. Use for: exact Knife Tool behavior, especially the beginner cube
+  split path versus the more advanced mesh face cutting path.
 - [YouTube — "How to Make Low-Poly Models with Pixel Texture" (Blockbench)](https://www.youtube.com/watch?v=GukhptdHlPk)
   Beginner end-to-end: model a low-poly object and give it a pixel texture. Use for: a watch-along
   of the whole first-model loop.

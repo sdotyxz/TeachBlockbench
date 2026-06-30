@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Knife Tool Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Knife Tool</b></span>
+  </nav>
+
+  <p class="kicker">Reference — keep open while splitting shapes</p>
+  <h1>Knife Tool</h1>
+  <p class="dek">Use Knife when one existing surface should become smaller editable pieces. For a
+  beginner cube workflow, think: <strong>split the cube first, then color or move the pieces.</strong></p>
+
+  <div class="callout tip">
+    <span class="label">Source</span>
+    <p>Blockbench's source defines Knife Tool as an Edit-mode main tool for cutting mesh faces into
+    smaller pieces, and its cube path splits a selected cube into two cube elements.
+    <a href="https://github.com/JannisX11/blockbench/blob/8fe8d9d/js/modeling/mesh/knife_tool.js#L713">[Knife Tool source]</a>
+    <a href="https://github.com/JannisX11/blockbench/blob/8fe8d9d/lang/en.json#L1450">[English label]</a></p>
+  </div>
+
+  <h2>Two behaviors</h2>
+  <table>
+    <thead><tr><th>Selected thing</th><th>What Knife does</th><th>Beginner use</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Cube</strong></td>
+        <td>Splits the cube into two cube elements along a straight plane.</td>
+        <td>Make planks, tiles, counter panels, cut marks, layered parts.</td>
+      </tr>
+      <tr>
+        <td><strong>Mesh</strong></td>
+        <td>Adds points and lines, then rebuilds mesh faces into smaller faces when applied.</td>
+        <td>Save for later: irregular shapes, advanced face editing, mesh topology.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Cube split recipe</h2>
+  <ol class="steps">
+    <li>
+      <h3>Select one cube in Edit Mode</h3>
+      Knife is an <strong>Edit Mode</strong> tool. If many cubes are selected, pick the one you want
+      to split first so the result is predictable.
+    </li>
+    <li>
+      <h3>Choose Knife Tool</h3>
+      Use the surgical-knife icon in the main toolbar. Your cursor becomes a crosshair.
+    </li>
+    <li>
+      <h3>Click the face where the split should pass</h3>
+      The first click sets the split position. Use a large face, usually the top face, so you can see
+      the preview clearly.
+    </li>
+    <li>
+      <h3>Move until the preview plane points the right way</h3>
+      The second point chooses the split direction. Watch the thin preview sheet, not the cursor.
+    </li>
+    <li>
+      <h3>Click again to apply</h3>
+      The single cube becomes two cubes. Rename them right away if you will keep editing both.
+    </li>
+  </ol>
+
+  <h2>Modifier keys</h2>
+  <table>
+    <thead><tr><th>Key</th><th>Use</th><th>Today</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Ctrl</kbd> / <kbd>Cmd</kbd></td><td>Snap to pixels.</td><td>Use when the cut should land cleanly on the pixel grid.</td></tr>
+      <tr><td><kbd>Shift</kbd></td><td>Snap to center.</td><td>Use for a middle cut; avoid it for uneven handmade planks.</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Cancel active Knife operation.</td><td>Use if the preview plane points the wrong way.</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Apply active mesh Knife operation.</td><td>Mostly for mesh cuts; cube cuts apply on the second click.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Knife icon is missing</td><td>You are not in Edit Mode, or the toolbar is customized.</td><td>Switch to Edit Mode or use Tools / Action Control and search <strong>Knife Tool</strong>.</td></tr>
+      <tr><td>The cut goes the wrong direction</td><td>The second click chose the other axis.</td><td>Undo, repeat, and watch the preview plane before the second click.</td></tr>
+      <tr><td>Nothing obvious changed</td><td>The two new cubes are still touching and have the same color.</td><td>Open the Outliner, select each piece, rename it, and color one side slightly darker.</td></tr>
+      <tr><td>A warning says different faces cannot be cut</td><td>You are using mesh Knife across unsupported faces.</td><td>For now, use cube splitting only; mesh Knife gets its own lesson later.</td></tr>
+    </tbody>
+  </table>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0009-prep-counter-knife-tool.html">▸ Lesson 9 — Prep counter Knife Tool</a>
+    <a href="blockbench-transform-cheatsheet.html">Transform Cheat Sheet →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · Knife Tool reference · source: Blockbench GitHub</footer>
+
+</main>
+</body>
+</html>

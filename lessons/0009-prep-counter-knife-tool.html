@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 9 · Prep Counter — Knife Tool</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 9</b></span>
+  </nav>
+
+  <p class="kicker">Day 9 — Week 2: Modeling polish</p>
+  <h1><span class="num">09</span>Prep counter — Knife Tool</h1>
+  <p class="dek">Yesterday's new move was Inflate: polish the shape without adding parts. Today you
+  learn the <strong>Knife Tool</strong>: split one cube into editable pieces, then turn a plain slab
+  into a wooden prep counter made from separate planks.</p>
+
+  <div class="meta">
+    <span>⏱️ ~45–60 min</span>
+    <span>🎯 Builds on Lessons 2, 5, 6, and 8</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>wooden prep counter tile</strong>: a single countertop slab cut into planks with
+    the Knife Tool, then colored and painted so it reads like a game-ready kitchen surface.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What problem does Inflate solve?</summary>
+      <div class="answer">It adds tiny all-side shape polish or separation without manually resizing each axis.</div>
+    </details>
+    <details>
+      <summary>Why does a shared palette matter?</summary>
+      <div class="answer">It makes separate props look like one asset pack instead of unrelated practice models.</div>
+    </details>
+    <details>
+      <summary>What should you do after duplicating or splitting parts?</summary>
+      <div class="answer">Rename the pieces in the Outliner so later edits are easy to find and undo.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — split before you decorate</h2>
+  <p>The Knife Tool is an <strong>Edit Mode</strong> tool. Blockbench's own labels describe it as a
+  tool for cutting mesh faces into smaller pieces, and the tool's source also has a cube path that
+  splits one selected cube into two cube elements.
+  <a href="https://github.com/JannisX11/blockbench/blob/8fe8d9d/lang/en.json#L1450">[Blockbench label]</a>
+  <a href="https://github.com/JannisX11/blockbench/blob/8fe8d9d/js/modeling/mesh/knife_tool.js#L544">[Cube split source]</a></p>
+
+  <p>Today we use only the beginner-safe cube behavior. A cube split is useful because the pieces
+  become separate elements: you can color one plank darker, lift one plank slightly, or paint different
+  wear marks without building every board from scratch.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Knife on a <strong>mesh</strong> is more flexible but easier to mess up. If Blockbench shows
+    a message about cutting between different faces, stop and return to cube splitting. Mesh Knife
+    will be a later lesson.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/prep-counter-knife-tool-reference.svg" alt="Stylized wooden prep counter split into planks with a small chef knife on top">
+    <div class="cap"><strong>Lesson target:</strong> not a new cutting-board prop, but a reusable
+    wooden counter tile for the kitchen asset pack. The visible plank gaps are the Knife Tool win.</div>
+  </div>
+
+  <h2>Settings tutorial — show Knife hints</h2>
+  <p>Knife has no big settings panel. Its important "settings" are the modifier-key hints in the
+  Status Bar. Blockbench has a setting called <strong>Suggest Modifier Keys in Status Bar</strong>;
+  keep it enabled so the bottom bar reminds you that Knife can use <kbd>Shift</kbd> and
+  <kbd>Ctrl</kbd> / <kbd>Cmd</kbd>.
+  <a href="https://github.com/JannisX11/blockbench/blob/8fe8d9d/js/interface/setup_settings.js#L48">[setting source]</a></p>
+
+  <table>
+    <thead><tr><th>Modifier</th><th>What to use it for today</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Ctrl</kbd> / <kbd>Cmd</kbd></td><td>Snap a cut to pixel positions.</td><td>Use for clean plank boundaries.</td></tr>
+      <tr><td><kbd>Shift</kbd></td><td>Snap to center.</td><td>Use once for a middle split, then make uneven planks by eye.</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Cancel if the preview plane points the wrong way.</td><td>Use immediately instead of forcing a bad split.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/overcooked-palette.html">Course Palette</a> and the
+  <a href="../reference/blockbench-knife-tool-cheatsheet.html">Knife Tool Cheat Sheet</a> open.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>prep-counter-knife-tool</code></h3>
+      Save early. This is a modular surface piece you could reuse under bowls, plates, chopping
+      boards, or a chef character later.
+    </li>
+    <li>
+      <h3>Build one plain slab</h3>
+      Add one cube. Suggested size: <code>X 8</code>, <code>Y 0.45</code>, <code>Z 5</code>.
+      Fill it with <strong>Wood</strong> from the course palette and rename it
+      <code>counter_slab</code>.
+    </li>
+    <li>
+      <h3>Select the slab and switch to Knife Tool</h3>
+      Stay in <strong>Edit Mode</strong>. Select only <code>counter_slab</code>, then choose the
+      surgical-knife icon in the main toolbar. If you cannot find it, open Action Control and search
+      <strong>Knife Tool</strong>.
+    </li>
+    <li>
+      <h3>Make the first split</h3>
+      On the top face, click where the first plank boundary should pass. Move the mouse until the
+      thin preview plane cuts across the slab in the direction you want, then click again. If the
+      preview points the wrong way, press <kbd>Esc</kbd> and repeat.
+    </li>
+    <li>
+      <h3>Rename the two pieces</h3>
+      In the Outliner, you now have two cube pieces. Rename them <code>plank_left</code> and
+      <code>plank_rest</code>. If they still look like one slab, that is normal: they are touching
+      and still have the same color.
+    </li>
+    <li>
+      <h3>Split the larger piece again</h3>
+      Select <code>plank_rest</code>. Use Knife Tool again to split it into two more pieces. Rename
+      them <code>plank_mid</code> and <code>plank_right</code>.
+    </li>
+    <li>
+      <h3>Make one uneven extra plank</h3>
+      Select the widest plank and split it one more time. Keep this cut slightly off-center. Perfectly
+      equal boards look artificial; slightly uneven boards feel handmade and more Overcooked-style.
+    </li>
+    <li>
+      <h3>Color the planks separately</h3>
+      Use the palette: keep most planks <strong>Wood</strong>, make one slightly darker with
+      <strong>Dark Wood</strong>, and use a small amount of <strong>Cream</strong> for highlight marks.
+      The point is to prove the split worked.
+    </li>
+    <li>
+      <h3>Add tiny height variation</h3>
+      Select one plank and move it up by only <code>Y 0.03</code> to <code>Y 0.06</code>. Do not make
+      a staircase. You only want the edge to catch light in the render.
+    </li>
+    <li>
+      <h3>Paint plank wear</h3>
+      In Paint Mode, use a size-1 brush. Add two or three short darker lines along each plank and a
+      few cream highlight pixels near the front edge. Stop early. Thumbnail readability matters more
+      than noise.
+    </li>
+    <li>
+      <h3>Optional: add one tiny prop on top</h3>
+      Reuse a simple cube knife handle/blade from Lesson 2 or add a small tomato-colored rectangle.
+      Keep it simple. Today's main skill is the countertop split, not the object on top.
+    </li>
+    <li>
+      <h3>Render the counter tile</h3>
+      Capture a low 3/4 view where the plank boundaries are visible. The render should say: "this is
+      one reusable kitchen surface piece."
+    </li>
+    <li>
+      <h3>Post your Day-9 update</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 9.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Good Knife habit</span>
+    <p>After every split, look at the Outliner. If a single cube became two cubes, the tool worked.
+    Rename immediately before you forget which side is which.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 9 of learning Blockbench from zero. Today I learned the Knife Tool by turning one plain cube slab into separate wooden planks for a kitchen prep counter. The useful part: after a split, each plank becomes its own editable piece, so I can color, lift, and paint boards separately without rebuilding the whole surface.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第9天】零基础学 Blockbench 做游戏素材 🎮
+今天学 Knife Tool（刀具工具），把一个普通的台面方块切成几块木板。
+这个工具最有用的地方是：切开以后，每块木板都变成独立的元素，可以单独改颜色、微调高度、画磨损细节。
+厨房素材包今天多了一个可复用的木质备餐台面。
+#Blockbench #3D建模 #低多边形 #游戏美术 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does Knife Tool do for a selected cube?</summary>
+      <div class="answer">It splits the cube into two cube elements along a straight preview plane.</div>
+    </details>
+    <details>
+      <summary>Why rename pieces right after a cut?</summary>
+      <div class="answer">The two pieces can still look identical, so names keep the next edit predictable.</div>
+    </details>
+    <details>
+      <summary>What should you watch before the second Knife click?</summary>
+      <div class="answer">Watch the preview plane and confirm it cuts in the direction you actually want.</div>
+    </details>
+    <details>
+      <summary>Why not use mesh Knife today?</summary>
+      <div class="answer">Mesh Knife is more flexible but has more failure cases; cube splitting gives the safe first win.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~5 min)</span>
+    <p>Skim the <a href="../reference/blockbench-knife-tool-cheatsheet.html">Knife Tool Cheat Sheet</a>,
+    then open the source links at the top if you want to see where the cube-split and mesh-cut behaviors
+    come from. For broader context, the official Blockbench overview explains Edit Mode and the main
+    toolbar. <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki]</a></p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If your cut goes the wrong way, tell me which face you clicked first and what the preview plane
+    looked like. Bring back your Day-9 render and I can help prepare the post.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0008-bread-basket-inflate.html">◂ Lesson 8 — Inflate &amp; Deflate</a>
+    <a href="../reference/blockbench-knife-tool-cheatsheet.html">📄 Knife Tool Cheat Sheet</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 9 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Low-poly prep counter made from Knife Tool plank splits</title>
+  <desc id="desc">A stylized wooden kitchen prep counter split into separate planks with small color changes and grooves.</desc>
+  <rect width="960" height="540" fill="#fbf7f0"/>
+  <g transform="translate(140 88)">
+    <polygon points="0,112 560,0 735,104 158,234" fill="#d6a15d"/>
+    <polygon points="0,112 158,234 158,318 0,190" fill="#7a4e24"/>
+    <polygon points="158,234 735,104 735,188 158,318" fill="#9b632d"/>
+    <g stroke="#7a4e24" stroke-width="8" stroke-linecap="round" opacity=".78">
+      <line x1="142" y1="84" x2="296" y2="174"/>
+      <line x1="282" y1="56" x2="438" y2="141"/>
+      <line x1="421" y1="28" x2="579" y2="113"/>
+    </g>
+    <g opacity=".85">
+      <polygon points="12,113 142,87 294,174 159,204" fill="#c68b45"/>
+      <polygon points="154,84 282,58 437,142 305,172" fill="#d0924e"/>
+      <polygon points="296,56 421,30 578,114 448,140" fill="#c68b45"/>
+      <polygon points="434,28 559,3 724,101 590,112" fill="#d89b55"/>
+    </g>
+    <g stroke="#f3e6c4" stroke-width="5" stroke-linecap="round" opacity=".72">
+      <line x1="69" y1="125" x2="153" y2="109"/>
+      <line x1="211" y1="97" x2="297" y2="80"/>
+      <line x1="353" y1="69" x2="438" y2="52"/>
+      <line x1="499" y1="42" x2="573" y2="27"/>
+    </g>
+    <g transform="translate(470 74)">
+      <ellipse cx="91" cy="90" rx="86" ry="36" fill="#7a4e24" opacity=".24"/>
+      <rect x="21" y="31" width="126" height="48" rx="10" fill="#d94a36"/>
+      <rect x="134" y="16" width="28" height="72" rx="7" fill="#5f3b1d"/>
+      <rect x="8" y="36" width="28" height="52" rx="7" fill="#5f3b1d"/>
+      <polygon points="42,18 117,18 147,31 21,31" fill="#efc39b"/>
+      <path d="M45 21 L89 7 L118 18 Z" fill="#f3e6c4"/>
+    </g>
+  </g>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif" fill="#2c2a26">
+    <text x="140" y="448" font-size="25" font-weight="700">Lesson target: one slab split into readable planks</text>
+    <text x="140" y="484" font-size="18" fill="#5b574f">Use the Knife Tool for the geometry splits, then color and texture each plank.</text>
+  </g>
+</svg>
