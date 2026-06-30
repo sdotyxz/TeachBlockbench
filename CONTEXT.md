@@ -34,3 +34,12 @@ _Avoid_: total software expertise, source-code mastery
 A small section inside each lesson that explains only the Blockbench settings needed for that lesson's
 tool or workflow, including the recommended beginner value and when to change it.
 _Avoid_: full settings reference, preference dump
+
+**UI-reachable feature**:
+A Blockbench capability that a learner can open or trigger through the visible interface, such as a
+menu item, toolbar tool, panel, mode, format picker, or settings control.
+_Avoid_: internal API, source-code feature
+
+**UI path**:
+The shortest visible route a learner can follow in Blockbench to reach a UI-reachable feature.
+_Avoid_: code path, implementation path
