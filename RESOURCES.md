@@ -1,7 +1,7 @@
 # Overcooked-style Blockbench Assets — Resources
 
 Curated, high-trust sources. Lesson knowledge is drawn from here, not from memory.
-Last reviewed: 2026-06-25.
+Last reviewed: 2026-06-30.
 
 ## Knowledge
 
@@ -25,6 +25,11 @@ Last reviewed: 2026-06-25.
   [Texture template seam logic](https://github.com/JannisX11/blockbench/blob/master/js/texturing/texture_generator.js)
   Official source implementation. Use for: exact Seam Tool behavior: mesh-only Edit-mode tool,
   Auto / Join / Divide modes, and how seams influence generated texture templates.
+- [Blockbench GitHub source — Selection Mode](https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh_editing.js) ·
+  [Cluster viewport selection logic](https://github.com/JannisX11/blockbench/blob/master/js/preview/preview.js) ·
+  [Merge Meshes source](https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/merge_split.ts)
+  Official source implementation. Use for: mesh Selection Mode options, especially Cluster selecting
+  connected face islands, and the beginner workflow of merging separate meshes before using Cluster.
 - [YouTube — "How to Make Low-Poly Models with Pixel Texture" (Blockbench)](https://www.youtube.com/watch?v=GukhptdHlPk)
   Beginner end-to-end: model a low-poly object and give it a pixel texture. Use for: a watch-along
   of the whole first-model loop.

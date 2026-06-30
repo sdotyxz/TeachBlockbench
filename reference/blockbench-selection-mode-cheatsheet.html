@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Selection Mode Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Selection Mode</b></span>
+  </nav>
+
+  <p class="kicker">Reference — keep open while editing meshes</p>
+  <h1>Selection Mode</h1>
+  <p class="dek">Selection Mode changes what a click in the viewport grabs. For meshes, it lets you
+  work at object, connected-cluster, face, edge, or vertex level.</p>
+
+  <div class="callout tip">
+    <span class="label">Source</span>
+    <p>Blockbench's source lists Selection Mode options as <strong>Object</strong>,
+    <strong>Cluster</strong>, <strong>Face</strong>, <strong>Edge</strong>, and
+    <strong>Vertex</strong>. Its click handling for <strong>Cluster</strong> starts from the clicked
+    face and recursively selects faces that share vertices with it.
+    <a href="https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh_editing.js">[Selection Mode source]</a>
+    <a href="https://github.com/JannisX11/blockbench/blob/master/js/preview/preview.js">[Cluster click source]</a></p>
+  </div>
+
+  <h2>The five modes</h2>
+  <table>
+    <thead><tr><th>Mode</th><th>What a click selects</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Object</strong></td><td>The whole cube, mesh, or element.</td><td>Normal beginner editing and Outliner work.</td></tr>
+      <tr><td><strong>Cluster</strong></td><td>All connected faces inside one mesh chunk.</td><td>Moving, resizing, rotating, or splitting one disconnected part of a merged mesh.</td></tr>
+      <tr><td><strong>Face</strong></td><td>One surface at a time.</td><td>UV placement, labels, and local texture fixes.</td></tr>
+      <tr><td><strong>Edge</strong></td><td>One mesh edge at a time.</td><td>Seam Tool, Loop Cut, and edge-level fixes.</td></tr>
+      <tr><td><strong>Vertex</strong></td><td>Individual corner points.</td><td>Advanced mesh shaping; use carefully.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cluster rule</h2>
+  <div class="callout win">
+    <span class="label">Plain meaning</span>
+    <p><strong>Cluster = connected faces.</strong> If faces share vertices, Cluster treats them as
+    one selectable island. If two shapes live in the same mesh but do not share vertices, Cluster can
+    select one shape without selecting the other.</p>
+  </div>
+
+  <h2>Beginner recipe</h2>
+  <ol class="steps">
+    <li>
+      <h3>Use meshes</h3>
+      Cluster is useful when you are editing mesh faces. If everything is still simple cubes, Object
+      mode is usually enough.
+    </li>
+    <li>
+      <h3>Create separate mesh pieces</h3>
+      Add two or more mesh primitives, such as spheres or cylinders, and position them near each
+      other.
+    </li>
+    <li>
+      <h3>Merge them only when needed</h3>
+      Use <strong>Mesh → Merge Meshes</strong> to keep them in one mesh element while preserving
+      disconnected face islands.
+    </li>
+    <li>
+      <h3>Switch to Cluster</h3>
+      With the merged mesh selected in Edit Mode, change <strong>Selection Mode</strong> to
+      <strong>Cluster</strong>.
+    </li>
+    <li>
+      <h3>Click one face</h3>
+      The connected chunk should highlight. Move, resize, rotate, or split it as one part.
+    </li>
+  </ol>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Cluster selects the whole object</td><td>All faces are connected, like one sphere or cylinder.</td><td>This is correct. Use Cluster on a mesh with disconnected chunks.</td></tr>
+      <tr><td>Cluster grabs two chunks</td><td>The chunks share at least one vertex.</td><td>Undo any accidental vertex merge, or separate the geometry before merging meshes.</td></tr>
+      <tr><td>Selection Mode is missing</td><td>No mesh is selected, or you are not in Edit Mode.</td><td>Select a mesh element, switch to Edit Mode, then look at the toolbar.</td></tr>
+      <tr><td>You can no longer select the whole mesh</td><td>You stayed in Cluster, Face, Edge, or Vertex mode.</td><td>Switch back to Object before normal whole-element edits.</td></tr>
+    </tbody>
+  </table>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0011-tomato-trio-cluster-selection.html">▸ Lesson 11 — Tomato Trio</a>
+    <a href="blockbench-seam-tool-cheatsheet.html">Seam Tool Cheat Sheet →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · Selection Mode reference · source: Blockbench GitHub</footer>
+
+</main>
+</body>
+</html>

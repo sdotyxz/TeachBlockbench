@@ -104,3 +104,10 @@ Working notes + learner preferences. Refer back before designing each lesson.
   hidden back edge as Divide, generates a texture template, then paints a front label. Adds
   `reference/blockbench-seam-tool-cheatsheet.html` and `assets/images/sauce-bottle-seam-tool-reference.svg`.
   *(authored 2026-06-30; completion not yet reported)*
+- **0011** — Tomato trio: Selection Mode, especially Cluster. New idea: Selection Mode changes what
+  viewport clicks select inside meshes; Cluster selects the connected face island reached from the
+  clicked face. Builds three mesh tomato spheres, merges them into one mesh, then uses Cluster to
+  nudge one tomato without selecting faces one by one. Adds
+  `reference/blockbench-selection-mode-cheatsheet.html` and
+  `assets/images/tomato-trio-cluster-reference.svg`. *(authored 2026-06-30; completion not yet
+  reported)*

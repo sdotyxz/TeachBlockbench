@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 11 · Tomato Trio — Cluster Selection</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 11</b></span>
+  </nav>
+
+  <p class="kicker">Day 11 — Week 2: Mesh editing control</p>
+  <h1><span class="num">11</span>Tomato trio — Selection Mode: Cluster</h1>
+  <p class="dek">You have used mesh tools for seams and a few selected faces. Today you learn
+  <strong>Selection Mode</strong>, especially <strong>Cluster</strong>: one click selects a connected
+  chunk of mesh faces so you can edit that chunk without selecting every face by hand.</p>
+
+  <div class="meta">
+    <span>⏱️ ~40–60 min</span>
+    <span>🎯 Builds on Lessons 5, 7, and 10</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>tomato trio render</strong>: three low-poly tomatoes merged into one mesh, then
+    edited with <strong>Cluster</strong> so one tomato can be selected and nudged as a connected
+    piece.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is a mesh useful for?</summary>
+      <div class="answer">A mesh gives finer control over faces, edges, and vertices than ordinary cube-only modeling.</div>
+    </details>
+    <details>
+      <summary>What did Seam Tool select?</summary>
+      <div class="answer">It selected mesh edges so you could mark UV seams as Auto, Join, or Divide.</div>
+    </details>
+    <details>
+      <summary>Why keep the same palette?</summary>
+      <div class="answer">Shared colors make daily props look like one cohesive kitchen asset pack.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — Cluster selects connected faces</h2>
+  <p><strong>Selection Mode</strong> changes what your viewport click selects. Blockbench lists five
+  mesh selection modes: Object, Cluster, Face, Edge, and Vertex. In Cluster mode, Blockbench starts
+  from the face you click and expands through faces connected by shared vertices.
+  <a href="https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh_editing.js">[Selection Mode source]</a>
+  <a href="https://github.com/JannisX11/blockbench/blob/master/js/preview/preview.js">[Cluster click source]</a></p>
+
+  <p>Plain version: if a tomato is one connected island of faces, <strong>Cluster</strong> grabs the
+  whole tomato. If three tomatoes are merged into one mesh but do not share vertices, Cluster can
+  still grab only the tomato you clicked.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Cluster is not an Outliner group. It does not mean "select everything named tomato." It means
+    <strong>select the connected face island inside the current mesh</strong>.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/tomato-trio-cluster-reference.svg" alt="Three low-poly tomatoes merged into one mesh, with the left tomato highlighted as a selected cluster">
+    <div class="cap"><strong>Lesson target:</strong> one mesh element, three disconnected tomato
+    clusters. The blue dashed outline shows the connected cluster selected by one click.</div>
+  </div>
+
+  <h2>Settings tutorial — Selection Mode</h2>
+  <p>The <strong>Selection Mode</strong> control appears in Edit Mode when a mesh is selected. It
+  decides the selection level before you click.</p>
+
+  <table>
+    <thead><tr><th>Mode</th><th>Beginner meaning</th><th>Use today?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Object</strong></td><td>Select the whole mesh element.</td><td>Use while positioning separate tomatoes.</td></tr>
+      <tr><td><strong>Cluster</strong></td><td>Select one connected island of mesh faces.</td><td><strong>Main skill today.</strong></td></tr>
+      <tr><td><strong>Face</strong></td><td>Select one surface.</td><td>Use only for tiny local fixes.</td></tr>
+      <tr><td><strong>Edge</strong></td><td>Select mesh edges.</td><td>For Seam Tool and later Loop Cut work.</td></tr>
+      <tr><td><strong>Vertex</strong></td><td>Select corner points.</td><td>Skip today unless fixing a mistake.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">main fruit</span><span class="hex">#D94A36</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C2452F"></div><div class="body"><span class="name">Tomato Shadow</span><span class="role">one darker cluster</span><span class="hex">#C2452F</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#3F8F5B"></div><div class="body"><span class="name">Herb Green</span><span class="role">stems</span><span class="hex">#3F8F5B</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">optional tray</span><span class="hex">#7A4E24</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/blockbench-selection-mode-cheatsheet.html">Selection Mode Cheat
+  Sheet</a> and the <a href="../reference/overcooked-palette.html">Course Palette</a> open.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>tomato-trio-cluster-selection</code></h3>
+      Save early. This is a tiny produce prop you can later drop onto a prep counter or crate.
+    </li>
+    <li>
+      <h3>Add the first tomato as a mesh sphere</h3>
+      In the Outliner, choose <strong>Add Element → Add Mesh</strong>. Pick
+      <strong>Shape: Sphere</strong>. Suggested values: <code>Diameter 2</code>,
+      <code>Sides 8</code> or <code>12</code>. Name it <code>tomato_left_mesh</code> and move it to
+      <code>X -2.2</code>.
+    </li>
+    <li>
+      <h3>Add two more mesh spheres</h3>
+      Add or duplicate two more tomato spheres. Name them <code>tomato_mid_mesh</code> and
+      <code>tomato_right_mesh</code>. Place them close together but leave them as separate meshes for
+      now.
+    </li>
+    <li>
+      <h3>Color the tomatoes</h3>
+      Create or reuse a texture. Fill most tomato meshes with <strong>Tomato</strong>. Make one
+      tomato slightly darker with <strong>Tomato Shadow</strong> before merging, so the final pile has
+      a little variation. If the texture dialog asks for a size, <code>32 × 32</code> is enough for
+      this small prop.
+    </li>
+    <li>
+      <h3>Add simple stems</h3>
+      Add three tiny green cubes or cones on top. Keep stems as normal elements; today's Cluster
+      practice is on the tomato mesh faces.
+    </li>
+    <li>
+      <h3>Select the three tomato mesh objects</h3>
+      In the Outliner, select <code>tomato_left_mesh</code>, <code>tomato_mid_mesh</code>, and
+      <code>tomato_right_mesh</code>. Do not select the stems.
+    </li>
+    <li>
+      <h3>Merge the tomato meshes</h3>
+      Use <strong>Mesh → Merge Meshes</strong>. Blockbench's source describes this action as merging
+      multiple meshes into one mesh. Rename the result <code>tomato_trio_mesh</code>.
+      <a href="https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/merge_split.ts">[Merge Meshes source]</a>
+    </li>
+    <li>
+      <h3>Switch Selection Mode to Cluster</h3>
+      With <code>tomato_trio_mesh</code> selected in <strong>Edit Mode</strong>, find
+      <strong>Selection Mode</strong> in the toolbar and choose <strong>Cluster</strong>.
+    </li>
+    <li>
+      <h3>Click one face on the left tomato</h3>
+      The whole left tomato should highlight, but the middle and right tomatoes should not. That is
+      the core win: one click selected one connected face cluster.
+    </li>
+    <li>
+      <h3>Nudge the selected cluster</h3>
+      Use Move to lift the selected tomato by about <code>Y 0.15</code> or slide it by
+      <code>X -0.2</code>. Keep the move tiny. You are arranging a natural pile, not separating the
+      tomato from the prop.
+    </li>
+    <li>
+      <h3>Try one more tiny transform</h3>
+      With the same cluster selected, use Resize or Rotate very slightly. If the tomato starts looking
+      broken, undo once. The goal is control: you should feel that Cluster grabs the whole connected
+      chunk, not one face.
+    </li>
+    <li>
+      <h3>Compare Cluster with Face</h3>
+      Switch Selection Mode to <strong>Face</strong> and click one tomato face. Notice the difference:
+      Face is precise but slow; Cluster is fast when the chunk is already connected.
+    </li>
+    <li>
+      <h3>Return to Object before normal edits</h3>
+      Switch Selection Mode back to <strong>Object</strong>. This prevents confusion when you later
+      expect a click to select the whole mesh.
+    </li>
+    <li>
+      <h3>Render the produce prop</h3>
+      Capture a low 3/4 view. Put the tomatoes on the prep counter from Lesson 9 if you want a
+      stronger kitchen-pack screenshot.
+    </li>
+    <li>
+      <h3>Post your Day-11 update</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 11.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Cluster habit</span>
+    <p>Use Cluster when you think, "I want this whole connected mesh piece, but not the entire mesh
+    object." Switch back to Object when you are done.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 11 of learning Blockbench from zero. Today I learned Selection Mode, especially Cluster. I built three low-poly tomatoes, merged them into one mesh, then used Cluster to select one connected tomato with a single click. This makes mesh editing feel much less fiddly than selecting every face by hand.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第11天】零基础学 Blockbench 做游戏素材 🎮
+今天学习 Selection Mode（选择模式），重点是 Cluster。
+我做了三个低多边形番茄，把它们合并成一个 mesh，然后用 Cluster 一次点选其中一个连在一起的番茄区域。
+这个功能很适合编辑 mesh 里的某一整块，不用一面一面慢慢选。
+厨房素材包今天多了一个小食材道具。
+#Blockbench #3D建模 #低多边形 #游戏美术 #独立游戏 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does Selection Mode change?</summary>
+      <div class="answer">It changes what a viewport click selects: object, cluster, face, edge, or vertex.</div>
+    </details>
+    <details>
+      <summary>What does Cluster select?</summary>
+      <div class="answer">Cluster selects the connected island of mesh faces that shares vertices with the clicked face.</div>
+    </details>
+    <details>
+      <summary>Why merge the tomato meshes first?</summary>
+      <div class="answer">Merging creates one mesh element with separate connected chunks, so Cluster has something useful to isolate.</div>
+    </details>
+    <details>
+      <summary>What should you switch back to after Cluster work?</summary>
+      <div class="answer">Switch back to Object so normal clicks select whole elements again.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~5 min)</span>
+    <p>Skim the <a href="../reference/blockbench-selection-mode-cheatsheet.html">Selection Mode Cheat
+    Sheet</a>. The source-backed point to remember: <strong>Cluster expands from the clicked face
+    through connected faces that share vertices</strong>.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If Cluster selects too much, too little, or the Selection Mode control is missing, tell me
+    whether the tomatoes are merged into one mesh and what mode is currently selected.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0010-sauce-bottle-seam-tool.html">◂ Lesson 10 — Seam Tool</a>
+    <a href="../reference/blockbench-selection-mode-cheatsheet.html">📄 Selection Mode Cheat Sheet</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 11 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>
