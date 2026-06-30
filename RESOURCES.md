@@ -21,6 +21,10 @@ Last reviewed: 2026-06-25.
 - [Blockbench GitHub source — Knife Tool](https://github.com/JannisX11/blockbench/blob/8fe8d9d/js/modeling/mesh/knife_tool.js)
   Official source implementation. Use for: exact Knife Tool behavior, especially the beginner cube
   split path versus the more advanced mesh face cutting path.
+- [Blockbench GitHub source — Seam Tool](https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/seam_tool.ts) ·
+  [Texture template seam logic](https://github.com/JannisX11/blockbench/blob/master/js/texturing/texture_generator.js)
+  Official source implementation. Use for: exact Seam Tool behavior: mesh-only Edit-mode tool,
+  Auto / Join / Divide modes, and how seams influence generated texture templates.
 - [YouTube — "How to Make Low-Poly Models with Pixel Texture" (Blockbench)](https://www.youtube.com/watch?v=GukhptdHlPk)
   Beginner end-to-end: model a low-poly object and give it a pixel texture. Use for: a watch-along
   of the whole first-model loop.

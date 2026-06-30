@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Seam Tool Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Seam Tool</b></span>
+  </nav>
+
+  <p class="kicker">Reference — keep open while unwrapping meshes</p>
+  <h1>Seam Tool</h1>
+  <p class="dek">Use Seam Tool when a <strong>mesh</strong> needs a cleaner generated texture layout.
+  Think: <strong>choose where the texture is allowed to cut or stay joined.</strong></p>
+
+  <div class="callout tip">
+    <span class="label">Source</span>
+    <p>Blockbench's source defines Seam Tool as an Edit-mode tool for UV seams on mesh edges, with
+    three seam modes: <strong>Auto</strong>, <strong>Join</strong>, and <strong>Divide</strong>.
+    The texture generator treats <strong>Divide</strong> as a hard stop between faces, while
+    <strong>Join</strong> overrides the usual angle-based split.
+    <a href="https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/seam_tool.ts">[Seam Tool source]</a>
+    <a href="https://github.com/JannisX11/blockbench/blob/master/js/texturing/texture_generator.js">[Template generator source]</a></p>
+  </div>
+
+  <h2>The three modes</h2>
+  <table>
+    <thead><tr><th>Mode</th><th>Meaning</th><th>Beginner use</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Auto</strong></td>
+        <td>Let Blockbench decide whether adjacent mesh faces should stay in the same UV island.</td>
+        <td>Default. Use when you do not care where the texture layout splits.</td>
+      </tr>
+      <tr>
+        <td><strong>Divide</strong></td>
+        <td>Force a cut between adjacent faces when generating a texture template.</td>
+        <td>Put the cut on a hidden back or bottom edge.</td>
+      </tr>
+      <tr>
+        <td><strong>Join</strong></td>
+        <td>Force adjacent faces to remain connected when generating a texture template.</td>
+        <td>Use only when the generated strip breaks into too many islands.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Beginner recipe</h2>
+  <ol class="steps">
+    <li>
+      <h3>Use a mesh, not a cube</h3>
+      Seam Tool is available for mesh elements. Add a mesh from the Outliner's add menu, or convert a
+      cube to mesh when you specifically need mesh UV control.
+    </li>
+    <li>
+      <h3>Choose Seam Tool in Edit Mode</h3>
+      The tool switches the mesh into edge selection and solid view so the edges are easier to read.
+    </li>
+    <li>
+      <h3>Select the edge where a cut should hide</h3>
+      For bottles, cups, jars, and rounded props, choose a vertical back edge. For boxes, choose a
+      bottom or rear edge.
+    </li>
+    <li>
+      <h3>Set Select UV Seam to Divide</h3>
+      The edge should tint red or orange. That is the "cut here" instruction for the next texture
+      template generation.
+    </li>
+    <li>
+      <h3>Generate or append a texture template</h3>
+      Seams influence the template layout. They do not repaint an existing texture by themselves.
+    </li>
+  </ol>
+
+  <h2>Color cues</h2>
+  <table>
+    <thead><tr><th>Edge color</th><th>Meaning</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Red / orange</td><td>Divide seam</td><td>Good for hidden cuts.</td></tr>
+      <tr><td>Green</td><td>Join seam</td><td>Good for keeping side faces as one strip.</td></tr>
+      <tr><td>Neutral grid color</td><td>Auto seam</td><td>Blockbench decides.</td></tr>
+      <tr><td>White-ish selected edge</td><td>Selected edge</td><td>Set the seam mode from the toolbar.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Seam Tool is missing</td><td>No mesh exists, or you are not in Edit Mode.</td><td>Add Mesh or Convert to Mesh, then return to Edit Mode.</td></tr>
+      <tr><td>The seam changed color but the texture did not change</td><td>Seams affect generated templates, not already-painted pixels.</td><td>Create a new Texture Template or append the mesh to a template.</td></tr>
+      <tr><td>The label appears on the back</td><td>The painted area is on the wrong part of the UV island.</td><td>Move the label pixels on the texture or move the UV island in the UV panel.</td></tr>
+      <tr><td>The side band is split into many pieces</td><td>Auto decided to divide too many angled faces.</td><td>Set important vertical edges to Join, leaving one hidden Divide seam.</td></tr>
+    </tbody>
+  </table>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0010-sauce-bottle-seam-tool.html">▸ Lesson 10 — Sauce Bottle Seam Tool</a>
+    <a href="blockbench-knife-tool-cheatsheet.html">Knife Tool Cheat Sheet →</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · Seam Tool reference · source: Blockbench GitHub</footer>
+
+</main>
+</body>
+</html>

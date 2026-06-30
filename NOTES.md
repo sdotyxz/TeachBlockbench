@@ -99,3 +99,8 @@ Working notes + learner preferences. Refer back before designing each lesson.
   cube-split path only; mesh-face Knife cutting is explicitly deferred. Adds
   `reference/blockbench-knife-tool-cheatsheet.html` and a simple prep-counter target image. *(authored
   2026-06-30; completion not yet reported)*
+- **0010** — Sauce bottle: Seam Tool. New idea: seams are mesh-edge instructions for generated UV
+  templates, not painted marks. Builds a small sauce bottle using Add Mesh → Cylinder, marks one
+  hidden back edge as Divide, generates a texture template, then paints a front label. Adds
+  `reference/blockbench-seam-tool-cheatsheet.html` and `assets/images/sauce-bottle-seam-tool-reference.svg`.
+  *(authored 2026-06-30; completion not yet reported)*

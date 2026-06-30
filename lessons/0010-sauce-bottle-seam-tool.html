@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 10 · Sauce Bottle — Seam Tool</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 10</b></span>
+  </nav>
+
+  <p class="kicker">Day 10 — Week 2: UV control</p>
+  <h1><span class="num">10</span>Sauce bottle — Seam Tool</h1>
+  <p class="dek">You have already moved a face's UV rectangle and used Knife to split shapes. Today
+  you learn the <strong>Seam Tool</strong>: tell Blockbench where a mesh texture should cut before
+  generating the texture template.</p>
+
+  <div class="meta">
+    <span>⏱️ ~45–60 min</span>
+    <span>🎯 Builds on Lessons 5, 7, and 9</span>
+    <span>🛠️ Browser Blockbench is fine</span>
+    <span>📤 Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>little sauce bottle render</strong>: a low-poly mesh bottle with a label on the
+    front and the UV cut hidden on the back. The new skill is choosing <strong>where the generated
+    texture layout splits</strong>.</p>
+  </div>
+
+  <h2>Warm up — 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does UV mapping change?</summary>
+      <div class="answer">It changes which part of a texture image appears on a face. Painting changes the image itself.</div>
+    </details>
+    <details>
+      <summary>What did Knife Tool do for the prep counter?</summary>
+      <div class="answer">It split one selected cube into separate editable pieces that could be colored and adjusted independently.</div>
+    </details>
+    <details>
+      <summary>Why do we keep using the same palette?</summary>
+      <div class="answer">Shared colors make separate props read as one sellable kitchen asset pack.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea — a seam is a planned texture cut</h2>
+  <p>A <strong>seam</strong> is not a painted line on the model. It is an instruction for UV
+  unwrapping: this edge may become a cut in the flat texture layout. For a bottle, you usually hide
+  that cut on the back so the label can sit cleanly on the front.</p>
+
+  <p>Blockbench's source describes Seam Tool as a tool for defining UV seams on mesh edges. The
+  official overview also separates Edit Mode UV setup from Paint Mode texture editing, so today the
+  order is: <strong>mesh first, seam second, texture template third, paint last</strong>.
+  <a href="https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/seam_tool.ts">[Seam Tool source]</a>
+  <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">[Blockbench Wiki — Edit/Paint modes]</a></p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Seam Tool is for <strong>meshes</strong>, not ordinary cube elements. Today we use
+    <strong>Add Mesh → Cylinder</strong> for the bottle body so the tool has mesh edges to work on.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/sauce-bottle-seam-tool-reference.svg" alt="Low-poly sauce bottle with hidden back seam and generated UV label strip">
+    <div class="cap"><strong>Lesson target:</strong> one sauce bottle. The red/orange back edge is
+    the Divide seam. The front label is painted after the texture template is generated.</div>
+  </div>
+
+  <h2>Settings tutorial — Select UV Seam</h2>
+  <p>When Seam Tool is active, the important toolbar control is <strong>Select UV Seam</strong>.
+  Blockbench exposes three modes. Use only one <strong>Divide</strong> seam today unless the generated
+  side strip breaks apart.</p>
+
+  <table>
+    <thead><tr><th>Mode</th><th>What it means</th><th>Beginner-safe use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Auto</strong></td><td>Blockbench decides.</td><td>Default for most edges.</td></tr>
+      <tr><td><strong>Divide</strong></td><td>Force a UV cut there.</td><td>Use on one hidden back edge.</td></tr>
+      <tr><td><strong>Join</strong></td><td>Force faces to stay connected.</td><td>Use only if the side strip breaks into too many islands.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">sauce body</span><span class="hex">#D94A36</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">front label</span><span class="hex">#F3E6C4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">cap highlight</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">cap shadow</span><span class="hex">#7A4E24</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <p>Keep the <a href="../reference/blockbench-seam-tool-cheatsheet.html">Seam Tool Cheat Sheet</a>
+  and the <a href="../reference/overcooked-palette.html">Course Palette</a> open.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model → name it <code>sauce-bottle-seam-tool</code></h3>
+      Save early. This is a small condiment prop for the kitchen pack, not a UV science project.
+    </li>
+    <li>
+      <h3>Add the bottle body as a mesh cylinder</h3>
+      In the Outliner, choose <strong>Add Element → Add Mesh</strong>. Pick
+      <strong>Shape: Cylinder</strong>. Suggested values: <code>Sides 12</code>,
+      <code>Diameter 2.4</code>, <code>Height 5</code>. Name it <code>bottle_body_mesh</code>.
+    </li>
+    <li>
+      <h3>Add a chunky cap</h3>
+      Add a small cube or another short mesh cylinder above the body. Fill it with
+      <strong>Dark Wood</strong> or <strong>Wood</strong>. Name it <code>cap</code>. The cap is not
+      today's seam practice; it only makes the render read as a bottle.
+    </li>
+    <li>
+      <h3>Pick the hidden back edge</h3>
+      Orbit to the back of the bottle body. Select <code>bottle_body_mesh</code>, choose
+      <strong>Seam Tool</strong>, and click one vertical edge on the back. Seam Tool should put you
+      into edge selection and solid view.
+    </li>
+    <li>
+      <h3>Set that edge to Divide</h3>
+      In the Seam Tool toolbar, set <strong>Select UV Seam → Divide</strong>. The selected edge
+      should tint red or orange. That means "cut the texture layout here."
+    </li>
+    <li>
+      <h3>Leave the other edges on Auto</h3>
+      Do not mark every edge. One hidden cut is easier to reason about. If you accidentally mark the
+      wrong edge, select it again and set <strong>Select UV Seam → Auto</strong>.
+    </li>
+    <li>
+      <h3>Create a texture template</h3>
+      In the Textures panel, choose <strong>Create Texture</strong>, then use
+      <strong>Texture Template</strong>. Keep <strong>Rearrange UVs</strong> enabled if the dialog
+      offers it. Use <code>32 × 32</code> or <code>64 × 64</code>; choose <code>64 × 64</code> if the
+      label text feels cramped.
+    </li>
+    <li>
+      <h3>Find the bottle side strip</h3>
+      The template should include a long strip or a set of connected side panels for the cylinder.
+      That strip is where the bottle body texture lives. The hidden Divide seam is the end of the
+      strip, not the place for the front label.
+    </li>
+    <li>
+      <h3>Paint the front label</h3>
+      Switch to Paint Mode. Paint the body <strong>Tomato</strong>. On the middle of the side strip,
+      paint a cream label rectangle and add simple red marks like <code>SAUCE</code>, a line, or one
+      tomato dot. Keep it readable at thumbnail size.
+    </li>
+    <li>
+      <h3>Check the seam placement</h3>
+      Orbit the model. The label should be visible on the front, and any awkward texture break should
+      sit on the back. If the label lands near the back cut, move the label pixels along the strip or
+      use the UV panel from Lesson 7 to reposition the island.
+    </li>
+    <li>
+      <h3>Only if needed: use Join</h3>
+      If the bottle side becomes many separate panels, select the vertical edges you want connected
+      and set them to <strong>Join</strong>, leaving the back edge as <strong>Divide</strong>. Then
+      regenerate the texture template. Skip this if your strip already looks usable.
+    </li>
+    <li>
+      <h3>Render the new prop</h3>
+      Capture a 3/4 front view where the label is readable. Place it beside the prep counter, bread
+      basket, or chopping board if you want the post to look like a growing kitchen pack.
+    </li>
+    <li>
+      <h3>Post your Day-10 update</h3>
+      Publish the render on itch.io and RedNote with the captions below. <em>Streak: Day 10.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">What to remember</span>
+    <p>A seam is not the label. A seam is the controlled cut that makes the flat label area easier to
+    place and paint.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">📤 Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 10 of learning Blockbench from zero. Built a small sauce bottle and learned the Seam Tool. The useful idea: a seam is not a painted line; it tells Blockbench where a mesh texture template should cut. I put one Divide seam on the hidden back edge, then painted the label on the front strip.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第10天】零基础学 Blockbench 做游戏素材 🎮
+今天做了一个小酱汁瓶，学习 Seam Tool（接缝工具）。
+这次的重点不是画一条线，而是告诉 Blockbench：贴图展开时应该在哪里切开。
+我把 Divide seam 放在瓶子背面隐藏起来，然后在正面的贴图区域画标签。
+厨房素材包又多了一个小道具。
+#Blockbench #3D建模 #低多边形 #UV映射 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#低多边形</span><span class="tag">#UV映射</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Does Seam Tool paint the model?</summary>
+      <div class="answer">No. It marks mesh edges so the next generated texture template knows where to cut or join UV islands.</div>
+    </details>
+    <details>
+      <summary>Why did we put Divide on the back edge?</summary>
+      <div class="answer">The texture cut is less visible on the back, leaving the front cleaner for the sauce label.</div>
+    </details>
+    <details>
+      <summary>What should stay on Auto today?</summary>
+      <div class="answer">Most mesh edges should stay on Auto. Only mark the hidden back cut unless the side strip breaks apart.</div>
+    </details>
+    <details>
+      <summary>When would you use Join?</summary>
+      <div class="answer">Use Join when adjacent side faces split apart but you want them connected in one useful texture strip.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">⭐ Primary source (optional, ~5 min)</span>
+    <p>Skim the <a href="../reference/blockbench-seam-tool-cheatsheet.html">Seam Tool Cheat Sheet</a>,
+    then open the Blockbench source links if you want the exact behavior. The key source-backed
+    point: <strong>Divide</strong> blocks faces from joining in the generated texture template, while
+    <strong>Join</strong> forces them together.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">👩‍🏫 I'm your teacher — ask me anything</span>
+    <p>If the seam tool does not appear, the label lands on the wrong side, or the template looks
+    fragmented, tell me whether your bottle body is a mesh and what the selected seam mode says.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0009-prep-counter-knife-tool.html">◂ Lesson 9 — Knife Tool</a>
+    <a href="../reference/blockbench-seam-tool-cheatsheet.html">📄 Seam Tool Cheat Sheet</a>
+    <a href="../reference/overcooked-palette.html">🎨 Course Palette</a>
+    <a href="../MISSION.md">🎯 Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 10 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

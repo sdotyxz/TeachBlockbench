@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Sauce bottle seam tool lesson reference</title>
+  <desc id="desc">A low-poly sauce bottle with one hidden back seam and a generated UV strip showing where the label is painted.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f4ead9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#4d3524" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="960" height="560" fill="url(#paper)"/>
+  <g transform="translate(86 82)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#b8531a">Lesson target</text>
+    <text x="0" y="34" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#2c2a26">Sauce bottle: one controlled UV seam</text>
+    <text x="0" y="68" font-family="Georgia, serif" font-size="20" fill="#5b574f">Hide the cut at the back, then paint the front label on the generated texture strip.</text>
+  </g>
+
+  <g transform="translate(160 190)" filter="url(#shadow)">
+    <ellipse cx="164" cy="294" rx="108" ry="30" fill="#c9b9a1" opacity=".45"/>
+    <path d="M101 126 L228 126 L211 354 Q164 386 117 354 Z" fill="#d94a36" stroke="#7a4e24" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M111 138 L218 138 L203 337 Q164 360 125 337 Z" fill="#e3712b" opacity=".74"/>
+    <path d="M112 145 Q164 174 217 145 L214 187 Q164 220 109 187 Z" fill="#f3e6c4" opacity=".88"/>
+    <path d="M118 232 Q164 258 210 232 L206 304 Q164 332 123 304 Z" fill="#f3e6c4" stroke="#7a4e24" stroke-width="4"/>
+    <text x="164" y="276" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" fill="#d94a36">SAUCE</text>
+    <rect x="132" y="62" width="64" height="70" rx="10" fill="#7a4e24" stroke="#4d2f18" stroke-width="5"/>
+    <rect x="121" y="36" width="86" height="34" rx="9" fill="#c68b45" stroke="#7a4e24" stroke-width="5"/>
+    <path d="M228 126 L244 154 L226 344 L211 354 Z" fill="#9f2f24" opacity=".72"/>
+    <path d="M228 126 L244 154" stroke="#ff4400" stroke-width="7" stroke-linecap="round"/>
+    <text x="252" y="160" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#c2452f">Divide seam</text>
+    <text x="252" y="180" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5b574f">hidden on back edge</text>
+  </g>
+
+  <g transform="translate(520 198)">
+    <rect x="0" y="0" width="338" height="256" rx="10" fill="#fffdf8" stroke="#e4dccd" stroke-width="3"/>
+    <text x="24" y="38" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="#2c2a26">Texture template after seams</text>
+    <rect x="42" y="78" width="254" height="90" fill="#f3e6c4" stroke="#7a4e24" stroke-width="3"/>
+    <path d="M296 78 L296 168" stroke="#ff4400" stroke-width="6"/>
+    <text x="169" y="132" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#d94a36">SAUCE</text>
+    <rect x="42" y="184" width="80" height="42" fill="#c68b45" stroke="#7a4e24" stroke-width="3"/>
+    <rect x="132" y="184" width="80" height="42" fill="#7a4e24" stroke="#7a4e24" stroke-width="3"/>
+    <rect x="222" y="184" width="74" height="42" fill="#d94a36" stroke="#7a4e24" stroke-width="3"/>
+    <text x="42" y="246" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5b574f">Long strip = bottle side faces. Paint label near the middle.</text>
+  </g>
+
+  <g transform="translate(536 78)">
+    <rect x="0" y="0" width="310" height="74" rx="10" fill="#eef5fa" stroke="#2f6f9e" stroke-width="2"/>
+    <circle cx="28" cy="37" r="10" fill="#16d606"/>
+    <text x="48" y="32" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#2c2a26">Join keeps neighboring faces together</text>
+    <circle cx="28" cy="55" r="10" fill="#ff4400"/>
+    <text x="48" y="60" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#2c2a26">Divide forces the texture to cut there</text>
+  </g>
+</svg>
