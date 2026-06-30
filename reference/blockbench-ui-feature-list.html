@@ -128,11 +128,11 @@
   </header>
   <main>
     <div class="counts"><div><strong>221</strong><span>Action</span></div><div><strong>15</strong><span>Menu group</span></div><div><strong>32</strong><span>Menu item</span></div><div><strong>5</strong><span>Mode</span></div><div><strong>26</strong><span>Numeric control</span></div><div><strong>17</strong><span>Panel</span></div><div><strong>10</strong><span>Project format</span></div><div><strong>1</strong><span>Project loader</span></div><div><strong>130</strong><span>Setting</span></div><div><strong>33</strong><span>Toggle</span></div><div><strong>19</strong><span>Tool</span></div><div><strong>8</strong><span>Toolbar select</span></div><div><strong>1</strong><span>Toolbar slider</span></div><div><strong>1</strong><span>Toolbar text</span></div></div>
-    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents are extracted from toolbar controls attached to each panel registration.</p>
+    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents include attached toolbar controls, static dropdown/menu paths, and reachable popups whose dialog forms are statically declared in source.</p>
     <h2>Panel Contents</h2>
-    <p>196 panel controls extracted from panel toolbar registrations.</p>
+    <p>244 panel controls extracted from panel toolbar registrations.</p>
     <section class="panel-section">
-        <h3>Animations <span>13 controls</span></h3>
+        <h3>Animations <span>19 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -143,6 +143,11 @@
             </tr>
           </thead>
           <tbody><tr>
+        <td class="feature"><strong> </strong><span>edit_uv_size.preset</span></td>
+        <td><span class="pill">Popup field (buttons)</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size &gt;  </td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Add Animation</strong><span>add_animation</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Animations &gt; Add Animation</td>
@@ -163,6 +168,11 @@
         <td class="route">View &gt; Panels &gt; Animations &gt; Panel Menu &gt; Add Animation Controller</td>
         <td><code>reference/blockbench-source/js/animations/animation.js:1683</code></td>
       </tr><tr>
+        <td class="feature"><strong>Adjust</strong><span>edit_uv_size.adjust</span></td>
+        <td><span class="pill">Popup field (select)</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size &gt; Adjust</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Animation Length</strong><span>slider_animation_length</span></td>
         <td><span class="pill">Numeric control</span></td>
         <td class="route">View &gt; Panels &gt; Animations &gt; Animation Length</td>
@@ -177,6 +187,11 @@
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Animations &gt; Panel Menu &gt; Create Animation Group</td>
         <td><code>reference/blockbench-source/js/animations/animation.js:1683</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Edit UV Size</strong><span>edit_uv_size</span></td>
+        <td><span class="pill">Popup</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
       </tr><tr>
         <td class="feature"><strong>Export Modded Entity Animations</strong><span>export_modded_animations</span></td>
         <td><span class="pill">Action</span></td>
@@ -198,6 +213,11 @@
         <td class="route">View &gt; Panels &gt; Animations &gt; Panel Menu &gt; Paste</td>
         <td><code>reference/blockbench-source/js/animations/animation.js:1683</code></td>
       </tr><tr>
+        <td class="feature"><strong>Result</strong><span>edit_uv_size.output</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size &gt; Result</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Save All Animations</strong><span>save_all_animations</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Animations &gt; Panel Menu &gt; Save All Animations</td>
@@ -207,6 +227,16 @@
         <td><span class="pill">Toggle</span></td>
         <td class="route">View &gt; Panels &gt; Animations &gt; Search Animations</td>
         <td><code>reference/blockbench-source/js/animations/animation.js:1683</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target</strong><span>edit_uv_size.target</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size &gt; Target</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target UV Size</strong><span>edit_uv_size.target_size</span></td>
+        <td><span class="pill">Popup field (vector)</span></td>
+        <td class="route">View &gt; Panels &gt; Animations &gt; Export Modded Entity Animations &gt; Popup &gt; Edit UV Size &gt; Target UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
       </tr></tbody>
         </table>
       </section><section class="panel-section">
@@ -415,7 +445,7 @@
       </tr></tbody>
         </table>
       </section><section class="panel-section">
-        <h3>Outliner <span>27 controls</span></h3>
+        <h3>Outliner <span>63 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -426,6 +456,11 @@
             </tr>
           </thead>
           <tbody><tr>
+        <td class="feature"><strong> </strong><span>edit_uv_size.preset</span></td>
+        <td><span class="pill">Popup field (buttons)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size &gt;  </td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Add Armature</strong><span>add_armature</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Armature</td>
@@ -481,6 +516,11 @@
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
       </tr><tr>
+        <td class="feature"><strong>Add Mesh</strong><span>add_primitive</span></td>
+        <td><span class="pill">Popup</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
         <td class="feature"><strong>Add Null Object</strong><span>add_null_object</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Null Object</td>
@@ -491,25 +531,105 @@
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
       </tr><tr>
+        <td class="feature"><strong>Add Spline</strong><span>add_spline</span></td>
+        <td><span class="pill">Popup</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
         <td class="feature"><strong>Add Texture Mesh</strong><span>add_texture_mesh</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Texture Mesh</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Adjust</strong><span>edit_uv_size.adjust</span></td>
+        <td><span class="pill">Popup field (select)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size &gt; Adjust</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Align Edges</strong><span>add_primitive.align_edges</span></td>
+        <td><span class="pill">Popup field (checkbox)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Align Edges</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Beveled Cuboid</strong><span>add_primitive.shape.beveled_cuboid</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Beveled Cuboid</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Circle</strong><span>add_primitive.shape.circle</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Circle</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Circle</strong><span>add_spline.shape.circle</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Shape &gt; Circle</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
       </tr><tr>
         <td class="feature"><strong>Collapse Groups</strong><span>collapse_groups</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Collapse Groups</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Cone</strong><span>add_primitive.shape.cone</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Cone</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
         <td class="feature"><strong>Cube Colors</strong><span>element_colors</span></td>
         <td><span class="pill">Toggle</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Cube Colors</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Cuboid</strong><span>add_primitive.shape.cuboid</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Cuboid</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Cylinder</strong><span>add_primitive.shape.cylinder</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Cylinder</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Diameter</strong><span>add_primitive.diameter</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Diameter</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Diameter</strong><span>add_spline.diameter</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Diameter</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Edge Size</strong><span>add_primitive.edge_size</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Edge Size</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Edit UV Size</strong><span>edit_uv_size</span></td>
+        <td><span class="pill">Popup</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Explode Skin Model</strong><span>explode_skin_model</span></td>
         <td><span class="pill">Toggle</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Explode Skin Model</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Height</strong><span>add_primitive.height</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Height</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Length</strong><span>add_spline.length</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Length</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Minor Sides</strong><span>add_primitive.minor_sides</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Minor Sides</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
       </tr><tr>
         <td class="feature"><strong>Model Statistics</strong><span>cube_counter</span></td>
         <td><span class="pill">Toolbar text</span></td>
@@ -521,6 +641,31 @@
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Paste</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Plane</strong><span>add_primitive.shape.plane</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Plane</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Pyramid</strong><span>add_primitive.shape.pyramid</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Pyramid</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Rectangle</strong><span>add_spline.shape.square</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Shape &gt; Rectangle</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Result</strong><span>edit_uv_size.output</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size &gt; Result</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Ring Segments</strong><span>add_spline.sides_radial</span></td>
+        <td><span class="pill">Popup field (num_slider)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Ring Segments</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
         <td class="feature"><strong>Search Outliner</strong><span>search_outliner</span></td>
         <td><span class="pill">Toggle</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Search Outliner</td>
@@ -531,15 +676,55 @@
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Search Outliner</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Segment</strong><span>add_spline.shape.segment</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Shape &gt; Segment</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
         <td class="feature"><strong>Select All</strong><span>select_all</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Select All</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Shape</strong><span>add_primitive.shape</span></td>
+        <td><span class="pill">Popup field (select)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Shape</strong><span>add_spline.shape</span></td>
+        <td><span class="pill">Popup field (select)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Shape</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Sides</strong><span>add_primitive.sides</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Sides</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
         <td class="feature"><strong>Sort Outliner</strong><span>sort_outliner</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Sort Outliner</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Sphere</strong><span>add_primitive.shape.sphere</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Sphere</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target</strong><span>edit_uv_size.target</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size &gt; Target</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target UV Size</strong><span>edit_uv_size.target_size</span></td>
+        <td><span class="pill">Popup field (vector)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Model Statistics &gt; Popup &gt; Edit UV Size &gt; Target UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Thickness</strong><span>add_primitive.minor_diameter</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Thickness</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
       </tr><tr>
         <td class="feature"><strong>Toggle More Options</strong><span>outliner_toggle</span></td>
         <td><span class="pill">Toggle</span></td>
@@ -556,14 +741,39 @@
         <td class="route">View &gt; Panels &gt; Outliner &gt; Toggle Skin Layer</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
       </tr><tr>
+        <td class="feature"><strong>Torus</strong><span>add_primitive.shape.torus</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Torus</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Tube</strong><span>add_primitive.shape.tube</span></td>
+        <td><span class="pill">Popup option</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh &gt; Popup &gt; Add Mesh &gt; Shape &gt; Tube</td>
+        <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Tube Radius</strong><span>add_spline.radius</span></td>
+        <td><span class="pill">Popup field (num_slider)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Tube Radius</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Tube Segments</strong><span>add_spline.sides_tubular</span></td>
+        <td><span class="pill">Popup field (num_slider)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Tube Segments</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
+      </tr><tr>
         <td class="feature"><strong>Unfold Groups</strong><span>unfold_groups</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Unfold Groups</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Width</strong><span>add_spline.width</span></td>
+        <td><span class="pill">Popup field (number)</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline &gt; Popup &gt; Add Spline &gt; Width</td>
+        <td><code>reference/blockbench-source/js/modeling/spline_editing.js:90</code></td>
       </tr></tbody>
         </table>
       </section><section class="panel-section">
-        <h3>Palette <span>10 controls</span></h3>
+        <h3>Palette <span>16 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -574,6 +784,21 @@
             </tr>
           </thead>
           <tbody><tr>
+        <td class="feature"><strong> </strong><span>edit_uv_size.preset</span></td>
+        <td><span class="pill">Popup field (buttons)</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size &gt;  </td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Adjust</strong><span>edit_uv_size.adjust</span></td>
+        <td><span class="pill">Popup field (select)</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size &gt; Adjust</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Edit UV Size</strong><span>edit_uv_size</span></td>
+        <td><span class="pill">Popup</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Export Palette</strong><span>export_palette</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Palette &gt; Export Palette</td>
@@ -604,6 +829,11 @@
         <td class="route">View &gt; Panels &gt; Palette &gt; Panel Menu &gt; Lock Palette</td>
         <td><code>reference/blockbench-source/js/texturing/color.js:757</code></td>
       </tr><tr>
+        <td class="feature"><strong>Result</strong><span>edit_uv_size.output</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size &gt; Result</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
         <td class="feature"><strong>Save Palette...</strong><span>save_palette</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette...</td>
@@ -623,6 +853,16 @@
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Palette &gt; Panel Menu &gt; Sort Palette</td>
         <td><code>reference/blockbench-source/js/texturing/color.js:757</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target</strong><span>edit_uv_size.target</span></td>
+        <td><span class="pill">Popup field (info)</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size &gt; Target</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Target UV Size</strong><span>edit_uv_size.target_size</span></td>
+        <td><span class="pill">Popup field (vector)</span></td>
+        <td class="route">View &gt; Panels &gt; Palette &gt; Save Palette... &gt; Popup &gt; Edit UV Size &gt; Target UV Size</td>
+        <td><code>reference/blockbench-source/js/uv/uv_size.ts:178</code></td>
       </tr></tbody>
         </table>
       </section><section class="panel-section">

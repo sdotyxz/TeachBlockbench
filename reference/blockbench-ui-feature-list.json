@@ -1,9 +1,18 @@
 {
-  "generated_at": "2026-06-30T03:26:40.610Z",
+  "generated_at": "2026-06-30T03:37:29.379Z",
   "source_root": "reference/blockbench-source",
   "count": 519,
-  "panel_content_count": 196,
+  "panel_content_count": 244,
   "panel_contents": [
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "edit_uv_size.preset",
+      "control_name": " ",
+      "control_type": "Popup field (buttons)",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size >  ",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
     {
       "panel_id": "animations",
       "panel_name": "Animations",
@@ -43,6 +52,15 @@
     {
       "panel_id": "animations",
       "panel_name": "Animations",
+      "control_id": "edit_uv_size.adjust",
+      "control_name": "Adjust",
+      "control_type": "Popup field (select)",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size > Adjust",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
       "control_id": "slider_animation_length",
       "control_name": "Animation Length",
       "control_type": "Numeric control",
@@ -66,6 +84,15 @@
       "control_type": "Action",
       "ui_path": "View > Panels > Animations > Panel Menu > Create Animation Group",
       "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "edit_uv_size",
+      "control_name": "Edit UV Size",
+      "control_type": "Popup",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
     },
     {
       "panel_id": "animations",
@@ -106,6 +133,15 @@
     {
       "panel_id": "animations",
       "panel_name": "Animations",
+      "control_id": "edit_uv_size.output",
+      "control_name": "Result",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size > Result",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
       "control_id": "save_all_animations",
       "control_name": "Save All Animations",
       "control_type": "Action",
@@ -120,6 +156,24 @@
       "control_type": "Toggle",
       "ui_path": "View > Panels > Animations > Search Animations",
       "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "edit_uv_size.target",
+      "control_name": "Target",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size > Target",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "edit_uv_size.target_size",
+      "control_name": "Target UV Size",
+      "control_type": "Popup field (vector)",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations > Popup > Edit UV Size > Target UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
     },
     {
       "panel_id": "collections",
@@ -376,6 +430,15 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "edit_uv_size.preset",
+      "control_name": " ",
+      "control_type": "Popup field (buttons)",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size >  ",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "add_armature",
       "control_name": "Add Armature",
       "control_type": "Action",
@@ -475,6 +538,15 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive",
+      "control_name": "Add Mesh",
+      "control_type": "Popup",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "add_null_object",
       "control_name": "Add Null Object",
       "control_type": "Action",
@@ -493,11 +565,65 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_spline",
+      "control_name": "Add Spline",
+      "control_type": "Popup",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "add_texture_mesh",
       "control_name": "Add Texture Mesh",
       "control_type": "Action",
       "ui_path": "View > Panels > Outliner > Add Element > Add Texture Mesh",
       "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "edit_uv_size.adjust",
+      "control_name": "Adjust",
+      "control_type": "Popup field (select)",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size > Adjust",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.align_edges",
+      "control_name": "Align Edges",
+      "control_type": "Popup field (checkbox)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Align Edges",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.beveled_cuboid",
+      "control_name": "Beveled Cuboid",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Beveled Cuboid",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.circle",
+      "control_name": "Circle",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Circle",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.shape.circle",
+      "control_name": "Circle",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Shape > Circle",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
     },
     {
       "panel_id": "outliner",
@@ -511,6 +637,15 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.cone",
+      "control_name": "Cone",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Cone",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "element_colors",
       "control_name": "Cube Colors",
       "control_type": "Toggle",
@@ -520,11 +655,92 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.cuboid",
+      "control_name": "Cuboid",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Cuboid",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.cylinder",
+      "control_name": "Cylinder",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Cylinder",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.diameter",
+      "control_name": "Diameter",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Diameter",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.diameter",
+      "control_name": "Diameter",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Diameter",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.edge_size",
+      "control_name": "Edge Size",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Edge Size",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "edit_uv_size",
+      "control_name": "Edit UV Size",
+      "control_type": "Popup",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "explode_skin_model",
       "control_name": "Explode Skin Model",
       "control_type": "Toggle",
       "ui_path": "View > Panels > Outliner > Explode Skin Model",
       "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.height",
+      "control_name": "Height",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Height",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.length",
+      "control_name": "Length",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Length",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.minor_sides",
+      "control_name": "Minor Sides",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Minor Sides",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
     },
     {
       "panel_id": "outliner",
@@ -547,6 +763,51 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.plane",
+      "control_name": "Plane",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Plane",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.pyramid",
+      "control_name": "Pyramid",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Pyramid",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.shape.square",
+      "control_name": "Rectangle",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Shape > Rectangle",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "edit_uv_size.output",
+      "control_name": "Result",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size > Result",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.sides_radial",
+      "control_name": "Ring Segments",
+      "control_type": "Popup field (num_slider)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Ring Segments",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "search_outliner",
       "control_name": "Search Outliner",
       "control_type": "Toggle",
@@ -565,6 +826,15 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_spline.shape.segment",
+      "control_name": "Segment",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Shape > Segment",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "select_all",
       "control_name": "Select All",
       "control_type": "Action",
@@ -574,11 +844,74 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive.shape",
+      "control_name": "Shape",
+      "control_type": "Popup field (select)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.shape",
+      "control_name": "Shape",
+      "control_type": "Popup field (select)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Shape",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.sides",
+      "control_name": "Sides",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Sides",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "sort_outliner",
       "control_name": "Sort Outliner",
       "control_type": "Action",
       "ui_path": "View > Panels > Outliner > Panel Menu > Sort Outliner",
       "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.sphere",
+      "control_name": "Sphere",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Sphere",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "edit_uv_size.target",
+      "control_name": "Target",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size > Target",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "edit_uv_size.target_size",
+      "control_name": "Target UV Size",
+      "control_type": "Popup field (vector)",
+      "ui_path": "View > Panels > Outliner > Model Statistics > Popup > Edit UV Size > Target UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.minor_diameter",
+      "control_name": "Thickness",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Thickness",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
     },
     {
       "panel_id": "outliner",
@@ -610,11 +943,83 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.torus",
+      "control_name": "Torus",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Torus",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_primitive.shape.tube",
+      "control_name": "Tube",
+      "control_type": "Popup option",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh > Popup > Add Mesh > Shape > Tube",
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:4"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.radius",
+      "control_name": "Tube Radius",
+      "control_type": "Popup field (num_slider)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Tube Radius",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.sides_tubular",
+      "control_name": "Tube Segments",
+      "control_type": "Popup field (num_slider)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Tube Segments",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "unfold_groups",
       "control_name": "Unfold Groups",
       "control_type": "Action",
       "ui_path": "View > Panels > Outliner > Panel Menu > Unfold Groups",
       "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline.width",
+      "control_name": "Width",
+      "control_type": "Popup field (number)",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline > Popup > Add Spline > Width",
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:90"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "edit_uv_size.preset",
+      "control_name": " ",
+      "control_type": "Popup field (buttons)",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size >  ",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "edit_uv_size.adjust",
+      "control_name": "Adjust",
+      "control_type": "Popup field (select)",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size > Adjust",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "edit_uv_size",
+      "control_name": "Edit UV Size",
+      "control_type": "Popup",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
     },
     {
       "panel_id": "palette",
@@ -673,6 +1078,15 @@
     {
       "panel_id": "palette",
       "panel_name": "Palette",
+      "control_id": "edit_uv_size.output",
+      "control_name": "Result",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size > Result",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
       "control_id": "save_palette",
       "control_name": "Save Palette...",
       "control_type": "Action",
@@ -705,6 +1119,24 @@
       "control_type": "Action",
       "ui_path": "View > Panels > Palette > Panel Menu > Sort Palette",
       "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "edit_uv_size.target",
+      "control_name": "Target",
+      "control_type": "Popup field (info)",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size > Target",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "edit_uv_size.target_size",
+      "control_name": "Target UV Size",
+      "control_type": "Popup field (vector)",
+      "ui_path": "View > Panels > Palette > Save Palette... > Popup > Edit UV Size > Target UV Size",
+      "source": "reference/blockbench-source/js/uv/uv_size.ts:178"
     },
     {
       "panel_id": "skin_pose",

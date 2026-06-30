@@ -60,6 +60,7 @@ const topMenuIds = new Set([
 const featureByKey = new Map();
 const routesById = new Map();
 const barItemDefinitions = new Map();
+const dialogDefinitionsByVar = new Map();
 const toolbarDefinitions = new Map();
 const panelDefinitions = [];
 const panelContents = [];
@@ -73,6 +74,7 @@ main();
 
 function main() {
   for (const file of sourceFiles) {
+    extractDialogs(file);
     extractToolbars(file);
     extractConstructors(file);
   }
@@ -115,6 +117,30 @@ function listSourceFiles(dir) {
     }
   }
   return result;
+}
+
+function extractDialogs(file) {
+  const raw = fs.readFileSync(file, 'utf8');
+  const src = stripComments(raw);
+  for (const match of findConstructors(src, 'Dialog')) {
+    const args = splitTopLevel(match.args);
+    if (!args.length) continue;
+    const objectArg = args.find(arg => arg.trim().startsWith('{')) || '';
+    if (!objectArg) continue;
+    const id = constructorId(args) || literalProp(objectArg, 'id');
+    if (!id) continue;
+    const rel = relative(file);
+    const line = lineNumber(raw, match.index);
+    const variable = assignedVariableBefore(src, match.index);
+    const dialog = {
+      id,
+      variable,
+      name: resolveName(literalProp(objectArg, 'title')) || titleCase(id),
+      fields: formFields(rawTopLevelProp(objectArg, 'form')),
+      source: `${rel}:${line}`,
+    };
+    if (variable) dialogDefinitionsByVar.set(variable, dialog);
+  }
 }
 
 function extractToolbars(file) {
@@ -330,6 +356,50 @@ function expandNestedControlRoutes(controlId, routePrefix, panel, fallbackSource
       }
       if (item.id) {
         expandNestedControlRoutes(item.id, route, panel, item.source || definition.source || fallbackSource, [...stack, controlId]);
+      }
+    }
+  }
+  expandDialogRoutes(controlId, routePrefix, panel, definition, fallbackSource);
+}
+
+function expandDialogRoutes(controlId, routePrefix, panel, definition, fallbackSource) {
+  const clickSource = rawTopLevelProp(definition.objectArg, 'click') || rawTopLevelMethod(definition.objectArg, 'click');
+  if (!clickSource) return;
+  const variables = [...clickSource.matchAll(/\b([A-Za-z_$][\w$]*)\.show\s*\(/g)].map(match => match[1]);
+  for (const variable of variables) {
+    const dialog = dialogDefinitionsByVar.get(variable);
+    if (!dialog?.fields.length) continue;
+    const popupRoute = [...routePrefix, 'Popup', dialog.name];
+    addPanelContent({
+      panel_id: panel.id,
+      panel_name: panel.name,
+      control_id: dialog.id,
+      control_name: dialog.name,
+      control_type: 'Popup',
+      ui_path: popupRoute.join(' > '),
+      source: dialog.source || fallbackSource,
+    });
+    for (const field of dialog.fields) {
+      const fieldRoute = [...popupRoute, field.name];
+      addPanelContent({
+        panel_id: panel.id,
+        panel_name: panel.name,
+        control_id: `${dialog.id}.${field.id}`,
+        control_name: field.name,
+        control_type: field.type ? `Popup field (${field.type})` : 'Popup field',
+        ui_path: fieldRoute.join(' > '),
+        source: dialog.source || fallbackSource,
+      });
+      for (const option of field.options) {
+        addPanelContent({
+          panel_id: panel.id,
+          panel_name: panel.name,
+          control_id: `${dialog.id}.${field.id}.${option.id}`,
+          control_name: option.name,
+          control_type: 'Popup option',
+          ui_path: [...fieldRoute, option.name].join(' > '),
+          source: dialog.source || fallbackSource,
+        });
       }
     }
   }
@@ -678,6 +748,52 @@ function rawTopLevelMethod(objectText, prop) {
     if (end !== -1) return trimmed.slice(brace, end + 1);
   }
   return '';
+}
+
+function formFields(formText) {
+  const form = formText?.trim() || '';
+  if (!form.startsWith('{')) return [];
+  const fields = [];
+  const body = trimWrapper(form, '{', '}');
+  for (const part of splitTopLevel(body)) {
+    const colon = part.indexOf(':');
+    if (colon === -1) continue;
+    const id = part.slice(0, colon).trim().replace(/^['"`]|['"`]$/g, '');
+    if (!id || id === '_' || id.startsWith('_')) continue;
+    const value = part.slice(colon + 1).trim();
+    if (!value.startsWith('{')) continue;
+    const label = resolveName(literalProp(value, 'label')) || titleCase(id);
+    const type = literalProp(value, 'type') || 'control';
+    fields.push({
+      id,
+      name: label,
+      type,
+      options: formOptions(rawTopLevelProp(value, 'options')),
+    });
+  }
+  return fields;
+}
+
+function formOptions(optionsText) {
+  const options = optionsText?.trim() || '';
+  if (!options.startsWith('{')) return [];
+  const entries = [];
+  const body = trimWrapper(options, '{', '}');
+  for (const part of splitTopLevel(body)) {
+    const colon = part.indexOf(':');
+    if (colon === -1) continue;
+    const id = part.slice(0, colon).trim().replace(/^['"`]|['"`]$/g, '');
+    const value = part.slice(colon + 1).trim();
+    const name = resolveName(stringLiteral(value) || literalProp(value, 'name')) || titleCase(id);
+    entries.push({id, name});
+  }
+  return entries;
+}
+
+function assignedVariableBefore(src, index) {
+  const prefix = src.slice(Math.max(0, index - 160), index);
+  const match = prefix.match(/(?:let|const|var)\s+([A-Za-z_$][\w$]*)\s*=\s*$/);
+  return match ? match[1] : '';
 }
 
 function staticArrayFromValue(value) {
@@ -1031,7 +1147,7 @@ function renderHtml(features, panelContents) {
   </header>
   <main>
     <div class="counts">${countCards}</div>
-    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents are extracted from toolbar controls attached to each panel registration.</p>
+    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents include attached toolbar controls, static dropdown/menu paths, and reachable popups whose dialog forms are statically declared in source.</p>
     <h2>Panel Contents</h2>
     <p>${panelContents.length} panel controls extracted from panel toolbar registrations.</p>
     ${panelSections}
