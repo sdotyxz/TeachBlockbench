@@ -127,10 +127,10 @@
     <p>Generated from <code>reference/blockbench-source</code>. A feature is included when the source exposes a visible route through menus, toolbox, panels, mode switcher, format picker, or settings.</p>
   </header>
   <main>
-    <div class="counts"><div><strong>210</strong><span>Action</span></div><div><strong>11</strong><span>Menu group</span></div><div><strong>25</strong><span>Menu item</span></div><div><strong>5</strong><span>Mode</span></div><div><strong>26</strong><span>Numeric control</span></div><div><strong>17</strong><span>Panel</span></div><div><strong>10</strong><span>Project format</span></div><div><strong>1</strong><span>Project loader</span></div><div><strong>130</strong><span>Setting</span></div><div><strong>33</strong><span>Toggle</span></div><div><strong>19</strong><span>Tool</span></div><div><strong>8</strong><span>Toolbar select</span></div><div><strong>1</strong><span>Toolbar slider</span></div><div><strong>1</strong><span>Toolbar text</span></div></div>
+    <div class="counts"><div><strong>221</strong><span>Action</span></div><div><strong>15</strong><span>Menu group</span></div><div><strong>32</strong><span>Menu item</span></div><div><strong>5</strong><span>Mode</span></div><div><strong>26</strong><span>Numeric control</span></div><div><strong>17</strong><span>Panel</span></div><div><strong>10</strong><span>Project format</span></div><div><strong>1</strong><span>Project loader</span></div><div><strong>130</strong><span>Setting</span></div><div><strong>33</strong><span>Toggle</span></div><div><strong>19</strong><span>Tool</span></div><div><strong>8</strong><span>Toolbar select</span></div><div><strong>1</strong><span>Toolbar slider</span></div><div><strong>1</strong><span>Toolbar text</span></div></div>
     <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents are extracted from toolbar controls attached to each panel registration.</p>
     <h2>Panel Contents</h2>
-    <p>167 panel controls extracted from panel toolbar registrations.</p>
+    <p>196 panel controls extracted from panel toolbar registrations.</p>
     <section class="panel-section">
         <h3>Animations <span>13 controls</span></h3>
         <table>
@@ -415,7 +415,7 @@
       </tr></tbody>
         </table>
       </section><section class="panel-section">
-        <h3>Outliner <span>17 controls</span></h3>
+        <h3>Outliner <span>27 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -426,6 +426,31 @@
             </tr>
           </thead>
           <tbody><tr>
+        <td class="feature"><strong>Add Armature</strong><span>add_armature</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Armature</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Armature Bone</strong><span>add_armature_bone</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Armature Bone</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Billboard</strong><span>add_billboard</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Billboard</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Bounding Box</strong><span>add_bounding_box</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Bounding Box</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Cube</strong><span>add_cube</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Cube</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
         <td class="feature"><strong>Add Element</strong><span>add_element</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element</td>
@@ -445,6 +470,31 @@
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Outliner &gt; Panel Menu &gt; Add Group</td>
         <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Locator</strong><span>add_locator</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Locator</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Mesh</strong><span>add_mesh</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Null Object</strong><span>add_null_object</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Null Object</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Spline</strong><span>add_spline</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Add Texture Mesh</strong><span>add_texture_mesh</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Texture Mesh</td>
+        <td><code>reference/blockbench-source/js/outliner/outliner.js:879</code></td>
       </tr><tr>
         <td class="feature"><strong>Collapse Groups</strong><span>collapse_groups</span></td>
         <td><span class="pill">Action</span></td>
@@ -662,7 +712,7 @@
       </tr></tbody>
         </table>
       </section><section class="panel-section">
-        <h3>Timeline <span>33 controls</span></h3>
+        <h3>Timeline <span>34 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -727,6 +777,11 @@
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; Timeline &gt; Panel Menu &gt; Fold All Animators</td>
         <td><code>reference/blockbench-source/js/animations/timeline.js:753</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Hide empty channels</strong><span>View/Panels/Timeline/Filter Channels/Hide empty channels</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; Timeline &gt; Filter Channels &gt; Hide empty channels</td>
+        <td><code>reference/blockbench-source/js/animations/timeline.js:2191</code></td>
       </tr><tr>
         <td class="feature"><strong>Include Other Graphs</strong><span>graph_editor_include_other_graphs</span></td>
         <td><span class="pill">Toggle</span></td>
@@ -943,7 +998,7 @@
       </tr></tbody>
         </table>
       </section><section class="panel-section">
-        <h3>UV <span>36 controls</span></h3>
+        <h3>UV <span>54 controls</span></h3>
         <table>
           <thead>
             <tr>
@@ -954,6 +1009,26 @@
             </tr>
           </thead>
           <tbody><tr>
+        <td class="feature"><strong>0°</strong><span>View/Panels/UV/Panel Menu/Rotation/0°</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotation &gt; 0°</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>180°</strong><span>View/Panels/UV/Panel Menu/Rotation/180°</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotation &gt; 180°</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>270°</strong><span>View/Panels/UV/Panel Menu/Rotation/270°</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotation &gt; 270°</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>90°</strong><span>View/Panels/UV/Panel Menu/Rotation/90°</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotation &gt; 90°</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
         <td class="feature"><strong>Apply To All Faces</strong><span>uv_apply_all</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Apply To All Faces</td>
@@ -989,6 +1064,11 @@
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cube Uv Mode</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
+        <td class="feature"><strong>Cullface</strong><span>View/Panels/UV/Panel Menu/Cullface</span></td>
+        <td><span class="pill">Panel menu group</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
         <td class="feature"><strong>Cycle Invert UV</strong><span>uv_cycle_invert</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cycle Invert UV</td>
@@ -1002,6 +1082,26 @@
         <td class="feature"><strong>Display UV Faces</strong><span>display_uv</span></td>
         <td><span class="pill">Setting</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Display UV Faces</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Down</strong><span>View/Panels/UV/Panel Menu/Cullface/Down</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; Down</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>East</strong><span>View/Panels/UV/Panel Menu/Cullface/East</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; East</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Enable Cullface</strong><span>auto_cullface</span></td>
+        <td><span class="pill">Action</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; Enable Cullface</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Export UV Mapping</strong><span>View/Panels/UV/Panel Menu/Export UV Mapping</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Export UV Mapping</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
         <td class="feature"><strong>Maximize UV</strong><span>uv_maximize</span></td>
@@ -1024,6 +1124,16 @@
         <td class="route">View &gt; Panels &gt; UV &gt; Mirror UV</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:2677</code></td>
       </tr><tr>
+        <td class="feature"><strong>Mirror X</strong><span>View/Panels/UV/Panel Menu/Mirror X</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Mirror X</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Mirror Y</strong><span>View/Panels/UV/Panel Menu/Mirror Y</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Mirror Y</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
         <td class="feature"><strong>Move Texture with UV</strong><span>move_texture_with_uv</span></td>
         <td><span class="pill">Toggle</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Move Texture with UV</td>
@@ -1032,6 +1142,16 @@
         <td class="feature"><strong>Move UV to Cursor</strong><span>move_uv_to_cursor</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Move UV to Cursor</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>None</strong><span>View/Panels/UV/Panel Menu/Cullface/None</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; None</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>North</strong><span>View/Panels/UV/Panel Menu/Cullface/North</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; North</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
         <td class="feature"><strong>Painting Grid</strong><span>painting_grid</span></td>
@@ -1069,9 +1189,24 @@
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotate UV Right</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
+        <td class="feature"><strong>Rotation</strong><span>View/Panels/UV/Panel Menu/Rotation</span></td>
+        <td><span class="pill">Panel menu group</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Rotation</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
         <td class="feature"><strong>Snap UV to Pixels</strong><span>snap_uv_to_pixels</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Snap UV to Pixels</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>South</strong><span>View/Panels/UV/Panel Menu/Cullface/South</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; South</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Texture</strong><span>View/Panels/UV/Panel Menu/Texture</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Texture</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
         <td class="feature"><strong>Tint</strong><span>face_tint</span></td>
@@ -1082,6 +1217,11 @@
         <td class="feature"><strong>Turn Mapping</strong><span>uv_turn_mapping</span></td>
         <td><span class="pill">Action</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Turn Mapping</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
+        <td class="feature"><strong>Up</strong><span>View/Panels/UV/Panel Menu/Cullface/Up</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; Up</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
       </tr><tr>
         <td class="feature"><strong>UV Editor Checkerboard</strong><span>uv_checkerboard</span></td>
@@ -1119,6 +1259,11 @@
         <td class="route">View &gt; Panels &gt; UV &gt; UV Rotation</td>
         <td><code>reference/blockbench-source/js/uv/uv.js:2677</code></td>
       </tr><tr>
+        <td class="feature"><strong>West</strong><span>View/Panels/UV/Panel Menu/Cullface/West</span></td>
+        <td><span class="pill">Panel menu item</span></td>
+        <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; West</td>
+        <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+      </tr><tr>
         <td class="feature"><strong>Zoom</strong><span>zoom</span></td>
         <td><span class="pill">Panel menu group</span></td>
         <td class="route">View &gt; Panels &gt; UV &gt; Panel Menu &gt; Zoom</td>
@@ -1140,8 +1285,8 @@
     <div class="controls">
       <input id="search" type="search" placeholder="Search feature, UI path, id, description">
       <select id="type">
-        <option value="">All feature types (497)</option>
-        <option value="Action">Action (210)</option><option value="Menu group">Menu group (11)</option><option value="Menu item">Menu item (25)</option><option value="Mode">Mode (5)</option><option value="Numeric control">Numeric control (26)</option><option value="Panel">Panel (17)</option><option value="Project format">Project format (10)</option><option value="Project loader">Project loader (1)</option><option value="Setting">Setting (130)</option><option value="Toggle">Toggle (33)</option><option value="Tool">Tool (19)</option><option value="Toolbar select">Toolbar select (8)</option><option value="Toolbar slider">Toolbar slider (1)</option><option value="Toolbar text">Toolbar text (1)</option>
+        <option value="">All feature types (519)</option>
+        <option value="Action">Action (221)</option><option value="Menu group">Menu group (15)</option><option value="Menu item">Menu item (32)</option><option value="Mode">Mode (5)</option><option value="Numeric control">Numeric control (26)</option><option value="Panel">Panel (17)</option><option value="Project format">Project format (10)</option><option value="Project loader">Project loader (1)</option><option value="Setting">Setting (130)</option><option value="Toggle">Toggle (33)</option><option value="Tool">Tool (19)</option><option value="Toolbar select">Toolbar select (8)</option><option value="Toolbar slider">Toolbar slider (1)</option><option value="Toolbar text">Toolbar text (1)</option>
       </select>
     </div>
     <table>
@@ -1735,9 +1880,9 @@
       <td></td>
       <td><code>reference/blockbench-source/js/interface/keybinding.js:7</code></td>
     </tr>
-<tr data-type="Menu item" data-search="profile menu item profiles file &gt; preferences &gt; profile ">
+<tr data-type="Menu group" data-search="profile menu group profiles file &gt; preferences &gt; profile ">
       <td class="feature"><strong>Profile</strong><span>profiles</span></td>
-      <td><span class="pill">Menu item</span></td>
+      <td><span class="pill">Menu group</span></td>
       <td class="route"><ul class="routes"><li>File &gt; Preferences &gt; Profile</li></ul></td>
       <td></td>
       <td><code>reference/blockbench-source/js/interface/menu_bar.js:65</code></td>
@@ -3464,9 +3609,9 @@
       <td>Switch between alternative tools, like move and resize, or brush and color picker</td>
       <td><code>reference/blockbench-source/js/interface/toolbars.js:495</code></td>
     </tr>
-<tr data-type="Menu item" data-search="toolbox menu item main_tools tools &gt; toolbox ">
+<tr data-type="Menu group" data-search="toolbox menu group main_tools tools &gt; toolbox ">
       <td class="feature"><strong>Toolbox</strong><span>main_tools</span></td>
-      <td><span class="pill">Menu item</span></td>
+      <td><span class="pill">Menu group</span></td>
       <td class="route"><ul class="routes"><li>Tools &gt; Toolbox</li></ul></td>
       <td></td>
       <td><code>reference/blockbench-source/js/interface/menu_bar.js:441</code></td>
@@ -3660,10 +3805,66 @@
       <td></td>
       <td><code>reference/blockbench-source/js/outliner/types/cube.js:1703</code></td>
     </tr>
-<tr data-type="Menu item" data-search="cullface menu item uv/cullface uv &gt; cullface ">
+<tr data-type="Menu group" data-search="cullface menu group uv/cullface uv &gt; cullface ">
       <td class="feature"><strong>Cullface</strong><span>UV/Cullface</span></td>
-      <td><span class="pill">Menu item</span></td>
+      <td><span class="pill">Menu group</span></td>
       <td class="route"><ul class="routes"><li>UV &gt; Cullface</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="down menu item uv/cullface/down uv &gt; cullface &gt; down ">
+      <td class="feature"><strong>Down</strong><span>UV/Cullface/Down</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; Down</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="east menu item uv/cullface/east uv &gt; cullface &gt; east ">
+      <td class="feature"><strong>East</strong><span>UV/Cullface/East</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; East</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Action" data-search="enable cullface action auto_cullface uv &gt; cullface &gt; enable cullface view &gt; panels &gt; uv &gt; panel menu &gt; cullface &gt; enable cullface sets the cullface for this face to itself">
+      <td class="feature"><strong>Enable Cullface</strong><span>auto_cullface</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; Enable Cullface</li><li>View &gt; Panels &gt; UV &gt; Panel Menu &gt; Cullface &gt; Enable Cullface</li></ul></td>
+      <td>Sets the cullface for this face to itself</td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:2358</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="none menu item uv/cullface/none uv &gt; cullface &gt; none ">
+      <td class="feature"><strong>None</strong><span>UV/Cullface/None</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; None</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="north menu item uv/cullface/north uv &gt; cullface &gt; north ">
+      <td class="feature"><strong>North</strong><span>UV/Cullface/North</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; North</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="south menu item uv/cullface/south uv &gt; cullface &gt; south ">
+      <td class="feature"><strong>South</strong><span>UV/Cullface/South</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; South</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="up menu item uv/cullface/up uv &gt; cullface &gt; up ">
+      <td class="feature"><strong>Up</strong><span>UV/Cullface/Up</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; Up</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="west menu item uv/cullface/west uv &gt; cullface &gt; west ">
+      <td class="feature"><strong>West</strong><span>UV/Cullface/West</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Cullface &gt; West</li></ul></td>
       <td></td>
       <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
     </tr>
@@ -3758,10 +3959,38 @@
       <td>Rotate the selected UV faces clockwise</td>
       <td><code>reference/blockbench-source/js/uv/uv.js:2283</code></td>
     </tr>
-<tr data-type="Menu item" data-search="rotation menu item uv/rotation uv &gt; rotation ">
+<tr data-type="Menu group" data-search="rotation menu group uv/rotation uv &gt; rotation ">
       <td class="feature"><strong>Rotation</strong><span>UV/Rotation</span></td>
-      <td><span class="pill">Menu item</span></td>
+      <td><span class="pill">Menu group</span></td>
       <td class="route"><ul class="routes"><li>UV &gt; Rotation</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="0° menu item uv/rotation/0° uv &gt; rotation &gt; 0° ">
+      <td class="feature"><strong>0°</strong><span>UV/Rotation/0°</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Rotation &gt; 0°</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="180° menu item uv/rotation/180° uv &gt; rotation &gt; 180° ">
+      <td class="feature"><strong>180°</strong><span>UV/Rotation/180°</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Rotation &gt; 180°</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="270° menu item uv/rotation/270° uv &gt; rotation &gt; 270° ">
+      <td class="feature"><strong>270°</strong><span>UV/Rotation/270°</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Rotation &gt; 270°</li></ul></td>
+      <td></td>
+      <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
+    </tr>
+<tr data-type="Menu item" data-search="90° menu item uv/rotation/90° uv &gt; rotation &gt; 90° ">
+      <td class="feature"><strong>90°</strong><span>UV/Rotation/90°</span></td>
+      <td><span class="pill">Menu item</span></td>
+      <td class="route"><ul class="routes"><li>UV &gt; Rotation &gt; 90°</li></ul></td>
       <td></td>
       <td><code>reference/blockbench-source/js/uv/uv.js:1784</code></td>
     </tr>
@@ -4156,6 +4385,76 @@
       <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner</li></ul></td>
       <td></td>
       <td><code>reference/blockbench-source/js/outliner/outliner.js:1335</code></td>
+    </tr>
+<tr data-type="Action" data-search="add armature action add_armature view &gt; panels &gt; outliner &gt; add element &gt; add armature adds an armature that allows deforming a mesh via animation">
+      <td class="feature"><strong>Add Armature</strong><span>add_armature</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Armature</li></ul></td>
+      <td>Adds an armature that allows deforming a mesh via animation</td>
+      <td><code>reference/blockbench-source/js/outliner/types/armature.ts:293</code></td>
+    </tr>
+<tr data-type="Action" data-search="add armature bone action add_armature_bone view &gt; panels &gt; outliner &gt; add element &gt; add armature bone adds a bone to the armature">
+      <td class="feature"><strong>Add Armature Bone</strong><span>add_armature_bone</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Armature Bone</li></ul></td>
+      <td>Adds a bone to the armature</td>
+      <td><code>reference/blockbench-source/js/outliner/types/armature_bone.ts:567</code></td>
+    </tr>
+<tr data-type="Action" data-search="add billboard action add_billboard view &gt; panels &gt; outliner &gt; add element &gt; add billboard adds a new billboard, a flat element that always faces towards the camera">
+      <td class="feature"><strong>Add Billboard</strong><span>add_billboard</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Billboard</li></ul></td>
+      <td>Adds a new billboard, a flat element that always faces towards the camera</td>
+      <td><code>reference/blockbench-source/js/outliner/types/billboard.js:742</code></td>
+    </tr>
+<tr data-type="Action" data-search="add bounding box action add_bounding_box view &gt; panels &gt; outliner &gt; add element &gt; add bounding box adds a new bounding box">
+      <td class="feature"><strong>Add Bounding Box</strong><span>add_bounding_box</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Bounding Box</li></ul></td>
+      <td>Adds a new bounding box</td>
+      <td><code>reference/blockbench-source/js/outliner/types/bounding_box.ts:518</code></td>
+    </tr>
+<tr data-type="Action" data-search="add cube action add_cube view &gt; panels &gt; outliner &gt; add element &gt; add cube adds a new cube">
+      <td class="feature"><strong>Add Cube</strong><span>add_cube</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Cube</li></ul></td>
+      <td>Adds a new cube</td>
+      <td><code>reference/blockbench-source/js/outliner/types/cube.js:1602</code></td>
+    </tr>
+<tr data-type="Action" data-search="add locator action add_locator view &gt; panels &gt; outliner &gt; add element &gt; add locator adds a new locator to control positions of particles, leashes etc">
+      <td class="feature"><strong>Add Locator</strong><span>add_locator</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Locator</li></ul></td>
+      <td>Adds a new locator to control positions of particles, leashes etc</td>
+      <td><code>reference/blockbench-source/js/outliner/types/locator.js:164</code></td>
+    </tr>
+<tr data-type="Action" data-search="add mesh action add_mesh view &gt; panels &gt; outliner &gt; add element &gt; add mesh adds a new mesh">
+      <td class="feature"><strong>Add Mesh</strong><span>add_mesh</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Mesh</li></ul></td>
+      <td>Adds a new mesh</td>
+      <td><code>reference/blockbench-source/js/modeling/mesh/add_mesh.ts:394</code></td>
+    </tr>
+<tr data-type="Action" data-search="add null object action add_null_object view &gt; panels &gt; outliner &gt; add element &gt; add null object adds a new null object">
+      <td class="feature"><strong>Add Null Object</strong><span>add_null_object</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Null Object</li></ul></td>
+      <td>Adds a new null object</td>
+      <td><code>reference/blockbench-source/js/outliner/types/null_object.js:173</code></td>
+    </tr>
+<tr data-type="Action" data-search="add spline action add_spline view &gt; panels &gt; outliner &gt; add element &gt; add spline adds a new spline">
+      <td class="feature"><strong>Add Spline</strong><span>add_spline</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Spline</li></ul></td>
+      <td>Adds a new spline</td>
+      <td><code>reference/blockbench-source/js/modeling/spline_editing.js:271</code></td>
+    </tr>
+<tr data-type="Action" data-search="add texture mesh action add_texture_mesh view &gt; panels &gt; outliner &gt; add element &gt; add texture mesh adds a new texture mesh">
+      <td class="feature"><strong>Add Texture Mesh</strong><span>add_texture_mesh</span></td>
+      <td><span class="pill">Action</span></td>
+      <td class="route"><ul class="routes"><li>View &gt; Panels &gt; Outliner &gt; Add Element &gt; Add Texture Mesh</li></ul></td>
+      <td>Adds a new Texture Mesh</td>
+      <td><code>reference/blockbench-source/js/outliner/types/texture_mesh.js:345</code></td>
     </tr>
 <tr data-type="Toolbar text" data-search="model statistics toolbar text cube_counter view &gt; panels &gt; outliner &gt; model statistics displays the current number of elements and other statistics">
       <td class="feature"><strong>Model Statistics</strong><span>cube_counter</span></td>

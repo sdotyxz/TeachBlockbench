@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-30T03:17:20.184Z",
+  "generated_at": "2026-06-30T03:26:40.610Z",
   "source_root": "reference/blockbench-source",
-  "count": 497,
-  "panel_content_count": 167,
+  "count": 519,
+  "panel_content_count": 196,
   "panel_contents": [
     {
       "panel_id": "animations",
@@ -376,6 +376,51 @@
     {
       "panel_id": "outliner",
       "panel_name": "Outliner",
+      "control_id": "add_armature",
+      "control_name": "Add Armature",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Armature",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_armature_bone",
+      "control_name": "Add Armature Bone",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Armature Bone",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_billboard",
+      "control_name": "Add Billboard",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Billboard",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_bounding_box",
+      "control_name": "Add Bounding Box",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Bounding Box",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_cube",
+      "control_name": "Add Cube",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Cube",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
       "control_id": "add_element",
       "control_name": "Add Element",
       "control_type": "Action",
@@ -408,6 +453,51 @@
       "control_type": "Action",
       "ui_path": "View > Panels > Outliner > Panel Menu > Add Group",
       "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_locator",
+      "control_name": "Add Locator",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Locator",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_mesh",
+      "control_name": "Add Mesh",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Mesh",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_null_object",
+      "control_name": "Add Null Object",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Null Object",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_spline",
+      "control_name": "Add Spline",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Spline",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_texture_mesh",
+      "control_name": "Add Texture Mesh",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element > Add Texture Mesh",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:879"
     },
     {
       "panel_id": "outliner",
@@ -826,6 +916,15 @@
     {
       "panel_id": "timeline",
       "panel_name": "Timeline",
+      "control_id": "View/Panels/Timeline/Filter Channels/Hide empty channels",
+      "control_name": "Hide empty channels",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > Timeline > Filter Channels > Hide empty channels",
+      "source": "reference/blockbench-source/js/animations/timeline.js:2191"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
       "control_id": "graph_editor_include_other_graphs",
       "control_name": "Include Other Graphs",
       "control_type": "Toggle",
@@ -1186,6 +1285,42 @@
     {
       "panel_id": "uv",
       "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Rotation/0°",
+      "control_name": "0°",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotation > 0°",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Rotation/180°",
+      "control_name": "180°",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotation > 180°",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Rotation/270°",
+      "control_name": "270°",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotation > 270°",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Rotation/90°",
+      "control_name": "90°",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotation > 90°",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
       "control_id": "uv_apply_all",
       "control_name": "Apply To All Faces",
       "control_type": "Action",
@@ -1249,6 +1384,15 @@
     {
       "panel_id": "uv",
       "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface",
+      "control_name": "Cullface",
+      "control_type": "Panel menu group",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
       "control_id": "uv_cycle_invert",
       "control_name": "Cycle Invert UV",
       "control_type": "Action",
@@ -1271,6 +1415,42 @@
       "control_name": "Display UV Faces",
       "control_type": "Setting",
       "ui_path": "View > Panels > UV > Panel Menu > Display UV Faces",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/Down",
+      "control_name": "Down",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > Down",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/East",
+      "control_name": "East",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > East",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "auto_cullface",
+      "control_name": "Enable Cullface",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > Enable Cullface",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Export UV Mapping",
+      "control_name": "Export UV Mapping",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Export UV Mapping",
       "source": "reference/blockbench-source/js/uv/uv.js:1784"
     },
     {
@@ -1312,6 +1492,24 @@
     {
       "panel_id": "uv",
       "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Mirror X",
+      "control_name": "Mirror X",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Mirror X",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Mirror Y",
+      "control_name": "Mirror Y",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Mirror Y",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
       "control_id": "move_texture_with_uv",
       "control_name": "Move Texture with UV",
       "control_type": "Toggle",
@@ -1325,6 +1523,24 @@
       "control_name": "Move UV to Cursor",
       "control_type": "Action",
       "ui_path": "View > Panels > UV > Panel Menu > Move UV to Cursor",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/None",
+      "control_name": "None",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > None",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/North",
+      "control_name": "North",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > North",
       "source": "reference/blockbench-source/js/uv/uv.js:1784"
     },
     {
@@ -1393,10 +1609,37 @@
     {
       "panel_id": "uv",
       "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Rotation",
+      "control_name": "Rotation",
+      "control_type": "Panel menu group",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotation",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
       "control_id": "snap_uv_to_pixels",
       "control_name": "Snap UV to Pixels",
       "control_type": "Action",
       "ui_path": "View > Panels > UV > Panel Menu > Snap UV to Pixels",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/South",
+      "control_name": "South",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > South",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Texture",
+      "control_name": "Texture",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Texture",
       "source": "reference/blockbench-source/js/uv/uv.js:1784"
     },
     {
@@ -1415,6 +1658,15 @@
       "control_name": "Turn Mapping",
       "control_type": "Action",
       "ui_path": "View > Panels > UV > Panel Menu > Turn Mapping",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/Up",
+      "control_name": "Up",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > Up",
       "source": "reference/blockbench-source/js/uv/uv.js:1784"
     },
     {
@@ -1479,6 +1731,15 @@
       "control_type": "Toolbar slider",
       "ui_path": "View > Panels > UV > UV Rotation",
       "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "View/Panels/UV/Panel Menu/Cullface/West",
+      "control_name": "West",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > UV > Panel Menu > Cullface > West",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
     },
     {
       "panel_id": "uv",
@@ -2610,7 +2871,7 @@
     {
       "id": "profiles",
       "name": "Profile",
-      "type": "Menu item",
+      "type": "Menu group",
       "description": "",
       "routes": [
         "File > Preferences > Profile"
@@ -5991,7 +6252,7 @@
     {
       "id": "main_tools",
       "name": "Toolbox",
-      "type": "Menu item",
+      "type": "Menu group",
       "description": "",
       "routes": [
         "Tools > Toolbox"
@@ -6363,10 +6624,115 @@
     {
       "id": "UV/Cullface",
       "name": "Cullface",
-      "type": "Menu item",
+      "type": "Menu group",
       "description": "",
       "routes": [
         "UV > Cullface"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/Down",
+      "name": "Down",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > Down"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/East",
+      "name": "East",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > East"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "auto_cullface",
+      "name": "Enable Cullface",
+      "type": "Action",
+      "description": "Sets the cullface for this face to itself",
+      "routes": [
+        "UV > Cullface > Enable Cullface",
+        "View > Panels > UV > Panel Menu > Cullface > Enable Cullface"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2358",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2358,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "UV/Cullface/None",
+      "name": "None",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > None"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/North",
+      "name": "North",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > North"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/South",
+      "name": "South",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > South"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/Up",
+      "name": "Up",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > Up"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Cullface/West",
+      "name": "West",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Cullface > West"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:1784",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -6557,10 +6923,62 @@
     {
       "id": "UV/Rotation",
       "name": "Rotation",
-      "type": "Menu item",
+      "type": "Menu group",
       "description": "",
       "routes": [
         "UV > Rotation"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Rotation/0°",
+      "name": "0°",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Rotation > 0°"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Rotation/180°",
+      "name": "180°",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Rotation > 180°"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Rotation/270°",
+      "name": "270°",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Rotation > 270°"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:1784",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 1784,
+      "extracted_from": "menu item"
+    },
+    {
+      "id": "UV/Rotation/90°",
+      "name": "90°",
+      "type": "Menu item",
+      "description": "",
+      "routes": [
+        "UV > Rotation > 90°"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:1784",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -7332,6 +7750,136 @@
       "source_file": "reference/blockbench-source/js/outliner/outliner.js",
       "source_line": 1335,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "add_armature",
+      "name": "Add Armature",
+      "type": "Action",
+      "description": "Adds an armature that allows deforming a mesh via animation",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Armature"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/armature.ts:293",
+      "source_file": "reference/blockbench-source/js/outliner/types/armature.ts",
+      "source_line": 293,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_armature_bone",
+      "name": "Add Armature Bone",
+      "type": "Action",
+      "description": "Adds a bone to the armature",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Armature Bone"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/armature_bone.ts:567",
+      "source_file": "reference/blockbench-source/js/outliner/types/armature_bone.ts",
+      "source_line": 567,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_billboard",
+      "name": "Add Billboard",
+      "type": "Action",
+      "description": "Adds a new billboard, a flat element that always faces towards the camera",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Billboard"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/billboard.js:742",
+      "source_file": "reference/blockbench-source/js/outliner/types/billboard.js",
+      "source_line": 742,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_bounding_box",
+      "name": "Add Bounding Box",
+      "type": "Action",
+      "description": "Adds a new bounding box",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Bounding Box"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/bounding_box.ts:518",
+      "source_file": "reference/blockbench-source/js/outliner/types/bounding_box.ts",
+      "source_line": 518,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_cube",
+      "name": "Add Cube",
+      "type": "Action",
+      "description": "Adds a new cube",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Cube"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/cube.js:1602",
+      "source_file": "reference/blockbench-source/js/outliner/types/cube.js",
+      "source_line": 1602,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_locator",
+      "name": "Add Locator",
+      "type": "Action",
+      "description": "Adds a new locator to control positions of particles, leashes etc",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Locator"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/locator.js:164",
+      "source_file": "reference/blockbench-source/js/outliner/types/locator.js",
+      "source_line": 164,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_mesh",
+      "name": "Add Mesh",
+      "type": "Action",
+      "description": "Adds a new mesh",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Mesh"
+      ],
+      "source": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts:394",
+      "source_file": "reference/blockbench-source/js/modeling/mesh/add_mesh.ts",
+      "source_line": 394,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_null_object",
+      "name": "Add Null Object",
+      "type": "Action",
+      "description": "Adds a new null object",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Null Object"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/null_object.js:173",
+      "source_file": "reference/blockbench-source/js/outliner/types/null_object.js",
+      "source_line": 173,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_spline",
+      "name": "Add Spline",
+      "type": "Action",
+      "description": "Adds a new spline",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Spline"
+      ],
+      "source": "reference/blockbench-source/js/modeling/spline_editing.js:271",
+      "source_file": "reference/blockbench-source/js/modeling/spline_editing.js",
+      "source_line": 271,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_texture_mesh",
+      "name": "Add Texture Mesh",
+      "type": "Action",
+      "description": "Adds a new Texture Mesh",
+      "routes": [
+        "View > Panels > Outliner > Add Element > Add Texture Mesh"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/texture_mesh.js:345",
+      "source_file": "reference/blockbench-source/js/outliner/types/texture_mesh.js",
+      "source_line": 345,
+      "extracted_from": "new Action"
     },
     {
       "id": "cube_counter",

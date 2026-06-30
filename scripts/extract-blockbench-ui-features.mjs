@@ -59,6 +59,7 @@ const topMenuIds = new Set([
 
 const featureByKey = new Map();
 const routesById = new Map();
+const barItemDefinitions = new Map();
 const toolbarDefinitions = new Map();
 const panelDefinitions = [];
 const panelContents = [];
@@ -153,6 +154,12 @@ function extractConstructors(file) {
       if (type === 'Setting') {
         feature.category = literalProp(objectArg, 'category') || 'general';
       }
+      barItemDefinitions.set(id, {
+        id,
+        type: typeNames[type],
+        objectArg,
+        source: feature.source,
+      });
       if (type === 'Panel') {
         panelDefinitions.push({
           id,
@@ -271,6 +278,7 @@ function applyPanelToolbarRoutes() {
             ui_path: route.join(' > '),
             source: toolbar.source || panel.source,
           });
+          expandNestedControlRoutes(childId, route, panel, toolbar.source || panel.source);
         }
       }
     }
@@ -297,6 +305,93 @@ function applyPanelToolbarRoutes() {
     if (panel) return panel;
     return a.control_name.localeCompare(b.control_name);
   });
+}
+
+function expandNestedControlRoutes(controlId, routePrefix, panel, fallbackSource, stack = []) {
+  if (stack.includes(controlId)) return;
+  const definition = barItemDefinitions.get(controlId);
+  if (!definition?.objectArg) return;
+  const nestedMenus = staticNestedMenuArrays(definition.objectArg);
+  for (const nestedArray of nestedMenus) {
+    for (const item of staticMenuEntries(nestedArray)) {
+      const route = [...routePrefix, item.name];
+      if (item.id) addRoute(item.id, route);
+      addPanelContent({
+        panel_id: panel.id,
+        panel_name: panel.name,
+        control_id: item.id || route.join('/'),
+        control_name: item.name,
+        control_type: item.children ? 'Panel menu group' : (featureTypeById(item.id) || 'Panel menu item'),
+        ui_path: route.join(' > '),
+        source: item.source || definition.source || fallbackSource,
+      });
+      if (item.children) {
+        expandStaticMenuEntries(item.children, route, panel, item.source || definition.source || fallbackSource);
+      }
+      if (item.id) {
+        expandNestedControlRoutes(item.id, route, panel, item.source || definition.source || fallbackSource, [...stack, controlId]);
+      }
+    }
+  }
+}
+
+function expandStaticMenuEntries(arrayText, routePrefix, panel, source) {
+  for (const item of staticMenuEntries(arrayText)) {
+    const route = [...routePrefix, item.name];
+    if (item.id) addRoute(item.id, route);
+    addPanelContent({
+      panel_id: panel.id,
+      panel_name: panel.name,
+      control_id: item.id || route.join('/'),
+      control_name: item.name,
+      control_type: item.children ? 'Panel menu group' : (featureTypeById(item.id) || 'Panel menu item'),
+      ui_path: route.join(' > '),
+      source,
+    });
+    if (item.children) expandStaticMenuEntries(item.children, route, panel, source);
+  }
+}
+
+function staticNestedMenuArrays(objectArg) {
+  const arrays = [];
+  const children = arrayProp(objectArg, 'children');
+  if (children) arrays.push(children);
+  const sideMenu = rawTopLevelProp(objectArg, 'side_menu');
+  const sideMenuArray = staticMenuArrayFromNewMenu(sideMenu);
+  if (sideMenuArray) arrays.push(sideMenuArray);
+  return arrays;
+}
+
+function staticMenuArrayFromNewMenu(value) {
+  if (!value?.trim().startsWith('new Menu')) return '';
+  const paren = value.indexOf('(');
+  const end = findMatching(value, paren, '(', ')');
+  if (paren === -1 || end === -1) return '';
+  const args = splitTopLevel(value.slice(paren + 1, end));
+  return args.find(arg => arg.trim().startsWith('['))?.trim() || '';
+}
+
+function staticMenuEntries(arrayText) {
+  const entries = [];
+  const body = trimWrapper(arrayText.trim(), '[', ']');
+  for (const token of splitTopLevel(body)) {
+    const item = token.trim();
+    if (!item || item === '_' || item === '+' || item.startsWith('new MenuSeparator')) continue;
+    if (/^['"`]/.test(item)) {
+      const id = stringLiteral(item);
+      if (id && id !== '_' && id !== '+') {
+        entries.push({id, name: labelForId(id)});
+      }
+      continue;
+    }
+    if (item.startsWith('{')) {
+      const id = literalProp(item, 'id');
+      const name = resolveName(literalProp(item, 'name')) || (id ? labelForId(id) : 'Menu Item');
+      const children = arrayProp(item, 'children');
+      entries.push({id, name, children});
+    }
+  }
+  return entries;
 }
 
 function parsePanelMenuArray(arrayText, panel, routePrefix, sourceFile, sourceLine) {
@@ -326,8 +421,9 @@ function parsePanelMenuArray(arrayText, panel, routePrefix, sourceFile, sourceLi
       const name = resolveName(literalProp(item, 'name')) || (id ? labelForId(id) : 'Menu Item');
       const route = [...routePrefix, name];
       const childrenArray = arrayProp(item, 'children');
+      const hasClick = /\bclick\s*\(/.test(item) || /\bclick\s*:/.test(item);
       if (id) addRoute(id, route);
-      if (id || childrenArray) {
+      if (id || childrenArray || hasClick) {
         addPanelContent({
           panel_id: panel.id,
           panel_name: panel.name,
@@ -554,8 +650,8 @@ function literalProp(objectText, prop) {
 }
 
 function arrayProp(objectText, prop) {
-  const value = rawTopLevelProp(objectText, prop);
-  return value?.trim().startsWith('[') ? value.trim() : '';
+  const value = rawTopLevelProp(objectText, prop) || rawTopLevelMethod(objectText, prop);
+  return staticArrayFromValue(value);
 }
 
 function rawTopLevelProp(objectText, prop) {
@@ -568,6 +664,32 @@ function rawTopLevelProp(objectText, prop) {
     if (key === prop) return part.slice(colon + 1).trim();
   }
   return '';
+}
+
+function rawTopLevelMethod(objectText, prop) {
+  if (!objectText) return '';
+  const body = trimWrapper(objectText.trim(), '{', '}');
+  for (const part of splitTopLevel(body)) {
+    const trimmed = part.trim();
+    if (!trimmed.startsWith(`${prop}(`)) continue;
+    const brace = trimmed.indexOf('{');
+    if (brace === -1) continue;
+    const end = findMatching(trimmed, brace, '{', '}');
+    if (end !== -1) return trimmed.slice(brace, end + 1);
+  }
+  return '';
+}
+
+function staticArrayFromValue(value) {
+  const trimmed = value?.trim() || '';
+  if (!trimmed) return '';
+  if (trimmed.startsWith('[')) return trimmed;
+  const returnIndex = trimmed.indexOf('return');
+  if (returnIndex === -1) return '';
+  const bracket = trimmed.indexOf('[', returnIndex);
+  if (bracket === -1) return '';
+  const end = findMatching(trimmed, bracket, '[', ']');
+  return end === -1 ? '' : trimmed.slice(bracket, end + 1);
 }
 
 function stringLiteral(value) {
