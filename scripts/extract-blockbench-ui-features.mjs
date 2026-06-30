@@ -59,6 +59,10 @@ const topMenuIds = new Set([
 
 const featureByKey = new Map();
 const routesById = new Map();
+const toolbarDefinitions = new Map();
+const panelDefinitions = [];
+const panelContents = [];
+const panelContentKeys = new Set();
 const inlineMenuItems = [];
 const sourceFiles = listSourceFiles(path.join(sourceRoot, 'js'))
   .concat(listSourceFiles(path.join(sourceRoot, 'scripts')))
@@ -68,11 +72,13 @@ main();
 
 function main() {
   for (const file of sourceFiles) {
+    extractToolbars(file);
     extractConstructors(file);
   }
   extractMainMenus();
   extractKnownRuntimeMenus();
   applySyntheticRoutes();
+  applyPanelToolbarRoutes();
   mergeInlineMenuItems();
 
   const features = [...featureByKey.values()]
@@ -87,9 +93,11 @@ function main() {
     generated_at: new Date().toISOString(),
     source_root: path.relative(repoRoot, sourceRoot),
     count: features.length,
+    panel_content_count: panelContents.length,
+    panel_contents: panelContents,
     features,
   }, null, 2));
-  fs.writeFileSync(outputPath, renderHtml(features));
+  fs.writeFileSync(outputPath, renderHtml(features, panelContents));
   console.log(`Wrote ${path.relative(repoRoot, outputPath)} with ${features.length} UI-reachable features`);
   console.log(`Wrote ${path.relative(repoRoot, jsonOutputPath)} for machine-readable review`);
 }
@@ -106,6 +114,17 @@ function listSourceFiles(dir) {
     }
   }
   return result;
+}
+
+function extractToolbars(file) {
+  const raw = fs.readFileSync(file, 'utf8');
+  const src = stripComments(raw);
+  for (const match of findConstructors(src, 'Toolbar')) {
+    const args = splitTopLevel(match.args);
+    const definition = toolbarDefinitionFromArgs(args, relative(file), lineNumber(raw, match.index));
+    if (!definition.id) continue;
+    toolbarDefinitions.set(definition.id, definition);
+  }
 }
 
 function extractConstructors(file) {
@@ -134,6 +153,14 @@ function extractConstructors(file) {
       if (type === 'Setting') {
         feature.category = literalProp(objectArg, 'category') || 'general';
       }
+      if (type === 'Panel') {
+        panelDefinitions.push({
+          id,
+          name: feature.name,
+          objectArg,
+          source: feature.source,
+        });
+      }
       upsertFeature(`${type}:${id}`, feature);
     }
   }
@@ -159,11 +186,13 @@ function extractKnownRuntimeMenus() {
       file: path.join(sourceRoot, 'js/uv/uv.js'),
       marker: 'menu: new Menu(',
       route: [menuName('uv')],
+      panel: {id: 'uv', name: 'UV'},
     },
     {
       file: path.join(sourceRoot, 'js/animations/timeline.js'),
       marker: 'menu: new Menu(',
       route: ['Timeline'],
+      panel: {id: 'timeline', name: 'Timeline'},
     },
   ];
   for (const spec of runtimeMenus) {
@@ -176,6 +205,15 @@ function extractKnownRuntimeMenus() {
     const args = splitTopLevel(src.slice(paren + 1, end));
     if (args[0]?.trim().startsWith('[')) {
       parseMenuArray(args[0], spec.route, relative(spec.file), lineNumber(raw, index));
+      if (spec.panel) {
+        parsePanelMenuArray(
+          args[0],
+          spec.panel,
+          ['View', 'Panels', spec.panel.name, 'Panel Menu'],
+          relative(spec.file),
+          lineNumber(raw, index)
+        );
+      }
     }
   }
 }
@@ -210,6 +248,106 @@ function applySyntheticRoutes() {
   addRoute('theme_window', ['File', 'Preferences', 'Theme']);
   addRoute('plugins_window', ['File', 'Plugins']);
   addRoute('action_control', ['Tools', 'Action Control']);
+}
+
+function applyPanelToolbarRoutes() {
+  for (const panel of panelDefinitions) {
+    const toolbarArray = arrayProp(panel.objectArg, 'toolbars');
+    if (toolbarArray) {
+      for (const token of splitTopLevel(trimWrapper(toolbarArray.trim(), '[', ']'))) {
+        const toolbar = toolbarDefinitionFromToken(token.trim());
+        if (!toolbar?.children?.length) continue;
+        for (const childId of toolbar.children) {
+          if (!childId || childId === '_' || childId === '+') continue;
+          const controlName = labelForId(childId);
+          const route = ['View', 'Panels', panel.name, controlName];
+          addRoute(childId, route);
+          addPanelContent({
+            panel_id: panel.id,
+            panel_name: panel.name,
+            control_id: childId,
+            control_name: controlName,
+            control_type: featureTypeById(childId) || 'Panel control',
+            ui_path: route.join(' > '),
+            source: toolbar.source || panel.source,
+          });
+        }
+      }
+    }
+    const menuProp = rawTopLevelProp(panel.objectArg, 'menu');
+    if (menuProp?.startsWith('new Menu')) {
+      const paren = menuProp.indexOf('(');
+      const end = findMatching(menuProp, paren, '(', ')');
+      if (paren !== -1 && end !== -1) {
+        const args = splitTopLevel(menuProp.slice(paren + 1, end));
+        if (args[0]?.trim().startsWith('[')) {
+          parsePanelMenuArray(
+            args[0],
+            panel,
+            ['View', 'Panels', panel.name, 'Panel Menu'],
+            panel.source.split(':')[0],
+            Number(panel.source.split(':').at(-1))
+          );
+        }
+      }
+    }
+  }
+  panelContents.sort((a, b) => {
+    const panel = a.panel_name.localeCompare(b.panel_name);
+    if (panel) return panel;
+    return a.control_name.localeCompare(b.control_name);
+  });
+}
+
+function parsePanelMenuArray(arrayText, panel, routePrefix, sourceFile, sourceLine) {
+  const body = trimWrapper(arrayText.trim(), '[', ']');
+  for (const token of splitTopLevel(body)) {
+    const item = token.trim();
+    if (!item || item === '_' || item.startsWith('new MenuSeparator')) continue;
+    if (/^['"`]/.test(item)) {
+      const id = stringLiteral(item);
+      if (!id || id === '_') continue;
+      const controlName = labelForId(id);
+      const route = [...routePrefix, controlName];
+      addRoute(id, route);
+      addPanelContent({
+        panel_id: panel.id,
+        panel_name: panel.name,
+        control_id: id,
+        control_name: controlName,
+        control_type: featureTypeById(id) || 'Panel menu item',
+        ui_path: route.join(' > '),
+        source: `${sourceFile}:${sourceLine}`,
+      });
+      continue;
+    }
+    if (item.startsWith('{')) {
+      const id = literalProp(item, 'id');
+      const name = resolveName(literalProp(item, 'name')) || (id ? labelForId(id) : 'Menu Item');
+      const route = [...routePrefix, name];
+      const childrenArray = arrayProp(item, 'children');
+      if (id) addRoute(id, route);
+      if (id || childrenArray) {
+        addPanelContent({
+          panel_id: panel.id,
+          panel_name: panel.name,
+          control_id: id || route.join('/'),
+          control_name: name,
+          control_type: childrenArray ? 'Panel menu group' : (featureTypeById(id) || 'Panel menu item'),
+          ui_path: route.join(' > '),
+          source: `${sourceFile}:${sourceLine}`,
+        });
+      }
+      if (childrenArray) parsePanelMenuArray(childrenArray, panel, route, sourceFile, sourceLine);
+    }
+  }
+}
+
+function addPanelContent(item) {
+  const key = `${item.panel_id}:${item.control_id}:${item.ui_path}`;
+  if (panelContentKeys.has(key)) return;
+  panelContentKeys.add(key);
+  panelContents.push(item);
 }
 
 function mergeInlineMenuItems() {
@@ -282,6 +420,46 @@ function addRoute(id, parts) {
   for (const feature of featureByKey.values()) {
     if (feature.id === id) feature.routes = unique(feature.routes.concat(route));
   }
+}
+
+function toolbarDefinitionFromToken(token) {
+  if (!token) return null;
+  if (token.startsWith('new Toolbar')) {
+    const paren = token.indexOf('(');
+    const end = findMatching(token, paren, '(', ')');
+    if (paren !== -1 && end !== -1) {
+      return toolbarDefinitionFromArgs(splitTopLevel(token.slice(paren + 1, end)), '', 0);
+    }
+  }
+  const ref = token.match(/^Toolbars\.([A-Za-z0-9_]+)/);
+  if (ref) return toolbarDefinitions.get(ref[1]) || null;
+  return null;
+}
+
+function toolbarDefinitionFromArgs(args, sourceFile, sourceLine) {
+  const id = constructorId(args);
+  const objectArg = args.find(arg => arg.trim().startsWith('{')) || '';
+  const children = stringArrayProp(objectArg, 'children');
+  return {
+    id,
+    children,
+    source: sourceFile ? `${sourceFile}:${sourceLine}` : '',
+  };
+}
+
+function stringArrayProp(objectText, prop) {
+  const array = arrayProp(objectText, prop);
+  if (!array) return [];
+  return splitTopLevel(trimWrapper(array.trim(), '[', ']'))
+    .map(token => stringLiteral(token.trim()))
+    .filter(Boolean);
+}
+
+function featureTypeById(id) {
+  for (const feature of featureByKey.values()) {
+    if (feature.id === id) return feature.type;
+  }
+  return '';
 }
 
 function findConstructors(src, type) {
@@ -534,6 +712,15 @@ function unique(list) {
   return [...new Set(list.filter(Boolean))];
 }
 
+function groupBy(list, keyFn) {
+  return list.reduce((groups, item) => {
+    const key = keyFn(item);
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(item);
+    return groups;
+  }, {});
+}
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -542,7 +729,7 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function renderHtml(features) {
+function renderHtml(features, panelContents) {
   const counts = features.reduce((acc, feature) => {
     acc[feature.type] = (acc[feature.type] || 0) + 1;
     return acc;
@@ -551,17 +738,45 @@ function renderHtml(features) {
     .map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)} (${counts[type]})</option>`)
     .join('');
   const rows = features.map(feature => {
-    const route = feature.routes[0] || '';
+    const routes = feature.routes
+      .map(route => `<li>${escapeHtml(route)}</li>`)
+      .join('');
     return `<tr data-type="${escapeHtml(feature.type)}" data-search="${escapeHtml(`${feature.name} ${feature.type} ${feature.id} ${feature.routes.join(' ')} ${feature.description}`.toLowerCase())}">
       <td class="feature"><strong>${escapeHtml(feature.name)}</strong><span>${escapeHtml(feature.id)}</span></td>
       <td><span class="pill">${escapeHtml(feature.type)}</span></td>
-      <td class="route">${escapeHtml(route)}</td>
+      <td class="route"><ul class="routes">${routes}</ul></td>
       <td>${escapeHtml(feature.description)}</td>
       <td><code>${escapeHtml(feature.source)}</code></td>
     </tr>`;
   }).join('\n');
   const countCards = Object.keys(counts).sort()
     .map(type => `<div><strong>${counts[type]}</strong><span>${escapeHtml(type)}</span></div>`)
+    .join('');
+  const panelGroups = groupBy(panelContents, item => item.panel_name);
+  const panelSections = Object.keys(panelGroups).sort()
+    .map(panelName => {
+      const items = panelGroups[panelName];
+      const itemRows = items.map(item => `<tr>
+        <td class="feature"><strong>${escapeHtml(item.control_name)}</strong><span>${escapeHtml(item.control_id)}</span></td>
+        <td><span class="pill">${escapeHtml(item.control_type)}</span></td>
+        <td class="route">${escapeHtml(item.ui_path)}</td>
+        <td><code>${escapeHtml(item.source)}</code></td>
+      </tr>`).join('');
+      return `<section class="panel-section">
+        <h3>${escapeHtml(panelName)} <span>${items.length} controls</span></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Control</th>
+              <th>Type</th>
+              <th>UI Path</th>
+              <th>Toolbar Source</th>
+            </tr>
+          </thead>
+          <tbody>${itemRows}</tbody>
+        </table>
+      </section>`;
+    })
     .join('');
 
   return `<!doctype html>
@@ -594,6 +809,9 @@ function renderHtml(features) {
       background: linear-gradient(180deg, #fff, #f8fafb);
     }
     h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0; }
+    h2 { margin: 26px 0 8px; font-size: 20px; letter-spacing: 0; }
+    h3 { margin: 18px 0 8px; font-size: 16px; letter-spacing: 0; }
+    h3 span { color: var(--muted); font-weight: 500; font-size: 13px; }
     p { margin: 0; color: var(--muted); max-width: 980px; }
     main { padding: 22px 32px 36px; }
     .counts {
@@ -650,6 +868,14 @@ function renderHtml(features) {
     .feature strong { display: block; }
     .feature span { color: var(--muted); font-size: 12px; }
     .route { min-width: 260px; color: var(--accent); font-weight: 600; }
+    .routes {
+      margin: 0;
+      padding-left: 16px;
+    }
+    .routes li + li { margin-top: 4px; }
+    .panel-section {
+      margin: 12px 0 18px;
+    }
     .pill {
       display: inline-block;
       border: 1px solid #c9d4dc;
@@ -683,7 +909,11 @@ function renderHtml(features) {
   </header>
   <main>
     <div class="counts">${countCards}</div>
-    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source.</p>
+    <p class="note">Routes marked through toolbox, panels, modes, project formats, loaders, and settings are inferred from Blockbench's standard UI registration points. Menu routes are extracted from menu registrations in source. Panel contents are extracted from toolbar controls attached to each panel registration.</p>
+    <h2>Panel Contents</h2>
+    <p>${panelContents.length} panel controls extracted from panel toolbar registrations.</p>
+    ${panelSections}
+    <h2>All UI-Reachable Features</h2>
     <div class="controls">
       <input id="search" type="search" placeholder="Search feature, UI path, id, description">
       <select id="type">

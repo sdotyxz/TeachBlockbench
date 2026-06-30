@@ -1,7 +1,1513 @@
 {
-  "generated_at": "2026-06-30T02:00:15.836Z",
+  "generated_at": "2026-06-30T03:17:20.184Z",
   "source_root": "reference/blockbench-source",
-  "count": 428,
+  "count": 497,
+  "panel_content_count": 167,
+  "panel_contents": [
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "add_animation",
+      "control_name": "Add Animation",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Add Animation",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "add_animation",
+      "control_name": "Add Animation",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Add Animation",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "add_animation_controller",
+      "control_name": "Add Animation Controller",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Add Animation Controller",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "add_animation_controller",
+      "control_name": "Add Animation Controller",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Add Animation Controller",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "slider_animation_length",
+      "control_name": "Animation Length",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Animations > Animation Length",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "create_animation_group",
+      "control_name": "Create Animation Group",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Create Animation Group",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "create_animation_group",
+      "control_name": "Create Animation Group",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Create Animation Group",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "export_modded_animations",
+      "control_name": "Export Modded Entity Animations",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Export Modded Entity Animations",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "load_animation_file",
+      "control_name": "Import Animations",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Import Animations",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "load_animation_file",
+      "control_name": "Import Animations",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Import Animations",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Paste",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "save_all_animations",
+      "control_name": "Save All Animations",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Animations > Panel Menu > Save All Animations",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "animations",
+      "panel_name": "Animations",
+      "control_id": "search_animations",
+      "control_name": "Search Animations",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Animations > Search Animations",
+      "source": "reference/blockbench-source/js/animations/animation.js:1683"
+    },
+    {
+      "panel_id": "collections",
+      "panel_name": "Collections",
+      "control_id": "copy",
+      "control_name": "Copy",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Collections > Panel Menu > Copy",
+      "source": "reference/blockbench-source/js/outliner/collections.ts:669"
+    },
+    {
+      "panel_id": "collections",
+      "panel_name": "Collections",
+      "control_id": "create_collection",
+      "control_name": "Create Collection",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Collections > Create Collection",
+      "source": "reference/blockbench-source/js/outliner/collections.ts:669"
+    },
+    {
+      "panel_id": "collections",
+      "panel_name": "Collections",
+      "control_id": "create_collection",
+      "control_name": "Create Collection",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Collections > Panel Menu > Create Collection",
+      "source": "reference/blockbench-source/js/outliner/collections.ts:669"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "add_to_palette",
+      "control_name": "Add To Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Color > Add To Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_blue",
+      "control_name": "Color Blue",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Color Blue",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_green",
+      "control_name": "Color Green",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Color Green",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_red",
+      "control_name": "Color Red",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Color Red",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_h",
+      "control_name": "Hue",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Hue",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "pick_screen_color",
+      "control_name": "Pick Screen Color",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Color > Pick Screen Color",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_s",
+      "control_name": "Saturation",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Saturation",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "color",
+      "panel_name": "Color",
+      "control_id": "slider_color_v",
+      "control_name": "Value",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Color > Value",
+      "source": "reference/blockbench-source/js/texturing/color.js:504"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "apply_display_preset",
+      "control_name": "Apply Preset",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Display > Apply Preset",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "copy",
+      "control_name": "Copy",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Display > Copy",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "gui_light",
+      "control_name": "GUI Light",
+      "control_type": "Toolbar select",
+      "ui_path": "View > Panels > Display > GUI Light",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "add_display_preset",
+      "control_name": "New Preset",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Display > New Preset",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Display > Paste",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "display",
+      "panel_name": "Display",
+      "control_id": "shelf_alignment",
+      "control_name": "Shelf Alignment",
+      "control_type": "Toolbar select",
+      "ui_path": "View > Panels > Display > Shelf Alignment",
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1694"
+    },
+    {
+      "panel_id": "keyframe",
+      "panel_name": "Keyframe",
+      "control_id": "keyframe_interpolation",
+      "control_name": "Interpolation",
+      "control_type": "Toolbar select",
+      "ui_path": "View > Panels > Keyframe > Interpolation",
+      "source": "reference/blockbench-source/js/animations/keyframe.js:1249"
+    },
+    {
+      "panel_id": "keyframe",
+      "panel_name": "Keyframe",
+      "control_id": "reset_keyframe",
+      "control_name": "Reset Keyframe",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Keyframe > Reset Keyframe",
+      "source": "reference/blockbench-source/js/animations/keyframe.js:1249"
+    },
+    {
+      "panel_id": "keyframe",
+      "panel_name": "Keyframe",
+      "control_id": "slider_keyframe_time",
+      "control_name": "Timecode",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Keyframe > Timecode",
+      "source": "reference/blockbench-source/js/animations/keyframe.js:1249"
+    },
+    {
+      "panel_id": "keyframe",
+      "panel_name": "Keyframe",
+      "control_id": "keyframe_uniform",
+      "control_name": "Uniform Scaling",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Keyframe > Uniform Scaling",
+      "source": "reference/blockbench-source/js/animations/keyframe.js:1249"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "create_empty_layer",
+      "control_name": "Create Empty Layer",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Layers > Create Empty Layer",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "create_empty_layer",
+      "control_name": "Create Empty Layer",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Layers > Panel Menu > Create Empty Layer",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "enable_texture_layers",
+      "control_name": "Enable Layers",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Layers > Enable Layers",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "import_layer",
+      "control_name": "Import Layer",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Layers > Import Layer",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "import_layer",
+      "control_name": "Import Layer",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Layers > Panel Menu > Import Layer",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "layer_blend_mode",
+      "control_name": "Layer Blend Mode",
+      "control_type": "Toolbar select",
+      "ui_path": "View > Panels > Layers > Layer Blend Mode",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "layers",
+      "panel_name": "Layers",
+      "control_id": "layer_opacity",
+      "control_name": "Layer Opacity",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Layers > Layer Opacity",
+      "source": "reference/blockbench-source/js/texturing/layers.js:680"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_element",
+      "control_name": "Add Element",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Element",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_element",
+      "control_name": "Add Element",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Add Element",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_group",
+      "control_name": "Add Group",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Add Group",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "add_group",
+      "control_name": "Add Group",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Add Group",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "collapse_groups",
+      "control_name": "Collapse Groups",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Collapse Groups",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "element_colors",
+      "control_name": "Cube Colors",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Cube Colors",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "explode_skin_model",
+      "control_name": "Explode Skin Model",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Explode Skin Model",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "cube_counter",
+      "control_name": "Model Statistics",
+      "control_type": "Toolbar text",
+      "ui_path": "View > Panels > Outliner > Model Statistics",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Paste",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "search_outliner",
+      "control_name": "Search Outliner",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Search Outliner",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "search_outliner",
+      "control_name": "Search Outliner",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Search Outliner",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "select_all",
+      "control_name": "Select All",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Select All",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "sort_outliner",
+      "control_name": "Sort Outliner",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Sort Outliner",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "outliner_toggle",
+      "control_name": "Toggle More Options",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Toggle More Options",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "outliner_toggle",
+      "control_name": "Toggle More Options",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Toggle More Options",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "toggle_skin_layer",
+      "control_name": "Toggle Skin Layer",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Toggle Skin Layer",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "outliner",
+      "panel_name": "Outliner",
+      "control_id": "unfold_groups",
+      "control_name": "Unfold Groups",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Outliner > Panel Menu > Unfold Groups",
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1335"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "export_palette",
+      "control_name": "Export Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Export Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "generate_palette",
+      "control_name": "Generate Palette...",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Generate Palette...",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "import_palette",
+      "control_name": "Import Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Import Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "load_palette",
+      "control_name": "Load Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Load Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "load_palette",
+      "control_name": "Load Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Panel Menu > Load Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "lock_palette",
+      "control_name": "Lock Palette",
+      "control_type": "Panel menu item",
+      "ui_path": "View > Panels > Palette > Panel Menu > Lock Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "save_palette",
+      "control_name": "Save Palette...",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Save Palette...",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "save_palette",
+      "control_name": "Save Palette...",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Panel Menu > Save Palette...",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "sort_palette",
+      "control_name": "Sort Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Sort Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "palette",
+      "panel_name": "Palette",
+      "control_id": "sort_palette",
+      "control_name": "Sort Palette",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Palette > Panel Menu > Sort Palette",
+      "source": "reference/blockbench-source/js/texturing/color.js:757"
+    },
+    {
+      "panel_id": "skin_pose",
+      "panel_name": "Pose",
+      "control_id": "add_custom_skin_pose",
+      "control_name": "Add Custom Skin Pose",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Pose > Add Custom Skin Pose",
+      "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:803"
+    },
+    {
+      "panel_id": "skin_pose",
+      "panel_name": "Pose",
+      "control_id": "custom_skin_poses",
+      "control_name": "Custom Skin Poses",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Pose > Custom Skin Poses",
+      "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:803"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "append_to_template",
+      "control_name": "Append Elements to Template...",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Append Elements to Template...",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "change_textures_folder",
+      "control_name": "Change Texture Location",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Panel Menu > Change Texture Location",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "create_texture",
+      "control_name": "Create Texture",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Create Texture",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "create_texture",
+      "control_name": "Create Texture",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Panel Menu > Create Texture",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "create_texture_group",
+      "control_name": "Create Texture Group",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Create Texture Group",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "import_texture",
+      "control_name": "Import Texture",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Import Texture",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "import_texture",
+      "control_name": "Import Texture",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Panel Menu > Import Texture",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Panel Menu > Paste",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "save_textures",
+      "control_name": "Save Textures",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Textures > Panel Menu > Save Textures",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "textures",
+      "panel_name": "Textures",
+      "control_id": "search_textures",
+      "control_name": "Search Textures",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Textures > Search Textures",
+      "source": "reference/blockbench-source/js/texturing/textures.js:2940"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "select_effect_animator",
+      "control_name": "Animate Effects",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Animate Effects",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "apply_animation_preset",
+      "control_name": "Apply Animation Preset",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Apply Animation Preset",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "bring_up_all_animations",
+      "control_name": "Bring Up All Animators",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Bring Up All Animators",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "bring_up_all_animations",
+      "control_name": "Bring Up All Animators",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Bring Up All Animators",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "clear_timeline",
+      "control_name": "Clear Timeline",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Clear Timeline",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "clear_timeline",
+      "control_name": "Clear Timeline",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Clear Timeline",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "disable_timeline_range",
+      "control_name": "Disable Timeline Range",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Disable Timeline Range",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "graph_editor_other_graphs",
+      "control_name": "Display Other Graphs",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Display Other Graphs",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "timeline_focus",
+      "control_name": "Filter Channels",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Filter Channels",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "timeline_focus",
+      "control_name": "Filter Channels",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Filter Channels",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "fold_all_animations",
+      "control_name": "Fold All Animators",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Fold All Animators",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "graph_editor_include_other_graphs",
+      "control_name": "Include Other Graphs",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Include Other Graphs",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "graph_editor_zero_line",
+      "control_name": "Include Zero Line",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Include Zero Line",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "jump_to_timeline_end",
+      "control_name": "Jump to Animation End",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Jump to Animation End",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "jump_to_timeline_end",
+      "control_name": "Jump to Animation End",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Jump to Animation End",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "jump_to_timeline_start",
+      "control_name": "Jump to Animation Start",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Jump to Animation Start",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "jump_to_timeline_start",
+      "control_name": "Jump to Animation Start",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Jump to Animation Start",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "looped_animation_playback",
+      "control_name": "Looped Playback",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Looped Playback",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Paste",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "play_animation",
+      "control_name": "Play Animation",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Play Animation",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "play_animation",
+      "control_name": "Play Animation",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Play Animation",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "slider_animation_speed",
+      "control_name": "Playback Speed",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Timeline > Playback Speed",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "zoom_reset",
+      "control_name": "Reset Zoom",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Zoom > Reset Zoom",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "save_timeline_setup",
+      "control_name": "Save Timeline Setup...",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Save Timeline Setup...",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "select_all",
+      "control_name": "Select All",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Select All",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "add_marker",
+      "control_name": "Set Marker",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Set Marker",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "set_timeline_range_end",
+      "control_name": "Set Timeline Range End",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Set Timeline Range End",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "set_timeline_range_start",
+      "control_name": "Set Timeline Range Start",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Set Timeline Range Start",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "timeline_setups",
+      "control_name": "Timeline Setups",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Timeline Setups",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "timeline_graph_editor",
+      "control_name": "Toggle Graph Editor",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Timeline > Toggle Graph Editor",
+      "source": "reference/blockbench-source/js/animations/timeline.js:800"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "zoom",
+      "control_name": "Zoom",
+      "control_type": "Panel menu group",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Zoom",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "zoom_in",
+      "control_name": "Zoom In",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Zoom > Zoom In",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "timeline",
+      "panel_name": "Timeline",
+      "control_id": "zoom_out",
+      "control_name": "Zoom Out",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Timeline > Panel Menu > Zoom > Zoom Out",
+      "source": "reference/blockbench-source/js/animations/timeline.js:753"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "origin_to_geometry",
+      "control_name": "Center Pivot",
+      "control_type": "Action",
+      "ui_path": "View > Panels > Transform > Center Pivot",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:839"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_inflate",
+      "control_name": "Inflate",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Inflate",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:816"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_origin_x",
+      "control_name": "Slider Origin X",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Origin X",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:839"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_origin_y",
+      "control_name": "Slider Origin Y",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Origin Y",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:839"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_origin_z",
+      "control_name": "Slider Origin Z",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Origin Z",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:839"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_pos_x",
+      "control_name": "Slider Pos X",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Pos X",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:806"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_pos_y",
+      "control_name": "Slider Pos Y",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Pos Y",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:806"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_pos_z",
+      "control_name": "Slider Pos Z",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Pos Z",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:806"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_rotation_x",
+      "control_name": "Slider Rotation X",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Rotation X",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:850"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_rotation_y",
+      "control_name": "Slider Rotation Y",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Rotation Y",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:850"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_rotation_z",
+      "control_name": "Slider Rotation Z",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Rotation Z",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:850"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_size_x",
+      "control_name": "Slider Size X",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Size X",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:816"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_size_y",
+      "control_name": "Slider Size Y",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Size Y",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:816"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_size_z",
+      "control_name": "Slider Size Z",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Size Z",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:816"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_stretch_x",
+      "control_name": "Slider Stretch X",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Stretch X",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:827"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_stretch_y",
+      "control_name": "Slider Stretch Y",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Stretch Y",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:827"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "slider_stretch_z",
+      "control_name": "Slider Stretch Z",
+      "control_type": "Numeric control",
+      "ui_path": "View > Panels > Transform > Slider Stretch Z",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:827"
+    },
+    {
+      "panel_id": "transform",
+      "panel_name": "Transform",
+      "control_id": "toggle_stretch_linked",
+      "control_name": "Toggle Stretch Linked",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > Transform > Toggle Stretch Linked",
+      "source": "reference/blockbench-source/js/interface/toolbars.js:827"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_apply_all",
+      "control_name": "Apply To All Faces",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Apply To All Faces",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_auto",
+      "control_name": "Auto UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Auto UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_auto",
+      "control_name": "Auto UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Auto UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "focus_on_selection",
+      "control_name": "Center View on Selection",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Center View on Selection",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "connect_uv_faces",
+      "control_name": "Connect UV Faces",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Connect UV Faces",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "copy",
+      "control_name": "Copy",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Copy",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "cube_uv_mode",
+      "control_name": "Cube Uv Mode",
+      "control_type": "Toolbar select",
+      "ui_path": "View > Panels > UV > Panel Menu > Cube Uv Mode",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_cycle_invert",
+      "control_name": "Cycle Invert UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Cycle Invert UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_cycle",
+      "control_name": "Cycle UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Cycle UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "display_uv",
+      "control_name": "Display UV Faces",
+      "control_type": "Setting",
+      "ui_path": "View > Panels > UV > Panel Menu > Display UV Faces",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_maximize",
+      "control_name": "Maximize UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Maximize UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_maximize",
+      "control_name": "Maximize UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Maximize UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "merge_uv_vertices",
+      "control_name": "Merge UV Vertices",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Merge UV Vertices",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "toggle_mirror_uv",
+      "control_name": "Mirror UV",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > UV > Mirror UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "move_texture_with_uv",
+      "control_name": "Move Texture with UV",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > UV > Move Texture with UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "move_uv_to_cursor",
+      "control_name": "Move UV to Cursor",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Move UV to Cursor",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "painting_grid",
+      "control_name": "Painting Grid",
+      "control_type": "Setting",
+      "ui_path": "View > Panels > UV > Panel Menu > Painting Grid",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "paste",
+      "control_name": "Paste",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Paste",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_rel_auto",
+      "control_name": "Relative Auto UV",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Relative Auto UV",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_transparent",
+      "control_name": "Remove Face",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Remove Face",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "zoom_reset",
+      "control_name": "Reset Zoom",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Zoom > Reset Zoom",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_rotate_left",
+      "control_name": "Rotate UV Left",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotate UV Left",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_rotate_right",
+      "control_name": "Rotate UV Right",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Rotate UV Right",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "snap_uv_to_pixels",
+      "control_name": "Snap UV to Pixels",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Snap UV to Pixels",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "face_tint",
+      "control_name": "Tint",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Tint",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_turn_mapping",
+      "control_name": "Turn Mapping",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Turn Mapping",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_checkerboard",
+      "control_name": "UV Editor Checkerboard",
+      "control_type": "Setting",
+      "ui_path": "View > Panels > UV > Panel Menu > UV Editor Checkerboard",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_mirror_x",
+      "control_name": "UV Mirror X",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > UV Mirror X",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_mirror_y",
+      "control_name": "UV Mirror Y",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > UV Mirror Y",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "paint_mode_uv_overlay",
+      "control_name": "UV Overlay",
+      "control_type": "Toggle",
+      "ui_path": "View > Panels > UV > Panel Menu > UV Overlay",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_project_from_view",
+      "control_name": "UV Project from View",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > UV Project from View",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_project_from_view",
+      "control_name": "UV Project from View",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > UV Project from View",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "uv_rotation",
+      "control_name": "UV Rotation",
+      "control_type": "Toolbar slider",
+      "ui_path": "View > Panels > UV > UV Rotation",
+      "source": "reference/blockbench-source/js/uv/uv.js:2677"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "zoom",
+      "control_name": "Zoom",
+      "control_type": "Panel menu group",
+      "ui_path": "View > Panels > UV > Panel Menu > Zoom",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "zoom_in",
+      "control_name": "Zoom In",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Zoom > Zoom In",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    },
+    {
+      "panel_id": "uv",
+      "panel_name": "UV",
+      "control_id": "zoom_out",
+      "control_name": "Zoom Out",
+      "control_type": "Action",
+      "ui_path": "View > Panels > UV > Panel Menu > Zoom > Zoom Out",
+      "source": "reference/blockbench-source/js/uv/uv.js:1784"
+    }
+  ],
   "features": [
     {
       "id": "select_effect_animator",
@@ -9,7 +1515,8 @@
       "type": "Action",
       "description": "Opens timeline to add sound and particle effects",
       "routes": [
-        "Animation > Animate Effects"
+        "Animation > Animate Effects",
+        "View > Panels > Timeline > Animate Effects"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2178",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -100,7 +1607,9 @@
       "type": "Action",
       "description": "Import an animation file",
       "routes": [
-        "Animation > Import Animations"
+        "Animation > Import Animations",
+        "View > Panels > Animations > Import Animations",
+        "View > Panels > Animations > Panel Menu > Import Animations"
       ],
       "source": "reference/blockbench-source/js/animations/animation.js:971",
       "source_file": "reference/blockbench-source/js/animations/animation.js",
@@ -165,7 +1674,8 @@
       "type": "Action",
       "description": "Save all currently loaded animations",
       "routes": [
-        "Animation > Save All Animations"
+        "Animation > Save All Animations",
+        "View > Panels > Animations > Panel Menu > Save All Animations"
       ],
       "source": "reference/blockbench-source/js/animations/animation.js:1028",
       "source_file": "reference/blockbench-source/js/animations/animation.js",
@@ -178,7 +1688,8 @@
       "type": "Action",
       "description": "Set a timeline marker",
       "routes": [
-        "Animation > Set Marker"
+        "Animation > Set Marker",
+        "View > Panels > Timeline > Set Marker"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2228",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -204,7 +1715,8 @@
       "type": "Action",
       "description": "Apply a default or custom display setting preset",
       "routes": [
-        "Display > Apply Preset"
+        "Display > Apply Preset",
+        "View > Panels > Display > Apply Preset"
       ],
       "source": "reference/blockbench-source/js/display_mode/display_mode.js:1619",
       "source_file": "reference/blockbench-source/js/display_mode/display_mode.js",
@@ -217,7 +1729,8 @@
       "type": "Action",
       "description": "Add a new display setting preset",
       "routes": [
-        "Display > New Preset"
+        "Display > New Preset",
+        "View > Panels > Display > New Preset"
       ],
       "source": "reference/blockbench-source/js/display_mode/display_mode.js:1577",
       "source_file": "reference/blockbench-source/js/display_mode/display_mode.js",
@@ -230,7 +1743,9 @@
       "type": "Action",
       "description": "Add a new element from the list of element types",
       "routes": [
-        "Edit > Add Element"
+        "Edit > Add Element",
+        "View > Panels > Outliner > Add Element",
+        "View > Panels > Outliner > Panel Menu > Add Element"
       ],
       "source": "reference/blockbench-source/js/outliner/outliner.js:879",
       "source_file": "reference/blockbench-source/js/outliner/outliner.js",
@@ -243,7 +1758,9 @@
       "type": "Action",
       "description": "Adds a new group or bone",
       "routes": [
-        "Edit > Add Group"
+        "Edit > Add Group",
+        "View > Panels > Outliner > Add Group",
+        "View > Panels > Outliner > Panel Menu > Add Group"
       ],
       "source": "reference/blockbench-source/js/outliner/types/group.js:719",
       "source_file": "reference/blockbench-source/js/outliner/types/group.js",
@@ -389,7 +1906,9 @@
       "routes": [
         "Edit > Select All",
         "Keyframe > Select All",
-        "Timeline > Select All"
+        "Timeline > Select All",
+        "View > Panels > Timeline > Panel Menu > Select All",
+        "View > Panels > Outliner > Panel Menu > Select All"
       ],
       "source": "reference/blockbench-source/js/interface/shared_actions.ts:190",
       "source_file": "reference/blockbench-source/js/interface/shared_actions.ts",
@@ -662,7 +2181,8 @@
       "type": "Action",
       "description": "Export animations for a Minecraft Java Edition modded entity model",
       "routes": [
-        "File > Export > Export Modded Entity Animations"
+        "File > Export > Export Modded Entity Animations",
+        "View > Panels > Animations > Export Modded Entity Animations"
       ],
       "source": "reference/blockbench-source/js/formats/java/modded_entity.js:1111",
       "source_file": "reference/blockbench-source/js/formats/java/modded_entity.js",
@@ -3419,7 +4939,10 @@
       "routes": [
         "Keyframe > Copy",
         "Display > Copy",
-        "UV > Copy"
+        "UV > Copy",
+        "View > Panels > UV > Panel Menu > Copy",
+        "View > Panels > Display > Copy",
+        "View > Panels > Collections > Panel Menu > Copy"
       ],
       "source": "reference/blockbench-source/js/copy_paste.js:458",
       "source_file": "reference/blockbench-source/js/copy_paste.js",
@@ -3461,7 +4984,13 @@
         "Keyframe > Paste",
         "Display > Paste",
         "UV > Paste",
-        "Timeline > Paste"
+        "View > Panels > UV > Panel Menu > Paste",
+        "Timeline > Paste",
+        "View > Panels > Timeline > Panel Menu > Paste",
+        "View > Panels > Animations > Panel Menu > Paste",
+        "View > Panels > Display > Paste",
+        "View > Panels > Outliner > Panel Menu > Paste",
+        "View > Panels > Textures > Panel Menu > Paste"
       ],
       "source": "reference/blockbench-source/js/copy_paste.js:494",
       "source_file": "reference/blockbench-source/js/copy_paste.js",
@@ -3474,7 +5003,8 @@
       "type": "Action",
       "description": "Reset all values of the selected keyframes",
       "routes": [
-        "Keyframe > Reset Keyframe"
+        "Keyframe > Reset Keyframe",
+        "View > Panels > Keyframe > Reset Keyframe"
       ],
       "source": "reference/blockbench-source/js/animations/keyframe.js:1067",
       "source_file": "reference/blockbench-source/js/animations/keyframe.js",
@@ -3539,7 +5069,8 @@
       "type": "Toggle",
       "description": "Enable uniform scaling on the selected keyframes",
       "routes": [
-        "Keyframe > Uniform Scaling"
+        "Keyframe > Uniform Scaling",
+        "View > Panels > Keyframe > Uniform Scaling"
       ],
       "source": "reference/blockbench-source/js/animations/keyframe.js:1012",
       "source_file": "reference/blockbench-source/js/animations/keyframe.js",
@@ -3773,7 +5304,8 @@
       "type": "Action",
       "description": "Save the current pose of the model as a pose preset",
       "routes": [
-        "Skin > Add Custom Skin Pose"
+        "Skin > Add Custom Skin Pose",
+        "View > Panels > Pose > Add Custom Skin Pose"
       ],
       "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:783",
       "source_file": "reference/blockbench-source/js/formats/minecraft/skin.ts",
@@ -3799,7 +5331,8 @@
       "type": "Action",
       "description": "Load a custom skin pose preset",
       "routes": [
-        "Skin > Custom Skin Poses"
+        "Skin > Custom Skin Poses",
+        "View > Panels > Pose > Custom Skin Poses"
       ],
       "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:744",
       "source_file": "reference/blockbench-source/js/formats/minecraft/skin.ts",
@@ -3812,7 +5345,8 @@
       "type": "Toggle",
       "description": "Toggles an explosion view that allows you to edit covered faces",
       "routes": [
-        "Skin > Explode Skin Model"
+        "Skin > Explode Skin Model",
+        "View > Panels > Outliner > Explode Skin Model"
       ],
       "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:714",
       "source_file": "reference/blockbench-source/js/formats/minecraft/skin.ts",
@@ -3825,7 +5359,8 @@
       "type": "Action",
       "description": "Toggle the hat and clothing layer of the skin model",
       "routes": [
-        "Skin > Toggle Skin Layer"
+        "Skin > Toggle Skin Layer",
+        "View > Panels > Outliner > Toggle Skin Layer"
       ],
       "source": "reference/blockbench-source/js/formats/minecraft/skin.ts:583",
       "source_file": "reference/blockbench-source/js/formats/minecraft/skin.ts",
@@ -3838,7 +5373,8 @@
       "type": "Action",
       "description": "Select from a list of animation presets and apply it to the selected bone",
       "routes": [
-        "Timeline > Apply Animation Preset"
+        "Timeline > Apply Animation Preset",
+        "View > Panels > Timeline > Panel Menu > Apply Animation Preset"
       ],
       "source": "reference/blockbench-source/js/animations/timeline_animators.js:1144",
       "source_file": "reference/blockbench-source/js/animations/timeline_animators.js",
@@ -3851,7 +5387,9 @@
       "type": "Action",
       "description": "Brings all modified animators into the timeline",
       "routes": [
-        "Timeline > Bring Up All Animators"
+        "Timeline > Bring Up All Animators",
+        "View > Panels > Timeline > Panel Menu > Bring Up All Animators",
+        "View > Panels > Timeline > Bring Up All Animators"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2132",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3864,7 +5402,9 @@
       "type": "Action",
       "description": "Clear all unselected bones from the timeline",
       "routes": [
-        "Timeline > Clear Timeline"
+        "Timeline > Clear Timeline",
+        "View > Panels > Timeline > Panel Menu > Clear Timeline",
+        "View > Panels > Timeline > Clear Timeline"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2169",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3877,7 +5417,8 @@
       "type": "Action",
       "description": "Disable the custom playback range in the animation timeline",
       "routes": [
-        "Timeline > Disable Timeline Range"
+        "Timeline > Disable Timeline Range",
+        "View > Panels > Timeline > Panel Menu > Disable Timeline Range"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2119",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3890,7 +5431,8 @@
       "type": "Toggle",
       "description": "Whether the graphs of the axes that are not selected are displayed",
       "routes": [
-        "Timeline > Display Other Graphs"
+        "Timeline > Display Other Graphs",
+        "View > Panels > Timeline > Panel Menu > Display Other Graphs"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:1938",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3903,7 +5445,9 @@
       "type": "Action",
       "description": "Select the animation channels to display in the timeline",
       "routes": [
-        "Timeline > Filter Channels"
+        "Timeline > Filter Channels",
+        "View > Panels > Timeline > Panel Menu > Filter Channels",
+        "View > Panels > Timeline > Filter Channels"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2191",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3916,7 +5460,8 @@
       "type": "Action",
       "description": "",
       "routes": [
-        "Timeline > Fold All Animators"
+        "Timeline > Fold All Animators",
+        "View > Panels > Timeline > Panel Menu > Fold All Animators"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2158",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3929,7 +5474,8 @@
       "type": "Toggle",
       "description": "Whether the graph editor includes the graphs that are not selected in the view",
       "routes": [
-        "Timeline > Include Other Graphs"
+        "Timeline > Include Other Graphs",
+        "View > Panels > Timeline > Panel Menu > Include Other Graphs"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:1947",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3942,7 +5488,8 @@
       "type": "Toggle",
       "description": "Whether the graph editor always includes the zero line in the view",
       "routes": [
-        "Timeline > Include Zero Line"
+        "Timeline > Include Zero Line",
+        "View > Panels > Timeline > Panel Menu > Include Zero Line"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:1956",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3955,7 +5502,9 @@
       "type": "Action",
       "description": "",
       "routes": [
-        "Timeline > Jump to Animation End"
+        "Timeline > Jump to Animation End",
+        "View > Panels > Timeline > Panel Menu > Jump to Animation End",
+        "View > Panels > Timeline > Jump to Animation End"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2052",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3968,7 +5517,9 @@
       "type": "Action",
       "description": "",
       "routes": [
-        "Timeline > Jump to Animation Start"
+        "Timeline > Jump to Animation Start",
+        "View > Panels > Timeline > Panel Menu > Jump to Animation Start",
+        "View > Panels > Timeline > Jump to Animation Start"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2034",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3981,7 +5532,8 @@
       "type": "Toggle",
       "description": "Preview animations in an infinite loop",
       "routes": [
-        "Timeline > Looped Playback"
+        "Timeline > Looped Playback",
+        "View > Panels > Timeline > Panel Menu > Looped Playback"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:1983",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -3994,7 +5546,9 @@
       "type": "Action",
       "description": "Preview the selected animation",
       "routes": [
-        "Timeline > Play Animation"
+        "Timeline > Play Animation",
+        "View > Panels > Timeline > Panel Menu > Play Animation",
+        "View > Panels > Timeline > Play Animation"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:1965",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -4007,7 +5561,8 @@
       "type": "Action",
       "description": "Save a preset for the currently selected animators and channels",
       "routes": [
-        "Timeline > Save Timeline Setup..."
+        "Timeline > Save Timeline Setup...",
+        "View > Panels > Timeline > Panel Menu > Save Timeline Setup..."
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2289",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -4020,7 +5575,8 @@
       "type": "Action",
       "description": "Set the end point for a custom playback range in the animation timeline",
       "routes": [
-        "Timeline > Set Timeline Range End"
+        "Timeline > Set Timeline Range End",
+        "View > Panels > Timeline > Panel Menu > Set Timeline Range End"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2110",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -4033,7 +5589,8 @@
       "type": "Action",
       "description": "Set the start point for a custom playback range in the animation timeline",
       "routes": [
-        "Timeline > Set Timeline Range Start"
+        "Timeline > Set Timeline Range Start",
+        "View > Panels > Timeline > Panel Menu > Set Timeline Range Start"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2101",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -4046,7 +5603,8 @@
       "type": "Action",
       "description": "",
       "routes": [
-        "Timeline > Timeline Setups"
+        "Timeline > Timeline Setups",
+        "View > Panels > Timeline > Panel Menu > Timeline Setups"
       ],
       "source": "reference/blockbench-source/js/animations/timeline.js:2257",
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
@@ -4582,7 +6140,8 @@
       "type": "Toggle",
       "description": "Toggle the UV mirroring on the X axis of the selected cubes",
       "routes": [
-        "Transform > Properties > Mirror UV"
+        "Transform > Properties > Mirror UV",
+        "View > Panels > UV > Mirror UV"
       ],
       "source": "reference/blockbench-source/js/modeling/transform.js:1744",
       "source_file": "reference/blockbench-source/js/modeling/transform.js",
@@ -4764,7 +6323,9 @@
       "type": "Action",
       "description": "Sets the UV size of this face to the real size of the face",
       "routes": [
-        "UV > Auto UV"
+        "UV > Auto UV",
+        "View > Panels > UV > Panel Menu > Auto UV",
+        "View > Panels > UV > Auto UV"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2127",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4777,7 +6338,8 @@
       "type": "Action",
       "description": "Connect the selected UV faces to the last selected UV face",
       "routes": [
-        "UV > Connect UV Faces"
+        "UV > Connect UV Faces",
+        "View > Panels > UV > Panel Menu > Connect UV Faces"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2459",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4790,7 +6352,8 @@
       "type": "Toolbar select",
       "description": "",
       "routes": [
-        "UV > Cube Uv Mode"
+        "UV > Cube Uv Mode",
+        "View > Panels > UV > Panel Menu > Cube Uv Mode"
       ],
       "source": "reference/blockbench-source/js/outliner/types/cube.js:1703",
       "source_file": "reference/blockbench-source/js/outliner/types/cube.js",
@@ -4816,7 +6379,8 @@
       "type": "Action",
       "description": "Reverse the order of UV vertices without changing the UV positions",
       "routes": [
-        "UV > Cycle Invert UV"
+        "UV > Cycle Invert UV",
+        "View > Panels > UV > Panel Menu > Cycle Invert UV"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2624",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4829,7 +6393,8 @@
       "type": "Action",
       "description": "Cycle through the order of UV vertices without changing the UV positions",
       "routes": [
-        "UV > Cycle UV"
+        "UV > Cycle UV",
+        "View > Panels > UV > Panel Menu > Cycle UV"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2598",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4843,6 +6408,7 @@
       "description": "Select which UV faces are displayed in the UV editor",
       "routes": [
         "UV > Display UV Faces",
+        "View > Panels > UV > Panel Menu > Display UV Faces",
         "File > Preferences > Settings > Interface > Display UV Faces"
       ],
       "source": "reference/blockbench-source/js/interface/setup_settings.js:75",
@@ -4883,7 +6449,9 @@
       "type": "Action",
       "description": "Sets the UV for this face to the full texture",
       "routes": [
-        "UV > Maximize UV"
+        "UV > Maximize UV",
+        "View > Panels > UV > Panel Menu > Maximize UV",
+        "View > Panels > UV > Maximize UV"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2095",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4896,7 +6464,8 @@
       "type": "Action",
       "description": "Snap the first selected UV vertices to the last selected UV vertices",
       "routes": [
-        "UV > Merge UV Vertices"
+        "UV > Merge UV Vertices",
+        "View > Panels > UV > Panel Menu > Merge UV Vertices"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2424",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4935,7 +6504,8 @@
       "type": "Action",
       "description": "Move the selected UV faces to the mouse cursor position",
       "routes": [
-        "UV > Move UV to Cursor"
+        "UV > Move UV to Cursor",
+        "View > Panels > UV > Panel Menu > Move UV to Cursor"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2403",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4948,7 +6518,8 @@
       "type": "Action",
       "description": "Sets the UV of this face to the position and size of the actual face",
       "routes": [
-        "UV > Relative Auto UV"
+        "UV > Relative Auto UV",
+        "View > Panels > UV > Panel Menu > Relative Auto UV"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2207",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4961,7 +6532,8 @@
       "type": "Action",
       "description": "Rotate the selected UV faces counter-clockwise",
       "routes": [
-        "UV > Rotate UV Left"
+        "UV > Rotate UV Left",
+        "View > Panels > UV > Panel Menu > Rotate UV Left"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2267",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -4974,7 +6546,8 @@
       "type": "Action",
       "description": "Rotate the selected UV faces clockwise",
       "routes": [
-        "UV > Rotate UV Right"
+        "UV > Rotate UV Right",
+        "View > Panels > UV > Panel Menu > Rotate UV Right"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2283",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5000,7 +6573,8 @@
       "type": "Action",
       "description": "Snaps the selected UV vertices to the pixel grid",
       "routes": [
-        "UV > Snap UV to Pixels"
+        "UV > Snap UV to Pixels",
+        "View > Panels > UV > Panel Menu > Snap UV to Pixels"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2550",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5026,7 +6600,8 @@
       "type": "Action",
       "description": "Enables the tint option for the current face",
       "routes": [
-        "UV > Tint"
+        "UV > Tint",
+        "View > Panels > UV > Panel Menu > Tint"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2374",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5039,7 +6614,8 @@
       "type": "Action",
       "description": "Turn the UV mapping around 90 degrees",
       "routes": [
-        "UV > Turn Mapping"
+        "UV > Turn Mapping",
+        "View > Panels > UV > Panel Menu > Turn Mapping"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2111",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5053,6 +6629,7 @@
       "description": "",
       "routes": [
         "UV > UV Editor Checkerboard",
+        "View > Panels > UV > Panel Menu > UV Editor Checkerboard",
         "File > Preferences > Settings > Interface > UV Editor Checkerboard"
       ],
       "source": "reference/blockbench-source/js/preview/preview.js:2378",
@@ -5067,6 +6644,7 @@
       "description": "Toggle the checkerboard background behind the UV editor",
       "routes": [
         "UV > UV Editor Checkerboard",
+        "View > Panels > UV > Panel Menu > UV Editor Checkerboard",
         "File > Preferences > Settings > Interface > UV Editor Checkerboard"
       ],
       "source": "reference/blockbench-source/js/interface/setup_settings.js:72",
@@ -5081,7 +6659,8 @@
       "type": "Toggle",
       "description": "Display the UV map as an overlay in paint mode",
       "routes": [
-        "UV > UV Overlay"
+        "UV > UV Overlay",
+        "View > Panels > UV > Panel Menu > UV Overlay"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2658",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5094,7 +6673,9 @@
       "type": "Action",
       "description": "Automatically generate UVs for the selected faces from the perspective of the 3D view",
       "routes": [
-        "UV > UV Project from View"
+        "UV > UV Project from View",
+        "View > Panels > UV > Panel Menu > UV Project from View",
+        "View > Panels > UV > UV Project from View"
       ],
       "source": "reference/blockbench-source/js/uv/uv.js:2143",
       "source_file": "reference/blockbench-source/js/uv/uv.js",
@@ -5122,7 +6703,9 @@
       "description": "Reset zoom to the default 100%",
       "routes": [
         "UV > Zoom > Reset Zoom",
-        "Timeline > Zoom > Reset Zoom"
+        "View > Panels > UV > Panel Menu > Zoom > Reset Zoom",
+        "Timeline > Zoom > Reset Zoom",
+        "View > Panels > Timeline > Panel Menu > Zoom > Reset Zoom"
       ],
       "source": "reference/blockbench-source/js/interface/toolbars.js:711",
       "source_file": "reference/blockbench-source/js/interface/toolbars.js",
@@ -5136,7 +6719,9 @@
       "description": "Zoom in to scale up the interface",
       "routes": [
         "UV > Zoom > Zoom In",
-        "Timeline > Zoom > Zoom In"
+        "View > Panels > UV > Panel Menu > Zoom > Zoom In",
+        "Timeline > Zoom > Zoom In",
+        "View > Panels > Timeline > Panel Menu > Zoom > Zoom In"
       ],
       "source": "reference/blockbench-source/js/interface/toolbars.js:699",
       "source_file": "reference/blockbench-source/js/interface/toolbars.js",
@@ -5150,7 +6735,9 @@
       "description": "Zoom out to scale down the interface",
       "routes": [
         "UV > Zoom > Zoom Out",
-        "Timeline > Zoom > Zoom Out"
+        "View > Panels > UV > Panel Menu > Zoom > Zoom Out",
+        "Timeline > Zoom > Zoom Out",
+        "View > Panels > Timeline > Panel Menu > Zoom > Zoom Out"
       ],
       "source": "reference/blockbench-source/js/interface/toolbars.js:705",
       "source_file": "reference/blockbench-source/js/interface/toolbars.js",
@@ -5190,7 +6777,8 @@
       "description": "Align the camera to face the center of the current selection",
       "routes": [
         "View > Center View on Selection",
-        "UV > Center View on Selection"
+        "UV > Center View on Selection",
+        "View > Panels > UV > Panel Menu > Center View on Selection"
       ],
       "source": "reference/blockbench-source/js/preview/preview.js:2446",
       "source_file": "reference/blockbench-source/js/preview/preview.js",
@@ -5244,6 +6832,7 @@
       "routes": [
         "View > Painting Grid",
         "UV > Painting Grid",
+        "View > Panels > UV > Panel Menu > Painting Grid",
         "File > Preferences > Settings > Grid > Painting Grid"
       ],
       "source": "reference/blockbench-source/js/interface/setup_settings.js:235",
@@ -5260,6 +6849,7 @@
       "routes": [
         "View > Painting Grid",
         "UV > Painting Grid",
+        "View > Panels > UV > Panel Menu > Painting Grid",
         "File > Preferences > Settings > Grid > Painting Grid"
       ],
       "source": "reference/blockbench-source/js/texturing/painter.js:3193",
@@ -5307,6 +6897,74 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "add_animation",
+      "name": "Add Animation",
+      "type": "Action",
+      "description": "Create a blank animation",
+      "routes": [
+        "View > Panels > Animations > Add Animation",
+        "View > Panels > Animations > Panel Menu > Add Animation"
+      ],
+      "source": "reference/blockbench-source/js/animations/animation.js:945",
+      "source_file": "reference/blockbench-source/js/animations/animation.js",
+      "source_line": 945,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "add_animation_controller",
+      "name": "Add Animation Controller",
+      "type": "Action",
+      "description": "Create a blank animation controller",
+      "routes": [
+        "View > Panels > Animations > Add Animation Controller",
+        "View > Panels > Animations > Panel Menu > Add Animation Controller"
+      ],
+      "source": "reference/blockbench-source/js/animations/animation_controllers.js:2298",
+      "source_file": "reference/blockbench-source/js/animations/animation_controllers.js",
+      "source_line": 2298,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "slider_animation_length",
+      "name": "Animation Length",
+      "type": "Numeric control",
+      "description": "Change the length of the selected animation",
+      "routes": [
+        "View > Panels > Animations > Animation Length"
+      ],
+      "source": "reference/blockbench-source/js/animations/animation.js:914",
+      "source_file": "reference/blockbench-source/js/animations/animation.js",
+      "source_line": 914,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "create_animation_group",
+      "name": "Create Animation Group",
+      "type": "Action",
+      "description": "Create a group of animations",
+      "routes": [
+        "View > Panels > Animations > Create Animation Group",
+        "View > Panels > Animations > Panel Menu > Create Animation Group"
+      ],
+      "source": "reference/blockbench-source/js/animations/animation.js:958",
+      "source_file": "reference/blockbench-source/js/animations/animation.js",
+      "source_line": 958,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "search_animations",
+      "name": "Search Animations",
+      "type": "Toggle",
+      "description": "Search for animations by name",
+      "routes": [
+        "View > Panels > Animations > Search Animations"
+      ],
+      "source": "reference/blockbench-source/js/animations/animation.js:1642",
+      "source_file": "reference/blockbench-source/js/animations/animation.js",
+      "source_line": 1642,
+      "extracted_from": "new Toggle"
+    },
+    {
       "id": "bone",
       "name": "Bone",
       "type": "Panel",
@@ -5346,6 +7004,20 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "create_collection",
+      "name": "Create Collection",
+      "type": "Action",
+      "description": "Create a collection out of the outliner selection",
+      "routes": [
+        "View > Panels > Collections > Create Collection",
+        "View > Panels > Collections > Panel Menu > Create Collection"
+      ],
+      "source": "reference/blockbench-source/js/outliner/collections.ts:603",
+      "source_file": "reference/blockbench-source/js/outliner/collections.ts",
+      "source_line": 603,
+      "extracted_from": "new Action"
+    },
+    {
       "id": "color",
       "name": "Color",
       "type": "Panel",
@@ -5357,6 +7029,110 @@
       "source_file": "reference/blockbench-source/js/texturing/color.js",
       "source_line": 504,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "add_to_palette",
+      "name": "Add To Palette",
+      "type": "Action",
+      "description": "Add the selected color to the color palette",
+      "routes": [
+        "View > Panels > Color > Add To Palette"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:903",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 903,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "slider_color_blue",
+      "name": "Color Blue",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Color Blue"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1213",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1213,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_color_green",
+      "name": "Color Green",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Color Green"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1196",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1196,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_color_red",
+      "name": "Color Red",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Color Red"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1179",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1179,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_color_h",
+      "name": "Hue",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Hue"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1116",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1116,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "pick_screen_color",
+      "name": "Pick Screen Color",
+      "type": "Action",
+      "description": "Pick a color from somewhere on your screen",
+      "routes": [
+        "View > Panels > Color > Pick Screen Color"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1249",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1249,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "slider_color_s",
+      "name": "Saturation",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Saturation"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1136",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1136,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_color_v",
+      "name": "Value",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Color > Value"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1156",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1156,
+      "extracted_from": "new NumSlider"
     },
     {
       "id": "display",
@@ -5387,6 +7163,32 @@
       "extracted_from": "new Mode"
     },
     {
+      "id": "gui_light",
+      "name": "GUI Light",
+      "type": "Toolbar select",
+      "description": "Select the way the item is lit in the inventory",
+      "routes": [
+        "View > Panels > Display > GUI Light"
+      ],
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1668",
+      "source_file": "reference/blockbench-source/js/display_mode/display_mode.js",
+      "source_line": 1668,
+      "extracted_from": "new BarSelect"
+    },
+    {
+      "id": "shelf_alignment",
+      "name": "Shelf Alignment",
+      "type": "Toolbar select",
+      "description": "Select the vertical alignment of items on the shelf",
+      "routes": [
+        "View > Panels > Display > Shelf Alignment"
+      ],
+      "source": "reference/blockbench-source/js/display_mode/display_mode.js:1679",
+      "source_file": "reference/blockbench-source/js/display_mode/display_mode.js",
+      "source_line": 1679,
+      "extracted_from": "new BarSelect"
+    },
+    {
       "id": "element",
       "name": "Element",
       "type": "Panel",
@@ -5413,6 +7215,32 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "keyframe_interpolation",
+      "name": "Interpolation",
+      "type": "Toolbar select",
+      "description": "Select the keyframe interpolation mode",
+      "routes": [
+        "View > Panels > Keyframe > Interpolation"
+      ],
+      "source": "reference/blockbench-source/js/animations/keyframe.js:1047",
+      "source_file": "reference/blockbench-source/js/animations/keyframe.js",
+      "source_line": 1047,
+      "extracted_from": "new BarSelect"
+    },
+    {
+      "id": "slider_keyframe_time",
+      "name": "Timecode",
+      "type": "Numeric control",
+      "description": "Change the timecode of the selected keyframes",
+      "routes": [
+        "View > Panels > Keyframe > Timecode"
+      ],
+      "source": "reference/blockbench-source/js/animations/keyframe.js:988",
+      "source_file": "reference/blockbench-source/js/animations/keyframe.js",
+      "source_line": 988,
+      "extracted_from": "new NumSlider"
+    },
+    {
       "id": "layers",
       "name": "Layers",
       "type": "Panel",
@@ -5424,6 +7252,73 @@
       "source_file": "reference/blockbench-source/js/texturing/layers.js",
       "source_line": 680,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "create_empty_layer",
+      "name": "Create Empty Layer",
+      "type": "Action",
+      "description": "",
+      "routes": [
+        "View > Panels > Layers > Create Empty Layer",
+        "View > Panels > Layers > Panel Menu > Create Empty Layer"
+      ],
+      "source": "reference/blockbench-source/js/texturing/layers.js:444",
+      "source_file": "reference/blockbench-source/js/texturing/layers.js",
+      "source_line": 444,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "enable_texture_layers",
+      "name": "Enable Layers",
+      "type": "Action",
+      "description": "",
+      "routes": [
+        "View > Panels > Layers > Enable Layers"
+      ],
+      "source": "reference/blockbench-source/js/texturing/layers.js:526",
+      "source_file": "reference/blockbench-source/js/texturing/layers.js",
+      "source_line": 526,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "import_layer",
+      "name": "Import Layer",
+      "type": "Action",
+      "description": "Import image files as layers",
+      "routes": [
+        "View > Panels > Layers > Import Layer",
+        "View > Panels > Layers > Panel Menu > Import Layer"
+      ],
+      "source": "reference/blockbench-source/js/texturing/layers.js:462",
+      "source_file": "reference/blockbench-source/js/texturing/layers.js",
+      "source_line": 462,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "layer_blend_mode",
+      "name": "Blend Mode",
+      "type": "Toolbar select",
+      "description": "",
+      "routes": [
+        "View > Panels > Layers > Layer Blend Mode"
+      ],
+      "source": "reference/blockbench-source/js/texturing/layers.js:584",
+      "source_file": "reference/blockbench-source/js/texturing/layers.js",
+      "source_line": 584,
+      "extracted_from": "new BarSelect"
+    },
+    {
+      "id": "layer_opacity",
+      "name": "Layer Opacity",
+      "type": "Numeric control",
+      "description": "",
+      "routes": [
+        "View > Panels > Layers > Layer Opacity"
+      ],
+      "source": "reference/blockbench-source/js/texturing/layers.js:554",
+      "source_file": "reference/blockbench-source/js/texturing/layers.js",
+      "source_line": 554,
+      "extracted_from": "new NumSlider"
     },
     {
       "id": "outliner",
@@ -5439,6 +7334,99 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "cube_counter",
+      "name": "Model Statistics",
+      "type": "Toolbar text",
+      "description": "Displays the current number of elements and other statistics",
+      "routes": [
+        "View > Panels > Outliner > Model Statistics"
+      ],
+      "source": "reference/blockbench-source/js/outliner/outliner.js:923",
+      "source_file": "reference/blockbench-source/js/outliner/outliner.js",
+      "source_line": 923,
+      "extracted_from": "new BarText"
+    },
+    {
+      "id": "collapse_groups",
+      "name": "Collapse Groups",
+      "type": "Action",
+      "description": "Collapse all groups in the outliner",
+      "routes": [
+        "View > Panels > Outliner > Panel Menu > Collapse Groups"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/group.js:800",
+      "source_file": "reference/blockbench-source/js/outliner/types/group.js",
+      "source_line": 800,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "element_colors",
+      "name": "Cube Colors",
+      "type": "Toggle",
+      "description": "Show cube colors in the outliner",
+      "routes": [
+        "View > Panels > Outliner > Panel Menu > Cube Colors"
+      ],
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1048",
+      "source_file": "reference/blockbench-source/js/outliner/outliner.js",
+      "source_line": 1048,
+      "extracted_from": "new Toggle"
+    },
+    {
+      "id": "sort_outliner",
+      "name": "Sort Outliner",
+      "type": "Action",
+      "description": "Sort the outliner alphabetically",
+      "routes": [
+        "View > Panels > Outliner > Panel Menu > Sort Outliner"
+      ],
+      "source": "reference/blockbench-source/js/outliner/outliner.js:1021",
+      "source_file": "reference/blockbench-source/js/outliner/outliner.js",
+      "source_line": 1021,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "unfold_groups",
+      "name": "Unfold Groups",
+      "type": "Action",
+      "description": "Unfold all groups in the outliner",
+      "routes": [
+        "View > Panels > Outliner > Panel Menu > Unfold Groups"
+      ],
+      "source": "reference/blockbench-source/js/outliner/types/group.js:810",
+      "source_file": "reference/blockbench-source/js/outliner/types/group.js",
+      "source_line": 810,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "search_outliner",
+      "name": "Search Outliner",
+      "type": "Toggle",
+      "description": "Search for specific element names in the outliner",
+      "routes": [
+        "View > Panels > Outliner > Search Outliner",
+        "View > Panels > Outliner > Panel Menu > Search Outliner"
+      ],
+      "source": "reference/blockbench-source/js/outliner/outliner.js:910",
+      "source_file": "reference/blockbench-source/js/outliner/outliner.js",
+      "source_line": 910,
+      "extracted_from": "new Toggle"
+    },
+    {
+      "id": "outliner_toggle",
+      "name": "Toggle More Options",
+      "type": "Toggle",
+      "description": "Toggles switches for more options in the outliner",
+      "routes": [
+        "View > Panels > Outliner > Toggle More Options",
+        "View > Panels > Outliner > Panel Menu > Toggle More Options"
+      ],
+      "source": "reference/blockbench-source/js/outliner/outliner.js:899",
+      "source_file": "reference/blockbench-source/js/outliner/outliner.js",
+      "source_line": 899,
+      "extracted_from": "new Toggle"
+    },
+    {
       "id": "palette",
       "name": "Palette",
       "type": "Panel",
@@ -5450,6 +7438,87 @@
       "source_file": "reference/blockbench-source/js/texturing/color.js",
       "source_line": 757,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "export_palette",
+      "name": "Export Palette",
+      "type": "Action",
+      "description": "Export palette as a .GPL file",
+      "routes": [
+        "View > Panels > Palette > Export Palette"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:952",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 952,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "generate_palette",
+      "name": "Generate Palette...",
+      "type": "Action",
+      "description": "Generate palette from a texture",
+      "routes": [
+        "View > Panels > Palette > Generate Palette..."
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:971",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 971,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "import_palette",
+      "name": "Import Palette",
+      "type": "Action",
+      "description": "Import a palette file",
+      "routes": [
+        "View > Panels > Palette > Import Palette"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:929",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 929,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "load_palette",
+      "name": "Load Palette",
+      "type": "Action",
+      "description": "Load one of the built-in or saved palette presets",
+      "routes": [
+        "View > Panels > Palette > Load Palette",
+        "View > Panels > Palette > Panel Menu > Load Palette"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1033",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1033,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "save_palette",
+      "name": "Save Palette...",
+      "type": "Action",
+      "description": "Save the current color palette inside Blockbench for later use",
+      "routes": [
+        "View > Panels > Palette > Save Palette...",
+        "View > Panels > Palette > Panel Menu > Save Palette..."
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:1087",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 1087,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "sort_palette",
+      "name": "Sort Palette",
+      "type": "Action",
+      "description": "Sort all colors on the palette by color and brightness",
+      "routes": [
+        "View > Panels > Palette > Sort Palette",
+        "View > Panels > Palette > Panel Menu > Sort Palette"
+      ],
+      "source": "reference/blockbench-source/js/texturing/color.js:978",
+      "source_file": "reference/blockbench-source/js/texturing/color.js",
+      "source_line": 978,
+      "extracted_from": "new Action"
     },
     {
       "id": "skin_pose",
@@ -5478,6 +7547,99 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "append_to_template",
+      "name": "Append Elements to Template...",
+      "type": "Action",
+      "description": "Add the currently selected elements to the texture template",
+      "routes": [
+        "View > Panels > Textures > Append Elements to Template..."
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2496",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2496,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "create_texture",
+      "name": "Create Texture",
+      "type": "Action",
+      "description": "Create a blank texture or template texture",
+      "routes": [
+        "View > Panels > Textures > Create Texture",
+        "View > Panels > Textures > Panel Menu > Create Texture"
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2488",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2488,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "create_texture_group",
+      "name": "Create Texture Group",
+      "type": "Action",
+      "description": "Create a group for your textures",
+      "routes": [
+        "View > Panels > Textures > Create Texture Group"
+      ],
+      "source": "reference/blockbench-source/js/texturing/texture_groups.js:663",
+      "source_file": "reference/blockbench-source/js/texturing/texture_groups.js",
+      "source_line": 663,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "import_texture",
+      "name": "Import Texture",
+      "type": "Action",
+      "description": "Import one or more textures from your file system",
+      "routes": [
+        "View > Panels > Textures > Import Texture",
+        "View > Panels > Textures > Panel Menu > Import Texture"
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2441",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2441,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "change_textures_folder",
+      "name": "Change Texture Location",
+      "type": "Action",
+      "description": "Change the folder that all textures are saved in",
+      "routes": [
+        "View > Panels > Textures > Panel Menu > Change Texture Location"
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2509",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2509,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "save_textures",
+      "name": "Save Textures",
+      "type": "Action",
+      "description": "Save all unsaved textures",
+      "routes": [
+        "View > Panels > Textures > Panel Menu > Save Textures"
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2504",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2504,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "search_textures",
+      "name": "Search Textures",
+      "type": "Toggle",
+      "description": "Search for textures by name",
+      "routes": [
+        "View > Panels > Textures > Search Textures"
+      ],
+      "source": "reference/blockbench-source/js/texturing/textures.js:2544",
+      "source_file": "reference/blockbench-source/js/texturing/textures.js",
+      "source_line": 2544,
+      "extracted_from": "new Toggle"
+    },
+    {
       "id": "timeline",
       "name": "Timeline",
       "type": "Panel",
@@ -5489,6 +7651,32 @@
       "source_file": "reference/blockbench-source/js/animations/timeline.js",
       "source_line": 800,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "slider_animation_speed",
+      "name": "Playback Speed",
+      "type": "Numeric control",
+      "description": "Playback speed of the timeline in percent",
+      "routes": [
+        "View > Panels > Timeline > Playback Speed"
+      ],
+      "source": "reference/blockbench-source/js/animations/timeline.js:1989",
+      "source_file": "reference/blockbench-source/js/animations/timeline.js",
+      "source_line": 1989,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "timeline_graph_editor",
+      "name": "Toggle Graph Editor",
+      "type": "Toggle",
+      "description": "Toggle the timeline between graph editor view and keyframe view",
+      "routes": [
+        "View > Panels > Timeline > Toggle Graph Editor"
+      ],
+      "source": "reference/blockbench-source/js/animations/timeline.js:1921",
+      "source_file": "reference/blockbench-source/js/animations/timeline.js",
+      "source_line": 1921,
+      "extracted_from": "new Toggle"
     },
     {
       "id": "transform",
@@ -5504,6 +7692,240 @@
       "extracted_from": "new Panel"
     },
     {
+      "id": "origin_to_geometry",
+      "name": "Center Pivot",
+      "type": "Action",
+      "description": "Set the pivot point to the center of the selection",
+      "routes": [
+        "View > Panels > Transform > Center Pivot"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1785",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1785,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "slider_inflate",
+      "name": "Inflate",
+      "type": "Numeric control",
+      "description": "Inflate cubes in all directions without changing the UV",
+      "routes": [
+        "View > Panels > Transform > Inflate"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1083",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1083,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_origin_x",
+      "name": "Pivot %0",
+      "type": "Numeric control",
+      "description": "Move pivot on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Origin X"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1397",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1397,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_origin_y",
+      "name": "Pivot %0",
+      "type": "Numeric control",
+      "description": "Move pivot on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Origin Y"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1418",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1418,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_origin_z",
+      "name": "Pivot %0",
+      "type": "Numeric control",
+      "description": "Move pivot on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Origin Z"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1439",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1439,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_pos_x",
+      "name": "Position %0",
+      "type": "Numeric control",
+      "description": "Move elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Pos X"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:913",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 913,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_pos_y",
+      "name": "Position %0",
+      "type": "Numeric control",
+      "description": "Move elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Pos Y"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:934",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 934,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_pos_z",
+      "name": "Position %0",
+      "type": "Numeric control",
+      "description": "Move elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Pos Z"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:955",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 955,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_rotation_x",
+      "name": "Rotation %0",
+      "type": "Numeric control",
+      "description": "Rotate elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Rotation X"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1241",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1241,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_rotation_y",
+      "name": "Rotation %0",
+      "type": "Numeric control",
+      "description": "Rotate elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Rotation Y"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1269",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1269,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_rotation_z",
+      "name": "Rotation %0",
+      "type": "Numeric control",
+      "description": "Rotate elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Rotation Z"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1297",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1297,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_size_x",
+      "name": "Size %0",
+      "type": "Numeric control",
+      "description": "Resize elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Size X"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:999",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 999,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_size_y",
+      "name": "Size %0",
+      "type": "Numeric control",
+      "description": "Resize elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Size Y"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1026",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1026,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_size_z",
+      "name": "Size %0",
+      "type": "Numeric control",
+      "description": "Resize elements on the %0 axis",
+      "routes": [
+        "View > Panels > Transform > Slider Size Z"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1053",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1053,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_stretch_x",
+      "name": "Stretch",
+      "type": "Numeric control",
+      "description": "Stretches cubes multiplicatively on the %0 axis without changing the UV",
+      "routes": [
+        "View > Panels > Transform > Slider Stretch X"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1135",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1135,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_stretch_y",
+      "name": "Stretch",
+      "type": "Numeric control",
+      "description": "Stretches cubes multiplicatively on the %0 axis without changing the UV",
+      "routes": [
+        "View > Panels > Transform > Slider Stretch Y"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1169",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1169,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "slider_stretch_z",
+      "name": "Stretch",
+      "type": "Numeric control",
+      "description": "Stretches cubes multiplicatively on the %0 axis without changing the UV",
+      "routes": [
+        "View > Panels > Transform > Slider Stretch Z"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1203",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1203,
+      "extracted_from": "new NumSlider"
+    },
+    {
+      "id": "toggle_stretch_linked",
+      "name": "Toggle Stretch Linked",
+      "type": "Toggle",
+      "description": "",
+      "routes": [
+        "View > Panels > Transform > Toggle Stretch Linked"
+      ],
+      "source": "reference/blockbench-source/js/modeling/transform.js:1779",
+      "source_file": "reference/blockbench-source/js/modeling/transform.js",
+      "source_line": 1779,
+      "extracted_from": "new Toggle"
+    },
+    {
       "id": "uv",
       "name": "UV",
       "type": "Panel",
@@ -5515,6 +7937,84 @@
       "source_file": "reference/blockbench-source/js/uv/uv.js",
       "source_line": 2677,
       "extracted_from": "new Panel"
+    },
+    {
+      "id": "uv_apply_all",
+      "name": "Apply To All Faces",
+      "type": "Action",
+      "description": "Applies the settings of the current face to all faces",
+      "routes": [
+        "View > Panels > UV > Apply To All Faces"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2329",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2329,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "move_texture_with_uv",
+      "name": "Move Texture with UV",
+      "type": "Toggle",
+      "description": "Move the texture of the face along when dragging UV faces",
+      "routes": [
+        "View > Panels > UV > Move Texture with UV"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2667",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2667,
+      "extracted_from": "new Toggle"
+    },
+    {
+      "id": "uv_transparent",
+      "name": "Remove Face",
+      "type": "Action",
+      "description": "Removes the current face",
+      "routes": [
+        "View > Panels > UV > Remove Face"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2299",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2299,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "uv_mirror_x",
+      "name": "UV Mirror X",
+      "type": "Action",
+      "description": "Mirrors the UV of this face on the X axis",
+      "routes": [
+        "View > Panels > UV > UV Mirror X"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2223",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2223,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "uv_mirror_y",
+      "name": "UV Mirror Y",
+      "type": "Action",
+      "description": "Mirrors the UV of this face on the Y axis",
+      "routes": [
+        "View > Panels > UV > UV Mirror Y"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2245",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2245,
+      "extracted_from": "new Action"
+    },
+    {
+      "id": "uv_rotation",
+      "name": "UV Rotation",
+      "type": "Toolbar slider",
+      "description": "Rotation of the UV face",
+      "routes": [
+        "View > Panels > UV > UV Rotation"
+      ],
+      "source": "reference/blockbench-source/js/uv/uv.js:2016",
+      "source_file": "reference/blockbench-source/js/uv/uv.js",
+      "source_line": 2016,
+      "extracted_from": "new BarSlider"
     },
     {
       "id": "pixel_grid",
