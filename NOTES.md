@@ -114,3 +114,9 @@ Working notes + learner preferences. Refer back before designing each lesson.
   `reference/blockbench-selection-mode-cheatsheet.html` and
   `assets/images/tomato-trio-cluster-reference.svg`. *(authored 2026-06-30; completion not yet
   reported)*
+- **0012** — Pixel texture foundations: clusters, contrast, and the thumbnail test. New idea: pixel
+  art for 3D model textures should start with connected clusters and a three-color material ramp, not
+  random single-pixel specks. Homework asks the learner to make "Pixel Texture Study #1: Wood" on one
+  existing wooden prop, post a close-up texture view plus a final render to itch.io, and bring back
+  the link for critique. Adds `reference/pixel-art-texture-cheatsheet.html` and reusable pixel-grid
+  CSS in `assets/lesson.css`. *(authored 2026-07-01; completion not yet reported)*

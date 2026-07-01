@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Pixel Art Texture Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Pixel textures</b></span>
+  </nav>
+
+  <p class="kicker">Reference - pixel art for tiny 3D textures</p>
+  <h1>Pixel Art Texture Cheatsheet</h1>
+  <p class="dek">A small texture does not need many details. It needs readable groups of pixels:
+  base color, shadow, highlight, and a few material marks.</p>
+
+  <h2>The five rules</h2>
+  <ol>
+    <li><strong>Use a tiny canvas on purpose.</strong> Start with <code>16 x 16</code> or
+    <code>32 x 32</code> for small Blockbench props. Increase only when the prop truly needs more
+    readable faces.</li>
+    <li><strong>Use three values per material.</strong> Base, shadow, highlight. If you need more,
+    make sure the reason is visible from a distance.</li>
+    <li><strong>Paint clusters, not dust.</strong> A cluster is a small connected group of same-color
+    pixels. Many isolated one-pixel specks usually read as noise.</li>
+    <li><strong>Check the thumbnail.</strong> Zoom out until the prop is small. If the material reads,
+    keep it. If it buzzes, delete details.</li>
+    <li><strong>Let the model do shape work.</strong> Do not draw every edge. Use texture pixels to
+    clarify material, direction, and small accents.</li>
+  </ol>
+
+  <h2>Blockbench settings</h2>
+  <table>
+    <thead><tr><th>Setting</th><th>Beginner-safe value</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Texture size</td><td><code>16 x 16</code> or <code>32 x 32</code></td><td>Forces readable choices and avoids over-detailing.</td></tr>
+      <tr><td>Painting Grid</td><td>On</td><td>Makes individual pixels visible while painting.</td></tr>
+      <tr><td>Brush size</td><td><code>1</code></td><td>Lets you place deliberate pixels and clusters.</td></tr>
+      <tr><td>Brush softness</td><td><code>0</code>, if shown</td><td>Keeps edges crisp instead of blurry.</td></tr>
+      <tr><td>Palette</td><td>Course palette first</td><td>Makes the asset pack look cohesive.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Three-color material ramp</h2>
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Shadow</span><span class="role">creases, lower edge, hidden side</span><span class="hex">#7A4E24</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Base</span><span class="role">main material color</span><span class="hex">#C68B45</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Highlight</span><span class="role">tiny top edge or catchlight</span><span class="hex">#F3E6C4</span></div></div>
+  </div>
+
+  <h2>Cluster example</h2>
+  <div class="pixel-board">
+    <div class="pixel-card">
+      <h3>Noisy</h3>
+      <div class="pixel-cells">
+        <span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span>
+        <span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span>
+        <span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span>
+        <span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span>
+      </div>
+      <p>Too many single pixels compete. The material buzzes when zoomed out.</p>
+    </div>
+    <div class="pixel-card">
+      <h3>Readable</h3>
+      <div class="pixel-cells">
+        <span style="background:#F3E6C4"></span><span style="background:#F3E6C4"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span>
+        <span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span>
+        <span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span>
+        <span style="background:#7A4E24"></span><span style="background:#7A4E24"></span><span style="background:#7A4E24"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#C68B45"></span><span style="background:#7A4E24"></span><span style="background:#7A4E24"></span>
+      </div>
+      <p>Connected shadow and highlight clusters give the material a clear direction.</p>
+    </div>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Sources</span>
+    <p>Use the official <a href="https://documentation.blockbench.net/textures/">Blockbench texture
+    documentation</a> for tool behavior, and <a href="https://lospec.com/pixel-art-tutorials/creating-pixel-art-by-cure">Creating Pixel Art by cure</a>
+    for pixel-art vocabulary such as clusters, palette control, anti-aliasing, and dithering.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0012-pixel-texture-foundations.html">Lesson 12 - Pixel texture foundations</a>
+    <a href="../reference/overcooked-palette.html">Course Palette</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · pixel texture reference</footer>
+
+</main>
+</body>
+</html>

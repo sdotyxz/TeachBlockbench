@@ -232,6 +232,37 @@ tbody tr:nth-child(odd){background:rgba(255,255,255,.55)}
 .swatch .role{font-family:var(--sans); font-size:.7rem; color:var(--ink-soft); display:block; margin-top:.1rem}
 .swatch .hex{font-family:var(--mono); font-size:.74rem; color:var(--ink-soft); margin-top:.3rem; display:block}
 
+/* ---------- pixel-art texture examples ---------- */
+.pixel-board{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:.85rem;
+  margin:1.3rem 0;
+}
+.pixel-card{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:.6rem;
+  padding:.85rem;
+  box-shadow:var(--shadow);
+}
+.pixel-card h3{margin:.05rem 0 .45rem}
+.pixel-card p{font-size:.88rem; margin:.45rem 0 0}
+.pixel-cells{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  aspect-ratio:2/1;
+  border:1px solid #d8cdb8;
+  background:#fff;
+  image-rendering:pixelated;
+}
+.pixel-cells span{
+  min-width:0;
+  min-height:0;
+  border-right:1px solid rgba(44,42,38,.1);
+  border-bottom:1px solid rgba(44,42,38,.1);
+}
+
 .lesson-nav{
   display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
   margin-top:3rem; border-top:1px solid var(--rule); padding-top:1.3rem;
