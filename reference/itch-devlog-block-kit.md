@@ -131,7 +131,7 @@ Format:
 
 Example:
 
-1. Built a six-color palette.
+1. Loaded the Endesga64 course palette.
 2. Refilled each prop from that same palette.
 3. Put the four props side by side to check whether they read as one pack.
 
@@ -294,7 +294,7 @@ Body draft:
 > - Accents: tomato red and leaf green add life without making the pack messy.
 >
 > The process in three steps:
-> 1. Built a six-color palette in Blockbench.
+> 1. Loaded the Endesga64 course palette in Blockbench.
 > 2. Refilled each prop from that same palette.
 > 3. Put the four props side by side to check whether they read as one pack.
 >

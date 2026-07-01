@@ -20,7 +20,7 @@
   <p class="kicker">Day 5 — Week 2: Texturing &amp; Polish</p>
   <h1><span class="num">05</span>A shared palette — make four props look like one pack</h1>
   <p class="dek">You have four good props. Right now they're four <em>separate</em> things. Today you give
-  them a single small palette of colors — and they snap together into something that looks
+  them one shared Endesga64 palette — and they snap together into something that looks
   <em>designed</em>, like a set a buyer would want.</p>
 
   <div class="meta">
@@ -55,8 +55,10 @@
   </div>
 
   <h2>The one new idea — a limited, shared palette</h2>
-  <p>A <strong>palette</strong> is the small fixed set of colors a whole project is allowed to use.
-  When every wooden thing is the <em>same</em> brown and every metal thing the <em>same</em> grey,
+  <p>A <strong>palette</strong> is the fixed set of colors a whole project is allowed to use.
+  The course palette is <strong>Endesga64</strong>, a 64-color pixel-art palette. For today's beginner
+  pass, you will use the six starter role colors below. When every wooden thing is the <em>same</em>
+  brown and every metal thing the <em>same</em> grey,
   separate objects start to read as one family. A buyer scanning itch.io for a "pack" is really
   looking for that cohesion — it's what separates a product from a pile of models.</p>
 
@@ -72,12 +74,12 @@
   source of truth for color from here on.</p>
 
   <div class="palette">
-    <div class="swatch"><div class="chip" style="background:#F3E6C4"></div><div class="body"><span class="name">Cream</span><span class="role">plates, ceramic</span><span class="hex">#F3E6C4</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#C68B45"></div><div class="body"><span class="name">Wood</span><span class="role">crate, board, handles</span><span class="hex">#C68B45</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#7A4E24"></div><div class="body"><span class="name">Dark Wood</span><span class="role">edges, shadow</span><span class="hex">#7A4E24</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#AEB8BE"></div><div class="body"><span class="name">Steel</span><span class="role">pot, knife, spoon</span><span class="hex">#AEB8BE</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#D94A36"></div><div class="body"><span class="name">Tomato</span><span class="role">warm accent</span><span class="hex">#D94A36</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#5FA63E"></div><div class="body"><span class="name">Leaf</span><span class="role">garnish</span><span class="hex">#5FA63E</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F9E6CF"></div><div class="body"><span class="name">Cream</span><span class="role">plates, ceramic</span><span class="hex">#F9E6CF</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#BF6F4A"></div><div class="body"><span class="name">Wood</span><span class="role">crate, board, handles</span><span class="hex">#BF6F4A</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">edges, shadow</span><span class="hex">#5D2C28</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#92A1B9"></div><div class="body"><span class="name">Steel</span><span class="role">pot, knife, spoon</span><span class="hex">#92A1B9</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#EA323C"></div><div class="body"><span class="name">Tomato</span><span class="role">warm accent</span><span class="hex">#EA323C</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5AC54F"></div><div class="body"><span class="name">Leaf</span><span class="role">garnish</span><span class="hex">#5AC54F</span></div></div>
   </div>
 
   <div class="callout tip">
@@ -99,24 +101,25 @@
       panel (the one with a color square and a HEX value). Click the <strong>Palette</strong> tab.
     </li>
     <li>
-      <h3>⭐ Build the palette: type a HEX, then Add To Palette</h3>
-      Click the color square / Color Bar, type the first HEX from the reference —
-      <code>F3E6C4</code> — then use <strong>Add To Palette</strong>. Repeat for all six:
-      <code>C68B45</code>, <code>7A4E24</code>, <code>AEB8BE</code>, <code>D94A36</code>,
-      <code>5FA63E</code>. You now have a six-swatch palette you can click instead of retyping.
+      <h3>⭐ Load Endesga64, then pin today's starter colors</h3>
+      In the Palette tab, look for <strong>Load Palette → Endesga 64</strong>. If it is available,
+      load it. Then find these six course starter colors:
+      <code>F9E6CF</code>, <code>BF6F4A</code>, <code>5D2C28</code>, <code>92A1B9</code>,
+      <code>EA323C</code>, <code>5AC54F</code>. If your Blockbench build does not show Endesga 64,
+      type those six HEX values into the Color Bar and use <strong>Add To Palette</strong> for today.
     </li>
     <li>
       <h3>Save the palette so it survives</h3>
       In the Palette tab, use <strong>Export</strong> to save the palette to a file (e.g.
-      <code>overcooked-palette</code>). In each later prop you can <strong>Import</strong> it back —
-      so every model in the pack literally shares the same colors.
+      <code>endesga64-course-palette</code>). In each later prop you can <strong>Import</strong> it back —
+      so every model in the pack literally shares the same color source.
     </li>
     <li>
       <h3>Recolor the crate → Wood</h3>
       Switch to <strong>Paint</strong> mode. Pick the <strong>Paint Bucket</strong> tool and set its
       <strong>Fill Mode</strong> to <strong>Cube</strong>. Click the <strong>Wood</strong> swatch
-      (<code>C68B45</code>), then click the crate. The whole part fills with the shared brown.
-      <em>Optional:</em> a couple of <strong>Dark Wood</strong> (<code>7A4E24</code>) clicks on edge
+      (<code>BF6F4A</code>), then click the crate. The whole part fills with the shared brown.
+      <em>Optional:</em> a couple of <strong>Dark Wood</strong> (<code>5D2C28</code>) clicks on edge
       slats for depth.
     </li>
     <li>
@@ -144,18 +147,18 @@
 
   <div class="callout tip">
     <span class="label">Shortcut for matching to a real image</span>
-    <p>Want colors pulled straight from an Overcooked screenshot? Use <strong>Pick Screen Color</strong>
-    to sample a pixel directly, then Add To Palette. Great for later, when you build a second palette
-    from a reference image instead of typed HEX codes.</p>
+    <p>Want colors pulled straight from a reference image? Use <strong>Pick Screen Color</strong>
+    to sample a pixel directly, then choose the nearest Endesga64 swatch. Great for later, when you
+    adapt a reference without breaking the course palette.</p>
   </div>
 
   <div class="callout post">
     <span class="label">📤 Paste-ready captions</span>
     <p style="margin-bottom:.4rem"><strong>itch.io devlog (English):</strong></p>
-    <div class="template">Day 5 of learning Blockbench from zero. No new prop today — instead I gave my four kitchen props one shared 6-color palette. Same wood, same metal, same cream everywhere. They went from four random objects to something that actually looks like a SET. A limited palette might be the highest-impact trick I've learned so far.</div>
+    <div class="template">Day 5 of learning Blockbench from zero. No new prop today — instead I moved my four kitchen props onto one shared Endesga64 course palette. Same wood, same metal, same cream everywhere, with room to grow later. They went from four random objects to something that actually looks like a SET. A limited palette might be the highest-impact trick I've learned so far.</div>
     <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
     <div class="template">【第5天】零基础学 Blockbench 做游戏素材 🎮
-今天没做新道具,而是给前四件厨房道具统一了一套只有6种颜色的配色。
+今天没做新道具,而是给前四件厨房道具统一到 Endesga64 课程配色。
 所有木头同一个棕色,所有金属同一个灰色,盘子同一个奶油白。
 原本四个零散的小物件,一下子变成了一整套! 🎨
 统一配色,可能是目前学到性价比最高的小技巧。

@@ -231,6 +231,10 @@ tbody tr:nth-child(odd){background:rgba(255,255,255,.55)}
 .swatch .name{font-family:var(--sans); font-size:.82rem; font-weight:700; color:var(--ink)}
 .swatch .role{font-family:var(--sans); font-size:.7rem; color:var(--ink-soft); display:block; margin-top:.1rem}
 .swatch .hex{font-family:var(--mono); font-size:.74rem; color:var(--ink-soft); margin-top:.3rem; display:block}
+.palette.compact{grid-template-columns:repeat(auto-fit,minmax(5.9rem,1fr)); gap:.45rem}
+.palette.compact .chip{height:2.25rem}
+.palette.compact .body{padding:.35rem .45rem}
+.palette.compact .hex{font-size:.68rem; margin-top:0}
 
 /* ---------- pixel-art texture examples ---------- */
 .pixel-board{

@@ -67,8 +67,8 @@ Working notes + learner preferences. Refer back before designing each lesson.
   <code>Y -35</code> for a utensil lying diagonally on a tabletop. Reuses Duplicate for plate rims,
   reinforces naming and set shots, and adds `reference/blockbench-transform-cheatsheet.html`.
   *(authored 2026-06-25; **completed 2026-06-26** — evidence in repo, "finish plate spoon" commit)*
-- **0005** — Shared palette (Week 2 kickoff). New idea: a **limited, saved palette** — build a 6-color
-  Overcooked palette via Color Bar HEX + **Add To Palette**, **Export** it, then recolor all four props
+- **0005** — Shared palette (Week 2 kickoff). New idea: a **limited, saved palette** — load Endesga64
+  and use the starter role colors via Color Bar HEX / saved swatches, **Export** it, then recolor all four props
   with **Paint Bucket / Fill Mode = Cube**. No new modeling; pure cohesion + polish. Interleaves all
   four old props; win is a before/after "set" shot. Adds `reference/overcooked-palette.html` (canonical
   palette — adhere to it in every future prop) + reusable `.palette/.swatch` CSS. Learner chose this

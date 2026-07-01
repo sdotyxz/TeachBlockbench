@@ -6,7 +6,7 @@ concrete finish checklist: title, before/after image, caption body, publish, and
 
 ## What is now established
 
-- A small, saved six-color palette is the pack's color source of truth.
+- Endesga64 is the pack's color source of truth, with six starter role colors for early props.
 - Paint Bucket with `Fill Mode: Cube` can recolor whole parts quickly and exactly.
 - Reusing the same wood, metal, cream, and accent colors makes separate props read as one set.
 - The course should keep posting to itch.io as a daily devlog, even when the artifact is a polish pass
