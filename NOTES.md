@@ -93,7 +93,10 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **0008** — Bread basket: inflate and deflate. New idea: Inflate scales a selected cube outward
   equally on all axes while keeping UVs intact; Deflate uses a negative value. Builds a new food prop
   with a wooden basket, cloth liner, and three chunky bread rolls. Uses tiny Inflate/Deflate values
-  both for shape polish and z-fighting fixes. *(authored 2026-06-29; completion not yet reported)*
+  both for shape polish and z-fighting fixes. *(authored 2026-06-29; **completed 2026-06-30** —
+  completion requested; normal itch.io draft prepared at
+  `https://itch.io/blog/1569477/day-8-bread-basket-with-inflate-deflate`, publication pending
+  approval; artifacts in `artifacts/breadbasket/`)*
 - **0009** — Prep counter: Knife Tool. New idea: Knife can split one selected cube into separate cube
   elements, which can then be renamed, colored, lifted, and painted independently. Uses the beginner
   cube-split path only; mesh-face Knife cutting is explicitly deferred. Adds
