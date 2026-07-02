@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 12 · UV Cleanup and Texture Layout</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span>·</span>
+    <span><b>Lesson 12</b></span>
+  </nav>
+
+  <p class="kicker">Day 12 - Week 2: UV control</p>
+  <h1><span class="num">12</span>UV cleanup - fix stretch, rotation, mirroring, and pixel snap</h1>
+  <p class="dek">You already placed one menu patch with UV mapping and used seams to generate a
+  bottle texture. Today you practice the UV fixes that make texture work feel controllable: position,
+  size, rotation, mirror, snap to pixels, and export the UV layout for checking.</p>
+
+  <div class="meta">
+    <span>~45-60 min</span>
+    <span>Builds on Lessons 7 and 10</span>
+    <span>Browser Blockbench is fine</span>
+    <span>Ends with a post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>UV cleanup proof render</strong>: a small condiment packet or flat sauce sachet
+    with a front label that is upright, not stretched, not backward, and aligned to the texture's
+    pixel grid.</p>
+  </div>
+
+  <h2>Warm up - 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does UV mapping change?</summary>
+      <div class="answer">It changes which part of a texture image appears on a model face. Painting changes the pixels themselves.</div>
+    </details>
+    <details>
+      <summary>What did Lesson 7 prove with the menu sign?</summary>
+      <div class="answer">One important face can be mapped to one specific patch of a texture image.</div>
+    </details>
+    <details>
+      <summary>What did Lesson 10 prove with the sauce bottle?</summary>
+      <div class="answer">A texture layout can be planned, generated, and then painted so the important art appears on the front.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea - UVs have five simple failure modes</h2>
+  <p>When a texture looks wrong, beginners often repaint it. First check the UV. Most beginner UV
+  problems are one of these: the UV rectangle is in the wrong position, the UV size is stretched, the
+  UV is rotated, or the UV is mirrored. Pixel-art textures add one more issue: corners can sit between
+  pixels, making the result look soft.</p>
+
+  <table>
+    <thead><tr><th>Symptom</th><th>UV cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>The label shows the wrong area.</td><td>UV position is wrong.</td><td>Move the UV rectangle over the correct patch.</td></tr>
+      <tr><td>The label is tall, wide, or smeared.</td><td>UV size does not match the face.</td><td>Use Auto UV, then resize the rectangle.</td></tr>
+      <tr><td>The word is sideways or upside down.</td><td>UV rotation is wrong.</td><td>Use Rotate UV or Turn Mapping.</td></tr>
+      <tr><td>The word reads backward.</td><td>UV is mirrored.</td><td>Use Mirror X or Mirror Y.</td></tr>
+      <tr><td>Pixel edges look soft.</td><td>UV corners are off-grid.</td><td>Use Snap UV to Pixels.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <span class="label">Beginner rule</span>
+    <p>Before repainting a label, ask: <strong>position, size, rotation, mirror, or snap?</strong>
+    Fixing the UV is often faster than redrawing the texture.</p>
+  </div>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#F9E6CF"></div><div class="body"><span class="name">Cream</span><span class="role">packet body + label text</span><span class="hex">#F9E6CF</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#EA323C"></div><div class="body"><span class="name">Tomato</span><span class="role">sauce mark</span><span class="hex">#EA323C</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">text shadow / border</span><span class="hex">#5D2C28</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#BF6F4A"></div><div class="body"><span class="name">Wood</span><span class="role">fold line / warm shadow</span><span class="hex">#BF6F4A</span></div></div>
+  </div>
+
+  <h2>Settings tutorial - the UV panel controls</h2>
+  <p>Keep the <a href="../reference/blockbench-uv-function-cheatsheet.html">UV Function
+  Cheatsheet</a> open. Today you are not learning every UV command. You are building a repair loop
+  you can use on future labels, icons, decals, signs, boxes, and packaging.</p>
+
+  <table>
+    <thead><tr><th>Control</th><th>Use it today for</th><th>Stop when</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Auto UV</strong></td><td>Recover a sensible UV size after stretching.</td><td>The patch no longer looks wildly stretched.</td></tr>
+      <tr><td><strong>Move / resize UV</strong></td><td>Put the face over the exact label patch.</td><td>The whole label sits inside the face.</td></tr>
+      <tr><td><strong>Rotate UV / Turn Mapping</strong></td><td>Make text upright.</td><td>The label reads normally from the front camera view.</td></tr>
+      <tr><td><strong>Mirror X / Mirror Y</strong></td><td>Fix backward text or asymmetric icons.</td><td>The letters and sauce dot are no longer reversed.</td></tr>
+      <tr><td><strong>Snap UV to Pixels</strong></td><td>Keep pixel-art edges crisp.</td><td>UV corners sit on the texture grid.</td></tr>
+      <tr><td><strong>Export UV Mapping</strong></td><td>Save a layout proof image.</td><td>You have a screenshot or exported layout for your post.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Do it with me</h2>
+  <p>Make a small <strong>sauce packet</strong>. It is simple enough that the modeling will not steal
+  time from the UV practice, but it is useful for the kitchen asset pack.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model - name it <code>sauce-packet-uv-cleanup</code></h3>
+      Save early. This is a small flat condiment packet or sauce sachet, not a full new modeling
+      challenge.
+    </li>
+    <li>
+      <h3>Build the packet body</h3>
+      Add one flat cube. Suggested size: <code>X 4.5</code>, <code>Y 3</code>, <code>Z 0.25</code>.
+      Fill it with <strong>Cream</strong>. Rename it <code>packet_body</code>.
+    </li>
+    <li>
+      <h3>Add two tiny folded ends</h3>
+      Add two very thin cubes on the left and right edges. Fill them with <strong>Wood</strong> or a
+      slightly darker cream if you prefer. These folds make the prop read as packaging.
+    </li>
+    <li>
+      <h3>Create a 32 x 32 texture</h3>
+      In the Textures panel, create a texture named <code>sauce-packet-texture</code> at
+      <code>32 x 32</code>. Keep the texture small so UV placement mistakes are visible.
+    </li>
+    <li>
+      <h3>Paint one clear label patch</h3>
+      In Paint Mode, draw a small front label patch somewhere on the texture: a cream or dark border,
+      the word <code>SAUCE</code> or simple block letters, and one tomato-red dot. Leave empty color
+      space around it so the UV rectangle has room to move.
+    </li>
+    <li>
+      <h3>Select the packet front face</h3>
+      Switch to Edit Mode. Select <code>packet_body</code>, then select the face that points toward
+      the camera. In the UV panel, make sure you are editing the selected/front face, not the whole
+      cube by accident.
+    </li>
+    <li>
+      <h3>Place the UV rectangle over the label</h3>
+      Move the selected face's UV rectangle over the label patch. Resize it so the full patch appears
+      on the packet front. If the result looks stretched, use <strong>Auto UV</strong> once, then
+      resize again by hand.
+    </li>
+    <li>
+      <h3>Break it on purpose: rotate the UV</h3>
+      Use <strong>Rotate UV Left</strong>, <strong>Rotate UV Right</strong>, or
+      <strong>Turn Mapping</strong> so the label becomes sideways. Then fix it. This makes the repair
+      action memorable.
+    </li>
+    <li>
+      <h3>Break it on purpose: mirror the UV</h3>
+      Use <strong>Mirror X</strong> or <strong>Mirror Y</strong> so the label reads backward. Then
+      mirror it again or use the opposite mirror until the word reads normally.
+    </li>
+    <li>
+      <h3>Snap the UV to pixels</h3>
+      Use <strong>Snap UV to Pixels</strong>. This is the final cleanup pass for crisp pixel art. If
+      the command moves the UV slightly, adjust the rectangle again and snap one more time.
+    </li>
+    <li>
+      <h3>Map the back simply</h3>
+      Select the packet back face and map it to a plain cream area of the texture. Do not put the same
+      readable label on the back unless you want duplicate packaging art.
+    </li>
+    <li>
+      <h3>Export or screenshot the UV layout</h3>
+      Use <strong>Export UV Mapping</strong> if available, or take a screenshot of the UV editor. Your
+      proof image should show the front face rectangle sitting cleanly over the label patch.
+    </li>
+    <li>
+      <h3>Render the packet</h3>
+      Capture a 3/4 front view. Place the packet beside the sauce bottle, prep counter, or chopping
+      board if you want the screenshot to feel like part of the same kitchen pack.
+    </li>
+    <li>
+      <h3>Post your Day-12 update</h3>
+      Publish two images: the final render and the UV layout or UV editor screenshot.
+      <em>Streak: Day 12.</em>
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Common mistake</span>
+    <p>If the label is backward or sideways, do not redraw the letters. That is a UV orientation
+    problem. Fix the UV first, then paint only if the artwork itself needs improvement.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="label">UV repair loop</span>
+    <p>Use this order every time: <strong>select the correct face -> move -> resize -> rotate ->
+    mirror -> snap -> check on the model</strong>.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 12 of learning Blockbench from zero. I changed the focus to UV cleanup today. I made a small sauce packet and practiced fixing the common UV problems: wrong texture area, stretched label, sideways text, mirrored text, and soft pixel edges. The key habit is checking the UV before repainting the texture.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第12天】零基础学 Blockbench 做游戏素材
+
+今天改成继续练 UV，不学像素画基础了。
+我做了一个小酱料包，重点练习 UV 修正：
+- 贴图区域不对
+- 标签被拉伸
+- 文字旋转了
+- 文字镜像反了
+- 像素边缘不够清晰
+
+今天最大的收获：贴图看起来不对时，先检查 UV，不要急着重画。
+#Blockbench #UV映射 #3D建模 #低多边形 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#UV映射</span>
+      <span class="tag">#3D建模</span><span class="tag">#低多边形</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>If a label shows the wrong part of the texture, what changes?</summary>
+      <div class="answer">Move the selected face's UV rectangle to the correct texture patch.</div>
+    </details>
+    <details>
+      <summary>If the label is stretched, what changes?</summary>
+      <div class="answer">Resize the UV rectangle, or use Auto UV first and then adjust by hand.</div>
+    </details>
+    <details>
+      <summary>If the word is backward, what changes?</summary>
+      <div class="answer">Use Mirror X or Mirror Y on the selected UV mapping.</div>
+    </details>
+    <details>
+      <summary>Why use Snap UV to Pixels?</summary>
+      <div class="answer">It keeps UV corners aligned to the texture grid so pixel-art edges stay crisp.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary source</span>
+    <p>Use the <a href="../reference/blockbench-uv-function-cheatsheet.html">UV Function
+    Cheatsheet</a> for the local source-backed list of Blockbench UV actions, including Auto UV,
+    Rotate UV, Mirror X/Y, Snap UV to Pixels, and Export UV Mapping.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Ask me anything</span>
+    <p>If the label lands on the wrong face, stretches, flips, or looks blurry, send me the model
+    screenshot and the UV editor screenshot. I can tell you which part of the UV repair loop to use.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0011-tomato-trio-cluster-selection.html">Previous - Lesson 11</a>
+    <a href="../reference/blockbench-uv-function-cheatsheet.html">UV Function Cheatsheet</a>
+    <a href="../reference/overcooked-palette.html">Course Palette</a>
+    <a href="../MISSION.md">Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 12 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>
