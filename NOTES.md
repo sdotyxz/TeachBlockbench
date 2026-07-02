@@ -101,7 +101,9 @@ Working notes + learner preferences. Refer back before designing each lesson.
   elements, which can then be renamed, colored, lifted, and painted independently. Uses the beginner
   cube-split path only; mesh-face Knife cutting is explicitly deferred. Adds
   `reference/blockbench-knife-tool-cheatsheet.html` and a simple prep-counter target image. *(authored
-  2026-06-30; completion not yet reported)*
+  2026-06-30; **completed 2026-07-01** — completion requested; normal itch.io draft prepared at
+  `https://itch.io/blog/1571308/day-9-knife-tool-turns-one-slab-into-wooden-planks`, publication
+  pending approval; artifacts in `artifacts/plankcut/`)*
 - **0010** — Sauce bottle: Seam Tool. New idea: seams are mesh-edge instructions for generated UV
   templates, not painted marks. Builds a small sauce bottle using Add Mesh → Cylinder, marks one
   hidden back edge as Divide, generates a texture template, then paints a front label. Adds

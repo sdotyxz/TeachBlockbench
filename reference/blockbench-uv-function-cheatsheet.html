@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench UV Function Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>UV functions</b></span>
+  </nav>
+
+  <p class="kicker">Reference - Blockbench UV mapping</p>
+  <h1>Blockbench UV Function Cheatsheet</h1>
+  <p class="dek">UV mapping decides which part of a texture image appears on each model face.
+  Painting changes the pixels. UV functions change how those pixels are placed, scaled, rotated,
+  mirrored, or generated on the model.</p>
+
+  <h2>The one mental model</h2>
+  <table>
+    <thead><tr><th>Thing</th><th>What it means</th><th>What changes on the model</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Texture size</strong></td>
+        <td>The resolution of the image, such as <code>16 x 16</code> or <code>32 x 32</code>.</td>
+        <td>How many pixels are available to paint.</td>
+      </tr>
+      <tr>
+        <td><strong>UV position</strong></td>
+        <td>Where a face's UV rectangle sits on the texture image.</td>
+        <td>Which patch of the image appears on the face.</td>
+      </tr>
+      <tr>
+        <td><strong>UV size</strong></td>
+        <td>The width and height of that UV rectangle on the image.</td>
+        <td>How zoomed-in or zoomed-out the texture looks on the face.</td>
+      </tr>
+      <tr>
+        <td><strong>UV rotation</strong></td>
+        <td>The direction the UV rectangle points.</td>
+        <td>Whether the texture appears upright, sideways, or upside down.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <span class="label">Answer to "what does UV size affect?"</span>
+    <p>A larger UV size samples more of the texture image across the same model face, so details look
+    smaller and less stretched. A smaller UV size samples fewer pixels, so those pixels stretch across
+    the face and look bigger, chunkier, or blurrier. UV size does <strong>not</strong> resize the cube
+    and does <strong>not</strong> change the texture canvas resolution.</p>
+  </div>
+
+  <h2>Beginner-safe values</h2>
+  <table>
+    <thead><tr><th>Setting or habit</th><th>Start here</th><th>Change it when</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Texture size</td>
+        <td><code>16 x 16</code> or <code>32 x 32</code> for small props.</td>
+        <td>The prop needs readable labels, icons, or several unique faces.</td>
+      </tr>
+      <tr>
+        <td>UV size</td>
+        <td>Match the face's rough shape. Long face = long UV rectangle.</td>
+        <td>The texture is stretched, squashed, too large, or too tiny.</td>
+      </tr>
+      <tr>
+        <td>Painting Grid</td>
+        <td>On.</td>
+        <td>Leave it on while learning pixel textures.</td>
+      </tr>
+      <tr>
+        <td>Snap UV to Pixels</td>
+        <td>Use after moving UV corners.</td>
+        <td>Edges look half-pixel blurry or tiny pixel details smear.</td>
+      </tr>
+      <tr>
+        <td>Face UV vs Box UV</td>
+        <td>Use Face UV when placing one specific patch on one face.</td>
+        <td>Use Box UV when you want a cube's sides laid out as one box-style wrap.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Core UV functions</h2>
+  <table>
+    <thead><tr><th>Function</th><th>What it does</th><th>Use it when</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Auto UV</strong></td>
+        <td>Sets the selected face's UV size to match the real face size.</td>
+        <td>A face is stretched and you want a sensible default.</td>
+      </tr>
+      <tr>
+        <td><strong>Relative Auto UV</strong></td>
+        <td>Sets the selected face's UV position and size from the actual face.</td>
+        <td>You want placement to roughly follow the model's position, not just its size.</td>
+      </tr>
+      <tr>
+        <td><strong>Reset Face</strong></td>
+        <td>Returns the selected face's UV mapping to a default state.</td>
+        <td>You made a face confusing and want to start that face over.</td>
+      </tr>
+      <tr>
+        <td><strong>Maximize UV</strong></td>
+        <td>Maps the selected face to the full texture image.</td>
+        <td>You want one face, such as a sign, to use the entire texture.</td>
+      </tr>
+      <tr>
+        <td><strong>Move UV to Cursor</strong></td>
+        <td>Moves selected UV faces to the mouse cursor position.</td>
+        <td>You need to quickly reposition an island to a new patch.</td>
+      </tr>
+      <tr>
+        <td><strong>Snap UV to Pixels</strong></td>
+        <td>Snaps selected UV vertices onto the pixel grid.</td>
+        <td>A pixel-art texture looks soft, smeared, or misaligned.</td>
+      </tr>
+      <tr>
+        <td><strong>Rotate UV Left / Right</strong></td>
+        <td>Rotates selected UV faces by 90 degrees.</td>
+        <td>The grain, label, or icon direction is sideways.</td>
+      </tr>
+      <tr>
+        <td><strong>Turn Mapping</strong></td>
+        <td>Turns the UV mapping around 90 degrees.</td>
+        <td>A cube face is using the right texture area but the orientation is wrong.</td>
+      </tr>
+      <tr>
+        <td><strong>Mirror X / Mirror Y</strong></td>
+        <td>Flips the selected UV mapping horizontally or vertically.</td>
+        <td>Text, arrows, or asymmetric details appear backward.</td>
+      </tr>
+      <tr>
+        <td><strong>UV Project from View</strong></td>
+        <td>Generates UVs for selected faces from the current 3D camera view.</td>
+        <td>You want a flat projection for a sign, label, front face, or decal-like area.</td>
+      </tr>
+      <tr>
+        <td><strong>Connect UV Faces</strong></td>
+        <td>Connects selected UV faces to the last selected UV face.</td>
+        <td>Adjacent model faces should share a continuous texture strip.</td>
+      </tr>
+      <tr>
+        <td><strong>Merge UV Vertices</strong></td>
+        <td>Snaps selected UV vertices to the last selected UV vertices.</td>
+        <td>Corners should line up exactly on the texture grid.</td>
+      </tr>
+      <tr>
+        <td><strong>Display UV Faces</strong></td>
+        <td>Chooses which UV faces are visible in the UV editor.</td>
+        <td>The UV editor feels crowded and you only want selected or relevant faces.</td>
+      </tr>
+      <tr>
+        <td><strong>UV Overlay</strong></td>
+        <td>Shows the UV map as an overlay in Paint Mode.</td>
+        <td>You want to paint while seeing where face boundaries are.</td>
+      </tr>
+      <tr>
+        <td><strong>Export UV Mapping</strong></td>
+        <td>Exports the UV layout as a reference image.</td>
+        <td>You want to paint externally or keep a layout guide.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Face UV vs Box UV</h2>
+  <table>
+    <thead><tr><th>Mode</th><th>Best for</th><th>Watch out for</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Face UV</strong></td>
+        <td>Manually placing one patch on one face, such as the <code>MENU</code> text in Lesson 7.</td>
+        <td>Each face can drift out of alignment if you move them independently.</td>
+      </tr>
+      <tr>
+        <td><strong>Box UV</strong></td>
+        <td>Cube-style wrapping where the sides should behave as one unfolded box.</td>
+        <td>Less direct control for a single face-specific label or decal.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Try this</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Texture looks stretched.</td>
+        <td>The UV size does not match the face proportions.</td>
+        <td>Use Auto UV, then resize the UV rectangle manually if needed.</td>
+      </tr>
+      <tr>
+        <td>Texture detail is too large.</td>
+        <td>The UV size is too small.</td>
+        <td>Make the UV rectangle larger so the face samples more pixels.</td>
+      </tr>
+      <tr>
+        <td>Texture detail is too tiny.</td>
+        <td>The UV size is too large.</td>
+        <td>Make the UV rectangle smaller so the face samples less of the image.</td>
+      </tr>
+      <tr>
+        <td>Text is cut off.</td>
+        <td>The UV position or size misses part of the painted patch.</td>
+        <td>Move the UV rectangle over the patch, then resize until the whole word is inside.</td>
+      </tr>
+      <tr>
+        <td>Text is backward or upside down.</td>
+        <td>The UV mapping is mirrored or rotated.</td>
+        <td>Use Mirror X, Mirror Y, Rotate UV, or Turn Mapping.</td>
+      </tr>
+      <tr>
+        <td>Pixel art looks soft.</td>
+        <td>UV corners are off the pixel grid, or the texture is being sampled between pixels.</td>
+        <td>Use Snap UV to Pixels and keep the texture small and crisp.</td>
+      </tr>
+      <tr>
+        <td>Wrong face changes.</td>
+        <td>The wrong face tab or face selection is active.</td>
+        <td>Orbit the model, select the visible face directly, then edit only that selected face.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout source">
+    <span class="label">Sources</span>
+    <p>This course uses the official Blockbench overview distinction between Edit Mode UV mapping
+    and Paint Mode texture painting, plus the source-derived local UV feature list in
+    <a href="blockbench-ui-features/uv.html">Blockbench UI Features - UV</a>.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0007-chalkboard-menu-uv.html">Lesson 7 - First UV mapping</a>
+    <a href="blockbench-seam-tool-cheatsheet.html">Seam Tool cheat sheet</a>
+    <a href="pixel-art-texture-cheatsheet.html">Pixel Art Texture Cheatsheet</a>
+    <a href="../index.html">Course Home</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · UV function reference</footer>
+
+</main>
+</body>
+</html>

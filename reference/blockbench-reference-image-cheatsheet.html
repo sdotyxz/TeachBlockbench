@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · Blockbench Reference Image Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>Reference images</b></span>
+  </nav>
+
+  <p class="kicker">Reference - building from images without copying blindly</p>
+  <h1>Blockbench Reference Image Cheatsheet</h1>
+  <p class="dek">A reference image is a guide in the viewport. It helps you match silhouette,
+  proportion, and details while you model. It is not the texture, and it is not the final screenshot.</p>
+
+  <h2>Do not mix these up</h2>
+  <table>
+    <thead><tr><th>Thing</th><th>What it is</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Reference image</strong></td>
+        <td>A guide image placed behind, inside, or over the viewport.</td>
+        <td>Checking shape, scale, angle, silhouette, and important features.</td>
+      </tr>
+      <tr>
+        <td><strong>Texture image</strong></td>
+        <td>The image mapped onto the model's faces.</td>
+        <td>Color, pixel marks, labels, material detail, and UV mapping.</td>
+      </tr>
+      <tr>
+        <td><strong>Render / screenshot</strong></td>
+        <td>The exported view of your finished model.</td>
+        <td>Posting progress, comparing before/after, and showing the asset pack.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <span class="label">Beginner rule</span>
+    <p>Use one main reference image for the silhouette, then build a simplified prop from it. Do not
+    chase every tiny detail. For this course, the model should read as a clean low-poly kitchen asset,
+    not a perfect copy of the photo.</p>
+  </div>
+
+  <h2>Where the controls are</h2>
+  <table>
+    <thead><tr><th>Control</th><th>Path or action</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Edit Reference Images</strong></td>
+        <td><strong>View -> Edit Reference Images</strong></td>
+        <td>Turns on reference image mode so you can add, select, move, resize, and edit references.</td>
+      </tr>
+      <tr>
+        <td><strong>Add Reference Image</strong></td>
+        <td>Reference image toolbar, or drag an image into Blockbench.</td>
+        <td>Adds an image as a viewport guide.</td>
+      </tr>
+      <tr>
+        <td><strong>Reference Image from Clipboard</strong></td>
+        <td>Reference image toolbar.</td>
+        <td>Adds a copied image without saving it as a separate file first.</td>
+      </tr>
+      <tr>
+        <td><strong>Reference Image List</strong></td>
+        <td>Reference image toolbar.</td>
+        <td>Shows project, global, and built-in references with visibility, mode, refresh, delete, and properties options.</td>
+      </tr>
+      <tr>
+        <td><strong>Toggle All Reference Images</strong></td>
+        <td>Reference image toolbar.</td>
+        <td>Hides or shows all active reference images at once.</td>
+      </tr>
+      <tr>
+        <td><strong>Select Reference Image on Double Click</strong></td>
+        <td><strong>File -> Preferences -> Settings -> Controls</strong></td>
+        <td>Lets a double-click in the viewport select a reference image.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Reference image settings</h2>
+  <table>
+    <thead><tr><th>Setting</th><th>Plain meaning</th><th>Beginner advice</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Layer</strong></td>
+        <td>Where the image sits: background, viewport, or floating UI layer.</td>
+        <td>Use background or viewport for modeling. Use float only when you want a loose on-screen note.</td>
+      </tr>
+      <tr>
+        <td><strong>Scope</strong></td>
+        <td>Whether the image belongs to this project or to the app globally.</td>
+        <td>Use project for lesson-specific photos. Use global for reusable guides like a style board.</td>
+      </tr>
+      <tr>
+        <td><strong>Position</strong></td>
+        <td>The image's 2D offset.</td>
+        <td>Center the subject near the model before resizing.</td>
+      </tr>
+      <tr>
+        <td><strong>Size</strong></td>
+        <td>The displayed width and height of the reference image.</td>
+        <td>Match the model's intended height or width first; exact scale can come later.</td>
+      </tr>
+      <tr>
+        <td><strong>Rotation</strong></td>
+        <td>The image's angle in the viewport.</td>
+        <td>Keep it at <code>0</code> unless the reference photo itself is tilted.</td>
+      </tr>
+      <tr>
+        <td><strong>Opacity</strong></td>
+        <td>How visible the reference image is.</td>
+        <td>Start around <code>40-60%</code> so you can see both the model and the guide.</td>
+      </tr>
+      <tr>
+        <td><strong>Visibility</strong></td>
+        <td>Whether this reference is shown.</td>
+        <td>Turn it off when checking your model's silhouette without help.</td>
+      </tr>
+      <tr>
+        <td><strong>Blueprint</strong></td>
+        <td>Attaches the image to the selected viewport direction.</td>
+        <td>Use for front/side/top orthographic guides when you need clean alignment.</td>
+      </tr>
+      <tr>
+        <td><strong>Clear Mode</strong></td>
+        <td>Makes the reference easier to see against the viewport/model.</td>
+        <td>Use it when the image and model visually blend together.</td>
+      </tr>
+      <tr>
+        <td><strong>Enabled Modes</strong></td>
+        <td>Controls which Blockbench modes show the reference.</td>
+        <td>Show references in Edit Mode; hide them in Paint Mode if they distract from texture work.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Recommended workflow</h2>
+  <ol class="steps">
+    <li>
+      <h3>Choose a useful image</h3>
+      Pick a clear front, side, or 3/4 view. Avoid busy photos where the object is hidden, cropped,
+      heavily blurred, or lit so dark that the silhouette is hard to read.
+    </li>
+    <li>
+      <h3>Add it to the project</h3>
+      Use <strong>View -> Edit Reference Images</strong>, then add the image. Choose project scope so
+      the guide travels with the lesson file.
+    </li>
+    <li>
+      <h3>Set opacity before modeling</h3>
+      Lower opacity until the guide stops fighting the model. If the image dominates the viewport,
+      you will copy details instead of designing the asset.
+    </li>
+    <li>
+      <h3>Match the big box first</h3>
+      Build the largest simple volume that matches the reference: board, pot body, crate, bottle, or
+      basket. Do not start with handles, pegs, labels, or tiny marks.
+    </li>
+    <li>
+      <h3>Check silhouette from a distance</h3>
+      Hide the reference, zoom out, and ask whether the model still reads. If it only works with the
+      photo visible, simplify the shape.
+    </li>
+    <li>
+      <h3>Use the reference for decisions, not decoration</h3>
+      Pull out 3-5 important features: chunky rim, angled legs, handle shape, label placement,
+      material split. Leave the rest out.
+    </li>
+  </ol>
+
+  <h2>When to use blueprint mode</h2>
+  <table>
+    <thead><tr><th>Situation</th><th>Use blueprint?</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>You have clean front and side drawings.</td>
+        <td>Yes.</td>
+        <td>Blueprints help align orthographic views to the model axes.</td>
+      </tr>
+      <tr>
+        <td>You have one casual 3/4 photo.</td>
+        <td>No, usually.</td>
+        <td>Use it as a loose visual guide, not a precise measured drawing.</td>
+      </tr>
+      <tr>
+        <td>You are making a simple Overcooked-style prop.</td>
+        <td>Only if the shape is hard to judge.</td>
+        <td>Most course props need readable proportions, not technical tracing.</td>
+      </tr>
+      <tr>
+        <td>You need exact symmetry or exact scale.</td>
+        <td>Yes.</td>
+        <td>Blueprints make front/side/top alignment less guessy.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>You cannot select the reference.</td>
+        <td>Reference image mode is off, or double-click selection is disabled.</td>
+        <td>Turn on <strong>View -> Edit Reference Images</strong>, then use the image list or enable double-click selection.</td>
+      </tr>
+      <tr>
+        <td>The image hides the model.</td>
+        <td>Opacity is too high or the layer is too intrusive.</td>
+        <td>Lower opacity, change layer, or toggle visibility while checking the model.</td>
+      </tr>
+      <tr>
+        <td>The model looks good only from one angle.</td>
+        <td>You copied a flat photo instead of building a 3D form.</td>
+        <td>Orbit often and use the reference for proportions, not as a 2D tracing sheet.</td>
+      </tr>
+      <tr>
+        <td>The reference does not save with the model.</td>
+        <td>It may be global instead of project-scoped.</td>
+        <td>Open properties and set scope to project for lesson-specific references.</td>
+      </tr>
+      <tr>
+        <td>The reference is distracting in Paint Mode.</td>
+        <td>It is enabled in too many modes.</td>
+        <td>Use Enabled Modes and keep it mainly in Edit Mode.</td>
+      </tr>
+      <tr>
+        <td>The image is tilted or mismatched.</td>
+        <td>The source photo has perspective, rotation, or cropping.</td>
+        <td>Use it loosely, rotate/resize it, or find a cleaner front/side image.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="label">Common mistake</span>
+    <p>Do not treat a reference image as permission to over-detail. If the reference has 30 tiny
+    screws, stains, labels, and scratches, choose the few details that make the object recognizable
+    at thumbnail size.</p>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Sources</span>
+    <p>This sheet is based on Blockbench's source-derived reference image actions and settings:
+    <a href="blockbench-ui-features/view.html">View UI Features</a> and
+    <code>reference/blockbench-source/js/preview/reference_images.js</code>.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0007-chalkboard-menu-uv.html">Lesson 7 - Chalkboard menu stand</a>
+    <a href="blockbench-interface-cheatsheet.html">Interface Cheat Sheet</a>
+    <a href="blockbench-uv-function-cheatsheet.html">UV Function Cheat Sheet</a>
+    <a href="../index.html">Course Home</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · reference image guide</footer>
+
+</main>
+</body>
+</html>

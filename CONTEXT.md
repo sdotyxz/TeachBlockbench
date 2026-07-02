@@ -19,6 +19,11 @@ _Avoid_: exercise result, homework
 The Blockbench skill of deciding which part of a texture image appears on each face of a model.
 _Avoid_: texture drawing, painting pixels
 
+**UV size**:
+The width and height of a selected face's UV area on the texture image. It controls how much of the
+texture the face samples, not the model's physical size or the texture canvas resolution.
+_Avoid_: texture size, model size, canvas size
+
 **Course pillar**:
 One of the three durable Blockbench skill areas this course tracks: Modeling, Texturing, and
 Animation. Each lesson should primarily advance one pillar while briefly reviewing earlier pillars.
