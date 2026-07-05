@@ -116,9 +116,13 @@ Working notes + learner preferences. Refer back before designing each lesson.
   `reference/blockbench-selection-mode-cheatsheet.html` and
   `assets/images/tomato-trio-cluster-reference.svg`. *(authored 2026-06-30; completion not yet
   reported)*
-- **0012** — Pixel texture foundations: clusters, contrast, and the thumbnail test. New idea: pixel
-  art for 3D model textures should start with connected clusters and a three-color material ramp, not
-  random single-pixel specks. Homework asks the learner to make "Pixel Texture Study #1: Wood" on one
-  existing wooden prop, post a close-up texture view plus a final render to itch.io, and bring back
-  the link for critique. Adds `reference/pixel-art-texture-cheatsheet.html` and reusable pixel-grid
-  CSS in `assets/lesson.css`. *(authored 2026-07-01; completion not yet reported)*
+- **0012** — Sauce packet: UV cleanup and layout. New idea: diagnose texture problems as UV
+  position, size, rotation, mirror, or pixel-snap issues before repainting. Builds a small sauce
+  packet label proof and exports/screenshots the UV layout. Adds `assets/images/sauce-packet-uv-cleanup-reference.png`.
+  *(authored 2026-07-03; **completed 2026-07-05** — completion requested; normal itch.io draft
+  prepared at `https://itch.io/blog/1574919/day-12-uv-cleanup-on-a-tiny-sauce-packet`, publication
+  pending approval; artifact in `artifacts/sauce-packet/`)*
+- **0013** — First Timeline animation: bouncing tomato loop. New idea: a keyframe is a saved pose at
+  a specific time; a simple loop can be made with down/up/down Position keyframes on one grouped prop.
+  Adds `reference/blockbench-first-animation-cheatsheet.html` and
+  `assets/images/bouncing-tomato-animation-reference.svg`. *(authored 2026-07-05; current lesson)*

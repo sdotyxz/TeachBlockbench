@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Bouncing tomato animation reference</title>
+  <desc id="desc">A low-poly tomato shown at three timeline keyframes: down, up, and down again.</desc>
+  <rect width="960" height="520" fill="#fbf7f0"/>
+  <rect x="48" y="54" width="864" height="318" rx="14" fill="#fffdf8" stroke="#e4dccd" stroke-width="3"/>
+  <line x1="120" y1="326" x2="840" y2="326" stroke="#d8cdb8" stroke-width="5" stroke-linecap="round"/>
+
+  <g transform="translate(190 246)">
+    <ellipse cx="0" cy="82" rx="74" ry="14" fill="#5d2c28" opacity=".25"/>
+    <path d="M-58 24 C-50 -28 -7 -58 40 -38 C82 -20 82 42 44 68 C6 96 -50 78 -58 24Z" fill="#ea323c" stroke="#5d2c28" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-12 -41 L10 -70 L20 -34 L56 -42 L30 -14" fill="none" stroke="#33984b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 -31 C54 -16 62 18 42 44" fill="none" stroke="#c42430" stroke-width="15" stroke-linecap="round" opacity=".7"/>
+    <text x="-35" y="133" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#2c2a26">0.0s</text>
+    <text x="-54" y="164" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">down</text>
+  </g>
+
+  <g transform="translate(480 158)">
+    <path d="M0 171 C-20 145 -54 136 -92 151" fill="none" stroke="#2f6f9e" stroke-width="5" stroke-dasharray="9 10" stroke-linecap="round"/>
+    <ellipse cx="0" cy="170" rx="54" ry="10" fill="#5d2c28" opacity=".14"/>
+    <path d="M-58 24 C-50 -28 -7 -58 40 -38 C82 -20 82 42 44 68 C6 96 -50 78 -58 24Z" fill="#ea323c" stroke="#5d2c28" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-12 -41 L10 -70 L20 -34 L56 -42 L30 -14" fill="none" stroke="#33984b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 -31 C54 -16 62 18 42 44" fill="none" stroke="#c42430" stroke-width="15" stroke-linecap="round" opacity=".7"/>
+    <text x="-35" y="221" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#2c2a26">0.5s</text>
+    <text x="-24" y="252" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">up</text>
+  </g>
+
+  <g transform="translate(770 246)">
+    <ellipse cx="0" cy="82" rx="74" ry="14" fill="#5d2c28" opacity=".25"/>
+    <path d="M-58 24 C-50 -28 -7 -58 40 -38 C82 -20 82 42 44 68 C6 96 -50 78 -58 24Z" fill="#ea323c" stroke="#5d2c28" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-12 -41 L10 -70 L20 -34 L56 -42 L30 -14" fill="none" stroke="#33984b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 -31 C54 -16 62 18 42 44" fill="none" stroke="#c42430" stroke-width="15" stroke-linecap="round" opacity=".7"/>
+    <text x="-35" y="133" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#2c2a26">1.0s</text>
+    <text x="-54" y="164" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">down</text>
+  </g>
+
+  <g transform="translate(110 420)">
+    <line x1="0" y1="32" x2="740" y2="32" stroke="#d8cdb8" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="0" cy="32" r="17" fill="#e3712b"/>
+    <circle cx="370" cy="32" r="17" fill="#e3712b"/>
+    <circle cx="740" cy="32" r="17" fill="#e3712b"/>
+    <text x="-28" y="78" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">keyframe</text>
+    <text x="327" y="78" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">keyframe</text>
+    <text x="697" y="78" font-family="Arial, sans-serif" font-size="18" fill="#5b574f">keyframe</text>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockbench First Animation Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="breadcrumb">
+    <span><b>TeachBlockbench</b></span>
+    <span>Reference</span>
+    <span><b>First animation</b></span>
+  </nav>
+
+  <p class="kicker">Animation reference</p>
+  <h1>First Animation Cheatsheet</h1>
+  <p class="dek">A beginner-safe map for the first Blockbench Timeline loop: one moving group,
+  three position keyframes, looped playback, and a GIF for posting.</p>
+
+  <div class="callout win">
+    <span class="label">Mental model</span>
+    <p>A <strong>keyframe</strong> is a saved pose at a specific time. The Timeline plays between
+    keyframes, so a three-keyframe bounce can be: down at <code>0.0s</code>, up at
+    <code>0.5s</code>, down again at <code>1.0s</code>.</p>
+  </div>
+
+  <h2>Core controls</h2>
+  <table>
+    <thead><tr><th>Control</th><th>Beginner meaning</th><th>Use today</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Animate mode</strong></td><td>The workspace for editing animation instead of the base model.</td><td>Switch here after the model is built.</td></tr>
+      <tr><td><strong>Animations panel</strong></td><td>Where animations are added, named, selected, and given a length.</td><td>Add one animation named <code>tomato_bounce</code>.</td></tr>
+      <tr><td><strong>Timeline panel</strong></td><td>The time ruler where keyframes appear.</td><td>Place keyframes at <code>0.0</code>, <code>0.5</code>, and <code>1.0</code> seconds.</td></tr>
+      <tr><td><strong>Position channel</strong></td><td>The track that stores where the selected group is located.</td><td>Key only Position for the first lesson.</td></tr>
+      <tr><td><strong>Looped Playback</strong></td><td>Previews the animation repeatedly.</td><td>Turn it on to check that the start and end match.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Beginner rules</h2>
+  <ul>
+    <li>Animate one grouped prop first. Do not animate every cube separately.</li>
+    <li>Make the first and last keyframe identical for a clean loop.</li>
+    <li>Use Position before Rotation or Scale. It is the easiest channel to debug.</li>
+    <li>If playback jumps at the end, copy the first pose to the final keyframe.</li>
+    <li>If nothing moves, check that the correct group is selected in Animate mode.</li>
+  </ul>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>No Timeline appears.</td><td>The panel is hidden or you are not in Animate mode.</td><td>Switch to Animate mode, then use <strong>View &gt; Panels &gt; Timeline</strong>.</td></tr>
+      <tr><td>The tomato moves in the model forever.</td><td>You edited in Edit mode instead of adding a keyframe in Animate mode.</td><td>Undo, switch to Animate mode, then move at a selected time.</td></tr>
+      <tr><td>Only one cube moves.</td><td>The tomato parts were not grouped, or the wrong element is selected.</td><td>Select the moving group, not an individual cube.</td></tr>
+      <tr><td>The loop pops at the end.</td><td>The last keyframe differs from the first.</td><td>Set the final pose to match the first pose exactly.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout source">
+    <span class="label">Local source-backed facts</span>
+    <p>The course's local Blockbench source shows Generic Model has <code>animation_mode: true</code>.
+    The local UI atlas also lists <strong>Add Keyframe</strong>, <strong>Looped Playback</strong>,
+    and the <strong>Animations</strong> and <strong>Timeline</strong> panels.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">Course Home</a>
+    <a href="blockbench-ui-features/animation.html">Animation UI Features</a>
+    <a href="blockbench-ui-features/timeline.html">Timeline UI Features</a>
+    <a href="blockbench-ui-features/keyframe.html">Keyframe UI Features</a>
+  </nav>
+</main>
+</body>
+</html>

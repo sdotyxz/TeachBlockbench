@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 13 · First Timeline Animation</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span><b>Lesson 13</b></span>
+  </nav>
+
+  <p class="kicker">Day 13 - Week 3 bridge: animation</p>
+  <h1><span class="num">13</span>First Timeline animation - a bouncing tomato loop</h1>
+  <p class="dek">You have a growing set of static kitchen props. Today you make the first moving
+  asset-pack proof: one tomato group that bounces with three position keyframes in Blockbench's
+  Timeline.</p>
+
+  <div class="meta">
+    <span>~45-60 min</span>
+    <span>Builds on Lessons 4, 9, and 11</span>
+    <span>Generic Model supports Animate mode</span>
+    <span>Ends with a GIF post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>1-second looping GIF</strong>: a low-poly tomato bouncing on a tiny counter tile,
+    made from three keyframes: down, up, down.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/bouncing-tomato-animation-reference.svg" alt="A tomato shown at three animation keyframes: down at 0 seconds, up at 0.5 seconds, and down at 1 second.">
+    <div class="cap"><strong>Lesson target:</strong> the first and last keyframes match, so the loop
+    can repeat without a visible jump.</div>
+  </div>
+
+  <h2>Warm up - 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is the difference between rotating the camera and rotating an element?</summary>
+      <div class="answer">Camera rotation only changes your view. Element rotation changes the model itself.</div>
+    </details>
+    <details>
+      <summary>Why did the tomato trio use Cluster Selection?</summary>
+      <div class="answer">Cluster selected one connected tomato chunk without selecting every face by hand.</div>
+    </details>
+    <details>
+      <summary>Why do we name parts in the Outliner?</summary>
+      <div class="answer">Names help you select the exact part or group you want to edit later.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea - keyframes save poses over time</h2>
+  <p>An <strong>animation</strong> is not a different model. It is the same model with saved poses at
+  different times. Each saved pose is a <strong>keyframe</strong>. Blockbench plays between those
+  keyframes in the <strong>Timeline</strong>.</p>
+
+  <p>For the first animation, keep the idea tiny: save the tomato down at <code>0.0s</code>, up at
+  <code>0.5s</code>, and down again at <code>1.0s</code>. The first and last keyframes match, so the
+  loop can restart cleanly.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Do not animate every cube separately today. Put the moving tomato pieces in one group, then
+    animate the group. One moving group is easier to understand than ten moving parts.</p>
+  </div>
+
+  <h2>Settings tutorial - Animate mode and Timeline</h2>
+  <p>Keep the <a href="../reference/blockbench-first-animation-cheatsheet.html">First Animation
+  Cheatsheet</a> open. Generic Model is OK for this lesson; the local Blockbench source marks it with
+  <code>animation_mode: true</code>.</p>
+
+  <table>
+    <thead><tr><th>Control</th><th>Use it today for</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Animate mode</strong></td><td>Enter the animation workspace.</td><td>Switch only after the static tomato is built.</td></tr>
+      <tr><td><strong>Animations panel</strong></td><td>Create and name the animation.</td><td><code>tomato_bounce</code>, length <code>1.0s</code>.</td></tr>
+      <tr><td><strong>Timeline</strong></td><td>Place and preview keyframes.</td><td>Use <code>0.0</code>, <code>0.5</code>, and <code>1.0</code> seconds.</td></tr>
+      <tr><td><strong>Position keyframes</strong></td><td>Move the whole tomato group up and down.</td><td>Animate Position only. Skip Rotation and Scale.</td></tr>
+      <tr><td><strong>Looped Playback</strong></td><td>Check the loop repeatedly.</td><td>On while previewing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#EA323C"></div><div class="body"><span class="name">Tomato</span><span class="role">main fruit</span><span class="hex">#EA323C</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C42430"></div><div class="body"><span class="name">Tomato Shadow</span><span class="role">side shade</span><span class="hex">#C42430</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#33984B"></div><div class="body"><span class="name">Herb Green</span><span class="role">stem</span><span class="hex">#33984B</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">shadow / counter edge</span><span class="hex">#5D2C28</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model - name it <code>bouncing-tomato-loop</code></h3>
+      Save early. This is a motion study, not a full new prop challenge.
+    </li>
+    <li>
+      <h3>Build a tiny counter tile</h3>
+      Add one flat cube as a simple base. Suggested size: <code>X 5</code>, <code>Y 0.25</code>,
+      <code>Z 4</code>. Color it with the shared wood colors or reuse the Lesson-9 prep counter idea.
+    </li>
+    <li>
+      <h3>Build one simple tomato above the tile</h3>
+      Use a low-poly mesh sphere if you are comfortable from Lesson 11, or use a chunky red cube if
+      you want the fastest path. Add a tiny green stem. Keep it readable at thumbnail size.
+    </li>
+    <li>
+      <h3>Group the moving tomato parts</h3>
+      Put the tomato body and stem into one Outliner group named <code>tomato_bounce_group</code>.
+      Leave the counter tile outside the group so the tile stays still.
+    </li>
+    <li>
+      <h3>Switch to Animate mode</h3>
+      Use the mode switcher to enter <strong>Animate</strong>. If the Timeline is hidden, open
+      <strong>View -> Panels -> Timeline</strong>. If the Animations panel is hidden, open
+      <strong>View -> Panels -> Animations</strong>.
+    </li>
+    <li>
+      <h3>Add one animation</h3>
+      In the Animations panel, add a new animation. Name it <code>tomato_bounce</code>. Set the
+      length to <code>1.0</code> second if the length field appears.
+    </li>
+    <li>
+      <h3>Select the moving group</h3>
+      Select <code>tomato_bounce_group</code>. In the Timeline, you want to key the group, not the
+      counter tile and not one small stem cube.
+    </li>
+    <li>
+      <h3>Keyframe 1: down at <code>0.0s</code></h3>
+      Move the Timeline playhead to <code>0.0s</code>. Add a <strong>Position</strong> keyframe for
+      the tomato group. This saves the starting pose.
+    </li>
+    <li>
+      <h3>Keyframe 2: up at <code>0.5s</code></h3>
+      Move the playhead to <code>0.5s</code>. Move the tomato group up a small amount, about
+      <code>Y +0.7</code>. Add another Position keyframe.
+    </li>
+    <li>
+      <h3>Keyframe 3: down at <code>1.0s</code></h3>
+      Move the playhead to <code>1.0s</code>. Put the tomato back at the same position as
+      <code>0.0s</code>. Add the final Position keyframe. Matching the first pose prevents a pop.
+    </li>
+    <li>
+      <h3>Turn on Looped Playback and preview</h3>
+      Play the Timeline. The tomato should bounce up and return down, then repeat. If it jumps at the
+      end, the <code>1.0s</code> keyframe does not match the <code>0.0s</code> keyframe.
+    </li>
+    <li>
+      <h3>Add one optional squash illusion</h3>
+      Optional: at the down keyframes, make the tomato slightly wider and lower. Only do this if the
+      simple bounce is already working. Save before experimenting.
+    </li>
+    <li>
+      <h3>Export or capture a GIF</h3>
+      Capture a short looping GIF or screen recording of the Timeline playback. Keep the camera fixed
+      so viewers notice the tomato movement, not the camera movement.
+    </li>
+    <li>
+      <h3>Post your Day-13 update</h3>
+      Publish the GIF and a short note. <em>Streak: Day 13.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Animation habit</span>
+    <p>For every loop, check this first: <strong>does the last keyframe match the first?</strong>
+    If yes, the loop can repeat cleanly.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 13 of learning Blockbench from zero. Today I made my first Timeline animation: a tiny tomato bounce loop. The useful idea was keyframes. I saved the tomato down at 0.0 seconds, up at 0.5 seconds, and down again at 1.0 second so the loop could repeat cleanly. This is the first moving proof for the kitchen asset pack.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第13天】零基础学 Blockbench 做游戏素材
+
+今天第一次做 Timeline 动画。
+我做了一个小番茄弹跳循环：
+- 0.0 秒：番茄在下面
+- 0.5 秒：番茄跳起来
+- 1.0 秒：番茄回到下面
+
+今天最大的收获：keyframe（关键帧）就是把某个时间点的姿势保存下来。开头和结尾一样，循环就不会突然跳一下。
+#Blockbench #3D建模 #动画 #低多边形 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#动画</span>
+      <span class="tag">#3D建模</span><span class="tag">#低多边形</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is a keyframe?</summary>
+      <div class="answer">A saved pose or value at a specific time in the animation.</div>
+    </details>
+    <details>
+      <summary>Why animate the group instead of every cube?</summary>
+      <div class="answer">One grouped animator keeps the first animation simple and makes the whole tomato move together.</div>
+    </details>
+    <details>
+      <summary>Why should the first and last keyframes match?</summary>
+      <div class="answer">A matching start and end lets the loop restart without a visible jump.</div>
+    </details>
+    <details>
+      <summary>If nothing moves during playback, what do you check first?</summary>
+      <div class="answer">Check that you are in Animate mode, the right group is selected, and Position keyframes exist on that group.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary source</span>
+    <p>Use the <a href="../reference/blockbench-first-animation-cheatsheet.html">First Animation
+    Cheatsheet</a>, plus the local UI atlas pages for
+    <a href="../reference/blockbench-ui-features/animation.html">Animation</a>,
+    <a href="../reference/blockbench-ui-features/timeline.html">Timeline</a>, and
+    <a href="../reference/blockbench-ui-features/keyframe.html">Keyframe</a>.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Ask me anything</span>
+    <p>If the Timeline is missing, the tomato moves permanently, or the loop pops at the end, send me
+    a screenshot of Animate mode and the Timeline. I can tell which keyframe step went wrong.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0012-uv-cleanup-and-layout.html">Previous - Lesson 12</a>
+    <a href="../reference/blockbench-first-animation-cheatsheet.html">First Animation Cheatsheet</a>
+    <a href="../reference/overcooked-palette.html">Course Palette</a>
+    <a href="../MISSION.md">Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 13 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>
