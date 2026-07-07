@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 14 · Kitchen Timer Rotation</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span><b>Lesson 14</b></span>
+  </nav>
+
+  <p class="kicker">Day 14 - Week 3 animation bridge</p>
+  <h1><span class="num">14</span>Kitchen timer rotation - animate a swinging needle</h1>
+  <p class="dek">You already know how to change Scale. Today the new skill is different:
+  <strong>Rotation keyframes</strong>. You will build a tiny kitchen timer and animate only its
+  needle, so you learn how pivots control animated turning.</p>
+
+  <div class="meta">
+    <span>~45-60 min</span>
+    <span>Builds on Lessons 4 and 13</span>
+    <span>New skill: Rotation keyframes</span>
+    <span>Ends with a GIF post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>1-second looping GIF</strong>: a cute kitchen timer with a red needle swinging
+    left, center, right, center, and left again.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/kitchen-timer-rotation-reference.svg" alt="A kitchen timer needle shown at five rotation keyframes: left, center, right, center, and left.">
+    <div class="cap"><strong>Lesson target:</strong> the timer body stays still; the needle rotates
+    around the center of the dial.</div>
+  </div>
+
+  <h2>Warm up - 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is a keyframe?</summary>
+      <div class="answer">A saved pose or value at a specific time in the animation.</div>
+    </details>
+    <details>
+      <summary>Why did Lesson 13 animate a group?</summary>
+      <div class="answer">A group keeps related parts moving together and makes the Timeline easier to debug.</div>
+    </details>
+    <details>
+      <summary>What does a pivot control?</summary>
+      <div class="answer">The pivot is the point an element or group rotates around.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea - rotation needs the right pivot</h2>
+  <p>A <strong>Rotation keyframe</strong> stores an angle at a specific time. But rotation is only
+  useful if the part turns around the right point. A timer needle should rotate around the center of
+  the dial, not around one corner of the rectangle.</p>
+
+  <p>That gives today a simple rule: <strong>set the pivot first, then add Rotation keyframes</strong>.
+  The official Blockbench Overview &amp; Tips page describes Animate mode, the Timeline, the Keyframe
+  Panel, and keyframe channels. The local Blockbench source also exposes transform channels for
+  <code>rotation</code>, <code>position</code>, and <code>scale</code>.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Do not animate the whole timer. The timer body is the stage. The needle is the actor.</p>
+  </div>
+
+  <h2>Settings tutorial - Rotation channel</h2>
+  <p>Keep the <a href="../reference/blockbench-rotation-animation-cheatsheet.html">Rotation Animation
+  Cheatsheet</a> open.</p>
+
+  <table>
+    <thead><tr><th>Control</th><th>Use it today for</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pivot Tool</strong></td><td>Put the needle's turning point at the dial center.</td><td>Set before animation.</td></tr>
+      <tr><td><strong>Rotation channel</strong></td><td>Save the needle angle over time.</td><td>Animate Rotation only.</td></tr>
+      <tr><td><strong>Keyframe Panel</strong></td><td>Edit selected keyframe values.</td><td>Type Z values if dragging is messy.</td></tr>
+      <tr><td><strong>Interpolation</strong></td><td>Control motion between keyframes.</td><td><code>Linear</code> for now.</td></tr>
+      <tr><td><strong>Looped Playback</strong></td><td>Check that the needle returns cleanly.</td><td>On while previewing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#EEC39A"></div><div class="body"><span class="name">Timer Cream</span><span class="role">timer face</span><span class="hex">#EEC39A</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#9A5B2F"></div><div class="body"><span class="name">Warm Rim</span><span class="role">dial rim</span><span class="hex">#9A5B2F</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#EA323C"></div><div class="body"><span class="name">Needle Red</span><span class="role">animated needle</span><span class="hex">#EA323C</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">marks / hub</span><span class="hex">#5D2C28</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model - name it <code>kitchen-timer-needle-loop</code></h3>
+      Save early. This is a tiny animation study that can still become a pack prop later.
+    </li>
+    <li>
+      <h3>Build a simple timer face</h3>
+      Use a flat cube or low-poly cylinder as the timer body. Keep it front-facing. Add a darker rim
+      and three small tick marks so viewers understand it is a dial.
+    </li>
+    <li>
+      <h3>Build one red needle</h3>
+      Add a thin red cuboid for the pointer. Place one end at the center of the timer face and point
+      the other end upward. Add a small dark hub over the center.
+    </li>
+    <li>
+      <h3>Group only the moving needle parts</h3>
+      Put the red pointer and center hub in one Outliner group named <code>timer_needle_group</code>.
+      Keep the timer body and tick marks outside the group.
+    </li>
+    <li>
+      <h3>Set the needle pivot to the dial center</h3>
+      Select <code>timer_needle_group</code>. Use the Pivot Tool or the pivot fields to put the
+      pivot at the center of the dial. This is the point the needle will rotate around.
+    </li>
+    <li>
+      <h3>Switch to Animate mode</h3>
+      Add one animation named <code>timer_needle_swing</code>. Set the length to
+      <code>1.0s</code>.
+    </li>
+    <li>
+      <h3>Keyframe 1: left at <code>0.00s</code></h3>
+      Select <code>timer_needle_group</code>. Move the playhead to <code>0.00s</code>. Add a
+      <strong>Rotation</strong> keyframe with <code>Z -35</code>.
+    </li>
+    <li>
+      <h3>Keyframe 2: center at <code>0.25s</code></h3>
+      Move to <code>0.25s</code>. Add a Rotation keyframe with <code>Z 0</code>.
+    </li>
+    <li>
+      <h3>Keyframe 3: right at <code>0.50s</code></h3>
+      Move to <code>0.50s</code>. Add a Rotation keyframe with <code>Z 35</code>.
+    </li>
+    <li>
+      <h3>Keyframe 4: center at <code>0.75s</code></h3>
+      Move to <code>0.75s</code>. Add a Rotation keyframe with <code>Z 0</code>.
+    </li>
+    <li>
+      <h3>Keyframe 5: left at <code>1.00s</code></h3>
+      Move to <code>1.00s</code>. Add a Rotation keyframe with <code>Z -35</code>. The final angle
+      matches the first angle, so the loop can restart cleanly.
+    </li>
+    <li>
+      <h3>Preview and debug the pivot</h3>
+      Turn on Looped Playback. If the needle orbits around the timer, stop and fix the pivot before
+      changing keyframes. If the whole timer rotates, you keyed the wrong group.
+    </li>
+    <li>
+      <h3>Capture a GIF</h3>
+      Keep the camera fixed and record the timer needle swinging. A small, readable loop is enough.
+    </li>
+    <li>
+      <h3>Post your Day-14 update</h3>
+      Publish the GIF and a short note. <em>Streak: Day 14.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Animation habit</span>
+    <p>For rotating parts, check the pivot before blaming the Timeline. Most beginner rotation bugs
+    are pivot bugs.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 14 of learning Blockbench from zero. Today I learned Rotation keyframes by making a tiny kitchen timer. The timer body stays still, but the needle swings left-center-right-center-left around a centered pivot. Useful lesson: for animated rotation, the pivot matters as much as the keyframes.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第14天】零基础学 Blockbench 做游戏素材
+
+今天学的是 Rotation keyframe（旋转关键帧）。
+我做了一个小厨房计时器，让红色指针左右摆动。
+
+今天的新重点不是移动，也不是缩放，而是：
+旋转动画一定要先把 pivot（旋转中心）放对。
+
+如果 pivot 不在表盘中心，指针就不会像指针一样转。
+这是做旋钮、门、把手、钟表、仪表盘都会用到的小技能。
+#Blockbench #3D建模 #动画 #低多边形 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#animation</span>
+      <span class="tag">#lowpoly</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does a Rotation keyframe store?</summary>
+      <div class="answer">It stores the selected group's angle at one time in the animation.</div>
+    </details>
+    <details>
+      <summary>Why does the timer needle need a centered pivot?</summary>
+      <div class="answer">The needle should rotate around the dial center, not around a corner or edge.</div>
+    </details>
+    <details>
+      <summary>Why keep the final rotation equal to the first?</summary>
+      <div class="answer">Matching start and end angles prevents a visible loop pop.</div>
+    </details>
+    <details>
+      <summary>If the whole timer rotates, what is wrong?</summary>
+      <div class="answer">The timer body was selected or grouped with the needle when the keyframe was added.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary source</span>
+    <p>Read the official <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Blockbench
+    Overview &amp; Tips</a> section on Animate mode, especially the Timeline, Keyframe Panel, and
+    keyframe channels. For the course-specific summary, use the
+    <a href="../reference/blockbench-rotation-animation-cheatsheet.html">Rotation Animation Cheatsheet</a>
+    and the local UI atlas pages for <a href="../reference/blockbench-ui-features/keyframe.html">Keyframe</a>
+    and <a href="../reference/blockbench-ui-features/timeline.html">Timeline</a>.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Ask me anything</span>
+    <p>If the needle rotates around the wrong point, flips like a door, or the whole timer moves,
+    send me a screenshot of the Outliner, Pivot fields, and Timeline. I can tell which setup step is
+    wrong.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0013-first-timeline-animation.html">Previous - Lesson 13</a>
+    <a href="../reference/blockbench-rotation-animation-cheatsheet.html">Rotation Animation Cheatsheet</a>
+    <a href="../reference/blockbench-first-animation-cheatsheet.html">First Animation Cheatsheet</a>
+    <a href="../MISSION.md">Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 14 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Kitchen timer needle rotation keyframes</title>
+  <desc id="desc">A kitchen timer face with a pointer rotating left, center, right, center, and left across five keyframes.</desc>
+  <rect width="900" height="360" fill="#fff8ed"/>
+  <style>
+    .label{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#3b352e}
+    .small{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#71675b}
+    .time{font:700 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#a64f1e}
+    .line{stroke:#d8c9b5;stroke-width:3;stroke-linecap:round}
+    .dot{fill:#fff;stroke:#d96d2b;stroke-width:4}
+    .face{fill:#f3dfb5;stroke:#7f4d2f;stroke-width:6}
+    .rim{fill:none;stroke:#b06b3c;stroke-width:8}
+    .needle{stroke:#d7352f;stroke-width:8;stroke-linecap:round}
+    .hub{fill:#5d2c28;stroke:#fff8ed;stroke-width:3}
+    .tick{stroke:#7f4d2f;stroke-width:3;stroke-linecap:round}
+  </style>
+  <text x="42" y="46" class="label">Lesson 14 target: animate Rotation, not Position or Scale</text>
+  <text x="42" y="71" class="small">The timer body stays still. Only the grouped needle rotates around its center pivot.</text>
+  <line x1="112" y1="295" x2="788" y2="295" class="line"/>
+
+  <g transform="translate(112 172)">
+    <circle class="face" cx="0" cy="0" r="66"/>
+    <circle class="rim" cx="0" cy="0" r="56"/>
+    <line class="tick" x1="0" y1="-52" x2="0" y2="-38"/>
+    <line class="tick" x1="45" y1="-26" x2="34" y2="-20"/>
+    <line class="tick" x1="-45" y1="-26" x2="-34" y2="-20"/>
+    <line class="needle" x1="0" y1="0" x2="-35" y2="-36"/>
+    <circle class="hub" cx="0" cy="0" r="10"/>
+    <circle class="dot" cx="0" cy="123" r="9"/>
+    <text x="-32" y="155" class="time">0.00s</text>
+    <text x="-33" y="178" class="small">left</text>
+    <text x="-36" y="200" class="label">-35°</text>
+  </g>
+
+  <g transform="translate(282 172)">
+    <circle class="face" cx="0" cy="0" r="66"/>
+    <circle class="rim" cx="0" cy="0" r="56"/>
+    <line class="tick" x1="0" y1="-52" x2="0" y2="-38"/>
+    <line class="tick" x1="45" y1="-26" x2="34" y2="-20"/>
+    <line class="tick" x1="-45" y1="-26" x2="-34" y2="-20"/>
+    <line class="needle" x1="0" y1="0" x2="0" y2="-50"/>
+    <circle class="hub" cx="0" cy="0" r="10"/>
+    <circle class="dot" cx="0" cy="123" r="9"/>
+    <text x="-32" y="155" class="time">0.25s</text>
+    <text x="-43" y="178" class="small">center</text>
+    <text x="-23" y="200" class="label">0°</text>
+  </g>
+
+  <g transform="translate(452 172)">
+    <circle class="face" cx="0" cy="0" r="66"/>
+    <circle class="rim" cx="0" cy="0" r="56"/>
+    <line class="tick" x1="0" y1="-52" x2="0" y2="-38"/>
+    <line class="tick" x1="45" y1="-26" x2="34" y2="-20"/>
+    <line class="tick" x1="-45" y1="-26" x2="-34" y2="-20"/>
+    <line class="needle" x1="0" y1="0" x2="35" y2="-36"/>
+    <circle class="hub" cx="0" cy="0" r="10"/>
+    <circle class="dot" cx="0" cy="123" r="9"/>
+    <text x="-32" y="155" class="time">0.50s</text>
+    <text x="-35" y="178" class="small">right</text>
+    <text x="-35" y="200" class="label">35°</text>
+  </g>
+
+  <g transform="translate(622 172)">
+    <circle class="face" cx="0" cy="0" r="66"/>
+    <circle class="rim" cx="0" cy="0" r="56"/>
+    <line class="tick" x1="0" y1="-52" x2="0" y2="-38"/>
+    <line class="tick" x1="45" y1="-26" x2="34" y2="-20"/>
+    <line class="tick" x1="-45" y1="-26" x2="-34" y2="-20"/>
+    <line class="needle" x1="0" y1="0" x2="0" y2="-50"/>
+    <circle class="hub" cx="0" cy="0" r="10"/>
+    <circle class="dot" cx="0" cy="123" r="9"/>
+    <text x="-32" y="155" class="time">0.75s</text>
+    <text x="-43" y="178" class="small">center</text>
+    <text x="-23" y="200" class="label">0°</text>
+  </g>
+
+  <g transform="translate(792 172)">
+    <circle class="face" cx="0" cy="0" r="66"/>
+    <circle class="rim" cx="0" cy="0" r="56"/>
+    <line class="tick" x1="0" y1="-52" x2="0" y2="-38"/>
+    <line class="tick" x1="45" y1="-26" x2="34" y2="-20"/>
+    <line class="tick" x1="-45" y1="-26" x2="-34" y2="-20"/>
+    <line class="needle" x1="0" y1="0" x2="-35" y2="-36"/>
+    <circle class="hub" cx="0" cy="0" r="10"/>
+    <circle class="dot" cx="0" cy="123" r="9"/>
+    <text x="-32" y="155" class="time">1.00s</text>
+    <text x="-33" y="178" class="small">loop</text>
+    <text x="-36" y="200" class="label">-35°</text>
+  </g>
+</svg>

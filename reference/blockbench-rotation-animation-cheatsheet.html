@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockbench Rotation Animation Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="breadcrumb">
+    <span><b>TeachBlockbench</b></span>
+    <span>Reference</span>
+    <span><b>Rotation animation</b></span>
+  </nav>
+
+  <p class="kicker">Animation reference</p>
+  <h1>Rotation Animation Cheatsheet</h1>
+  <p class="dek">A beginner-safe map for animating a small part that pivots: one group, a centered
+  pivot, Rotation keyframes, and a matching first/last pose for looping.</p>
+
+  <div class="callout win">
+    <span class="label">Mental model</span>
+    <p><strong>Position keyframes</strong> move a part through space. <strong>Rotation keyframes</strong>
+    turn a part around its pivot. If the pivot is wrong, the rotation will swing around the wrong
+    point.</p>
+  </div>
+
+  <h2>Timer needle recipe</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Rotation</th><th>Meaning</th><th>Check</th></tr></thead>
+    <tbody>
+      <tr><td><code>0.00s</code></td><td><code>Z -35</code></td><td>Needle points left.</td><td>Start of loop.</td></tr>
+      <tr><td><code>0.25s</code></td><td><code>Z 0</code></td><td>Needle passes center.</td><td>Motion is readable.</td></tr>
+      <tr><td><code>0.50s</code></td><td><code>Z 35</code></td><td>Needle points right.</td><td>Opposite extreme.</td></tr>
+      <tr><td><code>0.75s</code></td><td><code>Z 0</code></td><td>Needle returns through center.</td><td>No teleport.</td></tr>
+      <tr><td><code>1.00s</code></td><td><code>Z -35</code></td><td>Needle returns left.</td><td>Matches first pose.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Controls</h2>
+  <table>
+    <thead><tr><th>Control</th><th>Use it for</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pivot Tool</strong></td><td>Place the turning point before animation.</td><td>Center of the timer face.</td></tr>
+      <tr><td><strong>Rotation channel</strong></td><td>Store the needle angle over time.</td><td>Animate only Rotation today.</td></tr>
+      <tr><td><strong>Keyframe Panel</strong></td><td>Edit selected Rotation keyframe values.</td><td>Use typed Z values.</td></tr>
+      <tr><td><strong>Interpolation</strong></td><td>Choose how values change between keyframes.</td><td><code>Linear</code> for this lesson.</td></tr>
+      <tr><td><strong>Looped Playback</strong></td><td>Preview the motion repeatedly.</td><td>On while testing.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Axis rule</h2>
+  <p>If your timer face is built like a flat front-facing square, the needle usually spins on
+  <code>Z</code>. If it turns like a door, you are probably rotating on the wrong axis or the model
+  is facing a different direction.</p>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>The whole timer rotates.</td><td>The timer body is selected or grouped with the needle.</td><td>Select only the needle group before adding Rotation keyframes.</td></tr>
+      <tr><td>The needle orbits around the dial.</td><td>The pivot is not at the dial center.</td><td>Move the needle group's pivot to the center, then redo the keyframes.</td></tr>
+      <tr><td>The needle flips like a door.</td><td>The wrong rotation axis is keyed.</td><td>Undo and try the Z axis for a front-facing timer.</td></tr>
+      <tr><td>The loop pops at the end.</td><td>The final rotation differs from the first.</td><td>Set <code>1.00s</code> to the same value as <code>0.00s</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout source">
+    <span class="label">Source-backed facts</span>
+    <p>The official <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Blockbench
+    Overview &amp; Tips</a> page describes Animate mode, the Timeline, the Keyframe Panel, and
+    rotation/position/scale keyframe editing. The local UI atlas lists
+    <a href="blockbench-ui-features/keyframe.html">Keyframe</a> and
+    <a href="blockbench-ui-features/timeline.html">Timeline</a> controls, and the local source shows
+    transform channels for <code>rotation</code>, <code>position</code>, and <code>scale</code>.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">Course Home</a>
+    <a href="../lessons/0014-kitchen-timer-rotation.html">Lesson 14</a>
+    <a href="blockbench-first-animation-cheatsheet.html">First Animation Cheatsheet</a>
+  </nav>
+</main>
+</body>
+</html>

@@ -22,6 +22,8 @@ Working notes + learner preferences. Refer back before designing each lesson.
   `.glb`, `.obj`, or game-ready export unless it is only a supporting step inside a larger new skill.
 - **Each lesson should introduce a new skill** (confirmed 2026-06-29). Avoid lessons whose main move
   is repeating yesterday's technique on a different prop.
+- **Scale changes / basic Scale keyframes are already familiar** (confirmed 2026-07-08 after Lesson
+  13). Do not make Scale the main novelty of a new lesson; use it only as a supporting move.
 - **Each lesson should include a settings tutorial section** (confirmed 2026-06-29). Keep it scoped to
   the day's tool: where the setting lives, the beginner-safe value, what changes on screen, and when
   to change it.
@@ -129,9 +131,10 @@ Working notes + learner preferences. Refer back before designing each lesson.
   2026-07-06** — completion requested; normal itch.io draft prepared at
   `https://itch.io/blog/1576432/day-13-first-timeline-animation-tomato-bounce`, publication pending
   approval; artifact in `artifacts/bouncing-tomato/`)*
-- **0014** — Bounce timing and squash: make the tomato loop feel heavier. New idea: Scale keyframes
-  can fake squash and stretch without introducing rigs or complex curve editing. Reuses the Lesson-13
-  tomato bounce, keeps interpolation on Linear, places keyframes at impact/recovery/takeoff/top/landing,
-  and adds `reference/blockbench-animation-timing-cheatsheet.html` plus
-  `assets/images/tomato-squash-timing-reference.svg`. *(authored 2026-07-08; completion not yet
-  reported)*
+- **0014** — Kitchen timer rotation: animate a swinging timer needle. New idea: Rotation keyframes
+  store angles over time, and animated rotation depends on setting the pivot before keying. Builds a
+  small kitchen timer prop, keeps the body still, groups only the needle, and keys
+  `Z -35 / 0 / 35 / 0 / -35` for a clean loop. Adds
+  `reference/blockbench-rotation-animation-cheatsheet.html` plus
+  `assets/images/kitchen-timer-rotation-reference.svg`. *(authored 2026-07-08 after learner noted
+  Scale was already familiar; completion not yet reported)*

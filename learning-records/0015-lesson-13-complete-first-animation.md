@@ -26,5 +26,6 @@ Timeline, and three position keyframes.
 ## Teaching implication
 
 The learner has crossed into the animation pillar. The next lesson should build on the same tiny
-motion loop with one new animation idea, such as timing/easing or a simple squash illusion, rather
-than introducing a complex character rig yet.
+motion-loop scale with one genuinely new animation idea. After the learner clarified that Scale is
+already familiar from the previous lesson, the next best step is Rotation keyframes with a correct
+pivot, not a squash/stretch lesson and not a complex character rig yet.
