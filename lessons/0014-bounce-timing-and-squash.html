@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 14 · Bounce Timing and Squash</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span><b>Lesson 14</b></span>
+  </nav>
+
+  <p class="kicker">Day 14 - Week 3 animation bridge</p>
+  <h1><span class="num">14</span>Bounce timing and squash - make the tomato feel heavier</h1>
+  <p class="dek">Yesterday's tomato moved. Today it gets weight. You will keep the same tiny
+  bounce loop, then add timing decisions and Scale keyframes so the motion feels more like a game
+  asset and less like a sliding object.</p>
+
+  <div class="meta">
+    <span>~45-60 min</span>
+    <span>Builds on Lesson 13</span>
+    <span>New skill: Scale keyframes</span>
+    <span>Ends with an improved GIF post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One improved <strong>1-second tomato bounce GIF</strong>: the tomato squashes on impact,
+    stretches during takeoff, hangs briefly at the top, and lands cleanly into the loop.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/tomato-squash-timing-reference.svg" alt="Five tomato poses showing squash at impact, normal recovery, stretch at takeoff, hang at the top, and squash at landing.">
+    <div class="cap"><strong>Lesson target:</strong> the model still stays simple, but the timing
+    now explains weight.</div>
+  </div>
+
+  <h2>Warm up - 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What is a keyframe?</summary>
+      <div class="answer">A saved pose or value at a specific time in the animation.</div>
+    </details>
+    <details>
+      <summary>Why did the first and last bounce keyframes match?</summary>
+      <div class="answer">Matching start and end keyframes let the loop restart without a visible jump.</div>
+    </details>
+    <details>
+      <summary>Why did you animate the tomato group instead of every part?</summary>
+      <div class="answer">One group keeps the whole tomato moving together and makes the Timeline easier to debug.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea - scale can fake weight</h2>
+  <p>You do not need a character rig to show weight. In a small stylized prop, a quick
+  <strong>squash</strong> and <strong>stretch</strong> can sell the impact: wide and short when the
+  tomato hits the counter, tall and narrow when it springs upward, normal at the top.</p>
+
+  <p>Blockbench's official Overview &amp; Tips page says Animate mode has a <strong>Keyframe
+  Panel</strong>, an <strong>interpolation dropdown</strong>, and a <strong>Timeline</strong> for
+  keyframes. The local source shows new keyframes default to <code>linear</code> interpolation, so
+  today's motion stays predictable while you learn the Scale channel.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Skip Bezier handles and the Graph Editor today. They are real tools, but this lesson's win is
+    smaller: clear time placement plus a few Scale keyframes.</p>
+  </div>
+
+  <h2>Settings tutorial - interpolation and scale</h2>
+  <p>Keep the <a href="../reference/blockbench-animation-timing-cheatsheet.html">Animation Timing
+  Cheatsheet</a> open.</p>
+
+  <table>
+    <thead><tr><th>Control</th><th>Use it today for</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Keyframe Panel</strong></td><td>Edit selected keyframe values.</td><td>Select one keyframe before changing values.</td></tr>
+      <tr><td><strong>Interpolation</strong></td><td>Control how Blockbench moves between keyframes.</td><td><code>Linear</code>. Do not change it yet.</td></tr>
+      <tr><td><strong>Scale channel</strong></td><td>Save squash and stretch shapes.</td><td>Small values: <code>X/Z 1.15</code>, <code>Y 0.85</code>.</td></tr>
+      <tr><td><strong>Timeline snapping</strong></td><td>Place keyframes on clean frame times.</td><td>Use typed times if dragging feels imprecise.</td></tr>
+      <tr><td><strong>Looped Playback</strong></td><td>Check weight and loop pop repeatedly.</td><td>On while previewing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#EA323C"></div><div class="body"><span class="name">Tomato</span><span class="role">main fruit</span><span class="hex">#EA323C</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#C42430"></div><div class="body"><span class="name">Tomato Shadow</span><span class="role">side shade</span><span class="hex">#C42430</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#33984B"></div><div class="body"><span class="name">Herb Green</span><span class="role">stem</span><span class="hex">#33984B</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">shadow / counter edge</span><span class="hex">#5D2C28</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <ol class="steps">
+    <li>
+      <h3>Open yesterday's bouncing tomato file</h3>
+      Save a copy named <code>bouncing-tomato-squash-loop</code>. Keep yesterday's file intact so
+      you can show a before/after if you want.
+    </li>
+    <li>
+      <h3>Preview the old loop once</h3>
+      In Animate mode, play the current <code>tomato_bounce</code> animation. Notice the problem:
+      the tomato moves up and down, but it has little weight.
+    </li>
+    <li>
+      <h3>Rename the animation</h3>
+      Duplicate or rename the animation to <code>tomato_squash_bounce</code>. Keep the length at
+      <code>1.0s</code>.
+    </li>
+    <li>
+      <h3>Use five timing points</h3>
+      Keep the loop simple: <code>0.00s</code>, <code>0.12s</code>, <code>0.28s</code>,
+      <code>0.50s</code>, and <code>1.00s</code>. These are close enough for a tiny game-prop loop.
+    </li>
+    <li>
+      <h3>Impact at <code>0.00s</code>: squash</h3>
+      Select <code>tomato_bounce_group</code>. At <code>0.00s</code>, add or select a
+      <strong>Scale</strong> keyframe. Try <code>X 1.15</code>, <code>Y 0.85</code>,
+      <code>Z 1.15</code>.
+    </li>
+    <li>
+      <h3>Recovery at <code>0.12s</code>: normal shape</h3>
+      Move to <code>0.12s</code>. Add a Scale keyframe with <code>X 1</code>, <code>Y 1</code>,
+      <code>Z 1</code>. This makes the squash snap back quickly.
+    </li>
+    <li>
+      <h3>Takeoff at <code>0.28s</code>: stretch</h3>
+      Move to <code>0.28s</code>. Add a Scale keyframe with <code>X 0.92</code>,
+      <code>Y 1.12</code>, <code>Z 0.92</code>. This makes the upward motion feel springy.
+    </li>
+    <li>
+      <h3>Top at <code>0.50s</code>: normal shape and hang</h3>
+      Move to <code>0.50s</code>. Keep the tomato at the top position and set Scale back to
+      <code>1, 1, 1</code>. If the top feels too fast, hold the top position until about
+      <code>0.58s</code> with one extra Position keyframe.
+    </li>
+    <li>
+      <h3>Landing at <code>1.00s</code>: match the start</h3>
+      Move to <code>1.00s</code>. The tomato should be on the counter again with the same squash as
+      <code>0.00s</code>: <code>X 1.15</code>, <code>Y 0.85</code>, <code>Z 1.15</code>.
+    </li>
+    <li>
+      <h3>Keep interpolation linear</h3>
+      Select the transform keyframes and check the Keyframe Panel. Leave Interpolation on
+      <code>Linear</code>. Today's shape changes are already enough.
+    </li>
+    <li>
+      <h3>Preview at thumbnail size</h3>
+      Turn on Looped Playback and zoom out. If the squash is invisible, increase it a little. If it
+      looks like a bug, decrease it.
+    </li>
+    <li>
+      <h3>Capture the improved loop</h3>
+      Export or record a GIF with a fixed camera. Optional but useful: put yesterday's GIF beside
+      today's GIF for a before/after post.
+    </li>
+    <li>
+      <h3>Post your Day-14 update</h3>
+      Publish the GIF and a short note. <em>Streak: Day 14.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Animation habit</span>
+    <p>When a loop feels stiff, do not add complexity first. Ask: <strong>which keyframes say
+    impact, which say hang, and which say recovery?</strong></p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 14 of learning Blockbench from zero. Today I improved yesterday's tomato bounce by adding timing and squash. The new loop uses Scale keyframes: wide and short on impact, tall and narrow on takeoff, normal at the top, then back to the same squash for a clean loop. Tiny change, much better weight.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第14天】零基础学 Blockbench 做游戏素材
+
+今天没有做新道具，而是把昨天的小番茄弹跳动画做得更有重量。
+
+新练习：
+- 落地时压扁一点
+- 起跳时拉长一点
+- 最高点停一下
+- 结尾和开头保持一样，这样循环不会跳
+
+今天最大的收获：动画不只是“从 A 点移动到 B 点”。时间点和形状变化也能让一个简单模型更有生命力。
+#Blockbench #3D建模 #动画 #低多边形 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#animation</span>
+      <span class="tag">#lowpoly</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What does a Scale keyframe store?</summary>
+      <div class="answer">It stores the selected group's size values at one time in the animation.</div>
+    </details>
+    <details>
+      <summary>Why squash the tomato at impact?</summary>
+      <div class="answer">The wide, short shape makes the landing feel heavier and less rigid.</div>
+    </details>
+    <details>
+      <summary>Why keep the final Scale keyframe equal to the first?</summary>
+      <div class="answer">Matching start and end scale values prevents a visible loop pop.</div>
+    </details>
+    <details>
+      <summary>What should you do if the squash looks too silly?</summary>
+      <div class="answer">Reduce the scale change and preview again at thumbnail size.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary source</span>
+    <p>Read the official <a href="https://www.blockbench.net/wiki/guides/blockbench-overview-tips/">Blockbench
+    Overview &amp; Tips</a> section on Animate mode, especially the Keyframe Panel, interpolation
+    dropdown, Timeline, and Graph Editor. For the course-specific summary, use the
+    <a href="../reference/blockbench-animation-timing-cheatsheet.html">Animation Timing Cheatsheet</a>
+    and the local UI atlas pages for <a href="../reference/blockbench-ui-features/keyframe.html">Keyframe</a>
+    and <a href="../reference/blockbench-ui-features/timeline.html">Timeline</a>.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Ask me anything</span>
+    <p>If the tomato scales permanently, only one part stretches, or the loop pops at the end, send
+    me a screenshot of the Timeline and Keyframe Panel. I can tell which channel or time point is
+    wrong.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0013-first-timeline-animation.html">Previous - Lesson 13</a>
+    <a href="../reference/blockbench-animation-timing-cheatsheet.html">Animation Timing Cheatsheet</a>
+    <a href="../reference/blockbench-first-animation-cheatsheet.html">First Animation Cheatsheet</a>
+    <a href="../MISSION.md">Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 14 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

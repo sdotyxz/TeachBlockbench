@@ -125,4 +125,13 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **0013** — First Timeline animation: bouncing tomato loop. New idea: a keyframe is a saved pose at
   a specific time; a simple loop can be made with down/up/down Position keyframes on one grouped prop.
   Adds `reference/blockbench-first-animation-cheatsheet.html` and
-  `assets/images/bouncing-tomato-animation-reference.svg`. *(authored 2026-07-05; current lesson)*
+  `assets/images/bouncing-tomato-animation-reference.svg`. *(authored 2026-07-05; **completed
+  2026-07-06** — completion requested; normal itch.io draft prepared at
+  `https://itch.io/blog/1576432/day-13-first-timeline-animation-tomato-bounce`, publication pending
+  approval; artifact in `artifacts/bouncing-tomato/`)*
+- **0014** — Bounce timing and squash: make the tomato loop feel heavier. New idea: Scale keyframes
+  can fake squash and stretch without introducing rigs or complex curve editing. Reuses the Lesson-13
+  tomato bounce, keeps interpolation on Linear, places keyframes at impact/recovery/takeoff/top/landing,
+  and adds `reference/blockbench-animation-timing-cheatsheet.html` plus
+  `assets/images/tomato-squash-timing-reference.svg`. *(authored 2026-07-08; completion not yet
+  reported)*
