@@ -25,7 +25,7 @@ Timeline, and three position keyframes.
 
 ## Teaching implication
 
-The learner has crossed into the animation pillar. The next lesson should build on the same tiny
-motion-loop scale with one genuinely new animation idea. After the learner clarified that Scale is
-already familiar from the previous lesson, the next best step is Rotation keyframes with a correct
-pivot, not a squash/stretch lesson and not a complex character rig yet.
+The learner has previewed the animation pillar, but clarified on 2026-07-08 that animation should be
+a later lesson. Scale changes are also already familiar, so the next lesson should return to static
+modeling with a genuinely new tool. Lesson 14 should teach Mirror Modeling and defer further
+animation work.

@@ -24,6 +24,8 @@ Working notes + learner preferences. Refer back before designing each lesson.
   is repeating yesterday's technique on a different prop.
 - **Scale changes / basic Scale keyframes are already familiar** (confirmed 2026-07-08 after Lesson
   13). Do not make Scale the main novelty of a new lesson; use it only as a supporting move.
+- **Animation should move later in the path** (confirmed 2026-07-08). Keep Lesson 14 focused on
+  static modeling; return to animation after more modeling/texturing tools are comfortable.
 - **Each lesson should include a settings tutorial section** (confirmed 2026-06-29). Keep it scoped to
   the day's tool: where the setting lives, the beginner-safe value, what changes on screen, and when
   to change it.
@@ -131,10 +133,9 @@ Working notes + learner preferences. Refer back before designing each lesson.
   2026-07-06** — completion requested; normal itch.io draft prepared at
   `https://itch.io/blog/1576432/day-13-first-timeline-animation-tomato-bounce`, publication pending
   approval; artifact in `artifacts/bouncing-tomato/`)*
-- **0014** — Kitchen timer rotation: animate a swinging timer needle. New idea: Rotation keyframes
-  store angles over time, and animated rotation depends on setting the pivot before keying. Builds a
-  small kitchen timer prop, keeps the body still, groups only the needle, and keys
-  `Z -35 / 0 / 35 / 0 / -35` for a clean loop. Adds
-  `reference/blockbench-rotation-animation-cheatsheet.html` plus
-  `assets/images/kitchen-timer-rotation-reference.svg`. *(authored 2026-07-08 after learner noted
-  Scale was already familiar; completion not yet reported)*
+- **0014** — Mirrored wall shelf: Mirror Modeling. New idea: build one side of a symmetrical static
+  prop, reflect it across the X axis, then use Apply Mirror Modeling to turn the reflected side into
+  real geometry. Builds a café wall shelf with mirrored support brackets and non-mirrored jars/cups
+  on top. Adds `reference/blockbench-mirror-cheatsheet.html` plus
+  `assets/images/mirrored-wall-shelf-reference.svg`. *(authored 2026-07-08 after learner asked to
+  defer animation and learn mirroring; completion not yet reported)*

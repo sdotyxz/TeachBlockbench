@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 14 · Mirrored Wall Shelf</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb">
+    <span><b>Overcooked Assets</b> course</span>
+    <span>Mission: ship a sellable asset pack</span>
+    <span><b>Lesson 14</b></span>
+  </nav>
+
+  <p class="kicker">Day 14 - Week 3 modeling expansion</p>
+  <h1><span class="num">14</span>Mirrored wall shelf - build one side, reflect the other</h1>
+  <p class="dek">Animation can wait. Today you learn a modeling skill that makes symmetrical props
+  faster: <strong>Mirror Modeling</strong>. You will build one bracket for a café wall shelf and let
+  Blockbench reflect the matching bracket across the X center line.</p>
+
+  <div class="meta">
+    <span>~45-60 min</span>
+    <span>Builds on Lessons 3, 4, and 12</span>
+    <span>New skill: Mirror Modeling</span>
+    <span>Ends with a static prop post</span>
+  </div>
+
+  <div class="callout win">
+    <span class="label">Today's win</span>
+    <p>One <strong>postable café wall shelf</strong>: a centered shelf plank, two matching mirrored
+    brackets, and a couple of jars or cups sitting on top.</p>
+  </div>
+
+  <div class="figure">
+    <img src="../assets/images/mirrored-wall-shelf-reference.svg" alt="A café wall shelf with a built bracket on one side and a mirrored bracket on the opposite side across the X center line.">
+    <div class="cap"><strong>Lesson target:</strong> build one bracket on one side, mirror it across
+    <code>X 0</code>, then apply it when the pair looks right.</div>
+  </div>
+
+  <h2>Warm up - 30-second recall</h2>
+  <p>Answer first, then open the cards.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>What did Duplicate do in the cooking pot lesson?</summary>
+      <div class="answer">It made a copy that you moved manually to the other side.</div>
+    </details>
+    <details>
+      <summary>What is the difference between rotating the camera and rotating an element?</summary>
+      <div class="answer">The camera only changes your view. Element rotation changes the model itself.</div>
+    </details>
+    <details>
+      <summary>Why should symmetrical parts share the same size and color?</summary>
+      <div class="answer">Matching parts make the prop read as intentional instead of hand-mismatched.</div>
+    </details>
+  </div>
+
+  <h2>The one new idea - Mirror Modeling</h2>
+  <p><strong>Mirror Modeling</strong> reflects edits across the <strong>X axis</strong>. Instead of
+  building a left shelf bracket, duplicating it, moving it, and eyeballing the opposite side, you
+  build one bracket and let Blockbench show the mirrored partner.</p>
+
+  <p>The important distinction: <strong>Mirror Modeling</strong> is the live mirrored workflow.
+  <strong>Apply Mirror Modeling</strong> turns the mirrored side into real copied geometry. The local
+  Blockbench UI atlas lists both under the <strong>Edit</strong> menu.</p>
+
+  <div class="callout warn">
+    <span class="label">Beginner boundary</span>
+    <p>Today we mirror model geometry only. Mirror Painting, animation mirroring, and advanced UV
+    mirror cleanup can wait.</p>
+  </div>
+
+  <h2>Settings tutorial - Mirror Modeling</h2>
+  <p>Keep the <a href="../reference/blockbench-mirror-cheatsheet.html">Mirror Cheatsheet</a> open.</p>
+
+  <table>
+    <thead><tr><th>Control</th><th>Use it today for</th><th>Beginner-safe value</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Edit &gt; Mirror Modeling</strong></td><td>Turn on live X-axis mirroring.</td><td>On only while building the bracket.</td></tr>
+      <tr><td><strong>Mirror UV</strong></td><td>Mirror texture layout on copied parts.</td><td>On for solid-color shelf pieces.</td></tr>
+      <tr><td><strong>Apply Mirror Modeling</strong></td><td>Make the reflected bracket real geometry.</td><td>Use after the mirrored side looks right.</td></tr>
+      <tr><td><strong>Transform &gt; Flip</strong></td><td>Directly flip a selected part.</td><td>Skip today; this lesson is about Mirror Modeling.</td></tr>
+      <tr><td><strong>Center line</strong></td><td>The mirror plane.</td><td>Keep the shelf centered around <code>X 0</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#9A5B2F"></div><div class="body"><span class="name">Warm Wood</span><span class="role">shelf plank</span><span class="hex">#9A5B2F</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5D2C28"></div><div class="body"><span class="name">Dark Wood</span><span class="role">brackets / shadow</span><span class="hex">#5D2C28</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#EEC39A"></div><div class="body"><span class="name">Jar Cream</span><span class="role">jars / cups</span><span class="hex">#EEC39A</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#8A8F8D"></div><div class="body"><span class="name">Steel Grey</span><span class="role">jar lids</span><span class="hex">#8A8F8D</span></div></div>
+  </div>
+
+  <h2>Do it with me</h2>
+  <ol class="steps">
+    <li>
+      <h3>New Generic Model - name it <code>mirrored-wall-shelf</code></h3>
+      Save early. This is a static prop for the asset pack, not an animation exercise.
+    </li>
+    <li>
+      <h3>Build a centered shelf plank</h3>
+      Add one cube named <code>shelf-plank</code>. Suggested size:
+      <code>X 12</code>, <code>Y 0.6</code>, <code>Z 3</code>. Keep it centered on the grid so the
+      middle of the shelf sits on <code>X 0</code>.
+    </li>
+    <li>
+      <h3>Add a front lip</h3>
+      Add a thin cube named <code>shelf-front-lip</code>. Put it along the front edge of the shelf.
+      This small lip makes the shelf read as a designed prop instead of one flat board.
+    </li>
+    <li>
+      <h3>Turn on Mirror Modeling</h3>
+      Go to <strong>Edit &gt; Mirror Modeling</strong>. In its options, keep <strong>Mirror UV</strong>
+      on. From now on, watch what happens across the X center line.
+    </li>
+    <li>
+      <h3>Build one vertical bracket on the right side</h3>
+      Add a cube named <code>bracket-r-vertical</code>. Place it under the shelf at about
+      <code>X 4</code>. Keep it narrow and dark, like a support block. A mirrored partner should
+      appear on the opposite side.
+    </li>
+    <li>
+      <h3>Add the bracket foot</h3>
+      Add a short horizontal cube named <code>bracket-r-foot</code> under the vertical piece. The
+      mirrored side should update automatically. If it appears too close or too far away, move the
+      right-side original until the pair feels balanced.
+    </li>
+    <li>
+      <h3>Add an optional angled brace</h3>
+      Add a slim cube named <code>bracket-r-angle</code>, rotate it slightly, and place it between
+      the vertical support and the shelf. The mirrored side should angle the opposite way. If this is
+      fiddly, skip it; the vertical and foot blocks are enough.
+    </li>
+    <li>
+      <h3>Apply the mirror</h3>
+      Select the right-side bracket pieces, then choose <strong>Edit &gt; Apply Mirror Modeling</strong>.
+      The mirrored bracket becomes real geometry that can be selected and edited.
+    </li>
+    <li>
+      <h3>Turn Mirror Modeling off</h3>
+      Go back to <strong>Edit &gt; Mirror Modeling</strong> and turn it off. This prevents the jars
+      or cups from mirroring by accident.
+    </li>
+    <li>
+      <h3>Add shelf items asymmetrically</h3>
+      Add one or two jars, cups, or sauce bottles on top of the shelf. Do not mirror these. A little
+      asymmetry makes the prop feel more natural while the brackets stay perfectly matched.
+    </li>
+    <li>
+      <h3>Paint with the course palette</h3>
+      Use warm wood for the plank, dark wood for the brackets, cream for jars, and steel grey for
+      lids. Keep labels/text off this lesson so mirrored UVs cannot reverse letters.
+    </li>
+    <li>
+      <h3>Capture the shelf</h3>
+      Take one 3/4 screenshot of the shelf alone, then one set shot near your chalkboard, sauce
+      bottle, or prep counter if you have those files handy.
+    </li>
+    <li>
+      <h3>Post your Day-14 update</h3>
+      Publish the image and a short note. <em>Streak: Day 14.</em>
+    </li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="label">Modeling habit</span>
+    <p>Use Mirror Modeling for symmetrical structure. Turn it off before adding natural clutter,
+    labels, stains, or other details that should not be identical.</p>
+  </div>
+
+  <div class="callout post">
+    <span class="label">Paste-ready captions</span>
+    <p style="margin-bottom:.4rem"><strong>itch.io post (English):</strong></p>
+    <div class="template">Day 14 of learning Blockbench from zero. Today I learned Mirror Modeling by building a café wall shelf. I made one support bracket, mirrored it across the X center line, then applied the mirror so the second bracket became real geometry. Much faster than eyeballing two matching sides by hand.</div>
+    <p style="margin:.7rem 0 .4rem"><strong>RedNote / 小红书 (中文):</strong></p>
+    <div class="template">【第14天】零基础学 Blockbench 做游戏素材
+
+今天学的是 Mirror Modeling（镜像建模）。
+我做了一个小咖啡馆墙架：先做右边的支架，然后让 Blockbench 自动镜像出左边。
+
+今天最大的收获：
+对称结构不要手动猜位置。
+先把主体放在 X 轴中心线，再只做一边，镜像出来会更快也更准。
+
+这个技能以后做架子、把手、柜门、角色手臂都会用到。
+#Blockbench #3D建模 #低多边形 #游戏美术 #学习打卡</div>
+    <div class="tags">
+      <span class="tag">#Blockbench</span><span class="tag">#3D建模</span>
+      <span class="tag">#lowpoly</span><span class="tag">#游戏美术</span><span class="tag">#学习打卡</span>
+    </div>
+  </div>
+
+  <h2>Quick self-check</h2>
+  <p>Say the answer first, then open the card.</p>
+  <div class="selfcheck">
+    <details>
+      <summary>Which axis does Mirror Modeling reflect across in this beginner workflow?</summary>
+      <div class="answer">The X axis, using the center line at <code>X 0</code>.</div>
+    </details>
+    <details>
+      <summary>What is the difference between Mirror Modeling and Apply Mirror Modeling?</summary>
+      <div class="answer">Mirror Modeling previews live reflected edits; Apply Mirror Modeling makes the reflected side real geometry.</div>
+    </details>
+    <details>
+      <summary>Why turn Mirror Modeling off before adding jars?</summary>
+      <div class="answer">The brackets should match, but shelf clutter looks better when it is not perfectly mirrored.</div>
+    </details>
+    <details>
+      <summary>When should you be careful with Mirror UV?</summary>
+      <div class="answer">When a mirrored face has letters, labels, or directional texture details that could appear reversed.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary source</span>
+    <p>Use the <a href="../reference/blockbench-mirror-cheatsheet.html">Mirror Cheatsheet</a>. It is
+    grounded in the local Blockbench UI atlas entries for
+    <a href="../reference/blockbench-ui-features/edit.html">Edit &gt; Mirror Modeling</a> and the
+    source file <code>reference/blockbench-source/js/modeling/mirror_modeling.ts</code>.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">Ask me anything</span>
+    <p>If the mirrored bracket appears in the wrong place, the center shelf duplicates, or the mirror
+    will not apply, send me a screenshot of the Outliner and viewport. I can tell which part is
+    selected or off-center.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../lessons/0013-first-timeline-animation.html">Previous - Lesson 13</a>
+    <a href="../reference/blockbench-mirror-cheatsheet.html">Mirror Cheatsheet</a>
+    <a href="../reference/blockbench-transform-cheatsheet.html">Transform Cheatsheet</a>
+    <a href="../MISSION.md">Mission</a>
+  </nav>
+
+  <footer class="course">Lesson 14 of the Overcooked-style Blockbench course · made for ~1 hr/day · ask your teacher to continue</footer>
+
+</main>
+</body>
+</html>

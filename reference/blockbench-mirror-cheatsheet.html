@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockbench Mirror Cheatsheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="breadcrumb">
+    <span><b>TeachBlockbench</b></span>
+    <span>Reference</span>
+    <span><b>Mirror</b></span>
+  </nav>
+
+  <p class="kicker">Modeling reference</p>
+  <h1>Blockbench Mirror Cheatsheet</h1>
+  <p class="dek">A quick map for using Mirror Modeling safely: what it mirrors, when to apply it,
+  and how it differs from Duplicate, Flip, and Mirror UV.</p>
+
+  <div class="callout win">
+    <span class="label">Mental model</span>
+    <p><strong>Mirror Modeling</strong> reflects edits across the <strong>X axis</strong>. Build on
+    one side of the model, check the mirrored side, then use <strong>Apply Mirror Modeling</strong>
+    when you want the reflected side to become real editable geometry.</p>
+  </div>
+
+  <h2>Main controls</h2>
+  <table>
+    <thead><tr><th>Control</th><th>Where</th><th>What it does</th><th>Beginner use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Mirror Modeling</strong></td><td>Edit &gt; Mirror Modeling</td><td>Live-reflects viewport edits across X.</td><td>Turn on before building one side.</td></tr>
+      <tr><td><strong>Apply Mirror Modeling</strong></td><td>Edit &gt; Apply Mirror Modeling</td><td>Copies selected elements and flips them across X.</td><td>Use when the mirrored side looks right.</td></tr>
+      <tr><td><strong>Allow Mirror Modeling</strong></td><td>Edit mode, selected element</td><td>Lets a selected element participate in mirroring.</td><td>Leave on unless one part should not mirror.</td></tr>
+      <tr><td><strong>Mirror UV</strong></td><td>Mirror Modeling options / UV panel</td><td>Mirrors texture coordinates too.</td><td>Keep on for simple solid-color props.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Mirror vs nearby tools</h2>
+  <table>
+    <thead><tr><th>Tool</th><th>Use when</th><th>Beginner trap</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Duplicate</strong></td><td>You want a second copy you will place manually.</td><td>The copy is not automatically opposite or mirrored.</td></tr>
+      <tr><td><strong>Mirror Modeling</strong></td><td>You want edits on one side reflected live across X.</td><td>The center line matters. If the model is off-center, the mirror looks wrong.</td></tr>
+      <tr><td><strong>Apply Mirror Modeling</strong></td><td>You are done previewing and want real copied parts.</td><td>Apply only the parts you want mirrored.</td></tr>
+      <tr><td><strong>Transform &gt; Flip</strong></td><td>You want to flip selected geometry on X, Y, or Z.</td><td>Flip is a direct transform, not the same as live Mirror Modeling.</td></tr>
+      <tr><td><strong>Mirror UV</strong></td><td>You want texture layout mirrored.</td><td>This changes texture behavior, not model shape.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Safe beginner workflow</h2>
+  <ol class="steps">
+    <li>
+      <h3>Center the main prop around <code>X 0</code></h3>
+      Mirror Modeling reflects across the X center line, so a centered body gives predictable pairs.
+    </li>
+    <li>
+      <h3>Turn on <strong>Edit &gt; Mirror Modeling</strong></h3>
+      Keep <strong>Mirror UV</strong> on for simple solid-color props.
+    </li>
+    <li>
+      <h3>Build only one side</h3>
+      Watch the reflected side appear. If it appears in the wrong place, fix the original side's
+      position relative to the center line.
+    </li>
+    <li>
+      <h3>Use <strong>Apply Mirror Modeling</strong></h3>
+      Select the one-side pieces and apply when you want the mirrored copy to become editable.
+    </li>
+    <li>
+      <h3>Turn Mirror Modeling off</h3>
+      After applying, turn it off so later asymmetrical details do not duplicate by accident.
+    </li>
+  </ol>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>The mirror appears too close or too far.</td><td>The original part is not placed relative to <code>X 0</code> as expected.</td><td>Move the original side and watch the reflected side update.</td></tr>
+      <tr><td>A center piece duplicates unexpectedly.</td><td>Mirror Modeling is still on while editing a part that should stay single.</td><td>Turn Mirror Modeling off or disable mirroring for that element.</td></tr>
+      <tr><td>The mirrored side is only a preview.</td><td>You have not applied Mirror Modeling.</td><td>Select the source side and choose <strong>Edit &gt; Apply Mirror Modeling</strong>.</td></tr>
+      <tr><td>Textures look reversed.</td><td>Mirror UV is affecting the mirrored faces.</td><td>For text/labels, turn off Mirror UV or clean the UVs after applying.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout source">
+    <span class="label">Source-backed facts</span>
+    <p>The local Blockbench UI atlas lists <a href="blockbench-ui-features/edit.html">Edit &gt;
+    Mirror Modeling</a> as a toggle that reflects viewport changes across the X axis, and
+    <strong>Apply Mirror Modeling</strong> as an action that copies selected elements and flips them
+    across X. The local source for these actions is
+    <code>reference/blockbench-source/js/modeling/mirror_modeling.ts</code>.</p>
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">Course Home</a>
+    <a href="../lessons/0014-mirrored-wall-shelf.html">Lesson 14</a>
+    <a href="blockbench-transform-cheatsheet.html">Transform Cheatsheet</a>
+  </nav>
+</main>
+</body>
+</html>
