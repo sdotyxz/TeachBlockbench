@@ -136,6 +136,7 @@ Working notes + learner preferences. Refer back before designing each lesson.
 - **0014** — Mirrored wall shelf: Mirror Modeling. New idea: build one side of a symmetrical static
   prop, reflect it across the X axis, then use Apply Mirror Modeling to turn the reflected side into
   real geometry. Builds a café wall shelf with mirrored support brackets and non-mirrored jars/cups
-  on top. Adds `reference/blockbench-mirror-cheatsheet.html` plus
-  `assets/images/mirrored-wall-shelf-reference.svg`. *(authored 2026-07-08 after learner asked to
+  on top. Adds `reference/blockbench-mirror-cheatsheet.html`,
+  `assets/images/mirrored-wall-shelf-reference.svg`, and the raster target model image
+  `assets/images/mirrored-wall-shelf-target.png`. *(authored 2026-07-08 after learner asked to
   defer animation and learn mirroring; completion not yet reported)*
