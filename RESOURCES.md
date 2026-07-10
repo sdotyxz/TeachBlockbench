@@ -1,7 +1,7 @@
 # Overcooked-style Blockbench Assets — Resources
 
 Curated, high-trust sources. Lesson knowledge is drawn from here, not from memory.
-Last reviewed: 2026-07-01.
+Last reviewed: 2026-07-10.
 
 ## Knowledge
 
@@ -25,6 +25,13 @@ Last reviewed: 2026-07-01.
   [Texture template seam logic](https://github.com/JannisX11/blockbench/blob/master/js/texturing/texture_generator.js)
   Official source implementation. Use for: exact Seam Tool behavior: mesh-only Edit-mode tool,
   Auto / Join / Divide modes, and how seams influence generated texture templates.
+- [MTools source — action conditions](https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/actions.js) ·
+  [Cubic Projection](https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/tools/uv_mapping/uv_turnaround_projection.action.js) ·
+  [deprecated Project From View](https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/tools/uv_mapping/uv_project_view.action.js) ·
+  [Blockbench built-in UV source](https://github.com/JannisX11/blockbench/blob/master/js/uv/uv.js)
+  Primary implementation references for MTools menu visibility and UV behavior. Use for: the exact
+  six-direction Cubic Projection algorithm, Split and Margin behavior, the Project From View
+  deprecation, and the maintained built-in Blockbench replacement.
 - [Blockbench GitHub source — Selection Mode](https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh_editing.js) ·
   [Cluster viewport selection logic](https://github.com/JannisX11/blockbench/blob/master/js/preview/preview.js) ·
   [Merge Meshes source](https://github.com/JannisX11/blockbench/blob/master/js/modeling/mesh/merge_split.ts)

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference · MTools and UV Unwrapping Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span>📦 <b>Overcooked Assets</b> course</span>
+    <span>·</span>
+    <span>Reference</span>
+    <span>·</span>
+    <span><b>MTools + UV unwrapping</b></span>
+  </nav>
+
+  <p class="kicker">Reference — MTools 2.1.0 · checked 2026-07-10</p>
+  <h1>MTools + UV Unwrapping</h1>
+  <p class="dek">Use MTools to reshape and generate meshes. For UVs, remember one sentence:
+  <strong>Cubic Projection unwraps around six directions; Project from View flattens what the camera sees.</strong></p>
+
+  <div class="callout tip">
+    <span class="label">The mental model</span>
+    <p><strong>UV unwrapping</strong> flattens selected 3D faces into 2D coordinates on the texture.
+    It changes neither the geometry nor the painted pixels. After unwrapping, you still arrange the
+    UV islands, snap them to pixels, create or update the texture, and paint it.</p>
+  </div>
+
+  <h2>Where MTools appears</h2>
+  <table>
+    <thead><tr><th>Current state</th><th>Menu you get</th><th>What is inside</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Edit Mode + selected mesh + Object selection</td>
+        <td><strong>MTools Operators</strong></td>
+        <td>Whole-object operations such as Subdivide, Array, Scatter, and Boolean.</td>
+      </tr>
+      <tr>
+        <td>Edit Mode + selected mesh + Cluster / Face / Edge / Vertex selection</td>
+        <td><strong>MTools</strong></td>
+        <td>Component tools, including <strong>UV Mapping</strong>.</td>
+      </tr>
+      <tr>
+        <td>Desktop: Filter menu</td>
+        <td><strong>MTools Generate</strong></td>
+        <td>Terrain, Text Mesh, XYZ surfaces, Polyhedron, and Torus Knot.</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td><strong>Search</strong> or mesh context menu</td>
+        <td>Search for an individual generator; long-press a selected mesh for its context menu.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="label">If the menu is missing</span>
+    <p>MTools needs a format that supports <strong>meshes</strong>, a selected <strong>Mesh</strong>
+    rather than a Cube, and <strong>Edit Mode</strong>. A Generic Model is the safest starting point.
+    Object selection shows <em>MTools Operators</em>; any non-object selection mode shows <em>MTools</em>.</p>
+  </div>
+
+  <h2>MTools at a glance</h2>
+  <table>
+    <thead><tr><th>Group</th><th>Commands</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Tools</strong></td>
+        <td>Bridge Edge Loops, To Sphere, Laplacian Smooth, Poke Faces, Triangles to Quadrilaterals,
+        Triangulate Faces, UV Mapping, Expand Selection, Shrink Selection</td>
+        <td>Editing selected vertices, edges, or faces.</td>
+      </tr>
+      <tr>
+        <td><strong>Operators</strong></td>
+        <td>Subdivide, Split Edges, Scatter, Array, Boolean</td>
+        <td>Changing or duplicating selected mesh objects. Boolean is experimental.</td>
+      </tr>
+      <tr>
+        <td><strong>Generate</strong></td>
+        <td>Terrain, Terrain Style Editor, Text Mesh, XYZ Math Surface, Polyhedron, Torus Knot</td>
+        <td>Creating new procedural mesh objects.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The UV choice</h2>
+  <table>
+    <thead><tr><th>Method</th><th>What it does</th><th>Best for</th><th>Avoid when</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>MTools: Cubic Projection</strong></td>
+        <td>Groups selected faces by their nearest X, Y, or Z direction, then projects them from the
+        six sides of an imaginary box.</td>
+        <td>Crates, counters, shelves, appliances, and other mostly boxy props.</td>
+        <td>The mesh is rounded, strongly diagonal, or needs carefully connected islands.</td>
+      </tr>
+      <tr>
+        <td><strong>Blockbench: UV Project from View</strong></td>
+        <td>Flattens selected faces using the current camera view.</td>
+        <td>Signs, labels, logos, front panels, and one camera-facing surface.</td>
+        <td>You selected back faces too, or the camera sees the surface at a steep angle.</td>
+      </tr>
+      <tr>
+        <td><strong>Seam Tool + texture template</strong></td>
+        <td>Marks where connected mesh faces must split or stay joined when Blockbench generates a
+        texture template.</td>
+        <td>Bottles, jars, cups, pipes, and continuous side bands.</td>
+        <td>You only need to place one flat label; Project from View is faster.</td>
+      </tr>
+      <tr>
+        <td><strong>Manual UV editing</strong></td>
+        <td>Moves, rotates, scales, connects, and snaps the resulting UV islands.</td>
+        <td>The final cleanup after every automatic projection.</td>
+        <td>Never skip it merely because the first projection looks acceptable.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Recipe: MTools Cubic Projection</h2>
+  <ol class="steps">
+    <li>
+      <h3>Duplicate the mesh or save first</h3>
+      The command replaces UV coordinates on the selected faces. Geometry stays unchanged, and Undo
+      should work, but a duplicate makes comparison easy.
+    </li>
+    <li>
+      <h3>Use a square texture while learning</h3>
+      MTools scales the projection from the shorter project texture dimension. A square
+      <code>32 × 32</code> or <code>64 × 64</code> texture makes the result easiest to predict.
+    </li>
+    <li>
+      <h3>Select only the faces to unwrap</h3>
+      Enter Edit Mode, select the mesh, choose Face selection, then select the intended faces.
+      Unselected faces keep their existing UVs.
+    </li>
+    <li>
+      <h3>Open MTools → UV Mapping → Cubic Projection</h3>
+      On mobile, long-press the selected mesh in the Outliner to open its context menu.
+    </li>
+    <li>
+      <h3>Start with Split enabled</h3>
+      Split places the six directional projections into separate regions. This reduces overlap and
+      is the safer choice when each side needs unique painting.
+    </li>
+    <li>
+      <h3>Add a small Margin</h3>
+      Start around <code>2–5%</code>. Margin shrinks each projected group slightly to leave breathing
+      room. Inspect the result at the actual texture resolution; it is percentage-based, not an exact
+      pixel-padding control.
+    </li>
+    <li>
+      <h3>Clean the UV panel</h3>
+      Move islands apart, rotate sideways pieces, match their texel scale, and use
+      <strong>Snap UV to Pixels</strong> for crisp pixel art.
+    </li>
+    <li>
+      <h3>Test with a checker or numbered marks</h3>
+      Paint a few temporary pixels across edges. Distortion or discontinuity becomes obvious before
+      you spend time on the final texture.
+    </li>
+  </ol>
+
+  <h2>Cubic Projection settings</h2>
+  <table>
+    <thead><tr><th>Setting</th><th>Result</th><th>Choose it when</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Split: On</strong></td>
+        <td>Directional groups occupy separate parts of a roughly <code>3 × 2</code> layout.</td>
+        <td>You want to paint the top, sides, front, and back differently.</td>
+      </tr>
+      <tr>
+        <td><strong>Split: Off</strong></td>
+        <td>Different directional groups project into the same texture area and may overlap.</td>
+        <td>You intentionally want several sides to reuse the same pixels.</td>
+      </tr>
+      <tr>
+        <td><strong>Margin: 0%</strong></td>
+        <td>Uses the full allocated projection region.</td>
+        <td>You need maximum area and will manually add spacing.</td>
+      </tr>
+      <tr>
+        <td><strong>Margin: 2–5%</strong></td>
+        <td>Slightly shrinks each group.</td>
+        <td>You want a safer starting gap before painting.</td>
+      </tr>
+      <tr>
+        <td><strong>Large margin</strong></td>
+        <td>Shrinks the UV coverage and makes texture pixels appear larger on the model.</td>
+        <td>Rarely useful; watch for wasted texture space and uneven detail scale.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout source">
+    <span class="label">Important limitation</span>
+    <p>Cubic Projection is a directional projection, not an intelligent island packer. It does not
+    detect the most hidden seams, guarantee even padding, fill every empty pixel, or preserve a
+    carefully hand-arranged layout. Treat its output as a fast first draft.</p>
+  </div>
+
+  <h2>Recipe: Project from View</h2>
+  <ol class="steps">
+    <li>
+      <h3>Select only the visible-facing faces</h3>
+      Back and front faces can overlap when projected from the same camera.
+    </li>
+    <li>
+      <h3>Align the camera square to the surface</h3>
+      Use a front, side, or top orthographic view when possible. Perspective or a steep camera angle
+      creates a skewed UV shape.
+    </li>
+    <li>
+      <h3>Run the built-in command</h3>
+      Use <strong>UV → UV Project from View</strong>. On mobile, tap Search and enter
+      <strong>UV Project from View</strong>.
+    </li>
+    <li>
+      <h3>Place and snap the result</h3>
+      Move the projection onto the intended label or sign patch, scale it to the correct proportion,
+      and snap its corners to pixels.
+    </li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Deprecated MTools command</span>
+    <p>MTools still lists <strong>Project From View</strong>, but version 2.1.0 marks it deprecated.
+    Prefer Blockbench's built-in <strong>UV Project from View</strong>; it is the maintained path.</p>
+  </div>
+
+  <h2>Fast choice for kitchen props</h2>
+  <table>
+    <thead><tr><th>Prop or detail</th><th>Start with</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Crate, counter, shelf</td><td>MTools Cubic Projection, Split on</td><td>Most faces align to the six box directions.</td></tr>
+      <tr><td>Chalkboard or appliance label</td><td>Built-in Project from View</td><td>The front needs one flat, readable projection.</td></tr>
+      <tr><td>Bottle or jar side band</td><td>Seam Tool + generated template</td><td>A chosen back seam gives a cleaner continuous strip.</td></tr>
+      <tr><td>Repeated plain metal or wood sides</td><td>Cubic Projection, possibly Split off</td><td>Intentional overlap can reuse texture pixels efficiently.</td></tr>
+      <tr><td>Strongly diagonal mesh</td><td>Project from View or manual editing</td><td>Cubic Projection snaps it to the nearest main axis and can distort it.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>MTools UV Mapping is missing</td><td>You selected a Cube, are in Object selection, or left Edit Mode.</td><td>Use a Mesh, enter Edit Mode, then choose Face, Edge, or Vertex selection.</td></tr>
+      <tr><td>Cubic Projection does nothing</td><td>No mesh faces are selected.</td><td>Choose Face selection and select at least one face.</td></tr>
+      <tr><td>Several sides paint together</td><td>Split was off, so UV groups overlap.</td><td>Undo and rerun with Split on, or separate the islands manually.</td></tr>
+      <tr><td>UVs occupy only part of a wide texture</td><td>MTools bases the projection scale on the shorter texture dimension.</td><td>Use a square texture or manually scale and place the islands afterward.</td></tr>
+      <tr><td>Diagonal faces look stretched</td><td>Cubic Projection assigned them to the nearest X, Y, or Z direction.</td><td>Project those faces from a suitable view or unwrap them separately.</td></tr>
+      <tr><td>Front and back overlap</td><td>Project from View included faces on both sides.</td><td>Select only the camera-facing faces, then project again.</td></tr>
+      <tr><td>Texture seams bleed</td><td>Islands are too close or filtering samples neighboring pixels.</td><td>Add padding, move islands apart, and keep important paint away from island borders.</td></tr>
+      <tr><td>Pixel art looks soft</td><td>UV corners sit between pixels.</td><td>Use Snap UV to Pixels and check the model at the intended texture size.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="selfcheck">
+    <h2>30-second self-check</h2>
+    <details>
+      <summary>Which projection should you try first for a boxy café counter?</summary>
+      <div class="answer"><strong>MTools Cubic Projection</strong>, normally with Split enabled.</div>
+    </details>
+    <details>
+      <summary>Which projection should you use for one readable front label?</summary>
+      <div class="answer"><strong>Blockbench UV Project from View</strong>, with the camera square to the surface.</div>
+    </details>
+    <details>
+      <summary>Why would you deliberately turn Split off?</summary>
+      <div class="answer">To overlap several directions so they intentionally reuse the same texture pixels.</div>
+    </details>
+    <details>
+      <summary>Does an automatic projection finish the UV work?</summary>
+      <div class="answer">No. Arrange, scale, rotate, pad, test, and pixel-snap the resulting islands.</div>
+    </details>
+  </div>
+
+  <div class="callout source">
+    <span class="label">Primary sources</span>
+    <p>
+      <a href="https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/actions.js">[MTools visibility conditions]</a>
+      <a href="https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/tools/uv_mapping/uv_turnaround_projection.action.js">[MTools Cubic Projection source]</a>
+      <a href="https://github.com/JannisX11/blockbench-plugins/blob/master/src/mesh_tools/src/tools/uv_mapping/uv_project_view.action.js">[Deprecated MTools Project From View source]</a>
+      <a href="https://github.com/JannisX11/blockbench/blob/master/js/uv/uv.js">[Built-in Blockbench UV source]</a>
+    </p>
+  </div>
+
+  <nav class="lesson-nav" aria-label="Related references">
+    <a href="blockbench-uv-function-cheatsheet.html">UV Function cheat sheet</a>
+    <a href="blockbench-seam-tool-cheatsheet.html">Seam Tool cheat sheet</a>
+    <a href="../lessons/0012-uv-cleanup-and-layout.html">Lesson 12 — UV cleanup</a>
+    <a href="../index.html">Course Home</a>
+  </nav>
+
+  <footer class="course">Overcooked-style Blockbench assets · MTools and UV unwrapping reference</footer>
+
+</main>
+</body>
+</html>
